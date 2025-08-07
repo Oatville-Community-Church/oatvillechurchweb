@@ -588,12 +588,12 @@ video {
   margin-right: auto;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .mb-12 {
@@ -678,10 +678,6 @@ video {
 
 .max-w-6xl {
   max-width: 72rem;
-}
-
-.max-w-md {
-  max-width: 28rem;
 }
 
 .max-w-3xl {

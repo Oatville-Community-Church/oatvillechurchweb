@@ -44,3 +44,21 @@ externalPort = 80
 [deployment]
 deploymentTarget = "static"
 publicDir = "public"
+run = ["sh", "-c", "echo 'Static deployment - no run command needed'"]
+build = ["sh", "-c", "npm run build"]
+
+[workflows]
+runButton = "Build and Run"
+
+[[workflows.workflow]]
+name = "Build and Run"
+author = 46015147
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run build"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node index.js"

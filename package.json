@@ -4,7 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-sass": "sass src/scss/styles.scss public/styles.css --style=compressed",
+    "build-css": "npx tailwindcss -i ./input.css -o ./public/out.css",
+    "copy-assets": "cpx 'src/js/**/*' public/ && cpx 'src/images/**/*' public/images/",
+    "copy-html": "cpx 'src/*.html' public/",
+    "build": "npm run build-sass && npm run build-css && npm run copy-assets && npm run copy-html",
+    "watch-sass": "sass src/scss/styles.scss public/styles.css --watch",
+    "watch": "npm run watch-sass & npx tailwindcss -i ./input.css -o ./public/out.css --watch",
+    "dev": "npm run build && node index.js",
+    "start": "npm run build && node index.js"
   },
   "keywords": [],
   "author": "",

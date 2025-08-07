@@ -1,0 +1,31 @@
+
+// Main SASS file
+@import 'variables';
+@import 'base';
+@import 'components';
+
+// Variables
+$primary-color: #f59e0b;
+$secondary-color: #1f2937;
+$text-color: #374151;
+$bg-color: #ffffff;
+
+// Base styles
+body {
+  font-family: 'Arial', sans-serif;
+  color: $text-color;
+  background-color: $bg-color;
+}
+
+// Custom components
+.custom-button {
+  background-color: $primary-color;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}

@@ -1,6 +1,3 @@
-
-#!/usr/bin/env node
-
 /**
  * Performance Monitoring
  * Track build times and identify bottlenecks

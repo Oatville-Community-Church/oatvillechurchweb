@@ -44,7 +44,6 @@ externalPort = 80
 [deployment]
 deploymentTarget = "static"
 publicDir = "public"
-run = ["sh", "-c", "echo 'Static deployment - no run command needed'"]
 build = ["sh", "-c", "npm run build"]
 
 [workflows]

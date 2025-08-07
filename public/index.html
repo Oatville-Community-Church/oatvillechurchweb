@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oatville Community Church - Welcome Home</title>
+  <title>Oatville Community Church</title>
   <link rel="stylesheet" href="out.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body class="bg-white">
@@ -18,17 +19,17 @@
           <h1 class="text-2xl font-bold text-yellow-400">Oatville Community Church</h1>
         </div>
         <div class="hidden md:flex space-x-8">
-          <a href="#home" class="text-gray-200 hover:text-yellow-400 font-medium">Home</a>
-          <a href="#about" class="text-gray-200 hover:text-yellow-400 font-medium">About</a>
-          <a href="#services" class="text-gray-200 hover:text-yellow-400 font-medium">Services</a>
-          <a href="#contact" class="text-gray-200 hover:text-yellow-400 font-medium">Contact</a>
+          <a href="#home" class="nav-link text-gray-200 hover:text-yellow-400 font-medium">Home</a>
+          <a href="#about" class="nav-link text-gray-200 hover:text-yellow-400 font-medium">About</a>
+          <a href="#services" class="nav-link text-gray-200 hover:text-yellow-400 font-medium">Services</a>
+          <a href="#contact" class="nav-link text-gray-200 hover:text-yellow-400 font-medium">Contact</a>
         </div>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="bg-gray-900 text-white py-20 relative">
+  <section id="home" class="hero-section bg-gray-900 text-white py-20 relative">
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
       <h2 class="text-5xl font-bold mb-6 text-yellow-400">Welcome to Oatville Community Church</h2>
@@ -36,32 +37,45 @@
         A warm and welcoming community where you can feel the Holy Spirit among us. 
         Come as you are, and experience God's love in a place that feels like home.
       </p>
-      <a href="#contact" class="bg-yellow-500 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-400 transition duration-300 inline-block">
-        Join Us This Sunday
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#services" class="custom-button bg-yellow-500 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300">
+          Join Us Sunday
+        </a>
+        <a href="#contact" class="border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300">
+          Plan Your Visit
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Latest Video Section -->
-  <section class="py-16 bg-gray-100">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h3 class="text-4xl font-bold text-gray-800 mb-8">Latest Message</h3>
-      <div class="bg-white p-6 rounded-lg shadow-lg">
-        <div class="aspect-video w-full">
-          <iframe 
-            id="latest-video"
-            width="100%" 
-            height="100%" 
-            src="https://www.youtube.com/embed?listType=playlist&list=UULiIrzYVgwFD0rIEYQoGC5A&index=0" 
-            title="Latest Message from Oatville Community Church" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h3 class="text-4xl font-bold text-gray-800 mb-4">Latest Message</h3>
+        <p class="text-lg text-gray-600">Watch our most recent sermon and be inspired</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="aspect-video w-full">
+            <iframe 
+              id="latest-video"
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed?listType=playlist&list=UULiIrzYVgwFD0rIEYQoGC5A&index=0" 
+              title="Latest Message from Oatville Community Church" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600">
+              Watch our latest service and be inspired by God's word. Don't forget to subscribe to our YouTube channel for more content!
+            </p>
+          </div>
         </div>
-        <p class="text-gray-600 mt-4">
-          Watch our latest service and be inspired by God's word. Don't forget to subscribe to our YouTube channel for more content!
-        </p>
       </div>
     </div>
   </section>
@@ -79,43 +93,27 @@
           <img src="church-exterior.jpg" alt="Oatville Community Church Exterior" class="rounded-lg shadow-lg w-full">
         </div>
         <div>
-          <h4 class="text-2xl font-bold mb-4">Our Story</h4>
-          <p class="text-gray-600 mb-6">
-            Oatville Community Church holds a special place in the hearts of many families. 
-            It's more than a place of worship; it's where you feel the Holy Spirit among us.
-          </p>
-          <p class="text-gray-600 mb-6">
-            The atmosphere is warm and inviting, welcoming everyone with open arms. Whether you're 
-            a longtime member or visiting for the first time, you're embraced by a community 
-            dedicated to following God's path.
-          </p>
-          <p class="text-gray-600">
-            Our sermons are uplifting, delivered with passion by clergy who deeply care about 
-            our spiritual journey together. We blend tradition with modern faith practices, 
-            resonating with all seekers.
-          </p>
+          <img src="church-interior.jpg" alt="Oatville Community Church Interior" class="rounded-lg shadow-lg w-full">
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12 items-center mt-16">
-        <div class="md:order-2">
-          <img src="church-interior.jpg" alt="Oatville Community Church Interior" class="rounded-lg shadow-lg w-full">
-        </div>
-        <div class="md:order-1">
-          <h4 class="text-2xl font-bold mb-4">Our Mission</h4>
-          <p class="text-gray-600 mb-6">
-            We are committed to creating a haven where people can connect in faith and 
-            experience God's presence. Our mission is to build a strong, loving community 
-            that supports each member's spiritual growth.
-          </p>
-          <p class="text-gray-600 mb-6">
-            Each visit reaffirms faith and leaves our members inspired. We believe in 
-            the power of community, the importance of worship, and the transformative 
-            nature of God's love.
-          </p>
+      <div class="grid md:grid-cols-3 gap-8 mt-16">
+        <div class="card text-center">
+          <h4 class="text-2xl font-bold mb-4 text-gray-800">Our Mission</h4>
           <p class="text-gray-600">
-            If you seek a church to connect in faith and experience God's presence, 
-            Oatville Community Church is a haven worth visiting.
+            To share God's love and create a welcoming community where people can grow in faith and fellowship.
+          </p>
+        </div>
+        <div class="card text-center">
+          <h4 class="text-2xl font-bold mb-4 text-gray-800">Our Values</h4>
+          <p class="text-gray-600">
+            Love, compassion, service, and authentic community guided by Christian principles and teachings.
+          </p>
+        </div>
+        <div class="card text-center">
+          <h4 class="text-2xl font-bold mb-4 text-gray-800">Our Vision</h4>
+          <p class="text-gray-600">
+            To be a beacon of hope and love in our community, making disciples and serving others.
           </p>
         </div>
       </div>
@@ -123,95 +121,54 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="py-16 bg-gray-100">
+  <section id="services" class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h3 class="text-4xl font-bold mb-4">Our Services</h3>
-        <p class="text-xl text-gray-600">Join us for worship, fellowship, and spiritual growth</p>
+        <h3 class="text-4xl font-bold mb-4">Service Times</h3>
+        <p class="text-xl text-gray-600">Join us for worship and fellowship</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center bg-yellow-50 p-8 rounded-lg border-t-4 border-yellow-500">
-          <h4 class="text-2xl font-bold text-gray-800 mb-4">Sunday Service</h4>
-          <p class="text-gray-600 mb-4">Experience worship that inspires and uplifts your spirit</p>
-          <p class="text-lg font-semibold text-yellow-600">Sundays at 10:00 AM</p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card bg-white text-center">
+          <h4 class="text-2xl font-bold mb-4 text-blue-800">Sunday Worship</h4>
+          <p class="text-lg text-gray-600 mb-2">Every Sunday at 10:30 AM</p>
+          <p class="text-gray-500">Traditional and contemporary worship with inspiring messages</p>
         </div>
-
-        <div class="text-center bg-gray-100 p-8 rounded-lg border-t-4 border-yellow-500">
-          <h4 class="text-2xl font-bold text-gray-800 mb-4">Bible Study</h4>
-          <p class="text-gray-600 mb-4">Dive deeper into God's word with our community</p>
-          <p class="text-lg font-semibold text-yellow-600">Wednesdays at 7:00 PM</p>
+        <div class="card bg-white text-center">
+          <h4 class="text-2xl font-bold mb-4 text-blue-800">Bible Study</h4>
+          <p class="text-lg text-gray-600 mb-2">Wednesdays at 7:00 PM</p>
+          <p class="text-gray-500">Deep dive into scripture with fellowship and discussion</p>
         </div>
-
-        <div class="text-center bg-yellow-50 p-8 rounded-lg border-t-4 border-yellow-500">
-          <h4 class="text-2xl font-bold text-gray-800 mb-4">Youth Ministry</h4>
-          <p class="text-gray-600 mb-4">Engaging programs for our young people</p>
-          <p class="text-lg font-semibold text-yellow-600">Fridays at 6:30 PM</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Social Media Section -->
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h3 class="text-4xl font-bold text-gray-800 mb-8">Stay Connected</h3>
-      <p class="text-lg text-gray-600 mb-8">Follow us on social media for updates, inspiration, and community news</p>
-      
-      <div class="flex justify-center space-x-8">
-        <a href="https://www.facebook.com/oatvillecommunitychurch" 
-           target="_blank" 
-           class="bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition duration-300">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-        </a>
-        
-        <a href="https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A" 
-           target="_blank" 
-           class="bg-red-600 text-white p-4 rounded-full hover:bg-red-700 transition duration-300">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-          </svg>
-        </a>
-        
-        <a href="https://www.instagram.com/oatvillecommunitychurch/" 
-           target="_blank" 
-           class="bg-gray-700 text-white p-4 rounded-full hover:bg-gray-600 transition duration-300">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-        </a>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gray-900 text-white">
+  <section id="contact" class="py-16 bg-blue-900 text-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h3 class="text-4xl font-bold mb-4">Visit Us</h3>
-        <p class="text-xl">We'd love to welcome you to our church family</p>
+        <p class="text-xl text-blue-200">We'd love to meet you and welcome you to our church family</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-12">
         <div>
-          <h4 class="text-2xl font-bold mb-6">Contact Information</h4>
-
-          <div class="space-y-4">
+          <h4 class="text-2xl font-bold mb-6">Get in Touch</h4>
+          
+          <div class="space-y-6">
             <div class="flex items-start space-x-4">
               <svg class="w-6 h-6 mt-1 text-blue-300" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
               <div>
                 <p class="font-semibold">Address</p>
-                <p class="text-blue-200">3814 S Hoover Rd<br>Wichita, KS 67215</p>
+                <p class="text-blue-200">123 Faith Avenue<br>Oatville, KS 67565</p>
               </div>
             </div>
 
             <div class="flex items-start space-x-4">
               <svg class="w-6 h-6 mt-1 text-blue-300" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55-.45-1-1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
               </svg>
               <div>
                 <p class="font-semibold">Phone</p>
@@ -236,7 +193,7 @@
               We're excited to meet you! Come as you are - there's no dress code. 
               Arrive a few minutes early to get comfortable and meet our welcoming team.
             </p>
-            <a href="tel:3163903591" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300 inline-block">
+            <a href="tel:3163903591" class="custom-button bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300 inline-block">
               Call Us Today
             </a>
           </div>

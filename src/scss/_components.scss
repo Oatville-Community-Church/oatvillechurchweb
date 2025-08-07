@@ -1,26 +1,39 @@
-// Component styles
-.nav-link {
-  color: $text-color;
-  font-weight: 500;
-  transition: color 0.3s ease;
 
-  &:hover {
-    color: $primary-color;
-  }
-}
+@use 'variables' as *;
 
-.hero-section {
-  background: linear-gradient(135deg, $secondary-color 0%, color.adjust($primary-color, $lightness: -10%) 100%);
+// Custom components
+.custom-button {
+  background-color: $primary-color;
   color: white;
-
-  h2 {
-    color: $primary-color;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
   }
 }
 
-.card {
-  background: white;
+// Map iframe styles
+.map-iframe {
+  border: 0;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  padding: $spacing-lg;
+}
+
+// Navigation components
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+// Hero section enhancements
+.hero-section {
+  background: linear-gradient(135deg, $secondary-color 0%, darken($secondary-color, 15%) 100%);
 }

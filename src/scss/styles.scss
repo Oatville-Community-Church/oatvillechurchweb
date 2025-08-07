@@ -1,21 +1,8 @@
 
 // Main SASS file
-@use 'variables' as *;
+@use 'variables';
 @use 'base';
 @use 'components';
-
-// Variables
-$primary-color: #f59e0b;
-$secondary-color: #1f2937;
-$text-color: #374151;
-$bg-color: #ffffff;
-
-// Base styles
-body {
-  font-family: 'Arial', sans-serif;
-  color: $text-color;
-  background-color: $bg-color;
-}
 
 // Custom components
 .custom-button {

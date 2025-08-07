@@ -1,27 +1,47 @@
 {
-  "name": "nodejs",
+  "name": "oatville-community-church",
   "version": "1.0.0",
-  "description": "",
+  "description": "Modern static website for Oatville Community Church with world-class build process",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-sass": "sass src/scss/styles.scss public/styles.css --style=compressed",
-    "build-css": "npx tailwindcss -i ./input.css -o ./public/out.css",
-    "copy-assets": "cpx 'src/js/**/*' public/ && cpx 'src/images/**/*' public/images/",
-    "copy-html": "cpx 'src/*.html' public/",
-    "build": "npm run build-sass && npm run build-css && npm run copy-assets && npm run copy-html",
-    "watch-sass": "sass src/scss/styles.scss public/styles.css --watch",
-    "watch": "npm run watch-sass & npx tailwindcss -i ./input.css -o ./public/out.css --watch",
-    "dev": "npm run build && node index.js",
-    "start": "npm run build && node index.js"
+    "clean": "node scripts/clean.js",
+    "build": "node scripts/build.js",
+    "dev": "node scripts/dev.js",
+    "serve": "node scripts/serve.js",
+    "lint": "node scripts/lint.js",
+    "test": "npm run lint",
+    "prebuild": "npm run clean",
+    "postbuild": "npm run lint",
+    "start": "npm run build && npm run serve",
+    "build:production": "NODE_ENV=production npm run build",
+    "deploy": "npm run build:production && npm run serve"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "static-site",
+    "church-website",
+    "tailwindcss",
+    "sass",
+    "modern-build"
+  ],
+  "author": "Oatville Community Church",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sharesmallbiz-support/oatvillechurch.git"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
   "dependencies": {
-    "@types/node": "^18.0.6",
-    "express": "^4.18.2",
-    "node-fetch": "^3.2.6",
-    "tailwindcss": "^3.1.8"
+    "@types/node": "^24.2.0",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "chokidar": "^4.0.3",
+    "compression": "^1.8.1",
+    "sass": "^1.90.0"
   }
 }

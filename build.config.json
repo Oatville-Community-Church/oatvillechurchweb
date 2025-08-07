@@ -1,0 +1,81 @@
+{
+  "build": {
+    "srcDir": "src",
+    "outputDir": "public",
+    "tempDir": "temp",
+    "cleanPaths": ["public", "dist", "temp", ".cache", "node_modules/.cache"],
+    "sass": {
+      "input": "src/scss/styles.scss",
+      "output": "public/styles.css",
+      "style": "compressed",
+      "sourceMap": false
+    },
+    "tailwind": {
+      "input": "input.css",
+      "output": "public/out.css",
+      "minify": true,
+      "config": "tailwind.config.js"
+    },
+    "assets": {
+      "copy": [
+        {
+          "from": "src/js/**/*",
+          "to": "public/"
+        },
+        {
+          "from": "src/images/**/*",
+          "to": "public/images/"
+        },
+        {
+          "from": "src/assets/**/*",
+          "to": "public/assets/"
+        },
+        {
+          "from": "src/*.html",
+          "to": "public/"
+        }
+      ],
+      "staticExtensions": [
+        ".ico",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".gif",
+        ".svg",
+        ".webp",
+        ".woff",
+        ".woff2",
+        ".ttf",
+        ".eot",
+        ".pdf"
+      ]
+    },
+    "server": {
+      "port": 3000,
+      "host": "localhost",
+      "compression": true,
+      "security": true
+    },
+    "watch": {
+      "paths": ["src/**/*", "input.css", "tailwind.config.js"],
+      "ignored": ["node_modules", ".git", ".cache", "public", "dist"]
+    }
+  },
+  "lint": {
+    "html": {
+      "checkDoctype": true,
+      "checkTitle": true,
+      "checkLang": true,
+      "checkAlt": true
+    },
+    "css": {
+      "checkImportant": true,
+      "checkDeprecated": true
+    },
+    "js": {
+      "checkSyntax": true,
+      "checkConsole": true,
+      "checkVar": true
+    }
+  }
+}

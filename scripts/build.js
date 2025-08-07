@@ -230,14 +230,36 @@ class BuildProcessor {
 
     try {
       await this.ensureDirectories();
+      
+      const sassStart = Date.now();
       await this.compileSass();
+      const sassTime = Date.now() - sassStart;
+      
+      const tailwindStart = Date.now();
       await this.compileTailwind();
+      const tailwindTime = Date.now() - tailwindStart;
+      
+      const copyStart = Date.now();
       await this.copyAssets();
+      const copyTime = Date.now() - copyStart;
+      
       await this.optimizeAssets();
       await this.generateBuildInfo();
 
       const duration = Date.now() - startTime;
+      
+      // Performance report
+      console.log(`\n⚡ Performance Breakdown:`);
+      console.log(`  SASS: ${sassTime}ms`);
+      console.log(`  Tailwind: ${tailwindTime}ms`);
+      console.log(`  Assets: ${copyTime}ms`);
       console.log(`\n✨ Build completed successfully in ${duration}ms!`);
+      
+      // Generate performance report
+      const PerformanceMonitor = require('./performance');
+      const monitor = new PerformanceMonitor();
+      await monitor.generateReport();
+      
     } catch (error) {
       console.error('\n❌ Build process failed:', error.message);
       throw error;

@@ -1,19 +1,18 @@
-
 // Component styles
 .nav-link {
   color: $text-color;
   font-weight: 500;
   transition: color 0.3s ease;
-  
+
   &:hover {
     color: $primary-color;
   }
 }
 
 .hero-section {
-  background: linear-gradient(135deg, $secondary-color 0%, darken($secondary-color, 10%) 100%);
+  background: linear-gradient(135deg, $secondary-color 0%, color.adjust($primary-color, $lightness: -10%) 100%);
   color: white;
-  
+
   h2 {
     color: $primary-color;
   }

@@ -1,8 +1,8 @@
 
 // Main SASS file
-@import 'variables';
-@import 'base';
-@import 'components';
+@use 'variables' as *;
+@use 'base';
+@use 'components';
 
 // Variables
 $primary-color: #f59e0b;

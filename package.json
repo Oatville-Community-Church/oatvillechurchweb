@@ -13,8 +13,11 @@
     "prebuild": "npm run clean",
     "postbuild": "npm run lint",
     "start": "npm run build && npm run serve",
-    "build:production": "NODE_ENV=production npm run build",
-    "deploy": "npm run build:production && npm run serve"
+    "build:production": "NODE_ENV=production npm run build && node scripts/optimize.js",
+    "optimize": "node scripts/optimize.js",
+    "perf": "node scripts/performance.js",
+    "deploy": "npm run build:production && npm run serve",
+    "analyze": "npm run perf && npm run lint"
   },
   "keywords": [
     "static-site",

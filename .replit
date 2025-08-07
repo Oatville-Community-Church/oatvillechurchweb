@@ -61,3 +61,41 @@ args = "npm run build"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "node index.js"
+
+[[workflows.workflow]]
+name = "Development"
+author = 46015147
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run clean"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run build"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+
+[[workflows.workflow]]
+name = "Production Build"
+author = 46015147
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run clean"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run build:production"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node scripts/optimize.js"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run lint"

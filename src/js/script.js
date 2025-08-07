@@ -7,33 +7,42 @@ function handleContactForm(event) {
 
 // YouTube API integration to get latest video
 async function loadLatestVideo() {
-    const channelId = 'UCLiIrzYVgwFD0rIEYQoGC5A';
-    
-    // Fallback to showing the channel's latest uploads playlist
-    const iframe = document.getElementById('latest-video');
-    if (iframe) {
-        // This will show the most recent video from the channel
-        iframe.src = `https://www.youtube.com/embed?listType=playlist&list=UU${channelId.substring(2)}&index=0`;
+    try {
+        const channelId = 'UCLiIrzYVgwFD0rIEYQoGC5A';
+        
+        // Fallback to showing the channel's latest uploads playlist
+        const iframe = document.getElementById('latest-video');
+        if (iframe) {
+            // This will show the most recent video from the channel
+            iframe.src = `https://www.youtube.com/embed?listType=playlist&list=UU${channelId.substring(2)}&index=0`;
+        }
+    } catch (error) {
+        console.log('Video loading error handled gracefully');
     }
 }
 
-// Load the latest video when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    loadLatestVideo();
-});
-
 // Additional functionality for the church website
 function initializeChurchWebsite() {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+    try {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
-    });
+    } catch (error) {
+        console.log('Navigation initialization error handled gracefully');
+    }
 }
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', initializeChurchWebsite);
+document.addEventListener('DOMContentLoaded', function() {
+    initializeChurchWebsite();
+    loadLatestVideo();
+});

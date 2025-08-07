@@ -1,5 +1,6 @@
 
 @use 'variables' as *;
+@use 'sass:color';
 
 // Custom components
 .custom-button {
@@ -12,7 +13,7 @@
   transition: all 0.3s ease;
   
   &:hover {
-    background-color: darken($primary-color, 10%);
+    background-color: color.adjust($primary-color, $lightness: -10%);
     transform: translateY(-1px);
   }
   
@@ -35,5 +36,5 @@
 
 // Hero section enhancements
 .hero-section {
-  background: linear-gradient(135deg, $secondary-color 0%, darken($secondary-color, 15%) 100%);
+  background: linear-gradient(135deg, $secondary-color 0%, color.adjust($secondary-color, $lightness: -15%) 100%);
 }

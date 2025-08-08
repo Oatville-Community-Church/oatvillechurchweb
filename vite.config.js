@@ -28,11 +28,12 @@ function htmlPlaceholderPlugin() {
         const val = getValue(churchData, p);
         return val !== undefined ? String(val) : m;
       });
-      const siteUrl = process.env.SITE_URL || 'https://sharesmallbiz-support.github.io/oatvillechurch';
+      const siteUrl = (churchData?.site?.url || process.env.SITE_URL || 'https://sharesmallbiz-support.github.io/oatvillechurch').replace(/\/$/, '');
       // Determine path for canonical: index.html -> '/', others -> '/filename'
       const filename = ctx?.filename ? path.basename(ctx.filename) : 'index.html';
-      const pagePath = filename === 'index.html' ? '/' : `/${filename.replace(/index\.html$/, '')}`;
-      const canonicalHref = `${siteUrl}${pagePath}`.replace(/\/$\/$/, '/');
+      const cleanName = filename === 'index.html' ? '' : filename;
+      const pagePath = cleanName ? `/${cleanName}` : '/';
+      const canonicalHref = `${siteUrl}${pagePath}`;
       const canonicalTag = `<link rel=\"canonical\" href=\"${canonicalHref}\" />`;
       if (!/rel="canonical"/.test(transformed)) {
         transformed = transformed.replace('</head>', `  ${canonicalTag}\n</head>`);
@@ -42,6 +43,18 @@ function htmlPlaceholderPlugin() {
       }
       if (!/og:description/.test(transformed)) {
         transformed = transformed.replace('</head>', `  <meta property=\"og:description\" content=\"${churchData?.seo?.description || ''}\" />\n</head>`);
+      }
+      if (!/og:url/.test(transformed)) {
+        transformed = transformed.replace('</head>', `  <meta property=\"og:url\" content=\"${canonicalHref}\" />\n</head>`);
+      }
+      if (!/og:image/.test(transformed) && churchData?.site?.socialImage) {
+        transformed = transformed.replace('</head>', `  <meta property=\"og:image\" content=\"${churchData.site.socialImage}\" />\n</head>`);
+      }
+      if (churchData?.site?.socialImage && !/og:image:width/.test(transformed)) {
+        transformed = transformed.replace('</head>', '  <meta property="og:image:width" content="1200" />\n</head>');
+      }
+      if (churchData?.site?.socialImage && !/og:image:height/.test(transformed)) {
+        transformed = transformed.replace('</head>', '  <meta property="og:image:height" content="630" />\n</head>');
       }
       return transformed;
     }
@@ -100,8 +113,8 @@ function sitemapAndRobotsPlugin() {
     name: 'sitemap-and-robots',
     writeBundle(_, bundle) {
       const siteUrl = process.env.SITE_URL || 'https://sharesmallbiz-support.github.io/oatvillechurch';
-      const htmlPages = Object.keys(bundle).filter(f => f.endsWith('.html'));
-      const urls = htmlPages.map(f => {
+  const htmlPages = Object.keys(bundle).filter(f => f.endsWith('.html'));
+  const urls = htmlPages.filter(f => !['offline.html','not-found.html'].includes(f)).map(f => {
         const clean = f === 'index.html' ? '/' : `/${f.replace(/index.html$/, '')}`;
         return `  <url><loc>${siteUrl}${clean}</loc></url>`;
       }).join('\n');
@@ -172,10 +185,12 @@ export default defineConfig(({ mode }) => {
         manifest: {
           name: churchData?.name || 'Church Site',
           short_name: 'Church',
-          start_url: '.',
+          start_url: (churchData?.site?.url || '.') + '/',
           display: 'standalone',
           background_color: '#ffffff',
           theme_color: '#1f2937',
+          description: churchData?.seo?.description || 'Church website',
+          categories: ['religion','community','education'],
           icons: [
             // Data URI minimal placeholders to avoid external public assets
             {

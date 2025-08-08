@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /**
- * Simple image optimization script.
+ * Image optimization script.
  * - Scans src/images for .jpg/.jpeg/.png
- * - Generates WebP versions alongside originals if missing or if source is newer.
- * - Skips if a same-named .webp already exists and is newer than source.
+ * - Generates WebP & AVIF versions alongside originals if missing or outdated.
+ * - Generates resized (max 1600px width) performance variants: *-1600.webp / *-1600.avif
+ * - Skips regeneration if target exists and source not newer.
  */
 const fs = require('fs');
 const path = require('path');
@@ -21,27 +22,41 @@ function isRasterCandidate(file) {
 
 async function processImage(file) {
   const srcPath = path.join(IMAGES_DIR, file);
-  const webpName = file.replace(/\.(jpe?g|png)$/i, '.webp');
-  const webpPath = path.join(IMAGES_DIR, webpName);
-
+  const baseName = file.replace(/\.(jpe?g|png)$/i, '');
+  const targets = [
+    { ext: 'webp', quality: 78, resize: false },
+    { ext: 'avif', quality: 50, resize: false },
+    { ext: 'webp', quality: 74, resize: 1600 },
+    { ext: 'avif', quality: 48, resize: 1600 }
+  ];
   const srcStat = fs.statSync(srcPath);
-  let regenerate = true;
-  if (fs.existsSync(webpPath)) {
-    const webpStat = fs.statSync(webpPath);
-    regenerate = webpStat.mtimeMs < srcStat.mtimeMs; // only regenerate if source newer
-  }
-  if (!regenerate) {
-    console.log(`✓ Skipping (up-to-date) ${webpName}`);
-    return;
-  }
-  try {
-    await sharp(srcPath)
-      .rotate() // auto orientation
-      .webp({ quality: 78 })
-      .toFile(webpPath);
-    console.log(`✔ Generated ${webpName}`);
-  } catch (err) {
-    console.error(`✗ Error generating ${webpName}:`, err.message);
+  const image = sharp(srcPath).rotate();
+  const metadata = await image.metadata().catch(() => ({}));
+  for (const cfg of targets) {
+    const suffix = cfg.resize ? `-${cfg.resize}` : '';
+    const outName = `${baseName}${suffix}.${cfg.ext}`;
+    const outPath = path.join(IMAGES_DIR, outName);
+    let regenerate = true;
+    if (fs.existsSync(outPath)) {
+      const stat = fs.statSync(outPath);
+      regenerate = stat.mtimeMs < srcStat.mtimeMs;
+    }
+    if (!regenerate) {
+      console.log(`✓ Up-to-date ${outName}`);
+      continue; // eslint-disable-line no-continue
+    }
+    try {
+      let pipeline = sharp(srcPath).rotate();
+      if (cfg.resize && metadata.width && metadata.width > cfg.resize) {
+        pipeline = pipeline.resize({ width: cfg.resize });
+      }
+      if (cfg.ext === 'webp') pipeline = pipeline.webp({ quality: cfg.quality });
+      else if (cfg.ext === 'avif') pipeline = pipeline.avif({ quality: cfg.quality });
+      await pipeline.toFile(outPath);
+      console.log(`✔ Generated ${outName}`);
+    } catch (err) {
+      console.error(`✗ Error generating ${outName}:`, err.message);
+    }
   }
 }
 

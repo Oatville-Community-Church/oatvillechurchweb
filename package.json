@@ -8,9 +8,10 @@
     "lint": "node scripts/lint.js",
     "test": "npm run lint",
     "dev": "vite",
-    "build": "vite build",
+  "prebuild": "npm run images:optimize && node scripts/fetch-latest-video.js",
+  "build": "vite build",
     "preview": "vite preview",
-    "images:optimize": "node scripts/optimize-images.js"
+  "images:optimize": "node scripts/optimize-images.js"
   },
   "keywords": [
     "static-site",

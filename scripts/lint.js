@@ -116,7 +116,11 @@ class Linter {
         
         // Check for common issues
         if (content.includes('!important')) {
-          this.warnings.push(`${relativePath}: Uses !important (consider refactoring)`);
+            // Ignore occurrences that appear only inside comments
+            const uncommented = content.replace(/\/\*[^]*?\*\//g, '').replace(/\/\/.*$/gm, '');
+            if (uncommented.includes('!important')) {
+              this.warnings.push(`${relativePath}: Uses !important (consider refactoring)`);
+            }
         }
         
         // Check for deprecated SASS syntax
@@ -148,8 +152,20 @@ class Linter {
         
         // Basic syntax checks
         try {
-          // Simple parsing check
-          new Function(content);
+          // Allow simple ESM syntax by stripping static import/export lines before using Function constructor
+          let toParse = content;
+      if (/\bimport\b|\bexport\b/.test(content)) {
+            toParse = content
+              // remove static import lines (keep dynamic import expression syntax untouched)
+              .replace(/^\s*import[^;]+;?$/mg, '')
+              // replace export default with just the expression/object
+              .replace(/^\s*export\s+default/mg, ' ')
+              // drop export keywords for named exports while retaining declarations
+        .replace(/^\s*export\s+(const|let|var|function|class)\s+/mg, '$1 ')
+        // handle "export async function"
+        .replace(/^\s*export\s+async\s+function\s+/mg, 'async function ');
+          }
+          new Function(toParse);
         } catch (syntaxError) {
           this.errors.push(`${relativePath}: Syntax error - ${syntaxError.message}`);
         }
@@ -177,8 +193,8 @@ class Linter {
       
       for (const entry of entries) {
         const fullPath = path.join(dir, entry.name);
-        
-        if (entry.isDirectory() && entry.name !== 'node_modules') {
+  // Skip typical generated / vendor directories anywhere in tree
+  if (entry.isDirectory() && !['node_modules', 'dist', '.vite'].includes(entry.name)) {
           await this.getFilesWithExtension(fullPath, extension, files);
         } else if (entry.name.endsWith(extension)) {
           files.push(fullPath);
@@ -209,7 +225,6 @@ class Linter {
         this.errors.forEach(error => console.log(`  - ${error}`));
         console.log('');
       }
-      
       if (this.warnings.length > 0) {
         console.log('⚠️ Warnings:');
         this.warnings.forEach(warning => console.log(`  - ${warning}`));

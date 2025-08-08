@@ -6,7 +6,6 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Production builds
-public/
 dist/
 build/
 out/
@@ -79,14 +78,9 @@ temp/
 # Sass cache
 .sass-cache/
 
-# Tailwind CSS generated files (kept in public/ for serving)
-# public/out.css - keeping this commented as it's needed for serving
 
 # Replit specific
 .replit
 replit.nix
 
 # Build artifacts that should be regenerated
-public/styles.css
-public/script.js
-public/*.html

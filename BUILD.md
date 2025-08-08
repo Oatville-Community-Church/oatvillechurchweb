@@ -1,21 +1,16 @@
-# 🏗️ World-Class Build Process
+# 🏗️ World-Class Build Process (Vite + GitHub Pages + PWA)
 
-This project features a modern, professional build system with comprehensive automation and best practices.
+This project now uses a lean, fast, and production-grade static build pipeline powered by **Vite**, with first-class support for **GitHub Pages**, **PWA offline caching**, **sitemap/robots generation**, and **bundle size budgets**.
 
 ## 🚀 Quick Start
 
 ```bash
-# Install dependencies
-npm install
-
-# Development with hot reloading
-npm run dev
-
-# Production build
-npm run build
-
-# Serve production build
-npm run serve
+npm install            # Install dependencies
+npm run dev           # Vite dev server (HMR)
+npm run build         # Production build -> dist/
+npm run preview       # Preview production build locally
+npm run clean         # Remove dist and temp artifacts
+npm run lint          # Custom lint/quality checks
 ```
 
 ## 📁 Project Structure
@@ -31,18 +26,10 @@ npm run serve
 │   │   └── script.js
 │   ├── images/            # Image assets
 │   └── *.html             # HTML templates
-├── public/                # Generated output (auto-generated)
-│   ├── styles.css         # Compiled SASS
-│   ├── out.css           # Compiled Tailwind CSS
-│   ├── *.html            # Processed HTML
-│   ├── *.js              # Copied JavaScript
-│   └── images/           # Optimized images
-├── scripts/               # Build automation
-│   ├── clean.js          # Clean build artifacts
-│   ├── build.js          # Main build process
-│   ├── dev.js            # Development server
-│   ├── serve.js          # Production server
-│   └── lint.js           # Code quality checks
+├── dist/                  # Vite production output (hashed assets) AFTER build
+├── scripts/               # Auxiliary scripts (clean, lint)
+│   ├── clean.js          # Cleans dist/temp
+│   └── lint.js           # Custom quality script
 ├── input.css             # Tailwind CSS input
 ├── tailwind.config.js    # Tailwind configuration
 └── package.json          # Dependencies & scripts
@@ -50,17 +37,13 @@ npm run serve
 
 ## 🛠️ Build Commands
 
-### Development
+### Development & Production
 
-- **`npm run dev`** - Start development server with hot reloading
-- **`npm run lint`** - Run code quality checks
-
-### Production
-
-- **`npm run clean`** - Clean all generated files
-- **`npm run build`** - Full production build
-- **`npm run serve`** - Serve production build
-- **`npm start`** - Build and serve (production)
+- **`npm run dev`** – Instant-start dev server (native ESM, on-demand transforms) with HMR
+- **`npm run build`** – Production build (Rollup under the hood) → `dist/`
+- **`npm run preview`** – Local preview of built output
+- **`npm run clean`** – Remove `dist/` and caches
+- **`npm run lint`** – Custom HTML/JS/SCSS quality checks
 
 ### Testing & Quality
 
@@ -75,28 +58,23 @@ npm run serve
 - Ensures clean slate for each build
 - Clears cache and temporary files
 
-### 2. Build Phase (`scripts/build.js`)
+### 2. Build Phase (Vite Core)
 
-- **SASS Compilation**: Compiles SCSS to compressed CSS
-- **Tailwind Processing**: Generates optimized Tailwind CSS
-- **Asset Copying**: Copies and organizes all static assets
-- **HTML Processing**: Copies and processes HTML files
-- **Asset Optimization**: Optimizes images and other assets
-- **Build Info**: Generates build metadata
+- SCSS & Tailwind unified through JS entry imports (`src/main.js`)
+- Tree-shaking, code splitting, hashed filenames
+- Placeholder replacement (`{{key.path}}`) using `churchInformation.json`
+- Automatic manifest + build-info emission
+- Bundle budget check (env-configured `BUNDLE_BUDGET_KB`)
 
-### 3. Development Server (`scripts/dev.js`)
+### 3. Development Server (Vite)
 
-- **Hot Reloading**: Automatically rebuilds on file changes
-- **File Watching**: Monitors source files for changes
-- **Express Server**: Local development server
-- **Error Handling**: Graceful error recovery
+- Native ESM dev pipeline (fast cold start)
+- Hot Module Replacement (CSS/JS partial updates)
+- Source maps (non-production)
 
-### 4. Production Server (`scripts/serve.js`)
+### 4. Preview (`vite preview`)
 
-- **Compression**: Gzip compression enabled
-- **Security Headers**: Production security headers
-- **Caching**: Optimized cache headers
-- **Performance**: Production optimizations
+Serves the already built `dist/` with simple static server—useful for final validation.
 
 ### 5. Code Quality (`scripts/lint.js`)
 
@@ -109,15 +87,14 @@ npm run serve
 
 ### ✅ Automated Tasks
 
-- [x] SASS to CSS compilation with compression
-- [x] Tailwind CSS processing and optimization
-- [x] Asset copying and organization
-- [x] HTML processing and copying
-- [x] Development server with hot reloading
-- [x] Production server with optimizations
-- [x] Code quality checks and linting
-- [x] Clean build process
-- [x] Build information generation
+- [x] SCSS + Tailwind bundling via Vite
+- [x] HTML placeholder population
+- [x] Hashed asset output & manifest
+- [x] Build info metadata
+- [x] Bundle size budget warning
+- [x] Sitemap & robots.txt generation
+- [x] PWA manifest + service worker (auto-update)
+- [x] GitHub Pages CI/CD deployment workflow
 
 ### ✅ Best Practices
 
@@ -132,14 +109,13 @@ npm run serve
 
 ### 🔮 Future Enhancements
 
-- [ ] Image optimization (WebP conversion, compression)
-- [ ] JavaScript minification and bundling
-- [ ] CSS purging for unused styles
-- [ ] Progressive Web App (PWA) features
-- [ ] Automated testing integration
-- [ ] Deployment automation
-- [ ] Performance monitoring
-- [ ] Bundle analysis
+- [ ] Image optimization pipeline (sharp / vite-imagetools)
+- [ ] HTML minification (custom plugin or default rollup html compress)
+- [ ] Structured data (JSON-LD injection plugin)
+- [ ] Visual regression tests (Playwright)
+- [ ] Lighthouse CI integration
+- [ ] Accessibility automation (axe-core CI)
+- [ ] Multi-page generation (add more HTML + placeholder transforms)
 
 ## 🌐 Development Workflow
 
@@ -148,7 +124,7 @@ npm run serve
 3. **Auto Rebuild**: Files automatically rebuild on save
 4. **Quality Check**: `npm run lint`
 5. **Production Build**: `npm run build`
-6. **Deploy**: `npm run serve`
+6. **Deploy**: Push to main (GitHub Actions handles Pages deploy)
 
 ## 📊 Performance
 
@@ -188,9 +164,9 @@ Each script is modular and can be customized for specific needs.
 
 ### Production Issues
 
-- Verify `public/` directory exists after build
-- Check server logs for errors
-- Ensure all assets are properly copied
+- Ensure `dist/` exists post-build
+- If GitHub Pages shows 404: confirm repository Pages settings → deploy from GitHub Actions
+- Double check `base` path is set via `GITHUB_PAGES=true` env in CI
 
 ## 📈 Best Practice Guidelines
 
@@ -210,10 +186,10 @@ Each script is modular and can be customized for specific needs.
 
 ### JavaScript
 
-- Use modern ES6+ syntax
-- Follow consistent code style
-- Handle errors gracefully
-- Comment complex logic
+- Prefer ES modules & static imports
+- Keep global scope clean (encapsulate helpers)
+- Use dynamic imports for future large optional sections
+- Avoid blocking long tasks on main thread (consider requestIdleCallback for non-critical)
 
 ### HTML
 
@@ -224,4 +200,4 @@ Each script is modular and can be customized for specific needs.
 
 ---
 
-*Built with ❤️ for modern web development*
+_Built with ❤️ using Vite for fast, reliable static delivery_

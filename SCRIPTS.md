@@ -48,7 +48,7 @@ npm start
 
 **Clean all generated files**
 
-- Removes public/, dist/, temp/ directories
+- Removes dist/, temp/ directories
 - Clears build cache
 - Ensures fresh build environment
 
@@ -60,7 +60,7 @@ npm run clean
 
 **Production server only**
 
-- Serves pre-built files from public/
+- (Legacy) Removed: formerly served static public/ directory
 - Includes compression and security headers
 - Requires prior build (run `npm run build` first)
 
@@ -188,7 +188,7 @@ npm run build:production
 # Test production build locally
 npm run serve
 
-# Deploy (copy public/ directory to server)
+# Deploy (build & upload dist/)
 ```
 
 ### Troubleshooting

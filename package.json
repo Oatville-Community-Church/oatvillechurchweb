@@ -5,19 +5,11 @@
   "main": "index.js",
   "scripts": {
     "clean": "node scripts/clean.js",
-    "build": "node scripts/build.js",
-    "dev": "node scripts/dev.js",
-    "serve": "node scripts/serve.js",
     "lint": "node scripts/lint.js",
     "test": "npm run lint",
-    "prebuild": "npm run clean",
-    "postbuild": "npm run lint",
-    "start": "npm run build && npm run serve",
-    "build:production": "NODE_ENV=production npm run build && node scripts/optimize.js",
-    "optimize": "node scripts/optimize.js",
-    "perf": "node scripts/performance.js",
-    "deploy": "npm run build:production && npm run serve",
-    "analyze": "npm run perf && npm run lint"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [
     "static-site",
@@ -38,13 +30,16 @@
   },
   "dependencies": {
     "@types/node": "^24.2.0",
-    "express": "^4.21.2",
     "node-fetch": "^3.3.2",
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "chokidar": "^4.0.3",
-    "compression": "^1.8.1",
-    "sass": "^1.90.0"
+    "sass": "^1.90.0",
+    "vite": "^5.4.0",
+    "postcss": "^8.4.41",
+    "autoprefixer": "^10.4.20",
+    "@vitejs/plugin-legacy": "^5.4.0",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "vite-plugin-pwa": "^0.20.0"
   }
 }

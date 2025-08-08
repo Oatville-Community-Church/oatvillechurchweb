@@ -8,8 +8,8 @@
 const fs = require('fs').promises;
 const path = require('path');
 
+// All assets now live in /src; we only remove generated outputs.
 const CLEAN_PATHS = [
-  'public',
   'dist',
   'temp',
   '.cache',

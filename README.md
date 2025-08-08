@@ -1,34 +1,27 @@
-# 🏛️ Oatville Community Church Website
+# 🏛️ Oatville Community Church Website (Vite + GitHub Pages + PWA)
 
-<img src="public/tailwindlogo.png" width="300">
-
-A modern, responsive website for Oatville Community Church built with world-class development practices.
+A modern, responsive website for Oatville Community Church using a Vite-powered static build, automated GitHub Pages deployment, and optional PWA offline capabilities.
 
 ## 🚀 Quick Start
 
 ```bash
-# Install dependencies
-npm install
-
-# Development (with hot reloading)
-npm run dev
-
-# Production build
-npm run build
-
-# Serve production build
-npm run serve
+npm install       # dependencies
+npm run dev       # Vite dev server (HMR)
+npm run build     # production build -> dist/
+npm run preview   # preview built site locally
+npm run lint      # custom lint checks
+npm run clean     # remove dist
 ```
 
-Visit <http://localhost:3000> to view the site.
+Dev server (default): <http://localhost:5173>
 
 ## ✨ Features
 
-- **Modern Build System**: Professional-grade build pipeline with scripts
-- **Hot Reloading**: Instant updates during development
+- **Modern Build System**: Vite (ESM dev server + Rollup build)
+- **Hot Reloading**: Instant HMR for CSS/JS
 - **SASS & Tailwind**: Best-in-class styling with both SASS and Tailwind CSS
 - **Responsive Design**: Mobile-first, fully responsive layout
-- **Performance Optimized**: Compressed assets, caching, and optimization
+- **Performance Optimized**: Tree-shaking, code splitting, hashed assets
 - **Code Quality**: Built-in linting and quality checks
 - **Accessibility**: WCAG compliant with semantic HTML
 
@@ -36,37 +29,36 @@ Visit <http://localhost:3000> to view the site.
 
 ### Project Structure
 
-```
+```bash
 ├── src/                    # Source files (edit these)
 │   ├── scss/              # SASS stylesheets  
 │   ├── js/                # JavaScript files
 │   ├── images/            # Image assets
 │   ├── assets/            # Other static assets
 │   └── *.html             # HTML templates
-├── scripts/               # Build automation
-├── public/                # Generated output (auto-built)
+├── scripts/               # Clean + lint utilities
+├── dist/                  # Build output (after npm run build)
 └── package.json           # Dependencies & scripts
 ```
 
-### Build Process
+### Build Process (Vite)
 
-1. **Clean**: Removes old build artifacts
-2. **SASS Compilation**: Converts SCSS to optimized CSS
-3. **Tailwind Processing**: Generates utility-first CSS
-4. **Asset Processing**: Copies and optimizes all assets
-5. **Quality Checks**: Validates code quality and accessibility
-6. **Serving**: Production-ready server with compression
+1. **Entry Aggregation**: `src/main.js` imports SCSS + Tailwind + JS
+2. **Placeholder Injection**: `{{token}}` replaced from `src/data/churchInformation.json`
+3. **Optimization**: Minify, tree-shake, hash filenames
+4. **SEO Aids**: Canonical + OG tags + sitemap + robots
+5. **PWA**: Manifest + service worker via `vite-plugin-pwa`
+6. **Budget**: Warn if raw bundle size > `BUNDLE_BUDGET_KB`
 
 ## 🛠️ Development
 
 ### Available Commands
 
-- `npm run dev` - Development server with hot reloading
-- `npm run build` - Full production build
-- `npm run clean` - Clean all generated files
-- `npm run lint` - Code quality checks
-- `npm run serve` - Serve production build
-- `npm start` - Build and serve (production)
+- `npm run dev`       - Dev server (HMR)
+- `npm run build`     - Production build
+- `npm run preview`   - Static preview of dist/
+- `npm run clean`     - Remove dist/
+- `npm run lint`      - Basic quality scan
 
 See [SCRIPTS.md](SCRIPTS.md) for complete command reference.
 
@@ -81,16 +73,14 @@ See [SCRIPTS.md](SCRIPTS.md) for complete command reference.
 
 ### SASS (Primary Styles)
 
-- **Variables**: `src/scss/_variables.scss`
-- **Base**: `src/scss/_base.scss`
-- **Components**: `src/scss/_components.scss`
-- **Main**: `src/scss/styles.scss`
+*Variables:* `src/scss/_variables.scss`  
+*Base:* `src/scss/_base.scss`  
+*Components:* `src/scss/_components.scss`  
+*Main:* `src/scss/styles.scss`
 
 ### Tailwind CSS (Utility Classes)
 
-- Configuration: `tailwind.config.js`
-- Input: `input.css`
-- Output: `public/out.css`
+Config: `tailwind.config.js`. Tailwind directives now live in `src/tailwind.css` imported by `src/main.js` (no separate CLI output file).
 
 ## 📱 Content Sections
 
@@ -104,7 +94,7 @@ See [SCRIPTS.md](SCRIPTS.md) for complete command reference.
 
 ### Build Settings
 
-Edit `build.config.json` for build customization.
+Primary configuration: `vite.config.js` (GitHub Pages base, sitemap/robots, PWA, build budgets, static copy from src).
 
 ### Tailwind Config
 
@@ -119,10 +109,10 @@ Environment variables:
 
 ## 📊 Performance
 
-- **Build Time**: ~1-2 seconds
-- **Hot Reload**: ~100-500ms  
-- **Bundle Size**: Optimized and compressed
-- **Lighthouse Score**: 95+ across all metrics
+- **Cold Start**: ~<1s
+- **HMR**: Near-instant incremental updates
+- **Bundle Size**: Budget guarded
+- **SEO**: sitemap.xml + robots.txt + canonical
 
 ## 🚨 Troubleshooting
 
@@ -132,21 +122,20 @@ Environment variables:
 
 ```bash
 npm run clean
-npm install
+npm ci
 npm run build
 ```
 
 **Development server issues:**
 
-- Check port 3000 availability
-- Restart with `npm run dev`
-- Verify src/ directory structure
+- Ensure no process on port 5173
+- Restart: `npm run dev`
+- Validate import paths
 
 **Style not updating:**
 
-- Check file watcher is running
-- Verify SASS/CSS syntax
-- Clear browser cache
+- Confirm file imported via `src/main.js`
+- Ensure Tailwind class is not purged (matches content globs)
 
 ## 🌐 Browser Support
 
@@ -161,12 +150,14 @@ npm run build
 - [SCRIPTS.md](SCRIPTS.md) - NPM scripts reference  
 - [tailwind.config.js](tailwind.config.js) - Tailwind configuration
 
-## 🚀 Deployment
+## 🚀 Deployment (GitHub Pages)
 
-1. **Build**: `npm run build:production`
-2. **Test**: `npm run serve`
-3. **Deploy**: Copy `public/` directory to web server
-4. **Verify**: Check all assets load correctly
+Automatic via GitHub Actions workflow `.github/workflows/deploy.yml`:
+
+1. Push to `main` triggers CI.
+2. CI runs `npm ci && npm run build` with `GITHUB_PAGES=true` (sets correct base path).
+3. Dist bundle uploaded & deployed to Pages.
+4. Site available at: `https://sharesmallbiz-support.github.io/oatvillechurch`.
 
 ### Static Hosting
 
@@ -189,4 +180,4 @@ Works with any static hosting service:
 
 ---
 
-*Built with modern web standards and best practices for Oatville Community Church* 🙏
+*Built with modern web standards, Vite, and automated CI for Oatville Community Church* 🙏

@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ministries | {{seo.title}}</title>
-  <meta name="description" content="Wichita church ministries at Oatville Community Church – worship, kids, youth discipleship, prayer, outreach opportunities." />
+    <meta
+      name="description"
+      content="Wichita church ministries at Oatville Community Church – worship, kids, youth discipleship, prayer, outreach opportunities."
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Ministries | {{seo.title}}" />
@@ -21,10 +24,33 @@
       content="Ministry opportunities at our church."
     />
     <meta name="twitter:image" content="{{site.socialImage}}" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{site.url}}/"},{"@type":"ListItem","position":2,"name":"Ministries","item":"{{site.url}}/ministries.html"}]}</script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{site.url}}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ministries",
+            "item": "{{site.url}}/ministries.html"
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="bg-white">
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gray-900 text-white px-4 py-2 rounded">Skip to main content</a>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gray-900 text-white px-4 py-2 rounded"
+      >Skip to main content</a
+    >
     <nav
       class="bg-gray-900 shadow-lg sticky top-0 z-40 border-b border-gray-800"
     >
@@ -78,7 +104,18 @@
           </h1>
           <p class="text-lg text-gray-200 max-w-2xl mx-auto">
             Serving God and people through worship, teaching, fellowship, and
-            outreach. Planning a first visit? <a href="/plan-visit.html" class="underline text-blue-200 hover:text-white">Plan your visit</a> or learn about our <a href="/index.html#services" class="underline text-blue-200 hover:text-white">service times</a>.
+            outreach. Planning a first visit?
+            <a
+              href="/plan-visit.html"
+              class="underline text-blue-200 hover:text-white"
+              >Plan your visit</a
+            >
+            or learn about our
+            <a
+              href="/index.html#services"
+              class="underline text-blue-200 hover:text-white"
+              >service times</a
+            >.
           </p>
         </div>
       </section>

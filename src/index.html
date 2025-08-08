@@ -136,13 +136,31 @@
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {"@type": "ListItem","position": 1,"name": "Home","item": "{{site.url}}/"},
-          {"@type": "ListItem","position": 2,"name": "Ministries","item": "{{site.url}}/ministries.html"},
-          {"@type": "ListItem","position": 3,"name": "Plan Visit","item": "{{site.url}}/plan-visit.html"}
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{site.url}}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ministries",
+            "item": "{{site.url}}/ministries.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Plan Visit",
+            "item": "{{site.url}}/plan-visit.html"
+          }
         ]
       }
     </script>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com https://www.youtube.com; script-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com; connect-src 'self' https://api.allorigins.win;" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https://i.ytimg.com https://www.youtube.com; script-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com; connect-src 'self' https://api.allorigins.win;"
+    />
   </head>
   <body class="bg-white">
     <a
@@ -240,10 +258,25 @@
           <div class="max-w-4xl mx-auto">
             <div class="card overflow-hidden">
               <div class="aspect-video w-full">
-                <button class="lite-yt" data-videoid="{{latestVideo.id}}" aria-label="Play latest sermon video" type="button">
+                <button
+                  class="lite-yt"
+                  data-videoid="{{latestVideo.id}}"
+                  aria-label="Play latest sermon video"
+                  type="button"
+                >
                   <picture>
-                    <source srcset="{{latestVideo.thumbnail}}" type="image/jpeg" />
-                    <img src="{{latestVideo.thumbnail}}" alt="Thumbnail for {{latestVideo.title}}" loading="lazy" decoding="async" width="1280" height="720" />
+                    <source
+                      srcset="{{latestVideo.thumbnail}}"
+                      type="image/jpeg"
+                    />
+                    <img
+                      src="{{latestVideo.thumbnail}}"
+                      alt="Thumbnail for {{latestVideo.title}}"
+                      loading="lazy"
+                      decoding="async"
+                      width="1280"
+                      height="720"
+                    />
                   </picture>
                   <span class="lite-yt-play" aria-hidden="true"></span>
                 </button>

@@ -24,10 +24,33 @@
       content="Plan your first visit to our welcoming church family."
     />
     <meta name="twitter:image" content="{{site.socialImage}}" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{site.url}}/"},{"@type":"ListItem","position":2,"name":"Plan Visit","item":"{{site.url}}/plan-visit.html"}]}</script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{site.url}}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Plan Visit",
+            "item": "{{site.url}}/plan-visit.html"
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="bg-white">
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gray-900 text-white px-4 py-2 rounded">Skip to main content</a>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gray-900 text-white px-4 py-2 rounded"
+      >Skip to main content</a
+    >
     <nav
       class="bg-gray-900 shadow-lg sticky top-0 z-40 border-b border-gray-800"
     >
@@ -99,7 +122,18 @@
                 Services blend traditional hymns, organ, and some contemporary
                 elements in a reverent but welcoming atmosphere. Come as you are
                 – there's no dress code. You'll be greeted warmly, never
-                spotlighted. Explore our <a href="/ministries.html" class="text-blue-600 underline hover:text-blue-800">ministries</a> or review <a href="/index.html#services" class="text-blue-600 underline hover:text-blue-800">service times</a>.
+                spotlighted. Explore our
+                <a
+                  href="/ministries.html"
+                  class="text-blue-600 underline hover:text-blue-800"
+                  >ministries</a
+                >
+                or review
+                <a
+                  href="/index.html#services"
+                  class="text-blue-600 underline hover:text-blue-800"
+                  >service times</a
+                >.
               </p>
               <ul class="list-disc pl-6 space-y-2 text-gray-600 text-sm">
                 <li>Parking available on site – arrive 10 minutes early</li>

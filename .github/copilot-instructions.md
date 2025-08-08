@@ -4,17 +4,19 @@ Authoritative guidelines for automated assistance (GitHub Copilot / AI agents) w
 
 ---
 
-## 0. Critical Asset Policy (Non-Negotiable)
+## 0. Critical Asset & Documentation Policy (Non-Negotiable)
 
 ALL site source assets (HTML entry files, images, media, icons, fonts, JSON/data, scripts, styles, manifests) MUST live under `src/`. Root-level HTML entry pages have been deprecated — multi‑page entries now reside in `src/` and are declared explicitly in `vite.config.js` (`root: 'src'`). The legacy `public/` directory pattern remains disabled (`publicDir: false`).
 
 Hard rules:
 
-- Do NOT create a `public/` directory.
-- Do NOT reference `/public/...` paths; use root-relative paths that Vite rewrites from `src` (e.g. `/images/foo.webp`).
-- If you find any existing files in `public/`, migrate them into an appropriate `src/` subfolder (`src/images`, `src/assets`, etc.) and remove the `public` copy.
+- Do NOT create a `public/` directory (all assets must originate under `src/`; see §5 for asset details).
+- Do NOT reference `/public/...` paths; use root‑relative paths that Vite rewrites from `src` (e.g. `/images/foo.webp`).
+- If you find any existing files in `public/`, migrate them into an appropriate `src/` subfolder and remove the legacy copy.
 - New static assets: place in `src/images/` (photos/graphics) or `src/assets/` (favicons, manifest icons, logos, fonts, misc static).
-- Build output must only be written to `dist/` by the Vite build—never hand-edit `dist/`.
+- Build output must only be written to `dist/` by the Vite build—never hand‑edit `dist/`.
+- All AI/agent‑generated documentation (design notes, READMEs, architecture briefs, change logs, ADRs, etc.) MUST be placed inside the root `Documentation/` directory. Do **not** scatter new markdown/docs at project root or under `src/`. If a doc logically belongs with source (e.g., code comments, inline README snippet), keep it minimal and still add/expand the canonical version under `Documentation/`.
+- When updating or regenerating docs, prefer editing existing files in `Documentation/` instead of creating near‑duplicate variants; consolidate overlapping content and cross‑reference sections rather than copying.
 
 Automations / plugins (`staticCopyPlugin`, PWA manifest) already expect this structure; violating it will cause assets to be omitted from production builds or cached incorrectly.
 
@@ -94,7 +96,7 @@ Performance Budget: Soft budget of 300 KB raw total (see bundle size reporter). 
 
 - All images: place in `src/images/` (or nested logical subfolders). Use lowercase, hyphenated filenames (e.g., `church-exterior.webp`).
 - Icons / favicons / static site meta: `src/assets/`.
-- Do NOT create or rely on `/public` directory. The build has `publicDir: false` deliberately (see Critical Asset Policy §0).
+  (Public directory usage is prohibited – see Critical Asset Policy §0.)
 - Prefer modern formats: WebP / AVIF for photographs, SVG for vector.
 - Include explicit `width` & `height` attributes on `<img>` for CLS stability.
 - Lazy-load non-critical images: `loading="lazy"` except hero / above-the-fold.
@@ -260,10 +262,11 @@ Add separate scripts for `Event`, `FAQPage`, `VideoObject` (avoid bundling into 
 
 ## 18. Prohibited / Deprecated Patterns
 
-- Do NOT reintroduce `/public` directory.
-- Do NOT inject inline event handlers (e.g., `onclick=`) in HTML—use JS listeners.
-- Avoid large third-party script bundles (analytics, trackers) without explicit approval.
-- No meta keywords.
+- Reintroducing or relying on a `public/` directory (see §0).
+- Injecting inline event handlers (e.g., `onclick=`) – use JS listeners.
+- Large third‑party script bundles (analytics, trackers) without explicit approval.
+- Adding duplicate or stray documentation outside `Documentation/` (see §0 for doc policy).
+- Meta keywords.
 
 ---
 
@@ -276,6 +279,7 @@ Add separate scripts for `Event`, `FAQPage`, `VideoObject` (avoid bundling into 
 | Update SEO title        | `churchInformation.json` > `seo.title`                      |
 | Add structured data     | Inline `<script type="application/ld+json">` in target page |
 | Add image               | `src/images/` (optimize)                                    |
+| Add / update docs       | `Documentation/` (centralized – see §0)                     |
 | Modify sitemap behavior | `sitemapAndRobotsPlugin` (auto by HTML pages)               |
 | Performance budget      | Adjust env `BUNDLE_BUDGET_KB` or plugin warning             |
 

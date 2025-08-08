@@ -9,7 +9,8 @@
     "test": "npm run lint",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "images:optimize": "node scripts/optimize-images.js"
   },
   "keywords": [
     "static-site",
@@ -37,6 +38,7 @@
     "postcss": "^8.4.41",
     "autoprefixer": "^10.4.20",
     "@vitejs/plugin-legacy": "^5.4.0",
-    "vite-plugin-pwa": "^0.20.0"
+    "vite-plugin-pwa": "^0.20.0",
+    "sharp": "^0.33.4"
   }
 }

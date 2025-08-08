@@ -119,5 +119,14 @@ Actions performed during project streamlining:
 - Update budget thresholds & performance notes if new tooling or major assets introduced.
 - Record notable refactors in an Appendix section rather than inflating README.
 
+### 11.1 Asset Hygiene & Recent Cleanup
+
+- Temporary exploratory folders (e.g. `attached_assets/`) are not retained; all runtime imagery must live under `src/images/` and documentation-only images should (if needed) be placed under `Documentation/` (consider creating `Documentation/images/`).
+- Avoid committing editor upload artifacts or one-off design reference images. Remove them promptly after use or relocate with clear naming.
+- Verify every binary asset is referenced at least once in the codebase (`grep` before adding large media). Unreferenced assets should be deleted in the same PR to prevent repository bloat.
+- Prefer lowercase, hyphenated filenames (e.g. `church-exterior.webp`). If adding WebP/AVIF alongside JPEG for fallback, keep identical basenames and document any fallback logic if scripted.
+- Explicit width/height attributes are required on `<img>` tags (CLS stability). Already applied for current images.
+- February 2025 cleanup removed an unused banner image (`OCC_banner.jpg`) and the prior `attached_assets/` folder to enforce single-source asset provenance.
+
 ---
 *End of Architecture Overview.*

@@ -2,39 +2,84 @@
 @use 'variables' as *;
 @use 'sass:color';
 
-// Custom components
-.custom-button {
-  background-color: $primary-color;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+// BUTTONS
+.custom-button, .btn {
+  --btn-bg: #{$primary-color};
+  --btn-bg-hover: #{$primary-color-hover};
+  background: var(--btn-bg);
+  color: #111;
+  padding: 0.875rem 1.75rem;
+  border-radius: $radius-md;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: color.adjust($primary-color, $lightness: -10%);
-    transform: translateY(-1px);
-  }
-  
-  &:active {
-    transform: translateY(0);
-  }
+  font-weight: $font-weight-semibold;
+  letter-spacing: .25px;
+  position: relative;
+  isolation: isolate;
+  transition: background $transition-base, transform $transition-fast, box-shadow $transition-fast;
+  box-shadow: $shadow-sm;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  &:hover { background: var(--btn-bg-hover); transform: translateY(-2px); box-shadow: $shadow-md; }
+  &:active { transform: translateY(0); box-shadow: $shadow-sm; }
+  &:focus-visible { outline: 2px solid $accent-color; outline-offset: 2px; }
 }
 
-// Map iframe styles
-.map-iframe {
-  border: 0;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+.btn-outline {
+  background: transparent;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  &:hover { background: $primary-color; color: #111; }
 }
 
-// Navigation components
-.nav-link {
-  transition: color 0.3s ease;
+.btn-soft { background: rgba($primary-color, .1); color: $primary-color; &:hover { background: rgba($primary-color,.18);} }
+
+// CARDS
+.card {
+  background: #fff;
+  border-radius: $radius-lg;
+  padding: 1.75rem 1.5rem;
+  box-shadow: $shadow-md;
+  position: relative;
+  overflow: hidden;
+  transition: transform $transition-base, box-shadow $transition-base;
+  &:hover { transform: translateY(-4px); box-shadow: $shadow-lg; }
+  &::before { content:''; position:absolute; inset:0; background: linear-gradient(120deg, rgba($primary-color,.08), transparent 60%); opacity:0; transition:opacity $transition-base; }
+  &:hover::before { opacity:1; }
 }
 
-// Hero section enhancements
-.hero-section {
-  background: linear-gradient(135deg, $secondary-color 0%, color.adjust($secondary-color, $lightness: -15%) 100%);
-}
+.card-minimal { box-shadow: $shadow-sm; border:1px solid $gray-200; }
+
+// PANELS
+.panel-glass { -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); background: rgba($gray-900,.6); border:1px solid rgba(255,255,255,.08); }
+
+// NAVIGATION
+.nav-link { position:relative; font-weight: $font-weight-medium; letter-spacing:.025em; transition: color 0.3s ease; }
+.nav-link::after { content:''; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:$primary-color; transition:width $transition-base; border-radius:2px; }
+.nav-link:hover::after, .nav-link[aria-current="page"]::after { width:100%; }
+
+// HERO
+.hero-section { background: $gradient-dark; position:relative; }
+.hero-section::after { content:''; position:absolute; inset:0; background: radial-gradient(circle at 70% 30%, rgba(255,255,255,.08), transparent 60%); pointer-events:none; }
+
+// TESTIMONIALS
+[data-testimonials-root] article { display:flex; flex-direction:column; gap:1rem; }
+[data-testimonials-root] p { font-size:.9rem; }
+[data-testimonials-root] article:hover { box-shadow:$shadow-lg; }
+
+// UTILITIES
+.shadow-hover { transition: box-shadow $transition-base, transform $transition-base; &:hover { box-shadow: $shadow-lg; transform: translateY(-3px);} }
+.brand-gradient-text { background:$gradient-brand; -webkit-background-clip:text; background-clip:text; color:transparent; }
+.divider { height:1px; background:linear-gradient(90deg, transparent, $gray-200, transparent); margin:2.5rem 0; }
+
+// ANIMATIONS
+@keyframes fade-in-up { from { opacity:0; transform: translateY(14px);} to { opacity:1; transform:translateY(0);} }
+.fade-in-up { animation: fade-in-up .7s $transition-base both; }
+.anim-delay-1 { animation-delay: .1s !important; }
+.anim-delay-2 { animation-delay: .2s !important; }
+.anim-delay-3 { animation-delay: .3s !important; }
+
+// MAP
+.map-iframe { border:0; border-radius: $radius-md; box-shadow:$shadow-md; }

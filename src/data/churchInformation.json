@@ -1,4 +1,3 @@
-
 {
   "name": "Oatville Community Church",
   "tagline": "Small church with a big heart",
@@ -81,5 +80,16 @@
     "title": "Oatville Community Church | Wichita, KS | Non-Denominational Church",
     "description": "Oatville Community Church - A non-denominational community church in Wichita, KS. Small church with a big heart. Sunday worship at 11 AM & 5 PM, Christian education at 10 AM.",
     "keywords": "Oatville Community Church, Wichita church, non-denominational church, Kansas church, Christian community, worship services"
-  }
+  },
+  "testimonials": [
+    { "name": "Emily", "quote": "From day one I felt like family here." },
+    {
+      "name": "James",
+      "quote": "Biblical teaching and genuine community changed my life."
+    },
+    {
+      "name": "Sandra",
+      "quote": "My kids love the children's ministry and we all grow together."
+    }
+  ]
 }

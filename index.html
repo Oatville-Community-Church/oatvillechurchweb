@@ -12,31 +12,38 @@
     <!-- Vite build will bundle Tailwind + SCSS -->
     <!-- The body content is largely copied from src/index.html (Phase 1) -->
     <!-- Navigation -->
-    <nav class="bg-gray-800 shadow-lg sticky top-0 z-50">
+    <nav
+      class="bg-gray-900 shadow-lg sticky top-0 z-50 border-b border-gray-800"
+    >
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center py-4">
-          <div class="flex items-center space-x-4">
-            <h1 class="text-2xl font-bold text-yellow-400">{{name}}</h1>
-          </div>
-          <div class="hidden md:flex space-x-8">
+          <a href="/index.html#home" class="flex items-center space-x-2">
+            <span class="text-xl md:text-2xl font-bold brand-gradient-text"
+              >{{name}}</span
+            >
+          </a>
+          <div class="hidden md:flex items-center gap-8 text-sm">
             <a
               href="#home"
-              class="nav-link text-gray-200 hover:text-yellow-400 font-medium"
+              class="nav-link text-gray-300 hover:text-white"
+              aria-current="page"
               >Home</a
             >
-            <a
-              href="#about"
-              class="nav-link text-gray-200 hover:text-yellow-400 font-medium"
+            <a href="#about" class="nav-link text-gray-300 hover:text-white"
               >About</a
             >
-            <a
-              href="#services"
-              class="nav-link text-gray-200 hover:text-yellow-400 font-medium"
+            <a href="#services" class="nav-link text-gray-300 hover:text-white"
               >Services</a
             >
             <a
-              href="#contact"
-              class="nav-link text-gray-200 hover:text-yellow-400 font-medium"
+              href="/ministries.html"
+              class="nav-link text-gray-300 hover:text-white"
+              >Ministries</a
+            >
+            <a href="/plan-visit.html" class="custom-button btn-outline"
+              >Plan Visit</a
+            >
+            <a href="#contact" class="nav-link text-gray-300 hover:text-white"
               >Contact</a
             >
           </div>
@@ -47,28 +54,32 @@
     <!-- Hero Section -->
     <section
       id="home"
-      class="hero-section bg-gray-900 text-white py-20 relative"
+      class="hero-section text-white py-28 relative overflow-hidden"
     >
-      <div class="absolute inset-0 bg-black opacity-30"></div>
+      <div
+        class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_60%)]"
+      ></div>
       <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
-        <h2 class="text-5xl font-bold mb-6 text-yellow-400">
-          Welcome to {{name}}
+        <h2
+          class="mb-6 brand-gradient-text font-bold tracking-tight fade-in-up"
+        >
+          A Place to Belong & Grow
         </h2>
-        <p class="text-xl mb-4 max-w-3xl mx-auto text-gray-200">
+        <p
+          class="text-xl mb-4 max-w-3xl mx-auto text-gray-200 fade-in-up anim-delay-1"
+        >
           {{description}}
         </p>
-        <p class="text-lg mb-8 max-w-3xl mx-auto text-gray-300">
+        <p
+          class="text-lg mb-10 max-w-3xl mx-auto text-gray-300 fade-in-up anim-delay-2"
+        >
           {{welcomeMessage}}
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#services"
-            class="custom-button bg-yellow-500 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300"
-            >Join Us Sunday</a
-          >
-          <a
-            href="#contact"
-            class="border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300"
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up anim-delay-3"
+        >
+          <a href="#services" class="custom-button">This Sunday</a>
+          <a href="/plan-visit.html" class="btn-outline custom-button"
             >Plan Your Visit</a
           >
         </div>
@@ -76,16 +87,18 @@
     </section>
 
     <!-- Latest Video Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-20 bg-gray-50">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
-          <h3 class="text-4xl font-bold text-gray-800 mb-4">Latest Message</h3>
+          <h3 class="text-4xl font-bold text-gray-800 mb-4 brand-gradient-text">
+            Latest Message
+          </h3>
           <p class="text-lg text-gray-600">
             Watch our most recent sermon and be inspired
           </p>
         </div>
         <div class="max-w-4xl mx-auto">
-          <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="card overflow-hidden">
             <div class="aspect-video w-full">
               <iframe
                 id="latest-video"
@@ -127,11 +140,13 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
+    <section id="about" class="py-24 bg-white">
       <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center mb-12">
-          <h3 class="text-4xl font-bold mb-4">About Our Church</h3>
-          <p class="text-xl text-gray-600">
+        <div class="text-center mb-16">
+          <h3 class="text-4xl font-bold mb-4 brand-gradient-text">
+            About Our Church
+          </h3>
+          <p class="text-xl text-gray-600 prose-muted">
             A place where tradition meets modern faith
           </p>
         </div>
@@ -151,8 +166,8 @@
             />
           </div>
         </div>
-        <div class="grid md:grid-cols-3 gap-8 mt-16">
-          <div class="card text-center">
+        <div class="grid md:grid-cols-3 gap-10 mt-16">
+          <div class="card text-center fade-in-up anim-delay-1">
             <h4 class="text-2xl font-bold mb-4 text-gray-800">Our Mission</h4>
             <p class="text-gray-600">
               To reach the lost and show and grow in Christ's love - creating a
@@ -160,7 +175,7 @@
               and fellowship.
             </p>
           </div>
-          <div class="card text-center">
+          <div class="card text-center fade-in-up anim-delay-2">
             <h4 class="text-2xl font-bold mb-4 text-gray-800">Our Worship</h4>
             <p class="text-gray-600">
               Blending traditional hymns, contemporary music, and organ-led
@@ -168,7 +183,7 @@
               generations.
             </p>
           </div>
-          <div class="card text-center">
+          <div class="card text-center fade-in-up anim-delay-3">
             <h4 class="text-2xl font-bold mb-4 text-gray-800">Our Community</h4>
             <p class="text-gray-600">
               A small church with a big heart - non-denominational and focused
@@ -180,12 +195,62 @@
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-50">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-28 bg-gray-50">
       <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center mb-12">
-          <h3 class="text-4xl font-bold mb-4">Service Times & Programs</h3>
-          <p class="text-xl text-gray-600">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl font-bold mb-4 brand-gradient-text">
+            Stories of Impact
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto text-sm">
+            Real voices from people finding hope, community, and a place to
+            grow.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8" data-testimonials-root>
+          <!-- Placeholder cards; will be hydrated/enhanced dynamically in Phase 2 JS -->
+          <article
+            class="bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-6 flex flex-col"
+          >
+            <p class="text-gray-700 text-sm flex-1 leading-relaxed">
+              “{{testimonials.0.quote}}”
+            </p>
+            <p class="mt-4 text-xs font-semibold tracking-wide text-yellow-700">
+              — {{testimonials.0.name}}
+            </p>
+          </article>
+          <article
+            class="bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-6 flex flex-col"
+          >
+            <p class="text-gray-700 text-sm flex-1 leading-relaxed">
+              “{{testimonials.1.quote}}”
+            </p>
+            <p class="mt-4 text-xs font-semibold tracking-wide text-yellow-700">
+              — {{testimonials.1.name}}
+            </p>
+          </article>
+          <article
+            class="bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-6 flex flex-col"
+          >
+            <p class="text-gray-700 text-sm flex-1 leading-relaxed">
+              “{{testimonials.2.quote}}”
+            </p>
+            <p class="mt-4 text-xs font-semibold tracking-wide text-yellow-700">
+              — {{testimonials.2.name}}
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-14">
+          <h3 class="text-4xl font-bold mb-4 brand-gradient-text">
+            Service Times & Programs
+          </h3>
+          <p class="text-xl text-gray-600 prose-muted">
             Join us for worship, fellowship, and spiritual growth
           </p>
         </div>
@@ -249,7 +314,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-blue-900 text-white">
+    <section id="contact" class="py-24 bg-gradient-dark text-white">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
           <h3 class="text-4xl font-bold mb-4">Visit Us</h3>
@@ -259,7 +324,9 @@
         </div>
         <div class="grid md:grid-cols-2 gap-12">
           <div>
-            <h4 class="text-2xl font-bold mb-6">Get in Touch</h4>
+            <h4 class="text-2xl font-bold mb-6 brand-gradient-text">
+              Get in Touch
+            </h4>
             <div class="space-y-6">
               <div class="flex items-start space-x-4">
                 <svg
@@ -361,7 +428,7 @@
             </div>
           </div>
           <div>
-            <h4 class="text-2xl font-bold mb-6">Find Us</h4>
+            <h4 class="text-2xl font-bold mb-6 brand-gradient-text">Find Us</h4>
             <div class="bg-white rounded-lg p-4">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.8!2d-97.42!3d37.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sen!2sus!4v1609459200000!5m2!1sen!2sus&q=3814+S+Hoover+Rd,+Wichita,+KS+67215"
@@ -379,9 +446,11 @@
     </section>
 
     <!-- Social Media & YouTube Section -->
-    <section class="py-16 bg-white">
+    <section class="py-24 bg-white">
       <div class="max-w-6xl mx-auto px-4 text-center">
-        <h3 class="text-4xl font-bold text-gray-800 mb-8">Stay Connected</h3>
+        <h3 class="text-4xl font-bold text-gray-800 mb-8 brand-gradient-text">
+          Stay Connected
+        </h3>
         <p class="text-lg text-gray-600 mb-8">
           Follow us on social media for updates, inspiration, and community news
         </p>

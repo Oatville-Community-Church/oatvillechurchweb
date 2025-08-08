@@ -23,16 +23,19 @@ function getValue(obj, keyPath) {
 function htmlPlaceholderPlugin() {
   return {
     name: 'html-church-data-placeholders',
-    transformIndexHtml(html) {
+    transformIndexHtml(html, ctx) {
       let transformed = html.replace(/\{\{([^}]+)\}\}/g, (m, p) => {
         const val = getValue(churchData, p);
         return val !== undefined ? String(val) : m;
       });
-      // Basic meta enhancements (canonical + og)
       const siteUrl = process.env.SITE_URL || 'https://sharesmallbiz-support.github.io/oatvillechurch';
-      const canonical = `<link rel=\"canonical\" href=\"${siteUrl}/\" />`;
+      // Determine path for canonical: index.html -> '/', others -> '/filename'
+      const filename = ctx?.filename ? path.basename(ctx.filename) : 'index.html';
+      const pagePath = filename === 'index.html' ? '/' : `/${filename.replace(/index\.html$/, '')}`;
+      const canonicalHref = `${siteUrl}${pagePath}`.replace(/\/$\/$/, '/');
+      const canonicalTag = `<link rel=\"canonical\" href=\"${canonicalHref}\" />`;
       if (!/rel="canonical"/.test(transformed)) {
-        transformed = transformed.replace('</head>', `  ${canonical}\n</head>`);
+        transformed = transformed.replace('</head>', `  ${canonicalTag}\n</head>`);
       }
       if (!/og:title/.test(transformed)) {
         transformed = transformed.replace('</head>', `  <meta property=\"og:title\" content=\"${churchData?.seo?.title || ''}\" />\n</head>`);
@@ -95,9 +98,14 @@ function bundleSizeReporter() {
 function sitemapAndRobotsPlugin() {
   return {
     name: 'sitemap-and-robots',
-    writeBundle() {
+    writeBundle(_, bundle) {
       const siteUrl = process.env.SITE_URL || 'https://sharesmallbiz-support.github.io/oatvillechurch';
-      const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${siteUrl}/</loc></url>\n</urlset>`;
+      const htmlPages = Object.keys(bundle).filter(f => f.endsWith('.html'));
+      const urls = htmlPages.map(f => {
+        const clean = f === 'index.html' ? '/' : `/${f.replace(/index.html$/, '')}`;
+        return `  <url><loc>${siteUrl}${clean}</loc></url>`;
+      }).join('\n');
+      const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap });
       const robots = `User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml`;
       this.emitFile({ type: 'asset', fileName: 'robots.txt', source: robots });
@@ -148,7 +156,12 @@ export default defineConfig(({ mode }) => {
       manifest: true,
       sourcemap: mode !== 'production',
       rollupOptions: {
-        input: path.resolve(__dirname, 'index.html')
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          plan: path.resolve(__dirname, 'plan-visit.html'),
+          ministries: path.resolve(__dirname, 'ministries.html'),
+          offline: path.resolve(__dirname, 'offline.html')
+        }
       }
     },
     css: {

@@ -8,13 +8,33 @@
   box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
   color: $text-color;
   background-color: $bg-color;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+h1,h2,h3,h4,h5,h6 { font-family: $font-family-heading; font-weight: $font-weight-bold; letter-spacing: -.02em; }
+h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.15; }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.2; }
+h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; }
+p { font-weight: $font-weight-regular; }
+
+/* Anchor scroll offset so sticky nav doesn't cover section starts */
+[id] { scroll-margin-top: 5.5rem; }
+
+::selection { background: $primary-color; color: #fff; }
+
+.prose-muted { color: $text-color-light; }
+
+.bg-gradient-brand { background: $gradient-brand; }
+.bg-gradient-dark { background: $gradient-dark; }
 
 a {
   text-decoration: none;

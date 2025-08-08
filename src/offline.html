@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline | {{seo.title}}</title>
+    <meta
+      name="description"
+      content="You are currently offline. Please reconnect to continue browsing {{name}}."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content="noindex" />
+    <style>
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        margin: 0;
+        background: #0f172a;
+        color: #f1f5f9;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .card {
+        max-width: 480px;
+        background: #1e293b;
+        padding: 2.5rem 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.5);
+      }
+      h1 {
+        margin: 0 0 1rem;
+        font-size: 1.75rem;
+        background: linear-gradient(90deg, #38bdf8, #6366f1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      p {
+        line-height: 1.5;
+        font-size: 0.95rem;
+        margin: 0 0 1.25rem;
+        color: #cbd5e1;
+      }
+      a.button {
+        display: inline-block;
+        background: #2563eb;
+        color: #fff;
+        padding: 0.75rem 1.25rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      a.button:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 3px;
+      }
+      .tips {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.6;
+        margin-top: 1.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="main">
+      <h1>You're Offline</h1>
+      <p>
+        It looks like your device lost its network connection. This lightweight
+        page is available so you can retry once you're back online.
+      </p>
+      <p>
+        If you expected content here, please reconnect and refresh the page.
+      </p>
+      <a href="/index.html" class="button">Retry Home</a>
+      <div class="tips">
+        Tip: Some pages & assets may be cached for faster reloads.
+      </div>
+    </main>
+  </body>
+</html>

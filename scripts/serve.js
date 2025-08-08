@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-
+// DEPRECATED: Replaced by `vite preview` for production preview.
+// Safe to delete this file.
 /**
  * Production Server Script
  * Optimized production build and server

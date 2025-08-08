@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-
+// DEPRECATED: This custom development server is no longer used.
+// The project now relies on Vite (`npm run dev`). This file is retained only
+// temporarily for reference and can be safely deleted.
 /**
  * Development Server Script
  * Starts the development server with hot reloading and file watching

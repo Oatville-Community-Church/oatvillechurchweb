@@ -118,17 +118,9 @@ function staticCopyPlugin() {
   return {
     name: 'static-copy-from-src',
     generateBundle() {
-      // Copy images directory (unprocessed originals) -> dist/images
-      const imagesDir = path.resolve(__dirname, 'src', 'images');
-      if (fs.existsSync(imagesDir)) {
-        fs.readdirSync(imagesDir).forEach(file => {
-          const full = path.join(imagesDir, file);
-          if (fs.statSync(full).isFile()) {
-            this.emitFile({ type: 'asset', fileName: `images/${file}` , source: fs.readFileSync(full) });
-          }
-        });
-      }
-      // Copy generic asset files (favicons, logos) from src/assets (exclude code)
+  // Images are now handled solely by Vite's HTML asset graph (hashed & deduped)
+  // to avoid duplicate copies (previously /assets/* + /images/*).
+  // Copy generic asset files (favicons, logos) from src/assets (exclude code)
       const assetsDir = path.resolve(__dirname, 'src', 'assets');
       if (fs.existsSync(assetsDir)) {
         fs.readdirSync(assetsDir).forEach(file => {
@@ -146,7 +138,8 @@ export default defineConfig(({ mode }) => {
   const repoName = 'oatvillechurch'; // for GitHub Pages base
   const ghPages = process.env.GITHUB_PAGES === 'true';
   return {
-    root: '.',
+    // Project source root now lives in /src (all HTML pages relocated there)
+    root: 'src',
     // publicDir removed – all assets now sourced from /src and copied via plugins
     publicDir: false,
     base: ghPages ? `/${repoName}/` : '/',
@@ -156,11 +149,12 @@ export default defineConfig(({ mode }) => {
       manifest: true,
       sourcemap: mode !== 'production',
       rollupOptions: {
+        // Explicit multi-page entry points now under src/
         input: {
-          main: path.resolve(__dirname, 'index.html'),
-          plan: path.resolve(__dirname, 'plan-visit.html'),
-          ministries: path.resolve(__dirname, 'ministries.html'),
-          offline: path.resolve(__dirname, 'offline.html')
+          main: path.resolve(__dirname, 'src', 'index.html'),
+          plan: path.resolve(__dirname, 'src', 'plan-visit.html'),
+            ministries: path.resolve(__dirname, 'src', 'ministries.html'),
+          offline: path.resolve(__dirname, 'src', 'offline.html')
         }
       }
     },

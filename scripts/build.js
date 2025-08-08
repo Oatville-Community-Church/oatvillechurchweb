@@ -311,6 +311,9 @@ class BuildProcessor {
       throw error;
     }
   }
+  // Deprecated: legacy custom build script no longer used.
+  // Replaced by Vite (see package.json scripts: dev, build, preview).
+  // Intentionally left empty to avoid confusion; safe to delete this file.
 }
 
 async function build() {

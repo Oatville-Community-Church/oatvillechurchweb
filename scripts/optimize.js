@@ -1,9 +1,9 @@
-
 #!/usr/bin/env node
-
+// DEPRECATED: Manual optimization replaced by Vite + PostCSS/Tailwind pipeline.
+// Safe to delete this file.
 /**
- * Optimization Script
- * Minify CSS, optimize images, and compress assets
+ * (Legacy) Optimization Script (Deprecated)
+ * This file is no longer invoked; Vite handles minification & hashing.
  */
 
 const fs = require('fs').promises;

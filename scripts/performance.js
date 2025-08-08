@@ -1,3 +1,5 @@
+// DEPRECATED: Replaced by lightweight bundle size reporter in vite.config.js.
+// Safe to delete this file.
 /**
  * Performance Monitoring
  * Track build times and identify bottlenecks

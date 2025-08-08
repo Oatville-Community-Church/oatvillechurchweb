@@ -35,20 +35,21 @@ Dev server (default): <http://localhost:5173>
 │   ├── js/                # JavaScript files
 │   ├── images/            # Image assets
 │   ├── assets/            # Other static assets
-│   └── *.html             # HTML templates
-├── scripts/               # Clean + lint utilities
+│   └── *.html             # HTML entry pages (multi-page root lives here)
+├── scripts/               # Utility scripts (clean + lint only)
 ├── dist/                  # Build output (after npm run build)
 └── package.json           # Dependencies & scripts
 ```
 
 ### Build Process (Vite)
 
-1. **Entry Aggregation**: `src/main.js` imports SCSS + Tailwind + JS
-2. **Placeholder Injection**: `{{token}}` replaced from `src/data/churchInformation.json`
-3. **Optimization**: Minify, tree-shake, hash filenames
-4. **SEO Aids**: Canonical + OG tags + sitemap + robots
-5. **PWA**: Manifest + service worker via `vite-plugin-pwa`
-6. **Budget**: Warn if raw bundle size > `BUNDLE_BUDGET_KB`
+1. **Entry Pages**: All HTML entry files live directly under `src/` (Vite root set to `src`)
+2. **Entry Aggregation**: `src/main.js` imports SCSS + Tailwind (`src/tailwind.css`) + JS
+3. **Placeholder Injection**: `{{token}}` replaced from `src/data/churchInformation.json`
+4. **Optimization**: Minify, tree-shake, hash filenames
+5. **SEO Aids**: Canonical + OG tags + sitemap + robots
+6. **PWA**: Manifest + service worker via `vite-plugin-pwa`
+7. **Budget**: Warn if raw bundle size > `BUNDLE_BUDGET_KB`
 
 ## 🛠️ Development
 
@@ -64,7 +65,7 @@ See [SCRIPTS.md](SCRIPTS.md) for complete command reference.
 
 ### Making Changes
 
-1. Edit files in the `src/` directory
+1. Edit files in the `src/` directory (including HTML pages)
 2. Changes automatically rebuild with `npm run dev`
 3. Check quality with `npm run lint`
 4. Build for production with `npm run build`
@@ -80,7 +81,7 @@ See [SCRIPTS.md](SCRIPTS.md) for complete command reference.
 
 ### Tailwind CSS (Utility Classes)
 
-Config: `tailwind.config.js`. Tailwind directives now live in `src/tailwind.css` imported by `src/main.js` (no separate CLI output file).
+Config: `tailwind.config.js`. Tailwind directives live in `src/tailwind.css` imported by `src/main.js` (legacy `input.css` removed).
 
 ## 📱 Content Sections
 
@@ -94,7 +95,7 @@ Config: `tailwind.config.js`. Tailwind directives now live in `src/tailwind.css`
 
 ### Build Settings
 
-Primary configuration: `vite.config.js` (GitHub Pages base, sitemap/robots, PWA, build budgets, static copy from src).
+Primary configuration: `vite.config.js` (GitHub Pages base, sitemap/robots, PWA, build budgets, static copy from src). Legacy custom Node build scripts removed in favor of pure Vite pipeline.
 
 ### Tailwind Config
 
@@ -181,3 +182,24 @@ Works with any static hosting service:
 ---
 
 *Built with modern web standards, Vite, and automated CI for Oatville Community Church* 🙏
+
+---
+
+### Repository Cleanup (2025-02)
+
+The project was streamlined:
+
+- Removed legacy custom Node build/dev/serve/optimize/performance scripts (Vite fully replaces them)
+- Removed deprecated `pages/` directory (all HTML entry pages live directly under `src/` and are registered in `vite.config.js`)
+- Purged unused dependencies: `@types/node`, `node-fetch`, `rollup-plugin-visualizer`
+- Tailwind config now scans only `./src/**/*`
+- Consolidated static assets under `src/` (images → `src/images`, meta assets → `src/assets`)
+
+When adding a new page:
+
+1. Create `src/<name>.html`
+2. Register it in `vite.config.js` under `rollupOptions.input`
+3. Use `{{placeholders}}` from `src/data/churchInformation.json`
+4. Build with `npm run build` to confirm inclusion in sitemap & canonical output
+
+All future assets must originate under `src/`. Avoid creating a `public/` directory (intentionally disabled via `publicDir: false`).

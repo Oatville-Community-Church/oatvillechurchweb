@@ -15,24 +15,16 @@ npm run lint          # Custom lint/quality checks
 
 ## 📁 Project Structure
 
-```
-├── src/                    # Source files
-│   ├── scss/              # SASS stylesheets
-│   │   ├── _variables.scss
-│   │   ├── _base.scss
-│   │   ├── _components.scss
-│   │   └── styles.scss
-│   ├── js/                # JavaScript files
-│   │   └── script.js
-│   ├── images/            # Image assets
-│   └── *.html             # HTML templates
-├── dist/                  # Vite production output (hashed assets) AFTER build
-├── scripts/               # Auxiliary scripts (clean, lint)
-│   ├── clean.js          # Cleans dist/temp
-│   └── lint.js           # Custom quality script
-├── input.css             # Tailwind CSS input
-├── tailwind.config.js    # Tailwind configuration
-└── package.json          # Dependencies & scripts
+```bash
+├── src/                    # Source root (ALL HTML entry pages + JS, SCSS, Tailwind, assets)
+│   ├── scss/               # SASS stylesheets
+│   ├── js/                 # JavaScript files
+│   ├── images/             # Image assets
+│   └── assets/             # Icons / misc static
+├── dist/                   # Vite production output (after build)
+├── scripts/                # Utility scripts (clean.js, lint.js only)
+├── tailwind.config.js      # Tailwind configuration
+└── package.json            # Dependencies & scripts
 ```
 
 ## 🛠️ Build Commands
@@ -63,6 +55,7 @@ npm run lint          # Custom lint/quality checks
 - SCSS & Tailwind unified through JS entry imports (`src/main.js`)
 - Tree-shaking, code splitting, hashed filenames
 - Placeholder replacement (`{{key.path}}`) using `churchInformation.json`
+ (all HTML resides under `src/`, so Vite `root` is `src` and multi-page inputs are set in `vite.config.js`)
 - Automatic manifest + build-info emission
 - Bundle budget check (env-configured `BUNDLE_BUDGET_KB`)
 
@@ -146,7 +139,7 @@ Centralized SASS variables for colors, fonts, and spacing.
 
 ### Build Scripts (`scripts/`)
 
-Each script is modular and can be customized for specific needs.
+Only minimal auxiliary scripts (clean & lint) remain; legacy custom build/watch/serve/optimize/performance scripts have been removed in favor of native Vite + plugin functionality (repository cleanup performed 2025-08).
 
 ## 🚨 Troubleshooting
 
@@ -200,4 +193,4 @@ Each script is modular and can be customized for specific needs.
 
 ---
 
-_Built with ❤️ using Vite for fast, reliable static delivery_
+**Built with ❤️ using Vite for fast, reliable static delivery.**

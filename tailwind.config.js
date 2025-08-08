@@ -1,9 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pages/**/*.{html,js}", "./src/**/*.{html,js}"],
-  mode: 'jit',
+  // Scan only actual source tree (legacy /pages directory removed)
+  content: [
+    './src/**/*.{html,js,jsx,ts,tsx,vue}'
+  ],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
-}
+  plugins: []
+};

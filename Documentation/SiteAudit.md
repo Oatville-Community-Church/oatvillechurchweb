@@ -127,7 +127,7 @@ Legend: ✅ Aligned | ⚠ Partial / Needs Improvement | ❌ Missing
 | Performance (Images, Lite YT) | ✅ | Modern formats, lite embed, explicit dimensions. |
 | CSP Security | ⚠ | Includes `'unsafe-inline'` for styles; can remove via hashing/nonce build step. |
 | PWA / Offline | ✅ | Offline & PWA manifest present. |
-| Mobile Navigation | ❌ | No hamburger or accessible disclosure for small screens (menu hidden under `md:`). |
+| Mobile Navigation | ✅ | Accessible hamburger + focus trap, outside click + Escape close; unified across pages. |
 | Forms (Contact/Prayer) | ❌ | None; only static contact info. |
 | Giving Integration | ❌ | Placeholder only. |
 | Newsletter / Follow-up | ❌ | No subscription pathway. |
@@ -145,6 +145,10 @@ Legend: ✅ Aligned | ⚠ Partial / Needs Improvement | ❌ Missing
 - Injected explicit hero service times line.
 - Expanded `churchInformation.json` with `beliefs` list & `events.upcoming` array.
 - Ensured Lite YouTube embed + structured data synergy remains intact.
+- Implemented fully accessible mobile navigation (hamburger toggle, ARIA, focus return, Escape/outside click handling, scroll offset via `scroll-mt-24`).
+- Added slide-down animation (respects reduced future ability) and documented in `MOBILE_NAV_NOTES.md`.
+
+Note: Bundle size exceeds soft 300 KB budget primarily due to large JPG originals; optimization opportunity remains.
 
 ---
 
@@ -157,7 +161,7 @@ Legend: ✅ Aligned | ⚠ Partial / Needs Improvement | ❌ Missing
 | Missing Beliefs page/section | Trust, transparency | Add section on index or dedicated page referencing `beliefs` data (structured data optional) | Low | High |
 | No Leadership presentation | Human connection | Output leadership grid (name, role, short bio) | Low | High |
 | No Giving CTA / page | Engagement, stewardship | Add nav item + page (list methods; mark online giving “coming soon” until provider integrated) | Low-Med | High |
-| Mobile nav absent | Mobile usability | Implement accessible disclosure (button -> toggle menu) | Med | High |
+| Mobile nav absent | Mobile usability | (Completed) Accessible hamburger implemented. | Med | — |
 | Expanded Events schema absent | Rich results, local SEO | Loop `events.upcoming` to emit multiple Event JSON-LD blocks | Low | High |
 
 ### 4.2 Medium Priority (SEO & Engagement)
@@ -186,13 +190,13 @@ Legend: ✅ Aligned | ⚠ Partial / Needs Improvement | ❌ Missing
 1. Render Beliefs section (index or new page) from `beliefs` array.
 2. Render Leadership section/cards.
 3. Add Giving page (or interim section) + nav entry; link to philosophy & methods.
-4. Implement accessible mobile nav (button with aria-expanded, focus trapping optional).
-5. Emit multi-Event JSON-LD from `events.upcoming`.
-6. Display “Upcoming Gatherings” UI snippet (top 2–3 from upcoming).
-7. Add SiteNavigationElement JSON-LD.
-8. Add CTA blocks (after Latest Message & bottom of Ministries page).
-9. Extend `latestVideo` with `duration` & `speaker`; update VideoObject.
-10. Prepare CSP hardening plan (inventory inline styles; generate build-time hash).
+4. Emit multi-Event JSON-LD from `events.upcoming`.
+5. Display “Upcoming Gatherings” UI snippet (top 2–3 from upcoming).
+6. Add SiteNavigationElement JSON-LD.
+7. Add CTA blocks (after Latest Message & bottom of Ministries page).
+8. Extend `latestVideo` with `duration` & `speaker`; update VideoObject.
+9. Prepare CSP hardening plan (inventory inline styles; generate build-time hash).
+10. Image weight reduction pass (re‑evaluate JPG compression / add responsive sources) to move toward budget.
 
 ---
 
@@ -259,7 +263,7 @@ Sequence emphasizes trust + conversion (Beliefs, Leadership, Giving) before deep
 | Beliefs Section | Renders all entries; semantic headings; accessible list. |
 | Leadership Section | Displays each entry (role + bio); alt text reserved for future photos. |
 | Giving Page/Section | Includes philosophy + methods + future online note. |
-| Mobile Nav | Toggle button keyboard accessible; focus return; aria-expanded toggles. |
+| Mobile Nav | (Completed) Toggle button keyboard accessible; focus return; aria-expanded toggles; Escape/outside click close. |
 | Multi-Event JSON-LD | At least 3 upcoming events; passes Rich Results test. |
 | SiteNavigationElement | Reflects actual nav URLs (canonical). |
 | VideoObject Enrichment | Includes duration + updated thumbnail if changed. |
@@ -269,5 +273,4 @@ Sequence emphasizes trust + conversion (Beliefs, Leadership, Giving) before deep
 
 ## 11. Summary
 
-Site now satisfies core baseline (identity, plan visit, basic sermons, structured data, accessibility skeleton). Biggest immediate gaps are public-facing belief/leadership/giving content, mobile navigation usability, and richer event & sermon metadata. Addressing these high-priority items will materially improve trust, conversion, and search clarity with modest effort.
-
+Site now satisfies core baseline (identity, plan visit, sermons, structured data, accessibility skeleton) and has an accessible mobile navigation system. Biggest immediate gaps are public-facing belief/leadership/giving content and richer event & sermon metadata. Addressing these high-priority items plus image weight & CSP refinements will materially improve trust, conversion, search clarity, and performance with modest effort.

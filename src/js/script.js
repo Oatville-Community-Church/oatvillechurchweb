@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeChurchWebsite();
     initLiteYouTube();
     initYouTubeArchive();
+    initMobileNav();
     // Human readable date on homepage latest video if present
     const lvDate = document.getElementById('latest-video-date');
     if (lvDate && lvDate.dataset.iso) {
@@ -66,6 +67,68 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// Mobile navigation (hamburger) toggle
+function initMobileNav() {
+    const toggle = document.getElementById('nav-toggle');
+    const panel = document.getElementById('primary-menu');
+    if (!toggle || !panel) return;
+    let lastFocus = null;
+    function open() {
+        panel.classList.remove('hidden');
+        panel.classList.add('animate-slide-down');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Close main menu');
+        toggle.querySelector('.menu-icon')?.classList.add('hidden');
+        toggle.querySelector('.close-icon')?.classList.remove('hidden');
+        lastFocus = document.activeElement;
+        // Focus first link
+        const firstLink = panel.querySelector('[data-nav-link]');
+        firstLink && firstLink.focus();
+        document.addEventListener('keydown', onKey);
+    }
+    function close() {
+        panel.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open main menu');
+        toggle.querySelector('.menu-icon')?.classList.remove('hidden');
+        toggle.querySelector('.close-icon')?.classList.add('hidden');
+        document.removeEventListener('keydown', onKey);
+        lastFocus && (lastFocus instanceof HTMLElement) && lastFocus.focus();
+    }
+    function onKey(e) {
+        if (e.key === 'Escape') {
+            close();
+        } else if (e.key === 'Tab') {
+            // Simple focus trap
+            const focusable = panel.querySelectorAll('a[href], button:not([disabled])');
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+    }
+    toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        expanded ? close() : open();
+    });
+    // Close on link click (improve single-page nav experience)
+    panel.addEventListener('click', e => {
+        const link = e.target.closest('[data-nav-link]');
+        if (link) {
+            // Delay closing slightly to allow smooth scroll trigger
+            setTimeout(close, 80);
+        }
+    });
+    // Close on outside click
+    document.addEventListener('click', e => {
+        if (panel.classList.contains('hidden')) return;
+        if (!panel.contains(e.target) && !toggle.contains(e.target)) {
+            close();
+        }
+    });
+}
 
 // ------------------ YouTube Archive Page Logic ------------------
 function initYouTubeArchive() {

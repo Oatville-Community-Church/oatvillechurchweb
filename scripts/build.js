@@ -106,6 +106,56 @@ class BuildProcessor {
     }
   }
 
+  async processHtmlTemplates() {
+    console.log('📄 Processing HTML templates...');
+    try {
+      // Load church information
+      const churchDataPath = path.join(this.srcDir, 'data', 'churchInformation.json');
+      const churchDataExists = await this.pathExists(churchDataPath);
+      
+      let churchData = {};
+      if (churchDataExists) {
+        const churchDataContent = await fs.readFile(churchDataPath, 'utf8');
+        churchData = JSON.parse(churchDataContent);
+      }
+
+      // Process HTML files
+      const htmlFiles = await this.getFilesWithExtension(this.srcDir, '.html');
+      for (const htmlFile of htmlFiles) {
+        const relativePath = path.relative(this.srcDir, htmlFile);
+        const targetFile = path.join(this.publicDir, relativePath);
+        await this.ensureDirectoryForFile(targetFile);
+        
+        let htmlContent = await fs.readFile(htmlFile, 'utf8');
+        
+        // Replace placeholders with church data
+        if (Object.keys(churchData).length > 0) {
+          htmlContent = this.replacePlaceholders(htmlContent, churchData);
+        }
+        
+        await fs.writeFile(targetFile, htmlContent);
+      }
+
+      console.log('✓ HTML templates processed successfully');
+    } catch (error) {
+      console.error('❌ HTML template processing failed:', error.message);
+      throw error;
+    }
+  }
+
+  replacePlaceholders(htmlContent, data) {
+    // Helper function to safely get nested object values
+    const getValue = (obj, path) => {
+      return path.split('.').reduce((current, key) => current && current[key], obj);
+    };
+
+    // Replace all occurrences of {{path.to.value}} with actual data
+    return htmlContent.replace(/\{\{([^}]+)\}\}/g, (match, path) => {
+      const value = getValue(data, path.trim());
+      return value !== undefined ? value : match;
+    });
+  }
+
   async copyAssets() {
     console.log('📁 Copying assets...');
     try {
@@ -122,15 +172,6 @@ class BuildProcessor {
       const imagesExists = await this.pathExists(imagesSource);
       if (imagesExists) {
         await this.copyDirectory(imagesSource, imagesTarget);
-      }
-
-      // Copy HTML files
-      const htmlFiles = await this.getFilesWithExtension(this.srcDir, '.html');
-      for (const htmlFile of htmlFiles) {
-        const relativePath = path.relative(this.srcDir, htmlFile);
-        const targetFile = path.join(this.publicDir, relativePath);
-        await this.ensureDirectoryForFile(targetFile);
-        await fs.copyFile(htmlFile, targetFile);
       }
 
       // Copy other static assets (fonts, icons, etc.)
@@ -243,6 +284,10 @@ class BuildProcessor {
       await this.copyAssets();
       const copyTime = Date.now() - copyStart;
       
+      const htmlStart = Date.now();
+      await this.processHtmlTemplates();
+      const htmlTime = Date.now() - htmlStart;
+      
       await this.optimizeAssets();
       await this.generateBuildInfo();
 
@@ -253,6 +298,7 @@ class BuildProcessor {
       console.log(`  SASS: ${sassTime}ms`);
       console.log(`  Tailwind: ${tailwindTime}ms`);
       console.log(`  Assets: ${copyTime}ms`);
+      console.log(`  HTML: ${htmlTime}ms`);
       console.log(`\n✨ Build completed successfully in ${duration}ms!`);
       
       // Generate performance report

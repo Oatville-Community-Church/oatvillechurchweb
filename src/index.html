@@ -3,16 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Oatville Community Church | Wichita, KS | Non-Denominational Church
-    </title>
+    <title>{{seo.title}}</title>
     <meta
       name="description"
-      content="Oatville Community Church - A non-denominational community church in Wichita, KS. Small church with a big heart. Sunday worship at 11 AM & 5 PM, Christian education at 10 AM."
+      content="{{seo.description}}"
     />
     <meta
       name="keywords"
-      content="Oatville Community Church, Wichita church, non-denominational church, Kansas church, Christian community, worship services"
+      content="{{seo.keywords}}"
     />
     <link rel="stylesheet" href="out.css" />
     <link rel="stylesheet" href="styles.css" />
@@ -26,7 +24,7 @@
         <div class="flex justify-between items-center py-4">
           <div class="flex items-center space-x-4">
             <h1 class="text-2xl font-bold text-yellow-400">
-              Oatville Community Church
+              {{name}}
             </h1>
           </div>
           <div class="hidden md:flex space-x-8">
@@ -63,15 +61,13 @@
       <div class="absolute inset-0 bg-black opacity-30"></div>
       <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
         <h2 class="text-5xl font-bold mb-6 text-yellow-400">
-          Welcome to Oatville Community Church
+          Welcome to {{name}}
         </h2>
         <p class="text-xl mb-4 max-w-3xl mx-auto text-gray-200">
-          A non-denominational community church with a mission to "reach the
-          lost and show and grow in Christ's love."
+          {{description}}
         </p>
         <p class="text-lg mb-8 max-w-3xl mx-auto text-gray-300">
-          Small church with a big heart and love for the community - come as you
-          are and experience God's love in a place that feels like home.
+          {{welcomeMessage}}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -294,7 +290,7 @@
                 <div>
                   <p class="font-semibold">Address</p>
                   <p class="text-blue-200">
-                    3814 S Hoover Rd<br />Wichita, KS 67215
+                    {{location.address}}<br />{{location.city}}, {{location.state}} {{location.zipCode}}
                   </p>
                 </div>
               </div>
@@ -312,9 +308,9 @@
                 <div>
                   <p class="font-semibold">Phone</p>
                   <a
-                    href="tel:3163903591"
+                    href="tel:{{contact.phone}}"
                     class="text-blue-200 hover:text-yellow-400"
-                    >(316) 390-3591</a
+                    >{{contact.phone}}</a
                   >
                 </div>
               </div>
@@ -332,9 +328,9 @@
                 <div>
                   <p class="font-semibold">Email</p>
                   <a
-                    href="mailto:lmjo1@juno.com"
+                    href="mailto:{{contact.email}}"
                     class="text-blue-200 hover:text-yellow-400"
-                    >lmjo1@juno.com</a
+                    >{{contact.email}}</a
                   >
                 </div>
               </div>
@@ -446,16 +442,15 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
       <div class="max-w-6xl mx-auto px-4 text-center">
-        <h5 class="text-2xl font-bold mb-4">Oatville Community Church</h5>
+        <h5 class="text-2xl font-bold mb-4">{{name}}</h5>
         <p class="text-gray-400 mb-4">
-          A non-denominational community church - small church with a big heart
-          and love for the community.
+          A {{denomination}} community church - {{tagline}} and love for the community.
         </p>
         <p class="text-gray-400 mb-2">
-          3814 S Hoover Rd, Wichita, KS 67215 | (316) 390-3591
+          {{location.fullAddress}} | {{contact.phone}}
         </p>
         <p class="text-gray-500">
-          © 2025 Oatville Community Church. All rights reserved.
+          © 2025 {{name}}. All rights reserved.
         </p>
       </div>
     </footer>

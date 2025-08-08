@@ -1,0 +1,85 @@
+
+{
+  "name": "Oatville Community Church",
+  "tagline": "Small church with a big heart",
+  "mission": "reach the lost and show and grow in Christ's love",
+  "description": "A non-denominational community church with a mission to \"reach the lost and show and grow in Christ's love.\"",
+  "welcomeMessage": "Small church with a big heart and love for the community - come as you are and experience God's love in a place that feels like home.",
+  "denomination": "Non-denominational",
+  "location": {
+    "address": "3814 S Hoover Rd",
+    "city": "Wichita",
+    "state": "KS",
+    "zipCode": "67215",
+    "fullAddress": "3814 S Hoover Rd, Wichita, KS 67215"
+  },
+  "contact": {
+    "phone": "(316) 390-3591",
+    "email": "lmjo1@juno.com"
+  },
+  "hours": {
+    "sunday": "9:30 AM - 1:00 PM",
+    "monday": "8:30 AM - 4:00 PM",
+    "tuesday": "8:30 AM - 4:00 PM",
+    "wednesday": "8:30 AM - 4:00 PM",
+    "thursday": "8:00 AM - 4:00 PM",
+    "friday": "Closed",
+    "saturday": "2:00 PM - 5:00 PM"
+  },
+  "services": {
+    "christianEducation": {
+      "name": "Christian Education",
+      "time": "Sundays at 10:00 AM",
+      "description": "Sunday school and Christian education for all ages"
+    },
+    "sundayWorship": {
+      "name": "Sunday Worship",
+      "time": "11:00 AM & 5:00 PM",
+      "description": "Traditional hymns, contemporary music, and organ-led worship"
+    },
+    "wednesdayPrayer": {
+      "name": "Wednesday Prayer",
+      "time": "6:00 PM",
+      "description": "Community prayer gathering for fellowship and spiritual support"
+    },
+    "bibleStudy": {
+      "name": "YaWeh Bible Study",
+      "time": "Wednesdays at 6:45 PM",
+      "description": "Deep dive into scripture with fellowship and discussion"
+    },
+    "childrensMinistry": {
+      "name": "Children's Ministry",
+      "time": "During Services",
+      "description": "Children's church and nursery services available"
+    },
+    "specialEvents": {
+      "name": "Special Events",
+      "time": "Seasonal",
+      "description": "Vacation Bible School, Good Friday, Resurrection Sunday"
+    }
+  },
+  "socialMedia": {
+    "facebook": "https://www.facebook.com/oatvillecc/",
+    "youtube": "https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A",
+    "instagram": "https://www.instagram.com/oatvillecommunitychurch/"
+  },
+  "about": {
+    "mission": {
+      "title": "Our Mission",
+      "description": "To reach the lost and show and grow in Christ's love - creating a welcoming community where people can experience authentic faith and fellowship."
+    },
+    "worship": {
+      "title": "Our Worship",
+      "description": "Blending traditional hymns, contemporary music, and organ-led worship to create a meaningful worship experience for all generations."
+    },
+    "community": {
+      "title": "Our Community",
+      "description": "A small church with a big heart - non-denominational and focused on authentic connection, accessibility, and spiritual growth through inclusive programming."
+    }
+  },
+  "seo": {
+    "title": "Oatville Community Church | Wichita, KS | Non-Denominational Church",
+    "description": "Oatville Community Church - A non-denominational community church in Wichita, KS. Small church with a big heart. Sunday worship at 11 AM & 5 PM, Christian education at 10 AM.",
+    "keywords": "Oatville Community Church, Wichita church, non-denominational church, Kansas church, Christian community, worship services"
+  }
+}

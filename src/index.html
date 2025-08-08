@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{seo.title}}</title>
+    <link rel="canonical" href="{{site.url}}/" />
     <meta name="description" content="{{seo.description}}" />
     <!-- Deprecated meta keywords removed intentionally -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -11,6 +12,7 @@
     <meta property="og:title" content="{{seo.title}}" />
     <meta property="og:description" content="{{seo.description}}" />
     <meta property="og:image" content="{{site.socialImage}}" />
+    <meta property="og:image:alt" content="{{seo.title}} social banner" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="{{name}}" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -24,11 +26,12 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Church",
+        "@type": ["Organization", "Church"],
         "name": "{{name}}",
         "slogan": "{{tagline}}",
-        "url": "https://www.oatvillecommunitychurch.org/",
-        "image": "https://www.oatvillecommunitychurch.org/favicon.svg",
+        "url": "{{site.url}}/",
+        "logo": "{{site.url}}/favicon.svg",
+        "image": "{{site.url}}/favicon.svg",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "{{location.address}}",
@@ -234,9 +237,15 @@
             {{description}}
           </p>
           <p
-            class="text-lg mb-10 max-w-3xl mx-auto text-gray-300 fade-in-up anim-delay-2"
+            class="text-lg mb-6 max-w-3xl mx-auto text-gray-300 fade-in-up anim-delay-2"
           >
             {{welcomeMessage}}
+          </p>
+          <p
+            class="text-sm tracking-wide uppercase font-semibold text-gray-200 mb-10 fade-in-up anim-delay-2"
+          >
+            Sundays 10:00 AM Christian Education · 11:00 AM &amp; 5:00 PM
+            Worship (Central)
           </p>
           <div
             class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up anim-delay-3"
@@ -252,11 +261,11 @@
       <section class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h3
+            <h2
               class="text-4xl font-bold text-gray-800 mb-4 brand-gradient-text"
             >
               Latest Message
-            </h3>
+            </h2>
             <p class="text-lg text-gray-600">
               Watch our most recent sermon and be inspired
             </p>
@@ -289,11 +298,11 @@
                 </button>
               </div>
               <div class="p-6">
-                <h4
+                <h3
                   class="font-semibold text-lg text-gray-800 mb-2 line-clamp-2"
                 >
                   {{latestVideo.title}}
-                </h4>
+                </h3>
                 <p
                   class="text-xs text-gray-500 mb-4"
                   id="latest-video-date"
@@ -347,9 +356,9 @@
       <section id="about" class="py-24 bg-white">
         <div class="max-w-6xl mx-auto px-4">
           <div class="text-center mb-16">
-            <h3 class="text-4xl font-bold mb-4 brand-gradient-text">
+            <h2 class="text-4xl font-bold mb-4 brand-gradient-text">
               About Our Church
-            </h3>
+            </h2>
             <p class="text-xl text-gray-600 prose-muted">
               A place where tradition meets modern faith
             </p>
@@ -392,7 +401,7 @@
           </div>
           <div class="grid md:grid-cols-3 gap-10 mt-16">
             <div class="card text-center fade-in-up anim-delay-1">
-              <h4 class="text-2xl font-bold mb-4 text-gray-800">Our Mission</h4>
+              <h3 class="text-2xl font-bold mb-4 text-gray-800">Our Mission</h3>
               <p class="text-gray-600">
                 To reach the lost and show and grow in Christ's love - creating
                 a welcoming community where people can experience authentic
@@ -400,7 +409,7 @@
               </p>
             </div>
             <div class="card text-center fade-in-up anim-delay-2">
-              <h4 class="text-2xl font-bold mb-4 text-gray-800">Our Worship</h4>
+              <h3 class="text-2xl font-bold mb-4 text-gray-800">Our Worship</h3>
               <p class="text-gray-600">
                 Blending traditional hymns, contemporary music, and organ-led
                 worship to create a meaningful worship experience for all
@@ -408,9 +417,9 @@
               </p>
             </div>
             <div class="card text-center fade-in-up anim-delay-3">
-              <h4 class="text-2xl font-bold mb-4 text-gray-800">
+              <h3 class="text-2xl font-bold mb-4 text-gray-800">
                 Our Community
-              </h4>
+              </h3>
               <p class="text-gray-600">
                 A small church with a big heart - non-denominational and focused
                 on authentic connection, accessibility, and spiritual growth
@@ -476,63 +485,63 @@
       <section id="services" class="py-24 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
           <div class="text-center mb-14">
-            <h3 class="text-4xl font-bold mb-4 brand-gradient-text">
+            <h2 class="text-4xl font-bold mb-4 brand-gradient-text">
               Service Times & Programs
-            </h3>
+            </h2>
             <p class="text-xl text-gray-600 prose-muted">
               Join us for worship, fellowship, and spiritual growth
             </p>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="card bg-white text-center">
-              <h4 class="text-2xl font-bold mb-4 text-blue-800">
+              <h3 class="text-2xl font-bold mb-4 text-blue-800">
                 Christian Education
-              </h4>
+              </h3>
               <p class="text-lg text-gray-600 mb-2">Sundays at 10:00 AM</p>
               <p class="text-gray-500">
                 Sunday school and Christian education for all ages
               </p>
             </div>
             <div class="card bg-white text-center">
-              <h4 class="text-2xl font-bold mb-4 text-blue-800">
+              <h3 class="text-2xl font-bold mb-4 text-blue-800">
                 Sunday Worship
-              </h4>
+              </h3>
               <p class="text-lg text-gray-600 mb-2">11:00 AM & 5:00 PM</p>
               <p class="text-gray-500">
                 Traditional hymns, contemporary music, and organ-led worship
               </p>
             </div>
             <div class="card bg-white text-center">
-              <h4 class="text-2xl font-bold mb-4 text-blue-800">
+              <h3 class="text-2xl font-bold mb-4 text-blue-800">
                 Wednesday Prayer
-              </h4>
+              </h3>
               <p class="text-lg text-gray-600 mb-2">6:00 PM</p>
               <p class="text-gray-500">
                 Community prayer gathering for fellowship and spiritual support
               </p>
             </div>
             <div class="card bg-white text-center">
-              <h4 class="text-2xl font-bold mb-4 text-blue-800">
+              <h3 class="text-2xl font-bold mb-4 text-blue-800">
                 YaWeh Bible Study
-              </h4>
+              </h3>
               <p class="text-lg text-gray-600 mb-2">Wednesdays at 6:45 PM</p>
               <p class="text-gray-500">
                 Deep dive into scripture with fellowship and discussion
               </p>
             </div>
             <div class="card bg-white text-center">
-              <h4 class="text-2xl font-bold mb-4 text-blue-800">
+              <h3 class="text-2xl font-bold mb-4 text-blue-800">
                 Children's Ministry
-              </h4>
+              </h3>
               <p class="text-lg text-gray-600 mb-2">During Services</p>
               <p class="text-gray-500">
                 Children's church and nursery services available
               </p>
             </div>
             <div class="card bg-white text-center">
-              <h4 class="text-2xl font-bold mb-4 text-blue-800">
+              <h3 class="text-2xl font-bold mb-4 text-blue-800">
                 Special Events
-              </h4>
+              </h3>
               <p class="text-lg text-gray-600 mb-2">Seasonal</p>
               <p class="text-gray-500">
                 Vacation Bible School, Good Friday, Resurrection Sunday
@@ -545,16 +554,16 @@
       <section id="contact" class="py-24 bg-gradient-dark text-white">
         <div class="max-w-6xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h3 class="text-4xl font-bold mb-4">Visit Us</h3>
+            <h2 class="text-4xl font-bold mb-4">Visit Us</h2>
             <p class="text-xl text-blue-200">
               We'd love to meet you and welcome you to our church family
             </p>
           </div>
           <div class="grid md:grid-cols-2 gap-12">
             <div>
-              <h4 class="text-2xl font-bold mb-6 brand-gradient-text">
+              <h3 class="text-2xl font-bold mb-6 brand-gradient-text">
                 Get in Touch
-              </h4>
+              </h3>
               <div class="space-y-6">
                 <div class="flex items-start space-x-4">
                   <svg
@@ -614,7 +623,7 @@
                 </div>
               </div>
               <div class="mt-8">
-                <h5 class="text-xl font-bold mb-4">Church Hours</h5>
+                <h4 class="text-xl font-bold mb-4">Church Hours</h4>
                 <div class="text-blue-200 space-y-2 text-sm">
                   <p>
                     <span class="font-semibold">Sunday:</span> 9:30 AM - 1:00 PM
@@ -635,7 +644,7 @@
                 </div>
               </div>
               <div class="mt-8">
-                <h5 class="text-xl font-bold mb-4">First Time Visiting?</h5>
+                <h4 class="text-xl font-bold mb-4">First Time Visiting?</h4>
                 <p class="text-blue-200 mb-4">
                   We're excited to meet you! Come as you are - there's no dress
                   code. Arrive a few minutes early to get comfortable and meet
@@ -658,9 +667,9 @@
               </div>
             </div>
             <div>
-              <h4 class="text-2xl font-bold mb-6 brand-gradient-text">
+              <h3 class="text-2xl font-bold mb-6 brand-gradient-text">
                 Find Us
-              </h4>
+              </h3>
               <div class="bg-white rounded-lg p-4">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.8!2d-97.42!3d37.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sen!2sus!4v1609459200000!5m2!1sen!2sus&q=3814+S+Hoover+Rd,+Wichita,+KS+67215"
@@ -679,9 +688,9 @@
       <!-- Social Media & YouTube Section -->
       <section class="py-24 bg-white">
         <div class="max-w-6xl mx-auto px-4 text-center">
-          <h3 class="text-4xl font-bold text-gray-800 mb-8 brand-gradient-text">
+          <h2 class="text-4xl font-bold text-gray-800 mb-8 brand-gradient-text">
             Stay Connected
-          </h3>
+          </h2>
           <p class="text-lg text-gray-600 mb-8">
             Follow us on social media for updates, inspiration, and community
             news

@@ -154,8 +154,50 @@
       "start": "2025-08-10T11:00:00-05:00",
       "end": "2025-08-10T12:10:00-05:00",
       "timezone": "America/Chicago"
-    }
+    },
+    "upcoming": [
+      {
+        "name": "Sunday Worship Service",
+        "start": "2025-08-17T11:00:00-05:00",
+        "end": "2025-08-17T12:10:00-05:00",
+        "timezone": "America/Chicago"
+      },
+      {
+        "name": "Wednesday Prayer Gathering",
+        "start": "2025-08-13T18:00:00-05:00",
+        "end": "2025-08-13T18:45:00-05:00",
+        "timezone": "America/Chicago"
+      },
+      {
+        "name": "YaWeh Bible Study",
+        "start": "2025-08-13T18:45:00-05:00",
+        "end": "2025-08-13T19:45:00-05:00",
+        "timezone": "America/Chicago"
+      }
+    ]
   },
+  "beliefs": [
+    {
+      "title": "Scripture",
+      "summary": "We believe the Bible is the inspired and authoritative Word of God, sufficient for faith and life."
+    },
+    {
+      "title": "God",
+      "summary": "One God eternally existing in three persons: Father, Son, and Holy Spirit."
+    },
+    {
+      "title": "Jesus Christ",
+      "summary": "Fully God and fully man, whose life, death, and resurrection provide salvation to all who believe."
+    },
+    {
+      "title": "Salvation",
+      "summary": "By grace through faith in Christ alone—not by works—resulting in new life and hope."
+    },
+    {
+      "title": "The Church",
+      "summary": "A community of believers called to worship, discipleship, fellowship, service, and mission."
+    }
+  ],
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",

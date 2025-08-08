@@ -19,7 +19,6 @@
     <meta name="twitter:image" content="{{site.socialImage}}" />
     <!-- theme-color provides address bar tint on supported browsers -->
     <meta name="theme-color" content="#1f2937" />
-    <link rel="preload" as="image" href="./images/OCC_banner.webp" />
     <link rel="preconnect" href="https://www.youtube.com" />
     <link rel="preconnect" href="https://i.ytimg.com" />
     <script type="application/ld+json">
@@ -41,7 +40,7 @@
         "telephone": "{{contact.phone}}",
         "sameAs": [
           "https://www.facebook.com/oatvillecc/",
-          "https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A",
+          "{{you-tube.friendly-url}}",
           "https://www.instagram.com/oatvillecommunitychurch/"
         ]
       }
@@ -88,6 +87,8 @@
         "description": "{{latestVideo.description}}",
         "thumbnailUrl": "{{latestVideo.thumbnail}}",
         "uploadDate": "{{latestVideo.publishedAt}}",
+        "embedUrl": "https://www.youtube.com/embed/{{latestVideo.id}}",
+        "contentUrl": "https://www.youtube.com/watch?v={{latestVideo.id}}",
         "publisher": {
           "@type": "Organization",
           "name": "{{name}}",
@@ -159,7 +160,7 @@
     </script>
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://i.ytimg.com https://www.youtube.com; script-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com; connect-src 'self' https://api.allorigins.win;"
+      content="default-src 'self'; img-src 'self' data: https://i.ytimg.com https://www.youtube.com https://www.youtube-nocookie.com https://maps.gstatic.com https://maps.googleapis.com; script-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com; connect-src 'self' https://api.allorigins.win;"
     />
   </head>
   <body class="bg-white">
@@ -196,6 +197,11 @@
               href="ministries.html"
               class="nav-link text-gray-300 hover:text-white"
               >Ministries</a
+            >
+            <a
+              href="you-tube.html"
+              class="nav-link text-gray-300 hover:text-white"
+              >Messages</a
             >
             <a href="plan-visit.html" class="custom-button btn-outline"
               >Plan Visit</a
@@ -257,12 +263,13 @@
           </div>
           <div class="max-w-4xl mx-auto">
             <div class="card overflow-hidden">
-              <div class="aspect-video w-full">
+              <div class="aspect-video w-full relative group">
                 <button
                   class="lite-yt"
                   data-videoid="{{latestVideo.id}}"
-                  aria-label="Play latest sermon video"
+                  aria-label="Play latest sermon video: {{latestVideo.title}}"
                   type="button"
+                  role="button"
                 >
                   <picture>
                     <source
@@ -272,37 +279,65 @@
                     <img
                       src="{{latestVideo.thumbnail}}"
                       alt="Thumbnail for {{latestVideo.title}}"
-                      loading="lazy"
                       decoding="async"
                       width="1280"
                       height="720"
+                      class="object-cover w-full h-full"
                     />
                   </picture>
                   <span class="lite-yt-play" aria-hidden="true"></span>
                 </button>
               </div>
               <div class="p-6">
-                <p class="text-gray-600">
-                  Watch our latest service and be inspired by God's word.
-                </p>
-                <p class="text-gray-600 mb-6">
-                  Subscribe to our YouTube channel to get notified when we
-                  upload new sermons, special events, and inspirational content
-                  from our church family.
-                </p>
-                <a
-                  href="https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A?sub_confirmation=1"
-                  target="_blank"
-                  rel="noopener"
-                  class="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition duration-300 inline-flex items-center space-x-3"
+                <h4
+                  class="font-semibold text-lg text-gray-800 mb-2 line-clamp-2"
                 >
-                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                    />
-                  </svg>
-                  <span>Subscribe to Our Channel</span>
-                </a>
+                  {{latestVideo.title}}
+                </h4>
+                <p
+                  class="text-xs text-gray-500 mb-4"
+                  id="latest-video-date"
+                  data-iso="{{latestVideo.publishedAt}}"
+                >
+                  Published: {{latestVideo.publishedAt}}
+                </p>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-4">
+                  {{latestVideo.description}}
+                </p>
+                <div
+                  class="flex flex-wrap gap-4 items-center latest-video-links"
+                >
+                  <a
+                    href="{{you-tube.friendly-url}}?sub_confirmation=1"
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex items-center gap-2 bg-red-600 text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-red-700 transition"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"
+                      />
+                    </svg>
+                    <span>Subscribe</span>
+                  </a>
+                  <a
+                    href="you-tube.html"
+                    class="text-sm text-blue-700 hover:text-blue-900 underline font-medium"
+                    >View All Messages</a
+                  >
+                  <a
+                    href="https://www.youtube.com/watch?v={{latestVideo.id}}"
+                    target="_blank"
+                    rel="noopener"
+                    class="text-sm text-gray-600 hover:text-gray-900 underline"
+                    >Watch on YouTube</a
+                  >
+                </div>
               </div>
             </div>
           </div>
@@ -684,7 +719,7 @@
               >
             </a>
             <a
-              href="https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A"
+              href="{{you-tube.friendly-url}}"
               target="_blank"
               rel="noopener"
               class="group relative focus:outline-none focus-visible:ring-4 focus-visible:ring-red-300 rounded-full"

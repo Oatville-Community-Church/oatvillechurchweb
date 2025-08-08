@@ -59,7 +59,7 @@
   },
   "socialMedia": {
     "facebook": "https://www.facebook.com/oatvillecc/",
-    "youtube": "https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A",
+    "youtube": "https://www.youtube.com/@OatvilleCommunityChurch",
     "instagram": "https://www.instagram.com/oatvillecommunitychurch/"
   },
   "about": {
@@ -143,9 +143,10 @@
   "latestVideo": {
     "id": "OgR3C4qiQCU",
     "title": "Oatville Community Church livestream.",
-    "description": "Watch the most recent message from Oatville Community Church.",
+    "description": "The Oatville Community Church Sunday Morning live stream.",
     "thumbnail": "https://i.ytimg.com/vi/OgR3C4qiQCU/hqdefault.jpg",
-    "publishedAt": "2025-08-04T05:45:32+00:00"
+    "publishedAt": "2025-08-04T05:45:32+00:00",
+    "fetchedAt": "2025-08-08T20:06:42.810Z"
   },
   "events": {
     "nextSunday": {
@@ -154,5 +155,10 @@
       "end": "2025-08-10T12:10:00-05:00",
       "timezone": "America/Chicago"
     }
+  },
+  "you-tube": {
+    "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
+    "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
+    "rssFetchedAt": "2025-08-08T20:06:42.810Z"
   }
 }

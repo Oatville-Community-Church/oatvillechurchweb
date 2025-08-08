@@ -7,7 +7,7 @@
     "clean": "node scripts/clean.js",
     "lint": "node scripts/lint.js",
     "test": "npm run lint",
-    "dev": "vite",
+    "dev": "node scripts/fetch-latest-video.js && vite",
     "prebuild": "npm run images:optimize && node scripts/fetch-latest-video.js",
     "build": "vite build",
     "preview": "vite preview",

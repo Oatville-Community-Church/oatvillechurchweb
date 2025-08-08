@@ -169,7 +169,8 @@ export default defineConfig(({ mode }) => {
         input: {
           main: path.resolve(__dirname, 'src', 'index.html'),
           plan: path.resolve(__dirname, 'src', 'plan-visit.html'),
-            ministries: path.resolve(__dirname, 'src', 'ministries.html'),
+          ministries: path.resolve(__dirname, 'src', 'ministries.html'),
+          messages: path.resolve(__dirname, 'src', 'you-tube.html'),
           offline: path.resolve(__dirname, 'src', 'offline.html'),
           notfound: path.resolve(__dirname, 'src', '404.html')
         }

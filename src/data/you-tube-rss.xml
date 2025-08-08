@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+ <link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UCLiIrzYVgwFD0rIEYQoGC5A"/>
+ <id>yt:channel:LiIrzYVgwFD0rIEYQoGC5A</id>
+ <yt:channelId>LiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+ <title>Oatville Community Church</title>
+ <link rel="alternate" href="https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A"/>
+ <author>
+  <name>Oatville Community Church</name>
+  <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+ </author>
+ <published>2023-10-09T15:10:14+00:00</published>
+ <entry>
+  <id>yt:video:OgR3C4qiQCU</id>
+  <yt:videoId>OgR3C4qiQCU</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=OgR3C4qiQCU"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-08-04T05:45:32+00:00</published>
+  <updated>2025-08-04T06:07:07+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/OgR3C4qiQCU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/OgR3C4qiQCU/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="33"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:a5fKTUT2oU0</id>
+  <yt:videoId>a5fKTUT2oU0</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=a5fKTUT2oU0"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-07-28T05:27:11+00:00</published>
+  <updated>2025-07-28T05:58:41+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/a5fKTUT2oU0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/a5fKTUT2oU0/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="8"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:1NfEX_LjMZQ</id>
+  <yt:videoId>1NfEX_LjMZQ</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=1NfEX_LjMZQ"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-07-21T05:28:03+00:00</published>
+  <updated>2025-07-30T03:20:03+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/1NfEX_LjMZQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/1NfEX_LjMZQ/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="6"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:e8cTc75-N4g</id>
+  <yt:videoId>e8cTc75-N4g</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=e8cTc75-N4g"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-07-14T05:26:38+00:00</published>
+  <updated>2025-07-16T08:42:49+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/e8cTc75-N4g?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/e8cTc75-N4g/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="3"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:VTUtx118ioo</id>
+  <yt:videoId>VTUtx118ioo</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=VTUtx118ioo"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-07-07T05:04:24+00:00</published>
+  <updated>2025-08-05T14:24:59+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/VTUtx118ioo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/VTUtx118ioo/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="5"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:3cICyPw9SEs</id>
+  <yt:videoId>3cICyPw9SEs</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=3cICyPw9SEs"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-06-30T05:19:05+00:00</published>
+  <updated>2025-07-30T14:01:59+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/3cICyPw9SEs?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/3cICyPw9SEs/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="3"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:t1go4QIUXpg</id>
+  <yt:videoId>t1go4QIUXpg</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=t1go4QIUXpg"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-06-23T05:17:02+00:00</published>
+  <updated>2025-07-23T14:00:24+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/t1go4QIUXpg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/t1go4QIUXpg/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="14"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:UqnKgUs21to</id>
+  <yt:videoId>UqnKgUs21to</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=UqnKgUs21to"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-06-17T14:15:59+00:00</published>
+  <updated>2025-07-16T15:07:37+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/UqnKgUs21to?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/UqnKgUs21to/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="38"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:gpkjvwj9Fws</id>
+  <yt:videoId>gpkjvwj9Fws</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=gpkjvwj9Fws"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-06-16T05:32:00+00:00</published>
+  <updated>2025-07-16T14:47:44+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/gpkjvwj9Fws?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/gpkjvwj9Fws/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="7"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:cY1a2P_hhHQ</id>
+  <yt:videoId>cY1a2P_hhHQ</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Living the New life.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=cY1a2P_hhHQ"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-06-09T00:59:31+00:00</published>
+  <updated>2025-07-09T14:21:45+00:00</updated>
+  <media:group>
+   <media:title>Living the New life.</media:title>
+   <media:content url="https://www.youtube.com/v/cY1a2P_hhHQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/cY1a2P_hhHQ/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Sunday, June 8th, 2025 service</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="2"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:LsDVd9D3iPE</id>
+  <yt:videoId>LsDVd9D3iPE</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=LsDVd9D3iPE"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-06-02T05:24:42+00:00</published>
+  <updated>2025-07-02T13:40:26+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/LsDVd9D3iPE?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/LsDVd9D3iPE/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="4"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:FeVM1y9vuAQ</id>
+  <yt:videoId>FeVM1y9vuAQ</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=FeVM1y9vuAQ"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-05-26T05:14:09+00:00</published>
+  <updated>2025-06-25T13:36:50+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/FeVM1y9vuAQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/FeVM1y9vuAQ/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="8"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:8e37y687EQc</id>
+  <yt:videoId>8e37y687EQc</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=8e37y687EQc"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-05-19T05:33:19+00:00</published>
+  <updated>2025-06-13T07:05:39+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/8e37y687EQc?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/8e37y687EQc/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="7"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:hKFJR_90JnE</id>
+  <yt:videoId>hKFJR_90JnE</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=hKFJR_90JnE"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-05-12T05:46:43+00:00</published>
+  <updated>2025-06-09T05:01:37+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/hKFJR_90JnE?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/hKFJR_90JnE/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="3"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:GT0tlIlalQc</id>
+  <yt:videoId>GT0tlIlalQc</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=GT0tlIlalQc"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-05-05T05:43:09+00:00</published>
+  <updated>2025-06-06T14:36:44+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/GT0tlIlalQc?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/GT0tlIlalQc/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="4"/>
+   </media:community>
+  </media:group>
+ </entry>
+</feed>

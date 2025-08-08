@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages & Video Archive | {{seo.title}}</title>
+    <meta
+      name="description"
+      content="Browse recent worship services & sermons from {{name}}. Watch messages directly on our site."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Messages & Video Archive | {{seo.title}}"
+    />
+    <meta
+      property="og:description"
+      content="Catch up on sermons and worship services from {{name}}."
+    />
+    <meta property="og:image" content="{{site.socialImage}}" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Messages & Video Archive | {{seo.title}}"
+    />
+    <meta
+      name="twitter:description"
+      content="Watch recent sermons from {{name}}."
+    />
+    <meta name="twitter:image" content="{{site.socialImage}}" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{site.url}}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Messages",
+            "item": "{{site.url}}/you-tube.html"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gray-900 text-white px-4 py-2 rounded"
+      >Skip to main content</a
+    >
+    <nav
+      class="bg-gray-900 shadow-lg sticky top-0 z-40 border-b border-gray-800"
+    >
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <a href="index.html#home" class="flex items-center space-x-2"
+            ><span class="text-xl md:text-2xl font-bold brand-gradient-text"
+              >{{name}}</span
+            ></a
+          >
+          <div class="hidden md:flex items-center gap-8 text-sm">
+            <a
+              href="index.html#home"
+              class="nav-link text-gray-300 hover:text-white"
+              >Home</a
+            >
+            <a
+              href="index.html#about"
+              class="nav-link text-gray-300 hover:text-white"
+              >About</a
+            >
+            <a
+              href="index.html#services"
+              class="nav-link text-gray-300 hover:text-white"
+              >Services</a
+            >
+            <a
+              href="ministries.html"
+              class="nav-link text-gray-300 hover:text-white"
+              >Ministries</a
+            >
+            <a
+              href="you-tube.html"
+              aria-current="page"
+              class="nav-link text-gray-300 hover:text-white"
+              >Messages</a
+            >
+            <a href="plan-visit.html" class="custom-button btn-outline"
+              >Plan Visit</a
+            >
+            <a
+              href="index.html#contact"
+              class="nav-link text-gray-300 hover:text-white"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main id="main" class="pb-28">
+      <section class="py-20 bg-gradient-dark text-white">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 brand-gradient-text">
+            Message Archive
+          </h1>
+          <p class="text-gray-200 max-w-2xl mx-auto text-lg">
+            Watch recent worship services and messages from {{name}}. New videos
+            appear here shortly after they’re published.
+          </p>
+          <p
+            class="text-xs text-gray-400 mt-4"
+            id="rss-updated"
+            aria-live="polite"
+          ></p>
+        </div>
+      </section>
+      <section class="py-16 bg-white" id="videos">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+            <div class="flex-1 relative">
+              <label for="video-search" class="sr-only">Search videos</label>
+              <input
+                id="video-search"
+                type="search"
+                placeholder="Search titles..."
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <button
+              id="clear-search"
+              class="text-sm text-blue-700 hover:text-blue-900 underline hidden"
+            >
+              Clear
+            </button>
+            <a
+              href="{{you-tube.friendly-url}}?sub_confirmation=1"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2 bg-red-600 text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-red-700 transition"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"
+                />
+              </svg>
+              Subscribe
+            </a>
+          </div>
+          <div
+            id="video-grid"
+            class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            aria-live="polite"
+          ></div>
+          <div
+            id="video-status"
+            class="mt-8 text-center text-sm text-gray-500"
+          ></div>
+        </div>
+      </section>
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+          <h2 class="text-2xl font-bold mb-4 brand-gradient-text">
+            Need Earlier Messages?
+          </h2>
+          <p class="text-gray-600 mb-4 text-sm">
+            Visit our full YouTube channel for the complete archive and
+            playlists.
+          </p>
+          <a
+            href="{{you-tube.friendly-url}}"
+            class="custom-button"
+            target="_blank"
+            rel="noopener"
+            >Open Channel</a
+          >
+        </div>
+      </section>
+    </main>
+    <div
+      id="video-modal"
+      class="fixed inset-0 bg-black/70 hidden items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="video-modal-title"
+    >
+      <div
+        class="bg-white rounded-lg shadow-xl w-full max-w-3xl overflow-hidden relative"
+      >
+        <button
+          class="absolute top-2 right-2 text-gray-600 hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-500 px-2 py-1 rounded"
+          data-close-modal
+          aria-label="Close video"
+        >
+          ✕
+        </button>
+        <div
+          class="aspect-video w-full bg-black"
+          id="video-modal-player"
+          aria-live="polite"
+        ></div>
+        <div class="p-4 border-t">
+          <h3
+            id="video-modal-title"
+            class="font-semibold text-gray-800 text-lg mb-2"
+          ></h3>
+          <p id="video-modal-date" class="text-xs text-gray-500"></p>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-gray-800 text-white py-8 text-center">
+      <div class="max-w-6xl mx-auto px-4">
+        <p class="text-gray-400 text-sm">
+          © 2025 {{name}}. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -157,7 +157,10 @@ export default defineConfig(({ mode }) => {
     publicDir: false,
     base: ghPages ? `/${repoName}/` : '/',
     build: {
-      outDir: 'dist', // new dist output (keeps legacy build folder separate)
+  // outDir previously 'dist' relative to root:'src' which produced output in src/dist.
+  // For GitHub Pages workflow we need a root-level /dist folder.
+  // Use absolute path to ensure emission outside the project root config 'src'.
+  outDir: path.resolve(__dirname, 'dist'),
       emptyOutDir: true,
       manifest: true,
       sourcemap: mode !== 'production',

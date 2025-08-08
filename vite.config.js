@@ -154,13 +154,14 @@ function staticCopyPlugin() {
 
 export default defineConfig(({ mode }) => {
   const repoName = 'oatvillechurch'; // for GitHub Pages base
-  const ghPages = process.env.GITHUB_PAGES === 'true';
+  // Auto-detect GitHub Pages either via explicit flag or presence of GITHUB_REPOSITORY env (Actions) ending with repoName
+  const ghPages = process.env.GITHUB_PAGES === 'true' || (process.env.GITHUB_REPOSITORY && process.env.GITHUB_REPOSITORY.endsWith(`/${repoName}`));
   return {
     // Project source root now lives in /src (all HTML pages relocated there)
     root: 'src',
     // publicDir removed – all assets now sourced from /src and copied via plugins
     publicDir: false,
-    base: ghPages ? `/${repoName}/` : '/',
+  base: ghPages ? `/${repoName}/` : '/',
     build: {
   // outDir previously 'dist' relative to root:'src' which produced output in src/dist.
   // For GitHub Pages workflow we need a root-level /dist folder.
@@ -196,8 +197,8 @@ export default defineConfig(({ mode }) => {
           name: churchData?.name || 'Church Site',
           short_name: 'Church',
           // Use a same-origin start_url; when deployed to GitHub Pages ensure base path matches.
-          start_url: (process.env.GITHUB_PAGES === 'true') ? `/${repoName}/` : '/',
-          scope: (process.env.GITHUB_PAGES === 'true') ? `/${repoName}/` : '/',
+          start_url: ghPages ? `/${repoName}/` : '/',
+          scope: ghPages ? `/${repoName}/` : '/',
           display: 'standalone',
           background_color: '#ffffff',
           theme_color: '#1f2937',

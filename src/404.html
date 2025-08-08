@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Page Not Found | {{seo.title}}</title>
+    <meta
+      name="description"
+      content="The page you were looking for could not be found on {{name}}."
+    />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <!-- Basic Open Graph for social shares of a broken link -->
+    <meta property="og:title" content="Page Not Found | {{seo.title}}" />
+    <meta
+      property="og:description"
+      content="The page you requested was not found."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{site.socialImage}}" />
+    <meta name="twitter:card" content="summary" />
+    <style>
+      /* Minimal critical styles (re-using utility flavor) */
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: #0f172a;
+        color: #f1f5f9;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      nav {
+        background: #111827;
+        border-bottom: 1px solid #1f2937;
+      }
+      a {
+        text-decoration: none;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.85rem 0;
+      }
+      .brand {
+        font-weight: 700;
+        font-size: 1.25rem;
+        background: linear-gradient(90deg, #38bdf8, #6366f1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.25rem;
+        font-size: 0.85rem;
+      }
+      .nav-links a {
+        color: #d1d5db;
+        transition: 0.2s;
+      }
+      .nav-links a:hover,
+      .nav-links a:focus {
+        color: #fff;
+      }
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 1rem;
+      }
+      .card {
+        max-width: 640px;
+        width: 100%;
+        background: #1e293b;
+        padding: 2.5rem 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.5);
+      }
+      h1 {
+        margin: 0 0 1rem;
+        font-size: 2.75rem;
+        line-height: 1.1;
+        background: linear-gradient(90deg, #38bdf8, #6366f1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .error-code {
+        margin-top: 1.5rem;
+        font-size: 0.7rem;
+        opacity: 0.7;
+      }
+      p {
+        line-height: 1.55;
+        margin: 0.65rem 0;
+        color: #cbd5e1;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.15rem;
+        font-weight: 600;
+        border-radius: 0.55rem;
+        font-size: 0.85rem;
+        line-height: 1;
+        background: #2563eb;
+        color: #fff;
+      }
+      .btn:hover,
+      .btn:focus {
+        background: #1d4ed8;
+      }
+      .btn-outline {
+        background: transparent;
+        color: #93c5fd;
+        border: 2px solid #2563eb;
+      }
+      .btn-outline:hover,
+      .btn-outline:focus {
+        background: #2563eb;
+        color: #fff;
+      }
+      ul.suggest {
+        margin: 1.25rem 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 0.5rem;
+      }
+      ul.suggest a {
+        display: block;
+        padding: 0.6rem 0.8rem;
+        border-radius: 0.5rem;
+        background: #273349;
+        color: #e2e8f0;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      ul.suggest a:hover,
+      ul.suggest a:focus {
+        background: #334155;
+      }
+      footer {
+        background: #111827;
+        color: #9ca3af;
+        text-align: center;
+        padding: 1.75rem 0.75rem;
+        font-size: 0.7rem;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 3.25rem;
+        }
+        .nav-links {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only">Skip to main content</a>
+    <nav aria-label="Primary">
+      <div class="container nav-inner">
+        <a href="index.html#home" class="brand">{{name}}</a>
+        <div class="nav-links" role="menubar">
+          <a href="index.html#home" role="menuitem">Home</a>
+          <a href="index.html#about" role="menuitem">About</a>
+          <a href="index.html#services" role="menuitem">Services</a>
+          <a href="ministries.html" role="menuitem">Ministries</a>
+          <a href="plan-visit.html" role="menuitem">Plan Visit</a>
+          <a href="index.html#contact" role="menuitem">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <article class="card" role="alert" aria-live="polite">
+        <header>
+          <h1>Page Not Found</h1>
+        </header>
+        <p>We looked everywhere, but couldn’t find the page you requested.</p>
+        <p>
+          It might have been moved, renamed, or the link may be outdated. Here
+          are a few helpful paths to keep exploring {{name}}:
+        </p>
+        <div class="actions">
+          <a class="btn" href="index.html#home">Back Home</a>
+          <a class="btn-outline" href="plan-visit.html">Plan a Visit</a>
+          <a class="btn-outline" href="ministries.html">Our Ministries</a>
+        </div>
+        <ul class="suggest" aria-label="Popular destinations">
+          <li><a href="index.html#services">Service Times</a></li>
+          <li><a href="index.html#about">About Our Church</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#contact">Contact & Location</a></li>
+        </ul>
+        <p class="error-code">Error code: 404 – Not Found</p>
+      </article>
+    </main>
+    <footer>
+      <p>&copy; 2025 {{name}} – {{tagline}}</p>
+    </footer>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

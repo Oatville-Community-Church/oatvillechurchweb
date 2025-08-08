@@ -1,69 +1,76 @@
 # 🏛️ Oatville Community Church Website
 
-Modern, multi‑page static site powered by Vite, Tailwind, and SCSS. This README is intentionally concise; in‑depth technical and process documentation now lives under `Documentation/`.
+Modern, multi‑page static site powered by Vite, Tailwind, SCSS, and a light data placeholder layer. This README intentionally stays concise; authoritative deep‑dive docs live under `Documentation/`.
 
 ## 🚀 Quick Start
 
 ```bash
-npm install       # dependencies
-npm run dev       # Vite dev server (HMR)
-npm run build     # production build -> dist/
-npm run preview   # preview built site locally
-npm run lint      # custom lint checks
-npm run clean     # remove dist
+npm install            # install dependencies (Node >=16)
+npm run dev            # Vite dev server (HMR)
+npm run build          # production build -> dist/ (runs prebuild automatically)
+npm run preview        # preview built site locally
+npm run lint           # custom lint checks
+npm test               # alias -> lint (placeholder for future tests)
+npm run clean          # remove dist
+npm run images:optimize # (standalone) optimize source images via sharp
 ```
 
 Dev server (default): <http://localhost:5173>
 
 ## ✨ Key Features
 
-- Vite dev server & optimized production build
-- Tailwind + SCSS (utility + structured styles)
-- Data placeholders via `churchInformation.json`
-- Sitemap & robots generation
-- Performance budget warnings
-- Accessibility & SEO conscious head/meta structure
+- Multi‑page Vite build (entries: `index`, `plan-visit`, `ministries`, `offline`, `404`)
+- Tailwind + SCSS (utility + structured style partials)
+- Data placeholder replacement via `churchInformation.json` (`{{path.to.key}}`)
+- Automated: sitemap.xml, robots.txt, canonical tags, Open Graph tags
+- PWA manifest & service worker (auto update) + offline fallback page
+- Build metadata emission (`build-info.json`) & bundle size budget reporter (soft 300 KB)
+- Prebuild pipeline: image optimization + latest YouTube video metadata fetch
+- Accessibility & SEO‑optimized head/meta and structured data friendly
+- Strict asset policy: ALL runtime assets live under `src/` (`publicDir: false`)
 
 ## 🏗️ Structure (Summary)
 
-All source lives in `src/` (HTML entry pages, styles, scripts, assets, data). See `Documentation/ARCHITECTURE.md` for full details.
+All source lives in `src/` (HTML entry pages, styles, scripts, assets, data). No `public/` directory is used or permitted (`publicDir: false`). See `Documentation/ARCHITECTURE.md` for full details.
 
 ## 🛠️ Development Commands
 
-- `npm run dev`       - Dev server (HMR)
-- `npm run build`     - Production build
-- `npm run preview`   - Static preview of dist/
-- `npm run clean`     - Remove dist/
-- `npm run lint`      - Basic quality scan
+- `npm run dev`            - Dev server (HMR)
+- `npm run build`          - Production build (runs `prebuild` internally: image optimize + video fetch)
+- `npm run preview`        - Static preview of dist/
+- `npm run clean`          - Remove dist/
+- `npm run lint` / `test`  - Basic quality scan
+- `npm run images:optimize` - Manually (re)optimize images if needed
 
 Full command explanations: `Documentation/SCRIPTS.md`.
 
 ### Making Changes
 
-1. Edit files in the `src/` directory (including HTML pages)
-2. Changes automatically rebuild with `npm run dev`
-3. Check quality with `npm run lint`
-4. Build for production with `npm run build`
+1. Edit files in `src/` (HTML, SCSS, JS, data) – keep new assets under `src/images` or `src/assets`.
+2. Dev server (`npm run dev`) hot reloads changes.
+3. Add new templated content first to `churchInformation.json` then reference with `{{placeholder}}`.
+4. Run `npm run lint` before committing.
+5. Run `npm run build` to verify production output (check bundle size note in console).
 
 ## 🎨 Styling (Pointers)
 
-SCSS partials in `src/scss/`. Tailwind configured via `tailwind.config.js` and loaded from `src/tailwind.css`. See Architecture doc for layering guidance.
+SCSS partials live in `src/scss/` with variables in `_variables.scss`. Tailwind configured via `tailwind.config.js` and sourced from `src/tailwind.css`. Prefer utility classes; promote repeated patterns to SCSS only when justified.
 
 ## 📄 Content Source
 
-Key textual data & placeholders: `src/data/churchInformation.json`.
+Key textual data & placeholders: `src/data/churchInformation.json` (single source of truth for contact info, service times, SEO title/description, hero copy, FAQ, etc.).
 
 ## 🔧 Configuration
 
-Central config: `vite.config.js`. Tailwind: `tailwind.config.js`. Data-driven tokens: `churchInformation.json`.
+Central config: `vite.config.js` (multi‑page inputs, plugins, base path). Tailwind: `tailwind.config.js`. Data: `churchInformation.json`. Engines: Node >=16 (see `package.json`). Set `GITHUB_PAGES=true` in CI to emit correct `base` for GitHub Pages.
 
 ## 📊 Performance & SEO
 
-Automated sitemap, robots, canonical tags, and bundle size reporting.
+Automatic sitemap, robots, canonical & OG tags insertion, bundle size reporting (warns if budget exceeded). PWA adds offline resilience (see `offline.html`). Structured data (JSON‑LD) can be added inline per page using values from the data file.
 
 ## 🚨 Troubleshooting
 
-See `Documentation/BUILD.md` (Troubleshooting section) for full guidance.
+See `Documentation/BUILD.md` (Troubleshooting section) for full guidance. Common: run `npm run clean`, reinstall deps, then rebuild. Ensure new pages are registered in `vite.config.js` `rollupOptions.input`.
 
 ## 🌐 Browser Support
 
@@ -81,7 +88,7 @@ See `Documentation/BUILD.md` (Troubleshooting section) for full guidance.
 
 ## 🚀 Deployment
 
-Primary target: GitHub Pages (CI build & deploy). Portable to any static host (Netlify, Vercel, S3/CDN). Details: `Documentation/ARCHITECTURE.md` §7.
+Primary target: GitHub Pages (CI build & deploy) with `GITHUB_PAGES=true` env to set correct base path. Portable to any static host (Netlify, Vercel, S3/CDN) since output is static in `dist/`. Details: `Documentation/ARCHITECTURE.md` §7.
 
 ## 🤝 Contributing
 

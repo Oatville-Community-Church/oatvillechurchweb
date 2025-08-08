@@ -143,6 +143,11 @@ function staticCopyPlugin() {
           }
         });
       }
+      // Copy only the public-safe RSS XML needed at runtime (avoid copying entire /data)
+      const rssFile = path.resolve(__dirname, 'src', 'data', 'you-tube-rss.xml');
+      if (fs.existsSync(rssFile)) {
+        this.emitFile({ type: 'asset', fileName: 'data/you-tube-rss.xml', source: fs.readFileSync(rssFile) });
+      }
     }
   };
 }
@@ -190,7 +195,9 @@ export default defineConfig(({ mode }) => {
         manifest: {
           name: churchData?.name || 'Church Site',
           short_name: 'Church',
-          start_url: (churchData?.site?.url || '.') + '/',
+          // Use a same-origin start_url; when deployed to GitHub Pages ensure base path matches.
+          start_url: (process.env.GITHUB_PAGES === 'true') ? `/${repoName}/` : '/',
+          scope: (process.env.GITHUB_PAGES === 'true') ? `/${repoName}/` : '/',
           display: 'standalone',
           background_color: '#ffffff',
           theme_color: '#1f2937',

@@ -242,7 +242,8 @@ function initYouTubeArchive() {
         closeBtn?.focus();
     }
 
-    fetch('./data/you-tube-rss.xml')
+    // Use Vite base path so GitHub Pages deployment (/repoName/) works.
+    fetch(`${import.meta.env.BASE_URL}data/you-tube-rss.xml`)
       .then(r => r.ok ? r.text() : Promise.reject(r.status))
       .then(txt => {
         const videos = parseRSS(txt);

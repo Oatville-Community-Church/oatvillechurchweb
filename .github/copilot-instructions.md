@@ -90,6 +90,37 @@ Vite Plugins of Note:
 
 Performance Budget: Soft budget of 300 KB raw total (see bundle size reporter). If exceeded, recommend code splitting, image optimization, or removing unused CSS.
 
+### 4.1 Package Update Management
+
+Use `npm-check-updates` (ncu) for systematic package management:
+
+**Installation:**
+```bash
+npm install -g npm-check-updates
+```
+
+**Check for updates:**
+```bash
+ncu                    # Show all outdated packages
+ncu --target minor     # Show only minor/patch updates
+ncu --target latest    # Show all updates including major
+```
+
+**Update workflow:**
+1. **Security fixes first**: `ncu --target patch -u && npm install`
+2. **Minor updates**: `ncu --target minor -u && npm install && npm test`
+3. **Major updates**: Review breaking changes, test incrementally
+4. **Exclude risky packages**: `ncu --reject tailwindcss` (avoid major rewrites)
+
+**Testing after updates:**
+```bash
+npm run build         # Verify build works
+npm run dev          # Test dev server
+npm audit            # Check security vulnerabilities
+```
+
+Always create a backup branch before major package updates and test thoroughly.
+
 ---
 
 ## 5. Asset Management
@@ -282,6 +313,9 @@ Add separate scripts for `Event`, `FAQPage`, `VideoObject` (avoid bundling into 
 | Add / update docs       | `Documentation/` (centralized – see §0)                     |
 | Modify sitemap behavior | `sitemapAndRobotsPlugin` (auto by HTML pages)               |
 | Performance budget      | Adjust env `BUNDLE_BUDGET_KB` or plugin warning             |
+| Check package updates   | `ncu` or `ncu --target minor`                               |
+| Update packages safely  | `ncu --target patch -u && npm install`                      |
+| Security audit          | `npm audit` or `npm audit fix`                              |
 
 ---
 
@@ -295,6 +329,8 @@ When responding to user requests:
 4. Avoid large code blocks duplicating unmodified content—show only deltas if patching.
 5. Validate assumptions; if uncertain, state the assumption and proceed minimally.
 6. Maintain accessibility and SEO standards enumerated above.
+7. For package updates: use `ncu` to identify outdated packages before making changes.
+8. Always test builds after package updates: `npm run build && npm run dev`.
 
 ---
 

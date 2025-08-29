@@ -1,5 +1,5 @@
 // Main application entry for Vite
-import './scss/styles.scss';
+// Tailwind v4-first styles (theme + utilities) live in tailwind.css
 import './tailwind.css';
 import './js/script.js';
 

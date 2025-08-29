@@ -169,22 +169,22 @@
   <body class="bg-white">
     <a
       href="#main"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gray-900 text-white px-4 py-2 rounded"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gray-900 text-white px-4 py-2 rounded-sm"
       >Skip to main content</a
     >
     <!-- Navigation -->
     <nav
-      class="bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/80 shadow-lg sticky top-0 z-50 border-b border-gray-800"
+      class="bg-gray-900/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/10"
       x-data
     >
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center py-3 md:py-4">
           <a
             href="index.html#home"
-            class="flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded"
+            class="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-orange-400 rounded-sm"
           >
             <span
-              class="text-lg sm:text-xl md:text-2xl font-bold brand-gradient-text"
+              class="text-lg sm:text-xl md:text-2xl font-bold text-gradient-brand"
               >{{name}}</span
             >
           </a>
@@ -194,7 +194,7 @@
             type="button"
             aria-expanded="false"
             aria-controls="primary-menu"
-            class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-700 text-gray-300 hover:text-white hover:border-gray-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 transition"
+            class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg border border-gray-600 text-gray-300 hover:text-white hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
             aria-label="Open main menu"
           >
             <svg
@@ -232,7 +232,7 @@
           >
             <a
               href="#home"
-              class="nav-link text-gray-300 hover:text-white"
+              class="nav-link text-gray-200 hover:text-white font-medium transition-colors duration-200"
               aria-current="page"
               >Home</a
             >
@@ -252,9 +252,7 @@
               class="nav-link text-gray-300 hover:text-white"
               >Messages</a
             >
-            <a
-              href="plan-visit.html"
-              class="custom-button btn-outline text-xs md:text-sm"
+            <a href="plan-visit.html" class="btn btn-outline text-xs md:text-sm"
               >Plan Visit</a
             >
             <a href="#contact" class="nav-link text-gray-300 hover:text-white"
@@ -267,43 +265,43 @@
           <div class="pt-2 pb-6 space-y-1 border-t border-gray-800">
             <a
               href="#home"
-              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:bg-gray-800"
+              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
               data-nav-link
               >Home</a
             >
             <a
               href="#about"
-              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:bg-gray-800"
+              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
               data-nav-link
               >About</a
             >
             <a
               href="#services"
-              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:bg-gray-800"
+              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
               data-nav-link
               >Services</a
             >
             <a
               href="ministries.html"
-              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:bg-gray-800"
+              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
               data-nav-link
               >Ministries</a
             >
             <a
               href="you-tube.html"
-              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:bg-gray-800"
+              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
               data-nav-link
               >Messages</a
             >
             <a
               href="plan-visit.html"
-              class="block px-3 py-2 rounded-md text-sm font-semibold text-amber-400 bg-gray-800/60 hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              class="block px-3 py-2 rounded-md text-sm font-semibold text-amber-400 bg-gray-800/60 hover:bg-gray-800 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-400"
               data-nav-link
               >Plan Your Visit</a
             >
             <a
               href="#contact"
-              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:bg-gray-800"
+              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
               data-nav-link
               >Contact</a
             >
@@ -315,58 +313,60 @@
       <!-- Hero Section -->
       <section
         id="home"
-        class="hero-section text-white py-28 relative overflow-hidden"
+        class="relative min-h-screen flex items-center justify-center text-white py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
       >
         <div
-          class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_60%)]"
+          class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_60%)]"
         ></div>
-        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+        <div class="container mx-auto px-4 text-center relative z-10 max-w-6xl">
           <h1
-            class="mb-6 brand-gradient-text font-bold tracking-tight fade-in-up text-4xl md:text-5xl"
+            class="mb-8 text-gradient-brand font-bold tracking-tight fade-in-up text-4xl md:text-5xl lg:text-6xl leading-tight"
           >
             Oatville Community Church – A Place to Belong & Grow
           </h1>
           <p
-            class="text-xl mb-4 max-w-3xl mx-auto text-gray-200 fade-in-up anim-delay-1"
+            class="text-xl md:text-2xl mb-6 max-w-3xl mx-auto text-gray-200 fade-in-up anim-delay-1"
           >
             {{description}}
           </p>
           <p
-            class="text-lg mb-6 max-w-3xl mx-auto text-gray-300 fade-in-up anim-delay-2"
+            class="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-300 fade-in-up anim-delay-2"
           >
             {{welcomeMessage}}
           </p>
           <p
-            class="text-sm tracking-wide uppercase font-semibold text-gray-200 mb-10 fade-in-up anim-delay-2"
+            class="text-sm md:text-base tracking-wide uppercase font-semibold text-gray-200 mb-12 fade-in-up anim-delay-2"
           >
             Sundays 10:00 AM Christian Education · 11:00 AM &amp; 5:00 PM
             Worship (Central)
           </p>
           <div
-            class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up anim-delay-3"
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up anim-delay-3"
           >
-            <a href="#services" class="custom-button">This Sunday</a>
-            <a href="plan-visit.html" class="btn-outline custom-button"
+            <a href="#services" class="btn btn-primary text-lg">This Sunday</a>
+            <a href="plan-visit.html" class="btn btn-outline text-lg"
               >Plan Your Visit</a
             >
           </div>
         </div>
       </section>
       <!-- Latest Video Section -->
-      <section class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="text-center mb-12">
+      <section class="py-16 lg:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-6xl">
+          <div class="text-center mb-12 lg:mb-16">
             <h2
-              class="text-4xl font-bold text-gray-800 mb-4 brand-gradient-text"
+              class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-gradient-brand"
             >
               Latest Message
             </h2>
-            <p class="text-lg text-gray-600">
+            <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
               Watch our most recent sermon and be inspired
             </p>
           </div>
           <div class="max-w-4xl mx-auto">
-            <div class="card overflow-hidden">
+            <div
+              class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
+            >
               <div class="aspect-video w-full relative group">
                 <button
                   class="lite-yt"
@@ -415,7 +415,7 @@
                     href="{{you-tube.friendly-url}}?sub_confirmation=1"
                     target="_blank"
                     rel="noopener"
-                    class="inline-flex items-center gap-2 bg-red-600 text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-red-700 transition"
+                    class="btn btn-danger text-sm"
                   >
                     <svg
                       class="w-5 h-5"
@@ -448,13 +448,13 @@
         </div>
       </section>
       <!-- About Section -->
-      <section id="about" class="py-24 bg-white scroll-mt-24">
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4 brand-gradient-text">
+      <section id="about" class="py-16 lg:py-24 bg-white scroll-mt-24">
+        <div class="container mx-auto px-4 max-w-6xl">
+          <div class="text-center mb-12 lg:mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-gradient-brand">
               About Our Church
             </h2>
-            <p class="text-xl text-gray-600 prose-muted">
+            <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
               A place where tradition meets modern faith
             </p>
           </div>
@@ -462,11 +462,15 @@
             <div>
               <picture>
                 <source
+                  srcset="./images/church-exterior.avif"
+                  type="image/avif"
+                />
+                <source
                   srcset="./images/church-exterior.webp"
                   type="image/webp"
                 />
                 <img
-                  src="./images/church-exterior.jpg"
+                  src="./images/church-exterior-1600.jpg"
                   alt="Oatville Community Church Exterior"
                   class="rounded-lg shadow-lg w-full"
                   loading="lazy"
@@ -479,11 +483,15 @@
             <div>
               <picture>
                 <source
+                  srcset="./images/church-interior.avif"
+                  type="image/avif"
+                />
+                <source
                   srcset="./images/church-interior.webp"
                   type="image/webp"
                 />
                 <img
-                  src="./images/church-interior.jpg"
+                  src="./images/church-interior-1600.jpg"
                   alt="Oatville Community Church Interior"
                   class="rounded-lg shadow-lg w-full"
                   loading="lazy"
@@ -538,7 +546,7 @@
           </div>
           <div class="grid md:grid-cols-3 gap-8" data-testimonials-root>
             <article
-              class="bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-6 flex flex-col"
+              class="bg-white rounded-xl shadow-xs ring-1 ring-black/5 p-6 flex flex-col"
             >
               <p class="text-gray-700 text-sm flex-1 leading-relaxed">
                 “{{testimonials.0.quote}}”
@@ -550,7 +558,7 @@
               </p>
             </article>
             <article
-              class="bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-6 flex flex-col"
+              class="bg-white rounded-xl shadow-xs ring-1 ring-black/5 p-6 flex flex-col"
             >
               <p class="text-gray-700 text-sm flex-1 leading-relaxed">
                 “{{testimonials.1.quote}}”
@@ -562,7 +570,7 @@
               </p>
             </article>
             <article
-              class="bg-white rounded-xl shadow-sm ring-1 ring-black/5 p-6 flex flex-col"
+              class="bg-white rounded-xl shadow-xs ring-1 ring-black/5 p-6 flex flex-col"
             >
               <p class="text-gray-700 text-sm flex-1 leading-relaxed">
                 “{{testimonials.2.quote}}”
@@ -583,7 +591,7 @@
             <h2 class="text-4xl font-bold mb-4 brand-gradient-text">
               Service Times & Programs
             </h2>
-            <p class="text-xl text-gray-600 prose-muted">
+            <p class="text-xl text-gray-600">
               Join us for worship, fellowship, and spiritual growth
             </p>
           </div>
@@ -663,7 +671,7 @@
                 Get in Touch
               </h3>
               <div class="space-y-6">
-                <div class="flex items-start space-x-4">
+                <div class="flex items-start gap-4">
                   <svg
                     class="w-6 h-6 mt-1 text-blue-300"
                     fill="currentColor"
@@ -681,7 +689,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="flex items-start space-x-4">
+                <div class="flex items-start gap-4">
                   <svg
                     class="w-6 h-6 mt-1 text-blue-300"
                     fill="currentColor"
@@ -700,7 +708,7 @@
                     >
                   </div>
                 </div>
-                <div class="flex items-start space-x-4">
+                <div class="flex items-start gap-4">
                   <svg
                     class="w-6 h-6 mt-1 text-blue-300"
                     fill="currentColor"
@@ -751,14 +759,14 @@
                 <div class="flex flex-col sm:flex-row gap-4">
                   <a
                     href="tel:3163903591"
-                    class="custom-button bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300 inline-block text-center"
+                    class="btn bg-yellow-500 hover:bg-yellow-400 text-gray-900"
                     >Call Us Today</a
                   >
                   <a
                     href="https://www.facebook.com/oatvillecc/"
                     target="_blank"
                     rel="noopener"
-                    class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300 inline-block text-center"
+                    class="btn border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900"
                     >Facebook Page</a
                   >
                 </div>
@@ -773,7 +781,7 @@
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.8!2d-97.42!3d37.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sen!2sus!4v1609459200000!5m2!1sen!2sus&q=3814+S+Hoover+Rd,+Wichita,+KS+67215"
                   width="100%"
                   height="300"
-                  class="map-iframe"
+                  class="border-0 rounded-md shadow-md"
                   frameborder="0"
                   allowfullscreen
                   title="Oatville Community Church Location"
@@ -801,12 +809,12 @@
               href="https://www.facebook.com/oatvillecc/"
               target="_blank"
               rel="noopener"
-              class="group relative focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 rounded-full"
+              class="group relative focus:outline-hidden focus-visible:ring-4 focus-visible:ring-blue-300 rounded-full"
               aria-label="Follow us on Facebook"
             >
               <span class="sr-only">Facebook</span>
               <span
-                class="w-16 h-16 flex items-center justify-center rounded-full bg-blue-600 text-white shadow transition duration-300 group-hover:bg-blue-700 group-hover:scale-110"
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-blue-600 text-white shadow-sm transition duration-300 group-hover:bg-blue-700 group-hover:scale-110"
               >
                 <svg
                   aria-hidden="true"
@@ -829,12 +837,12 @@
               href="{{you-tube.friendly-url}}"
               target="_blank"
               rel="noopener"
-              class="group relative focus:outline-none focus-visible:ring-4 focus-visible:ring-red-300 rounded-full"
+              class="group relative focus:outline-hidden focus-visible:ring-4 focus-visible:ring-red-300 rounded-full"
               aria-label="Visit our YouTube channel"
             >
               <span class="sr-only">YouTube</span>
               <span
-                class="w-16 h-16 flex items-center justify-center rounded-full bg-red-600 text-white shadow transition duration-300 group-hover:bg-red-700 group-hover:scale-110"
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-red-600 text-white shadow-sm transition duration-300 group-hover:bg-red-700 group-hover:scale-110"
               >
                 <svg
                   aria-hidden="true"
@@ -857,12 +865,12 @@
               href="https://www.instagram.com/oatvillecommunitychurch/"
               target="_blank"
               rel="noopener"
-              class="group relative focus:outline-none focus-visible:ring-4 focus-visible:ring-pink-300 rounded-full"
+              class="group relative focus:outline-hidden focus-visible:ring-4 focus-visible:ring-pink-300 rounded-full"
               aria-label="Follow us on Instagram"
             >
               <span class="sr-only">Instagram</span>
               <span
-                class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-500 via-pink-500 to-orange-400 text-white shadow transition duration-300 group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-orange-500 group-hover:scale-110"
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-500 via-pink-500 to-orange-400 text-white shadow-sm transition duration-300 group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-orange-500 group-hover:scale-110"
               >
                 <svg
                   aria-hidden="true"
@@ -898,31 +906,31 @@
             </p>
           </div>
           <div class="space-y-6">
-            <details class="bg-white rounded-lg shadow p-5">
+            <details class="bg-white rounded-lg shadow-sm p-5">
               <summary class="font-semibold cursor-pointer">
                 {{faq.0.q}}
               </summary>
               <p class="mt-3 text-gray-600">{{faq.0.a}}</p>
             </details>
-            <details class="bg-white rounded-lg shadow p-5">
+            <details class="bg-white rounded-lg shadow-sm p-5">
               <summary class="font-semibold cursor-pointer">
                 {{faq.1.q}}
               </summary>
               <p class="mt-3 text-gray-600">{{faq.1.a}}</p>
             </details>
-            <details class="bg-white rounded-lg shadow p-5">
+            <details class="bg-white rounded-lg shadow-sm p-5">
               <summary class="font-semibold cursor-pointer">
                 {{faq.2.q}}
               </summary>
               <p class="mt-3 text-gray-600">{{faq.2.a}}</p>
             </details>
-            <details class="bg-white rounded-lg shadow p-5">
+            <details class="bg-white rounded-lg shadow-sm p-5">
               <summary class="font-semibold cursor-pointer">
                 {{faq.3.q}}
               </summary>
               <p class="mt-3 text-gray-600">{{faq.3.a}}</p>
             </details>
-            <details class="bg-white rounded-lg shadow p-5">
+            <details class="bg-white rounded-lg shadow-sm p-5">
               <summary class="font-semibold cursor-pointer">
                 {{faq.4.q}}
               </summary>

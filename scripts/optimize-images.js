@@ -17,7 +17,10 @@ try { sharp = require('sharp'); } catch (e) {
 const IMAGES_DIR = path.join(__dirname, '..', 'src', 'images');
 
 function isRasterCandidate(file) {
-  return /\.(jpe?g|png)$/i.test(file);
+  // Only process original raster sources, skip already-resized variants like *-1600.jpg/png
+  if (!/\.(jpe?g|png)$/i.test(file)) return false;
+  if (/-1600\.(jpe?g|png)$/i.test(file)) return false;
+  return true;
 }
 
 async function processImage(file) {
@@ -27,7 +30,9 @@ async function processImage(file) {
     { ext: 'webp', quality: 78, resize: false },
     { ext: 'avif', quality: 50, resize: false },
     { ext: 'webp', quality: 74, resize: 1600 },
-    { ext: 'avif', quality: 48, resize: 1600 }
+  { ext: 'avif', quality: 48, resize: 1600 },
+  // Add a compressed JPEG fallback for legacy browsers (used only when <picture> doesn't support AVIF/WebP)
+  { ext: 'jpg', quality: 78, resize: 1600 }
   ];
   const srcStat = fs.statSync(srcPath);
   const image = sharp(srcPath).rotate();
@@ -50,8 +55,9 @@ async function processImage(file) {
       if (cfg.resize && metadata.width && metadata.width > cfg.resize) {
         pipeline = pipeline.resize({ width: cfg.resize });
       }
-      if (cfg.ext === 'webp') pipeline = pipeline.webp({ quality: cfg.quality });
-      else if (cfg.ext === 'avif') pipeline = pipeline.avif({ quality: cfg.quality });
+  if (cfg.ext === 'webp') pipeline = pipeline.webp({ quality: cfg.quality });
+  else if (cfg.ext === 'avif') pipeline = pipeline.avif({ quality: cfg.quality });
+  else if (cfg.ext === 'jpg' || cfg.ext === 'jpeg') pipeline = pipeline.jpeg({ quality: cfg.quality, mozjpeg: true });
       await pipeline.toFile(outPath);
       console.log(`✔ Generated ${outName}`);
     } catch (err) {

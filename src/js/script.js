@@ -179,8 +179,8 @@ function initYouTubeArchive() {
             return;
         }
         grid.innerHTML = videos.map(v => `
-          <article class="group bg-white rounded-lg shadow-sm ring-1 ring-black/5 overflow-hidden flex flex-col">
-            <button class="relative aspect-video w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" data-play="${v.id}" aria-label="Play video: ${v.title.replace(/"/g,'&quot;')}">
+          <article class="group bg-white rounded-lg shadow-xs ring-1 ring-black/5 overflow-hidden flex flex-col">
+            <button class="relative aspect-video w-full text-left focus:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500" data-play="${v.id}" aria-label="Play video: ${v.title.replace(/"/g,'&quot;')}">
               <img src="${v.thumbnail}" alt="Thumbnail for ${v.title.replace(/"/g,'&quot;')}" loading="lazy" decoding="async" class="w-full h-full object-cover transition group-hover:scale-105" width="480" height="270" />
               <span class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm font-semibold">Play</span>
             </button>

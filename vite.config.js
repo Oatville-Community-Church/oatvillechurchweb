@@ -136,9 +136,18 @@ function staticCopyPlugin() {
   // Copy generic asset files (favicons, logos) from src/assets (exclude code)
       const assetsDir = path.resolve(__dirname, 'src', 'assets');
       if (fs.existsSync(assetsDir)) {
+        // Whitelist only essential, small, site-wide assets to avoid copying large unused files
+        const allowList = [
+          'favicon.ico',
+          'favicon.svg',
+          'site.webmanifest',
+          'manifest.webmanifest',
+        ];
         fs.readdirSync(assetsDir).forEach(file => {
           const full = path.join(assetsDir, file);
-          if (fs.statSync(full).isFile() && !/\.(js|ts|jsx|tsx|scss|css)$/.test(file)) {
+          if (!fs.statSync(full).isFile()) return;
+          // Only emit allow-listed assets; all others (e.g., large PNG logos) are excluded unless referenced in HTML/CSS
+          if (allowList.includes(file)) {
             this.emitFile({ type: 'asset', fileName: file, source: fs.readFileSync(full) });
           }
         });

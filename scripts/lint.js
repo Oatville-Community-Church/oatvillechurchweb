@@ -165,6 +165,8 @@ class Linter {
         // handle "export async function"
         .replace(/^\s*export\s+async\s+function\s+/mg, 'async function ');
           }
+          // Neutralize `import.meta` to avoid Node parser error in non-ESM context
+          toParse = toParse.replace(/\bimport\.meta\b/g, '({})');
           new Function(toParse);
         } catch (syntaxError) {
           this.errors.push(`${relativePath}: Syntax error - ${syntaxError.message}`);

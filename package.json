@@ -24,7 +24,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sharesmallbiz-support/oatvillechurch.git"
+    "url": "https://github.com/Oatville-Community-Church/oatvillechurchweb.git"
   },
   "engines": {
     "node": ">=20.19.0",

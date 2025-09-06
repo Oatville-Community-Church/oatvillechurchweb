@@ -28,7 +28,7 @@ function htmlPlaceholderPlugin() {
         const val = getValue(churchData, p);
         return val !== undefined ? String(val) : m;
       });
-      const siteUrl = (churchData?.site?.url || process.env.SITE_URL || 'https://sharesmallbiz-support.github.io/oatvillechurch').replace(/\/$/, '');
+      const siteUrl = (churchData?.site?.url || process.env.SITE_URL || 'https://oatville-community-church.github.io/oatvillechurchweb').replace(/\/$/, '');
       // Determine path for canonical: index.html -> '/', others -> '/filename'
       const filename = ctx?.filename ? path.basename(ctx.filename) : 'index.html';
       const cleanName = filename === 'index.html' ? '' : filename;
@@ -112,7 +112,7 @@ function sitemapAndRobotsPlugin() {
   return {
     name: 'sitemap-and-robots',
     writeBundle(_, bundle) {
-      const siteUrl = process.env.SITE_URL || 'https://sharesmallbiz-support.github.io/oatvillechurch';
+      const siteUrl = process.env.SITE_URL || 'https://oatville-community-church.github.io/oatvillechurchweb';
   const htmlPages = Object.keys(bundle).filter(f => f.endsWith('.html'));
   const urls = htmlPages.filter(f => !['offline.html','not-found.html'].includes(f)).map(f => {
         const clean = f === 'index.html' ? '/' : `/${f.replace(/index.html$/, '')}`;
@@ -162,7 +162,7 @@ function staticCopyPlugin() {
 }
 
 export default defineConfig(({ mode }) => {
-  const repoName = 'oatvillechurch'; // for GitHub Pages base
+  const repoName = 'oatvillechurchweb'; // for GitHub Pages base
   // Auto-detect GitHub Pages either via explicit flag or presence of GITHUB_REPOSITORY env (Actions) ending with repoName
   const ghPages = process.env.GITHUB_PAGES === 'true' || (process.env.GITHUB_REPOSITORY && process.env.GITHUB_REPOSITORY.endsWith(`/${repoName}`));
   return {

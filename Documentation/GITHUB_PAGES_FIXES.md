@@ -44,13 +44,34 @@ GET https://oatville-community-church.github.io/oatvillechurch/assets/main-CNYTP
 - Added new `build:github` script that sets `GITHUB_PAGES=true` environment variable
 - Updated GitHub Actions workflow to use correct site URL
 
+### 4. PWA Manifest Icon Errors
+
+**Problem**: Invalid data URI icons in the PWA manifest were causing browser errors.
+
+**Error Messages**:
+
+```text
+Error while trying to use the following icon from the Manifest: data:image/png;base64,iVBORw0KGgo... (Download error or resource isn't a valid image)
+```
+
+**Solution**:
+
+- Generated proper PNG icon files (192x192 and 512x512) from the existing SVG favicon
+- Added icon files to the static copy allow list in vite.config.js
+- Updated manifest to reference actual icon files instead of broken data URIs
+
 ## Files Modified
 
 ### Configuration Files
 
-- `vite.config.js`: Updated repository name and site URLs
+- `vite.config.js`: Updated repository name, site URLs, and icon file allow list
 - `package.json`: Added `build:github` script and `cross-env` dependency
 - `.github/workflows/deploy.yml`: Updated site URL
+
+### Asset Files
+
+- `src/assets/icon-192.png`: Generated PNG icon for PWA manifest (192x192)
+- `src/assets/icon-512.png`: Generated PNG icon for PWA manifest (512x512)
 
 ### Data Files
 
@@ -97,9 +118,10 @@ After deployment, verify:
 
 - [ ] No CSP violations in browser console
 - [ ] All assets load correctly (CSS, JS, images)
-- [ ] PWA manifest loads correctly
+- [ ] PWA manifest loads correctly with proper icon references
 - [ ] Service worker registers successfully
 - [ ] No 404 errors for any resources
+- [ ] No manifest icon errors in browser console
 
 ## URLs
 

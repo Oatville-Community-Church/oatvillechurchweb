@@ -142,6 +142,8 @@ function staticCopyPlugin() {
           'favicon.svg',
           'site.webmanifest',
           'manifest.webmanifest',
+          'icon-192.png',
+          'icon-512.png',
         ];
         fs.readdirSync(assetsDir).forEach(file => {
           const full = path.join(assetsDir, file);

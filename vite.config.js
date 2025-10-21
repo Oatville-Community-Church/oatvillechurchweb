@@ -24,11 +24,16 @@ function htmlPlaceholderPlugin() {
   return {
     name: 'html-church-data-placeholders',
     transformIndexHtml(html, ctx) {
+      const siteUrl = (process.env.SITE_URL || churchData?.site?.url || 'https://oatville-community-church.github.io/oatvillechurchweb').replace(/\/$/, '');
+      
       let transformed = html.replace(/\{\{([^}]+)\}\}/g, (m, p) => {
+        // Special case for site.url to use environment-aware URL
+        if (p.trim() === 'site.url') {
+          return siteUrl;
+        }
         const val = getValue(churchData, p);
         return val !== undefined ? String(val) : m;
       });
-      const siteUrl = (churchData?.site?.url || process.env.SITE_URL || 'https://oatville-community-church.github.io/oatvillechurchweb').replace(/\/$/, '');
       // Determine path for canonical: index.html -> '/', others -> '/filename'
       const filename = ctx?.filename ? path.basename(ctx.filename) : 'index.html';
       const cleanName = filename === 'index.html' ? '' : filename;

@@ -1,0 +1,277 @@
+{
+  "hero": {
+    "title": "Our Ministries",
+    "subtitle": "Serving God and people through worship, teaching, fellowship, and outreach.",
+    "callToAction": {
+      "text": "Planning a first visit?",
+      "links": [
+        {
+          "text": "Plan your visit",
+          "url": "plan-visit.html"
+        },
+        {
+          "text": "service times",
+          "url": "index.html#services"
+        }
+      ]
+    }
+  },
+  "ministries": [
+    {
+      "id": "worship-music",
+      "title": "Worship & Music",
+      "description": "Blending traditional hymns, organ accompaniment, and occasional contemporary songs – Christ-centered and congregationally focused.",
+      "features": [
+        "Traditional hymns with organ accompaniment",
+        "Contemporary worship songs",
+        "Congregational singing focus",
+        "Christ-centered musical worship",
+        "Special music during services"
+      ],
+      "schedule": [
+        "Sunday Morning Worship - 11:00 AM",
+        "Sunday Evening Worship - 5:00 PM"
+      ],
+      "leadership": "Music Ministry Team",
+      "icon": "🎵"
+    },
+    {
+      "id": "childrens-ministry",
+      "title": "Children's Ministry",
+      "description": "Safe, caring environments where kids learn Scripture, prayer, and foundational truths in age-appropriate ways.",
+      "features": [
+        "Age-appropriate Bible teaching",
+        "Safe and secure environment",
+        "Trained and screened volunteers",
+        "Interactive learning activities",
+        "Character development focus"
+      ],
+      "schedule": [
+        "Sunday School - 10:00 AM",
+        "Children's Church during worship",
+        "Vacation Bible School (Summer)"
+      ],
+      "leadership": "Jane Smith - Children's Ministry Lead",
+      "ageGroups": [
+        "Nursery (0-2 years)",
+        "Preschool (3-5 years)",
+        "Elementary (6-11 years)"
+      ],
+      "icon": "👶"
+    },
+    {
+      "id": "youth-discipleship",
+      "title": "Youth & Discipleship",
+      "description": "Helping students grow in faith, biblical literacy, and resilient identity in Christ through study and mentoring.",
+      "features": [
+        "Biblical literacy development",
+        "Faith formation and growth",
+        "Mentoring relationships",
+        "Identity development in Christ",
+        "Peer fellowship and support"
+      ],
+      "schedule": [
+        "Youth Group - Sundays 6:30 PM",
+        "Bible Study - Wednesdays 7:00 PM",
+        "Special Events - Monthly"
+      ],
+      "leadership": "Youth Ministry Team",
+      "ageGroups": [
+        "Middle School (6th-8th grade)",
+        "High School (9th-12th grade)"
+      ],
+      "icon": "🌱"
+    },
+    {
+      "id": "prayer-study",
+      "title": "Prayer & Study",
+      "description": "Weekly prayer gatherings and deep-dive Bible study (YaWeh Study) to strengthen spiritual life and community intercession.",
+      "features": [
+        "Weekly prayer gatherings",
+        "Deep Bible study sessions",
+        "Community intercession",
+        "Spiritual growth focus",
+        "Fellowship and sharing"
+      ],
+      "schedule": ["Wednesday Prayer - 6:00 PM", "YaWeh Bible Study - 6:45 PM"],
+      "leadership": "Pastor Rick Oglesby",
+      "topics": [
+        "Biblical exposition",
+        "Prayer requests and intercession",
+        "Spiritual growth",
+        "Community concerns"
+      ],
+      "icon": "🙏"
+    },
+    {
+      "id": "care-fellowship",
+      "title": "Care & Fellowship",
+      "description": "Encouragement, visitation, and practical help for those in need – embodying Christ's love in action.",
+      "features": [
+        "Pastoral care and visitation",
+        "Practical assistance",
+        "Encouragement ministry",
+        "Community support",
+        "Crisis intervention"
+      ],
+      "services": [
+        "Hospital and home visits",
+        "Meal ministry for families in need",
+        "Transportation assistance",
+        "Prayer support",
+        "Grief and crisis counseling"
+      ],
+      "leadership": "Care Ministry Team",
+      "icon": "💕"
+    },
+    {
+      "id": "outreach-community",
+      "title": "Outreach & Community",
+      "description": "Local engagement, seasonal events, and service opportunities to share hope and serve our neighbors.",
+      "features": [
+        "Local community engagement",
+        "Seasonal events and outreach",
+        "Service opportunities",
+        "Neighbor relations",
+        "Mission support"
+      ],
+      "activities": [
+        "Community service projects",
+        "Holiday outreach events",
+        "Food drives and assistance",
+        "Local mission partnerships",
+        "Evangelism and witness"
+      ],
+      "schedule": [
+        "Seasonal Events - Various times",
+        "Service Projects - Monthly",
+        "Community Partnerships - Ongoing"
+      ],
+      "leadership": "Outreach Committee",
+      "icon": "🤝"
+    }
+  ],
+  "getInvolved": {
+    "title": "Get Involved",
+    "subtitle": "Whether you're new or returning, there's a next step for you. We'd love to help you connect where your gifts and passion meet a need.",
+    "opportunities": [
+      {
+        "title": "Worship Team",
+        "description": "Musicians and vocalists to enhance our worship services",
+        "commitment": "Weekly rehearsal and Sunday participation"
+      },
+      {
+        "title": "Children's Ministry",
+        "description": "Volunteers to teach and care for our children",
+        "commitment": "Monthly rotation basis"
+      },
+      {
+        "title": "Hospitality Team",
+        "description": "Greeters and ushers to welcome visitors",
+        "commitment": "Monthly service opportunities"
+      },
+      {
+        "title": "Care Ministry",
+        "description": "Provide practical help and encouragement",
+        "commitment": "As available and needed"
+      }
+    ],
+    "nextSteps": [
+      {
+        "text": "Plan a Visit",
+        "url": "plan-visit.html",
+        "type": "primary"
+      },
+      {
+        "text": "Contact Us",
+        "url": "index.html#contact",
+        "type": "outline"
+      }
+    ]
+  },
+  "seo": {
+    "title": "Ministries | Oatville Community Church | Wichita, KS",
+    "description": "Discover ministries at Oatville Community Church in Wichita, KS - worship, children's ministry, youth discipleship, prayer, care, and community outreach opportunities for all ages.",
+    "keywords": "church ministries, Wichita church programs, children's ministry, youth discipleship, worship music, prayer groups, community outreach, volunteer opportunities, church involvement, spiritual growth"
+  },
+  "structuredData": {
+    "breadcrumbs": [
+      {
+        "position": 1,
+        "name": "Home",
+        "item": "{{site.url}}/"
+      },
+      {
+        "position": 2,
+        "name": "Ministries",
+        "item": "{{site.url}}/ministries.html"
+      }
+    ],
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Oatville Community Church",
+      "url": "{{site.url}}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{location.address}}",
+        "addressLocality": "{{location.city}}",
+        "addressRegion": "{{location.state}}",
+        "postalCode": "{{location.zipCode}}",
+        "addressCountry": "US"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Church Ministries",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Worship & Music Ministry",
+              "description": "Traditional and contemporary worship services with congregational focus"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Children's Ministry",
+              "description": "Age-appropriate Bible teaching and safe learning environment for children"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Youth Discipleship",
+              "description": "Faith formation and biblical literacy for students and young adults"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "faq": [
+    {
+      "question": "How can I get involved in a ministry?",
+      "answer": "Start by attending our services and talking with ministry leaders. We'll help match your interests and gifts with our ministry needs."
+    },
+    {
+      "question": "Do I need experience to volunteer?",
+      "answer": "No experience required! We provide training and support for all volunteers. What matters most is a heart to serve."
+    },
+    {
+      "question": "What ministries are available for children?",
+      "answer": "We offer nursery care, children's church, Sunday school, and seasonal programs like Vacation Bible School for ages 0-11."
+    },
+    {
+      "question": "How often do ministries meet?",
+      "answer": "Most ministries meet weekly, with some meeting monthly or seasonally. Each ministry has its own schedule to accommodate different commitments."
+    },
+    {
+      "question": "Can visitors participate in ministries?",
+      "answer": "Absolutely! Visitors are welcome to participate in most ministry activities. Some leadership roles may require membership or completion of our volunteer process."
+    }
+  ]
+}

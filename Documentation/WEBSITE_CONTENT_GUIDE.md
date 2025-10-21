@@ -1,13 +1,16 @@
 # Website Content Update Guide
 
-This guide will teach you how to update your church website content by editing the `churchInformation.json` file using GitHub's web interface or mobile app.
+This guide will teach you how to update your church website content by editing JSON data files using GitHub's web interface or mobile app.
 
 ## Quick Start
 
 **To update your website:**
 
 1. Go to your GitHub repository (you'll get the link after being added to the organization)
-2. Navigate to `src` → `data` → `churchInformation.json`
+2. Navigate to `src` → `data` → choose the file you want to edit:
+   - `churchInformation.json` - General church info, contact details, leadership
+   - `planvisit.json` - Plan Your Visit page content
+   - `ministries.json` - Ministries page content
 3. Click the pencil icon (✏️) to edit
 4. Make your changes (see sections below)
 5. Scroll down and click "Commit changes"
@@ -15,9 +18,15 @@ This guide will teach you how to update your church website content by editing t
 
 ## What You Can Update
 
-The website gets its information from a file called `churchInformation.json`. This file contains all the text, contact info, service times, and other details that appear on your website.
+The website gets its information from JSON data files in the `src/data` folder. Each file controls different parts of your website:
 
-### Basic Church Information
+- **`churchInformation.json`** - Basic church info, contact details, leadership, social media
+- **`planvisit.json`** - Complete content for the "Plan Your Visit" page
+- **`ministries.json`** - All ministry information and volunteer opportunities
+
+⚠️ **IMPORTANT**: Always keep the exact same structure (field names) - only change the values inside the quotes!
+
+### Basic Church Information (churchInformation.json)
 
 ```json
 "name": "Oatville Community Church",
@@ -33,7 +42,60 @@ The website gets its information from a file called `churchInformation.json`. Th
 - `"mission"`: Your church's mission statement
 - `"description"`: A longer description of your church
 
-### Contact Information
+### Plan Your Visit Content (planvisit.json)
+
+This file controls everything on the "Plan Your Visit" page:
+
+```json
+"hero": {
+  "title": "Plan Your Visit",
+  "subtitle": "We're excited to welcome you to our church family!"
+},
+"serviceTimes": {
+  "title": "Service Times",
+  "sunday": {
+    "time": "11:00 AM & 5:00 PM",
+    "description": "Traditional hymns, contemporary music, and biblical teaching"
+  }
+}
+```
+
+**What to change:**
+
+- Update service times and descriptions
+- Modify welcome messages and visitor information
+- Update FAQ answers about what to expect
+- Change accessibility information
+- ⚠️ **Keep field names like `"hero"`, `"serviceTimes"` exactly the same - only change the text inside quotes**
+
+### Ministries Content (ministries.json)
+
+This file controls the entire "Ministries" page:
+
+```json
+"hero": {
+  "title": "Our Ministries",
+  "subtitle": "Discover ways to connect, serve, and grow in faith"
+},
+"ministries": [
+  {
+    "name": "Children's Ministry",
+    "icon": "👶",
+    "description": "Age-appropriate learning and activities for children",
+    "schedule": "Sundays during worship service"
+  }
+]
+```
+
+**What to change:**
+
+- Update ministry names, descriptions, and schedules
+- Modify volunteer opportunity descriptions
+- Change contact information for ministry leaders
+- Update FAQ about ministries
+- ⚠️ **Keep field names like `"ministries"`, `"volunteerOpportunities"` exactly the same - only change the content**
+
+### Contact Information (churchInformation.json)
 
 ```json
 "contact": {
@@ -53,7 +115,7 @@ The website gets its information from a file called `churchInformation.json`. Th
 - Update phone numbers, email, or address as needed
 - Make sure the address is exactly as you want it to appear on Google Maps
 
-### Service Times
+### Service Times (churchInformation.json)
 
 ```json
 "services": {
@@ -76,7 +138,7 @@ The website gets its information from a file called `churchInformation.json`. Th
 - Modify service names or descriptions
 - Add new services or remove ones you no longer have
 
-### Office Hours
+### Office Hours (churchInformation.json)
 
 ```json
 "hours": {
@@ -96,7 +158,7 @@ The website gets its information from a file called `churchInformation.json`. Th
 - Use "Closed" for days when the office is closed
 - Use format like "9:00 AM - 5:00 PM" for open days
 
-### Social Media Links
+### Social Media Links (churchInformation.json)
 
 ```json
 "socialMedia": {
@@ -112,7 +174,7 @@ The website gets its information from a file called `churchInformation.json`. Th
 - Remove platforms you don't use by deleting the entire line
 - Add new platforms by copying the format
 
-### Leadership Information
+### Leadership Information (churchInformation.json)
 
 ```json
 "leadership": [
@@ -135,7 +197,7 @@ The website gets its information from a file called `churchInformation.json`. Th
 - Add new staff members by copying the format
 - Remove staff members by deleting their entire section
 
-### Frequently Asked Questions
+### Frequently Asked Questions (churchInformation.json)
 
 ```json
 "faq": [
@@ -156,7 +218,7 @@ The website gets its information from a file called `churchInformation.json`. Th
 - Add new questions by copying the format
 - Remove questions by deleting their entire section
 
-### Testimonials
+### Testimonials (churchInformation.json)
 
 ```json
 "testimonials": [
@@ -185,16 +247,20 @@ The website gets its information from a file called `churchInformation.json`. Th
    - Go to your repository: `https://github.com/Oatville-Community-Church/oatvillechurchweb`
    - Click on the `src` folder
    - Click on the `data` folder
-   - Click on `churchInformation.json`
+   - Click on the file you want to edit:
+     - `churchInformation.json` - General church info
+     - `planvisit.json` - Plan Your Visit page
+     - `ministries.json` - Ministries page
 
 2. **Edit the File**
    - Click the pencil icon (✏️) in the top right of the file view
    - Make your changes carefully
+   - **CRITICAL**: Keep all field names exactly the same - only change values inside quotes
    - Make sure to keep all quotation marks and commas
 
 3. **Save Your Changes**
    - Scroll down to "Commit changes"
-   - Add a brief description like "Updated service times"
+   - Add a brief description like "Updated service times" or "Updated ministries"
    - Click "Commit changes"
 
 ### Using GitHub Mobile App
@@ -206,22 +272,42 @@ The website gets its information from a file called `churchInformation.json`. Th
 
 2. **Find the File**
    - Tap "Browse files"
-   - Tap `src` → `data` → `churchInformation.json`
+   - Tap `src` → `data` → choose your file:
+     - `churchInformation.json` - General church info
+     - `planvisit.json` - Plan Your Visit page
+     - `ministries.json` - Ministries page
 
 3. **Edit and Save**
    - Tap the pencil icon to edit
-   - Make your changes
+   - Make your changes (keep structure the same!)
    - Tap "Commit changes" at the top right
    - Add a description and commit
 
 ## Important Formatting Rules
 
-### Keep the Structure
+### Keep the Structure - CRITICAL RULE
+
+**⚠️ NEVER change field names - only change the content inside quotes!**
+
+✅ **CORRECT** - Only change the value:
+
+```json
+"title": "NEW TITLE HERE"
+```
+
+❌ **WRONG** - Don't change field names:
+
+```json
+"newFieldName": "NEW TITLE HERE"
+```
+
+### Maintain JSON Format
 
 - **Always keep the commas** between items
 - **Always keep the quotation marks** around text
 - **Don't delete the curly braces** `{` `}`
 - **Don't delete the square brackets** `[` `]`
+- **Don't change field names** like `"hero"`, `"ministries"`, `"serviceTimes"`
 
 ### Example of Correct Format
 
@@ -240,6 +326,8 @@ The website gets its information from a file called `churchInformation.json`. Th
 - ❌ Missing comma: `"name": "John" "role": "Pastor"`
 - ✅ Correct: `"name": "John", "role": "Pastor"`
 - ❌ Missing quotes: `name: John Doe`
+- ✅ Correct: `"name": "John Doe"`
+- ❌ Changing field names: `"newName": "John Doe"`
 - ✅ Correct: `"name": "John Doe"`
 
 ## What Happens After You Save
@@ -262,7 +350,7 @@ If you ever change your YouTube channel, you'll need to update the YouTube chann
 
 ## Common Updates You'll Make
 
-### Updating Service Times
+### Updating Service Times (churchInformation.json)
 
 Most common update - when service times change seasonally:
 
@@ -274,7 +362,34 @@ Most common update - when service times change seasonally:
 }
 ```
 
-### Adding Special Events
+### Updating Plan Your Visit Info (planvisit.json)
+
+For seasonal changes or updated visitor information:
+
+```json
+"serviceTimes": {
+  "sunday": {
+    "time": "NEW TIME HERE",
+    "description": "NEW DESCRIPTION HERE"
+  }
+}
+```
+
+### Updating Ministry Information (ministries.json)
+
+For changes to ministry schedules or descriptions:
+
+```json
+"ministries": [
+  {
+    "name": "KEEP THE SAME",
+    "schedule": "NEW SCHEDULE HERE",
+    "description": "NEW DESCRIPTION HERE"
+  }
+]
+```
+
+### Adding Special Events (churchInformation.json)
 
 For holiday services or special events:
 
@@ -288,7 +403,7 @@ For holiday services or special events:
 }
 ```
 
-### Updating Contact Info
+### Updating Contact Info (churchInformation.json)
 
 When phone numbers or email changes:
 
@@ -343,16 +458,21 @@ When phone numbers or email changes:
 
 ## Quick Reference
 
-| What You Want to Update | Where to Find It | Example |
-|------------------------|------------------|---------|
-| Service times | `services` → specific service → `time` | `"time": "10:30 AM"` |
-| Phone number | `contact` → `phone` | `"phone": "(316) 555-0123"` |
-| Church address | `location` → `address`, `city`, etc. | `"address": "123 Main St"` |
-| Office hours | `hours` → specific day | `"monday": "9 AM - 5 PM"` |
-| Pastor information | `leadership` → find pastor entry | `"name": "Pastor John"` |
-| Add new FAQ | `faq` → copy existing format | `{"q": "Question?", "a": "Answer"}` |
-| Social media links | `socialMedia` → platform name | `"facebook": "https://..."` |
+| What You Want to Update | File to Edit | Where to Find It | Example |
+|------------------------|---------------|------------------|---------|
+| Service times | `churchInformation.json` | `services` → specific service → `time` | `"time": "10:30 AM"` |
+| Phone number | `churchInformation.json` | `contact` → `phone` | `"phone": "(316) 555-0123"` |
+| Church address | `churchInformation.json` | `location` → `address`, `city`, etc. | `"address": "123 Main St"` |
+| Office hours | `churchInformation.json` | `hours` → specific day | `"monday": "9 AM - 5 PM"` |
+| Pastor information | `churchInformation.json` | `leadership` → find pastor entry | `"name": "Pastor John"` |
+| Add new FAQ | `churchInformation.json` | `faq` → copy existing format | `{"q": "Question?", "a": "Answer"}` |
+| Social media links | `churchInformation.json` | `socialMedia` → platform name | `"facebook": "https://..."` |
+| Plan Visit page content | `planvisit.json` | Various sections | `"title": "New Title"` |
+| Ministry descriptions | `ministries.json` | `ministries` → find ministry | `"description": "New desc"` |
+| Volunteer opportunities | `ministries.json` | `volunteerOpportunities` | `"title": "New opportunity"` |
 
 ---
 
-**Remember:** The website automatically updates YouTube videos weekly, so you only need to focus on church information, service times, and announcements. Make small changes at first until you're comfortable with the process!
+**Remember:** The website automatically updates YouTube videos weekly, so you only need to focus on church information, service times, ministries, and announcements.
+
+**CRITICAL REMINDER**: Always keep the exact same structure (field names like `"hero"`, `"ministries"`, `"serviceTimes"`) - only change the content inside the quotes! Make small changes at first until you're comfortable with the process!

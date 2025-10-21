@@ -3,29 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plan Your Visit | {{seo.title}}</title>
+    <title>{{planvisit.seo.title}}</title>
     <link rel="canonical" href="{{site.url}}/plan-visit.html" />
-    <meta
-      name="description"
-      content="Plan your first visit to Oatville Community Church – what to expect, service times, kids, parking, and more."
-    />
+    <meta name="description" content="{{planvisit.seo.description}}" />
+    <meta name="keywords" content="{{planvisit.seo.keywords}}" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Plan Your Visit | {{seo.title}}" />
-    <meta
-      property="og:description"
-      content="Plan your first visit – service times, kids check‑in, welcome process, and what to expect."
-    />
+    <meta property="og:title" content="{{planvisit.seo.title}}" />
+    <meta property="og:description" content="{{planvisit.seo.description}}" />
     <meta property="og:image" content="{{site.socialImage}}" />
     <meta property="og:image:alt" content="{{seo.title}} social banner" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="{{site.url}}/plan-visit.html" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Plan Your Visit | {{seo.title}}" />
-    <meta
-      name="twitter:description"
-      content="Plan your first visit to our welcoming church family."
-    />
+    <meta name="twitter:title" content="{{planvisit.seo.title}}" />
+    <meta name="twitter:description" content="{{planvisit.seo.description}}" />
     <meta name="twitter:image" content="{{site.socialImage}}" />
+
+    <!-- Structured Data - Breadcrumbs -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -44,6 +43,93 @@
             "item": "{{site.url}}/plan-visit.html"
           }
         ]
+      }
+    </script>
+
+    <!-- Structured Data - FAQ Page -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need to dress up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wear what's comfortable – jeans, casual, or traditional. All are welcome."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will I be singled out?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No – you're our guest. We won't ask you to stand or introduce yourself publicly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the building accessible?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Entrances and seating are accessible; let us know if you need assistance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What about parking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Free parking is available on-site. We recommend arriving 10-15 minutes early to find a convenient spot."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I bring my children?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely! We have nursery and children's ministry during services, or children are welcome to stay with parents."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Structured Data - Event (Next Sunday Service) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Sunday Worship Service",
+        "description": "Join us for traditional and contemporary worship with biblical teaching and fellowship. Plan your first visit - come as you are!",
+        "startDate": "{{events.nextSunday.start}}",
+        "endDate": "{{events.nextSunday.end}}",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "{{name}}",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{location.address}}",
+            "addressLocality": "{{location.city}}",
+            "addressRegion": "{{location.state}}",
+            "postalCode": "{{location.zipCode}}",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "{{name}}",
+          "url": "{{site.url}}"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
       }
     </script>
   </head>
@@ -195,11 +281,10 @@
       <section class="py-24 bg-gradient-dark text-white">
         <div class="max-w-4xl mx-auto px-4 text-center">
           <h1 class="text-4xl md:text-5xl font-bold mb-6 brand-gradient-text">
-            Plan Your First Visit
+            {{planvisit.hero.title}}
           </h1>
           <p class="text-lg text-gray-200 max-w-2xl mx-auto">
-            We're honored you're considering visiting {{name}}. Here's
-            everything you need to feel comfortable and confident.
+            {{planvisit.hero.subtitle}}
           </p>
         </div>
       </section>
@@ -209,23 +294,20 @@
           <div class="grid md:grid-cols-2 gap-10 items-start">
             <div>
               <h2 class="text-3xl font-bold mb-4 brand-gradient-text">
-                What to Expect
+                {{planvisit.whatToExpect.title}}
               </h2>
               <p class="text-gray-600 mb-4">
-                Services blend traditional hymns, organ, and some contemporary
-                elements in a reverent but welcoming atmosphere. Come as you are
-                – there's no dress code. You'll be greeted warmly, never
-                spotlighted. Explore our
+                {{planvisit.whatToExpect.description}} Explore our
                 <a
-                  href="ministries.html"
+                  href="{{planvisit.whatToExpect.links.ministries.url}}"
                   class="text-blue-600 underline hover:text-blue-800"
-                  >ministries</a
+                  >{{planvisit.whatToExpect.links.ministries.text}}</a
                 >
-                or review
+                or
                 <a
-                  href="index.html#services"
+                  href="{{planvisit.whatToExpect.links.services.url}}"
                   class="text-blue-600 underline hover:text-blue-800"
-                  >service times</a
+                  >{{planvisit.whatToExpect.links.services.text}}</a
                 >.
               </p>
               <ul class="list-disc pl-6 space-y-2 text-gray-600 text-sm">
@@ -241,7 +323,7 @@
             </div>
             <div class="card p-6">
               <h3 class="text-xl font-semibold mb-3 text-gray-800">
-                Service Times
+                {{planvisit.serviceTimes.title}}
               </h3>
               <ul class="space-y-2 text-gray-600 text-sm">
                 <li><strong>Christian Education:</strong> 10:00 AM</li>
@@ -250,7 +332,7 @@
                 <li><strong>YaWeh Study:</strong> 6:45 PM Wednesdays</li>
               </ul>
               <p class="text-xs text-gray-500 mt-4">
-                Times shown in Central Time.
+                {{planvisit.serviceTimes.timezone}}
               </p>
             </div>
           </div>
@@ -258,13 +340,10 @@
           <div class="grid md:grid-cols-2 gap-10 items-start">
             <div class="order-2 md:order-1">
               <h3 class="text-2xl font-bold mb-4 brand-gradient-text">
-                Children & Families
+                {{planvisit.childrenFamilies.title}}
               </h3>
               <p class="text-gray-600 mb-4">
-                We love families. Nursery and children's ministry options are
-                available during worship. You're welcome to keep your kids with
-                you if you prefer; we support whatever helps your family worship
-                best.
+                {{planvisit.childrenFamilies.description}}
               </p>
               <ul class="list-disc pl-6 space-y-2 text-gray-600 text-sm">
                 <li>Safe, caring volunteers (screened)</li>
@@ -277,12 +356,12 @@
               class="order-1 md:order-2 bg-gray-50 rounded-lg p-6 shadow-inner"
             >
               <h4 class="font-semibold text-gray-800 mb-3">
-                Before You Arrive
+                {{planvisit.beforeYouArrive.title}}
               </h4>
               <ol class="list-decimal pl-5 space-y-2 text-gray-600 text-sm">
                 <li>Pick a service time</li>
                 <li>Plan to arrive 10–15 minutes early</li>
-                <li>Stop by to say hello – we’d love to meet you</li>
+                <li>Stop by to say hello – we'd love to meet you</li>
                 <li>Grab a seat anywhere comfortable</li>
                 <li>Complete a connect card if you'd like follow‑up</li>
               </ol>
@@ -292,7 +371,7 @@
           <div class="grid md:grid-cols-2 gap-10 items-start">
             <div>
               <h3 class="text-2xl font-bold mb-4 brand-gradient-text">
-                Common Questions
+                {{planvisit.commonQuestions.title}}
               </h3>
               <div class="space-y-4">
                 <details class="bg-white border rounded-lg p-4">
@@ -322,15 +401,32 @@
                     you need assistance.
                   </p>
                 </details>
+                <details class="bg-white border rounded-lg p-4">
+                  <summary class="font-semibold cursor-pointer">
+                    What about parking?
+                  </summary>
+                  <p class="mt-2 text-gray-600 text-sm">
+                    Free parking is available on-site. We recommend arriving
+                    10-15 minutes early to find a convenient spot.
+                  </p>
+                </details>
+                <details class="bg-white border rounded-lg p-4">
+                  <summary class="font-semibold cursor-pointer">
+                    Can I bring my children?
+                  </summary>
+                  <p class="mt-2 text-gray-600 text-sm">
+                    Absolutely! We have nursery and children's ministry during
+                    services, or children are welcome to stay with parents.
+                  </p>
+                </details>
               </div>
             </div>
             <div class="card p-6">
               <h3 class="text-xl font-semibold mb-3 text-gray-800">
-                Next Step
+                {{planvisit.nextStep.title}}
               </h3>
               <p class="text-gray-600 mb-4">
-                Ready to visit? We'd love to greet you personally – or just come
-                and enjoy.
+                {{planvisit.nextStep.description}}
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
                 <a href="tel:{{contact.phone}}" class="btn btn-primary"
@@ -341,6 +437,36 @@
                 >
               </div>
             </div>
+          </div>
+
+          <!-- Accessibility Information -->
+          <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+            <h3 class="text-xl font-semibold mb-3 text-blue-900">
+              Accessibility & Accommodations
+            </h3>
+            <p class="text-blue-800 mb-3">
+              We welcome everyone and strive to ensure our facility is
+              accessible to all visitors.
+            </p>
+            <ul class="grid md:grid-cols-2 gap-2 text-sm text-blue-700">
+              <li class="flex items-center">
+                <span class="mr-2">♿</span> Wheelchair accessible entrances and
+                seating
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2">🚻</span> Accessible restrooms
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2">📖</span> Large print materials available
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2">🔊</span> Hearing assistance devices
+                available
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2">🐕</span> Service animal friendly
+              </li>
+            </ul>
           </div>
         </div>
       </section>

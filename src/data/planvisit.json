@@ -1,0 +1,189 @@
+{
+  "hero": {
+    "title": "Plan Your First Visit",
+    "subtitle": "We're honored you're considering visiting Oatville Community Church. Here's everything you need to feel comfortable and confident."
+  },
+  "whatToExpect": {
+    "title": "What to Expect",
+    "description": "Services blend traditional hymns, organ, and some contemporary elements in a reverent but welcoming atmosphere. Come as you are – there's no dress code. You'll be greeted warmly, never spotlighted.",
+    "highlights": [
+      "Parking available on site – arrive 10 minutes early",
+      "Friendly greeters & ushers if you need help finding a seat",
+      "Services last about 60–70 minutes",
+      "Prayer and community are central (opportunities to connect)"
+    ],
+    "links": {
+      "ministries": {
+        "text": "Explore our ministries",
+        "url": "ministries.html"
+      },
+      "services": {
+        "text": "review service times",
+        "url": "index.html#services"
+      }
+    }
+  },
+  "serviceTimes": {
+    "title": "Service Times",
+    "timezone": "Times shown in Central Time",
+    "schedule": [
+      {
+        "service": "Christian Education",
+        "time": "10:00 AM"
+      },
+      {
+        "service": "Sunday Worship",
+        "time": "11:00 AM & 5:00 PM"
+      },
+      {
+        "service": "Wednesday Prayer",
+        "time": "6:00 PM"
+      },
+      {
+        "service": "YaWeh Study",
+        "time": "6:45 PM Wednesdays"
+      }
+    ]
+  },
+  "childrenFamilies": {
+    "title": "Children & Families",
+    "description": "We love families. Nursery and children's ministry options are available during worship. You're welcome to keep your kids with you if you prefer; we support whatever helps your family worship best.",
+    "features": [
+      "Safe, caring volunteers (screened)",
+      "Simple check-in process",
+      "Age‑appropriate teaching",
+      "Family seating always welcome"
+    ]
+  },
+  "beforeYouArrive": {
+    "title": "Before You Arrive",
+    "steps": [
+      "Pick a service time",
+      "Plan to arrive 10–15 minutes early",
+      "Stop by to say hello – we'd love to meet you",
+      "Grab a seat anywhere comfortable",
+      "Complete a connect card if you'd like follow‑up"
+    ]
+  },
+  "commonQuestions": {
+    "title": "Common Questions",
+    "faqs": [
+      {
+        "question": "Do I need to dress up?",
+        "answer": "Wear what's comfortable – jeans, casual, or traditional. All are welcome."
+      },
+      {
+        "question": "Will I be singled out?",
+        "answer": "No – you're our guest. We won't ask you to stand or introduce yourself publicly."
+      },
+      {
+        "question": "Is the building accessible?",
+        "answer": "Yes. Entrances and seating are accessible; let us know if you need assistance."
+      },
+      {
+        "question": "What about parking?",
+        "answer": "Free parking is available on-site. We recommend arriving 10-15 minutes early to find a convenient spot."
+      },
+      {
+        "question": "Can I bring my children?",
+        "answer": "Absolutely! We have nursery and children's ministry during services, or children are welcome to stay with parents."
+      },
+      {
+        "question": "What happens during a typical service?",
+        "answer": "Services include worship music (traditional hymns and contemporary), prayer, biblical teaching, and fellowship time."
+      },
+      {
+        "question": "How can I get involved?",
+        "answer": "Start by visiting! We have various ministries and volunteer opportunities. Talk to any greeter or staff member about ways to connect."
+      },
+      {
+        "question": "Do you offer communion?",
+        "answer": "Yes, communion is offered regularly during our worship services as a time of remembrance and fellowship."
+      }
+    ]
+  },
+  "nextStep": {
+    "title": "Next Step",
+    "description": "Ready to visit? We'd love to greet you personally – or just come and enjoy.",
+    "actions": [
+      {
+        "text": "Call Us",
+        "url": "tel:{{contact.phone}}",
+        "type": "primary"
+      },
+      {
+        "text": "Get Directions",
+        "url": "index.html#contact",
+        "type": "outline"
+      }
+    ]
+  },
+  "seo": {
+    "title": "Plan Your Visit | Oatville Community Church | Wichita, KS",
+    "description": "Plan your first visit to Oatville Community Church – what to expect, service times, kids, parking, and more. Come as you are to our welcoming church family.",
+    "keywords": "plan visit, first time visitor, church service times, what to expect, children ministry, church parking, church accessibility, Wichita church, non-denominational, Sunday worship"
+  },
+  "structuredData": {
+    "breadcrumbs": [
+      {
+        "position": 1,
+        "name": "Home",
+        "item": "{{site.url}}/"
+      },
+      {
+        "position": 2,
+        "name": "Plan Visit",
+        "item": "{{site.url}}/plan-visit.html"
+      }
+    ],
+    "faqPage": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": "{{planvisit.commonQuestions.faqs}}"
+    },
+    "event": {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Sunday Worship Service",
+      "description": "Join us for traditional and contemporary worship with biblical teaching and fellowship",
+      "startDate": "{{events.nextSunday.start}}",
+      "endDate": "{{events.nextSunday.end}}",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "{{name}}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{location.address}}",
+          "addressLocality": "{{location.city}}",
+          "addressRegion": "{{location.state}}",
+          "postalCode": "{{location.zipCode}}",
+          "addressCountry": "US"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "{{name}}",
+        "url": "{{site.url}}"
+      }
+    }
+  },
+  "accessibility": {
+    "features": [
+      "Wheelchair accessible entrances and seating",
+      "Accessible restrooms",
+      "Large print materials available",
+      "Hearing assistance devices available",
+      "Service animal friendly"
+    ]
+  },
+  "directions": {
+    "address": "{{location.fullAddress}}",
+    "landmarks": [
+      "Located on South Hoover Road in Wichita",
+      "Easy access from Kellogg (US-54)",
+      "Ample parking available on-site"
+    ]
+  }
+}

@@ -3,29 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ministries | {{seo.title}}</title>
+    <title>{{ministries.seo.title}}</title>
     <link rel="canonical" href="{{site.url}}/ministries.html" />
-    <meta
-      name="description"
-      content="Wichita church ministries at Oatville Community Church – worship, kids, youth discipleship, prayer, outreach opportunities."
-    />
+    <meta name="description" content="{{ministries.seo.description}}" />
+    <meta name="keywords" content="{{ministries.seo.keywords}}" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Ministries | {{seo.title}}" />
-    <meta
-      property="og:description"
-      content="Learn about the ministries helping people grow in faith and community."
-    />
+    <meta property="og:title" content="{{ministries.seo.title}}" />
+    <meta property="og:description" content="{{ministries.seo.description}}" />
     <meta property="og:image" content="{{site.socialImage}}" />
     <meta property="og:image:alt" content="{{seo.title}} social banner" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="{{site.url}}/ministries.html" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ministries | {{seo.title}}" />
-    <meta
-      name="twitter:description"
-      content="Ministry opportunities at our church."
-    />
+    <meta name="twitter:title" content="{{ministries.seo.title}}" />
+    <meta name="twitter:description" content="{{ministries.seo.description}}" />
     <meta name="twitter:image" content="{{site.socialImage}}" />
+
+    <!-- Structured Data - Breadcrumbs -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -42,6 +41,129 @@
             "position": 2,
             "name": "Ministries",
             "item": "{{site.url}}/ministries.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Structured Data - Organization with Ministry Catalog -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "{{site.url}}/#organization",
+        "name": "{{name}}",
+        "url": "{{site.url}}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{location.address}}",
+          "addressLocality": "{{location.city}}",
+          "addressRegion": "{{location.state}}",
+          "postalCode": "{{location.zipCode}}",
+          "addressCountry": "US"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Church Ministries",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Worship & Music Ministry",
+                "description": "Traditional and contemporary worship services with congregational focus"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Children's Ministry",
+                "description": "Age-appropriate Bible teaching and safe learning environment for children"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Youth Discipleship",
+                "description": "Faith formation and biblical literacy for students and young adults"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Prayer & Study",
+                "description": "Weekly prayer gatherings and Bible study for spiritual growth"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Care & Fellowship",
+                "description": "Pastoral care, visitation, and practical assistance for community members"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Outreach & Community",
+                "description": "Local engagement and service opportunities to serve our neighbors"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- Structured Data - FAQ Page -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How can I get involved in a ministry?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start by attending our services and talking with ministry leaders. We'll help match your interests and gifts with our ministry needs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need experience to volunteer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No experience required! We provide training and support for all volunteers. What matters most is a heart to serve."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What ministries are available for children?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We offer nursery care, children's church, Sunday school, and seasonal programs like Vacation Bible School for ages 0-11."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How often do ministries meet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most ministries meet weekly, with some meeting monthly or seasonally. Each ministry has its own schedule to accommodate different commitments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can visitors participate in ministries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely! Visitors are welcome to participate in most ministry activities. Some leadership roles may require membership or completion of our volunteer process."
+            }
           }
         ]
       }
@@ -193,11 +315,10 @@
       <section class="py-24 bg-gradient-dark text-white">
         <div class="max-w-4xl mx-auto px-4 text-center">
           <h1 class="text-4xl md:text-5xl font-bold mb-6 brand-gradient-text">
-            Our Ministries
+            {{ministries.hero.title}}
           </h1>
           <p class="text-lg text-gray-200 max-w-2xl mx-auto">
-            Serving God and people through worship, teaching, fellowship, and
-            outreach. Planning a first visit?
+            {{ministries.hero.subtitle}} {{ministries.hero.callToAction.text}}
             <a
               href="plan-visit.html"
               class="underline text-blue-200 hover:text-white"
@@ -214,64 +335,271 @@
       </section>
 
       <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12">
-          <div class="space-y-10">
-            <div class="card p-6">
-              <h2 class="text-2xl font-bold mb-3 brand-gradient-text">
-                Worship & Music
-              </h2>
-              <p class="text-gray-600 text-sm">
+        <div class="max-w-6xl mx-auto px-4">
+          <!-- Primary Ministries Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Worship & Music Ministry -->
+            <div class="card p-6 hover:shadow-lg transition-shadow">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🎵</span>
+                <h2 class="text-2xl font-bold brand-gradient-text">
+                  Worship & Music
+                </h2>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">
                 Blending traditional hymns, organ accompaniment, and occasional
                 contemporary songs – Christ-centered and congregationally
                 focused.
               </p>
+              <div class="space-y-2">
+                <h4 class="font-semibold text-gray-800 text-sm">
+                  Service Times:
+                </h4>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• Sunday Morning Worship - 11:00 AM</li>
+                  <li>• Sunday Evening Worship - 5:00 PM</li>
+                </ul>
+              </div>
             </div>
-            <div class="card p-6">
-              <h2 class="text-2xl font-bold mb-3 brand-gradient-text">
-                Children's Ministry
-              </h2>
-              <p class="text-gray-600 text-sm">
+
+            <!-- Children's Ministry -->
+            <div class="card p-6 hover:shadow-lg transition-shadow">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">👶</span>
+                <h2 class="text-2xl font-bold brand-gradient-text">
+                  Children's Ministry
+                </h2>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">
                 Safe, caring environments where kids learn Scripture, prayer,
                 and foundational truths in age-appropriate ways.
               </p>
+              <div class="space-y-2">
+                <h4 class="font-semibold text-gray-800 text-sm">Age Groups:</h4>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• Nursery (0-2 years)</li>
+                  <li>• Preschool (3-5 years)</li>
+                  <li>• Elementary (6-11 years)</li>
+                </ul>
+                <p class="text-xs text-gray-500 mt-2">
+                  <strong>Leader:</strong> Jane Smith
+                </p>
+              </div>
             </div>
-            <div class="card p-6">
-              <h2 class="text-2xl font-bold mb-3 brand-gradient-text">
-                Youth & Discipleship
-              </h2>
-              <p class="text-gray-600 text-sm">
+
+            <!-- Youth & Discipleship -->
+            <div class="card p-6 hover:shadow-lg transition-shadow">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🌱</span>
+                <h2 class="text-2xl font-bold brand-gradient-text">
+                  Youth & Discipleship
+                </h2>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">
                 Helping students grow in faith, biblical literacy, and resilient
                 identity in Christ through study and mentoring.
               </p>
+              <div class="space-y-2">
+                <h4 class="font-semibold text-gray-800 text-sm">Schedule:</h4>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• Youth Group - Sundays 6:30 PM</li>
+                  <li>• Bible Study - Wednesdays 7:00 PM</li>
+                  <li>• Special Events - Monthly</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="space-y-10">
-            <div class="card p-6">
-              <h2 class="text-2xl font-bold mb-3 brand-gradient-text">
-                Prayer & Study
-              </h2>
-              <p class="text-gray-600 text-sm">
+
+            <!-- Prayer & Study -->
+            <div class="card p-6 hover:shadow-lg transition-shadow">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🙏</span>
+                <h2 class="text-2xl font-bold brand-gradient-text">
+                  Prayer & Study
+                </h2>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">
                 Weekly prayer gatherings and deep-dive Bible study (YaWeh Study)
                 to strengthen spiritual life and community intercession.
               </p>
+              <div class="space-y-2">
+                <h4 class="font-semibold text-gray-800 text-sm">
+                  Meeting Times:
+                </h4>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• Wednesday Prayer - 6:00 PM</li>
+                  <li>• YaWeh Bible Study - 6:45 PM</li>
+                </ul>
+              </div>
             </div>
-            <div class="card p-6">
-              <h2 class="text-2xl font-bold mb-3 brand-gradient-text">
-                Care & Fellowship
-              </h2>
-              <p class="text-gray-600 text-sm">
+
+            <!-- Care & Fellowship -->
+            <div class="card p-6 hover:shadow-lg transition-shadow">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">💕</span>
+                <h2 class="text-2xl font-bold brand-gradient-text">
+                  Care & Fellowship
+                </h2>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">
                 Encouragement, visitation, and practical help for those in need
                 – embodying Christ's love in action.
               </p>
+              <div class="space-y-2">
+                <h4 class="font-semibold text-gray-800 text-sm">Services:</h4>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• Hospital and home visits</li>
+                  <li>• Meal ministry</li>
+                  <li>• Transportation assistance</li>
+                  <li>• Prayer support</li>
+                </ul>
+              </div>
             </div>
-            <div class="card p-6">
-              <h2 class="text-2xl font-bold mb-3 brand-gradient-text">
-                Outreach & Community
-              </h2>
-              <p class="text-gray-600 text-sm">
+
+            <!-- Outreach & Community -->
+            <div class="card p-6 hover:shadow-lg transition-shadow">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🤝</span>
+                <h2 class="text-2xl font-bold brand-gradient-text">
+                  Outreach & Community
+                </h2>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">
                 Local engagement, seasonal events, and service opportunities to
                 share hope and serve our neighbors.
               </p>
+              <div class="space-y-2">
+                <h4 class="font-semibold text-gray-800 text-sm">Activities:</h4>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• Community service projects</li>
+                  <li>• Holiday outreach events</li>
+                  <li>• Food drives and assistance</li>
+                  <li>• Local mission partnerships</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Volunteer Opportunities Section -->
+          <div class="bg-gray-50 rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-6 text-center brand-gradient-text">
+              Volunteer Opportunities
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="bg-white rounded-lg p-4 shadow-sm">
+                <h3 class="font-semibold text-gray-800 mb-2">Worship Team</h3>
+                <p class="text-xs text-gray-600 mb-2">
+                  Musicians and vocalists to enhance our worship services
+                </p>
+                <p class="text-xs text-gray-500">
+                  <strong>Commitment:</strong> Weekly rehearsal and Sunday
+                  participation
+                </p>
+              </div>
+
+              <div class="bg-white rounded-lg p-4 shadow-sm">
+                <h3 class="font-semibold text-gray-800 mb-2">
+                  Children's Ministry
+                </h3>
+                <p class="text-xs text-gray-600 mb-2">
+                  Volunteers to teach and care for our children
+                </p>
+                <p class="text-xs text-gray-500">
+                  <strong>Commitment:</strong> Monthly rotation basis
+                </p>
+              </div>
+
+              <div class="bg-white rounded-lg p-4 shadow-sm">
+                <h3 class="font-semibold text-gray-800 mb-2">
+                  Hospitality Team
+                </h3>
+                <p class="text-xs text-gray-600 mb-2">
+                  Greeters and ushers to welcome visitors
+                </p>
+                <p class="text-xs text-gray-500">
+                  <strong>Commitment:</strong> Monthly service opportunities
+                </p>
+              </div>
+
+              <div class="bg-white rounded-lg p-4 shadow-sm">
+                <h3 class="font-semibold text-gray-800 mb-2">Care Ministry</h3>
+                <p class="text-xs text-gray-600 mb-2">
+                  Provide practical help and encouragement
+                </p>
+                <p class="text-xs text-gray-500">
+                  <strong>Commitment:</strong> As available and needed
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-8 text-center brand-gradient-text">
+              Frequently Asked Questions
+            </h2>
+            <div class="max-w-4xl mx-auto space-y-4">
+              <details class="bg-white border rounded-lg p-4 shadow-sm">
+                <summary
+                  class="font-semibold cursor-pointer hover:text-blue-600"
+                >
+                  How can I get involved in a ministry?
+                </summary>
+                <p class="mt-3 text-gray-600 text-sm">
+                  Start by attending our services and talking with ministry
+                  leaders. We'll help match your interests and gifts with our
+                  ministry needs.
+                </p>
+              </details>
+
+              <details class="bg-white border rounded-lg p-4 shadow-sm">
+                <summary
+                  class="font-semibold cursor-pointer hover:text-blue-600"
+                >
+                  Do I need experience to volunteer?
+                </summary>
+                <p class="mt-3 text-gray-600 text-sm">
+                  No experience required! We provide training and support for
+                  all volunteers. What matters most is a heart to serve.
+                </p>
+              </details>
+
+              <details class="bg-white border rounded-lg p-4 shadow-sm">
+                <summary
+                  class="font-semibold cursor-pointer hover:text-blue-600"
+                >
+                  What ministries are available for children?
+                </summary>
+                <p class="mt-3 text-gray-600 text-sm">
+                  We offer nursery care, children's church, Sunday school, and
+                  seasonal programs like Vacation Bible School for ages 0-11.
+                </p>
+              </details>
+
+              <details class="bg-white border rounded-lg p-4 shadow-sm">
+                <summary
+                  class="font-semibold cursor-pointer hover:text-blue-600"
+                >
+                  How often do ministries meet?
+                </summary>
+                <p class="mt-3 text-gray-600 text-sm">
+                  Most ministries meet weekly, with some meeting monthly or
+                  seasonally. Each ministry has its own schedule to accommodate
+                  different commitments.
+                </p>
+              </details>
+
+              <details class="bg-white border rounded-lg p-4 shadow-sm">
+                <summary
+                  class="font-semibold cursor-pointer hover:text-blue-600"
+                >
+                  Can visitors participate in ministries?
+                </summary>
+                <p class="mt-3 text-gray-600 text-sm">
+                  Absolutely! Visitors are welcome to participate in most
+                  ministry activities. Some leadership roles may require
+                  membership or completion of our volunteer process.
+                </p>
+              </details>
             </div>
           </div>
         </div>
@@ -280,11 +608,10 @@
       <section class="py-16 bg-gray-50">
         <div class="max-w-5xl mx-auto px-4 text-center">
           <h2 class="text-3xl font-bold mb-6 brand-gradient-text">
-            Get Involved
+            {{ministries.getInvolved.title}}
           </h2>
           <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Whether you're new or returning, there's a next step for you. We'd
-            love to help you connect where your gifts and passion meet a need.
+            {{ministries.getInvolved.subtitle}}
           </p>
           <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a href="plan-visit.html" class="btn btn-primary">Plan a Visit</a>

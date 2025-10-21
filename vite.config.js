@@ -6,12 +6,32 @@ import path from 'path';
 
 // Load church data once
 const dataPath = path.resolve(__dirname, 'src', 'data', 'churchInformation.json');
+const planVisitDataPath = path.resolve(__dirname, 'src', 'data', 'planvisit.json');
+const ministriesDataPath = path.resolve(__dirname, 'src', 'data', 'ministries.json');
 let churchData = {};
+let planVisitData = {};
+let ministriesData = {};
 try {
   churchData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 } catch (e) {
   // eslint-disable-next-line no-console
   console.warn('Could not load churchInformation.json for placeholder replacement');
+}
+try {
+  planVisitData = JSON.parse(fs.readFileSync(planVisitDataPath, 'utf8'));
+  // Merge planvisit data into churchData for placeholder access
+  churchData.planvisit = planVisitData;
+} catch (e) {
+  // eslint-disable-next-line no-console
+  console.warn('Could not load planvisit.json for placeholder replacement');
+}
+try {
+  ministriesData = JSON.parse(fs.readFileSync(ministriesDataPath, 'utf8'));
+  // Merge ministries data into churchData for placeholder access
+  churchData.ministries = ministriesData;
+} catch (e) {
+  // eslint-disable-next-line no-console
+  console.warn('Could not load ministries.json for placeholder replacement');
 }
 
 // Helper to get nested value

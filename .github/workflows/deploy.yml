@@ -32,9 +32,9 @@ jobs:
 
       - name: Build
         env:
-          GITHUB_PAGES: "true"
+          GITHUB_PAGES: "false" # Custom domain setup
           BUNDLE_BUDGET_KB: "300"
-          SITE_URL: "https://oatville-community-church.github.io/oatvillechurchweb"
+          SITE_URL: "https://oatville-community-church.org" # Actual domain name
         run: npm run build
 
       - name: Upload artifact

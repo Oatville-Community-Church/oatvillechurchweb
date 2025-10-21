@@ -165,14 +165,18 @@ function staticCopyPlugin() {
 
 export default defineConfig(({ mode }) => {
   const repoName = 'oatvillechurchweb'; // for GitHub Pages base
+  // Custom domain support: Check if SITE_URL env var contains a custom domain
+  const siteUrl = process.env.SITE_URL || 'https://oatville-community-church.github.io/oatvillechurchweb';
+  const isCustomDomain = siteUrl && !siteUrl.includes('github.io');
   // Auto-detect GitHub Pages either via explicit flag or presence of GITHUB_REPOSITORY env (Actions) ending with repoName
-  const ghPages = process.env.GITHUB_PAGES === 'true' || (process.env.GITHUB_REPOSITORY && process.env.GITHUB_REPOSITORY.endsWith(`/${repoName}`));
+  const ghPages = (process.env.GITHUB_PAGES === 'true' || (process.env.GITHUB_REPOSITORY && process.env.GITHUB_REPOSITORY.endsWith(`/${repoName}`))) && !isCustomDomain;
+  
   return {
     // Project source root now lives in /src (all HTML pages relocated there)
     root: 'src',
     // publicDir removed – all assets now sourced from /src and copied via plugins
     publicDir: false,
-  base: ghPages ? `/${repoName}/` : '/',
+    base: ghPages ? `/${repoName}/` : '/',
     build: {
   // outDir previously 'dist' relative to root:'src' which produced output in src/dist.
   // For GitHub Pages workflow we need a root-level /dist folder.

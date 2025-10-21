@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node Version](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen)](https://nodejs.org/)
 
-**Live Website:** [oatvillecommunitychurch.org](https://www.oatvillecommunitychurch.org) | [GitHub Pages](https://oatville-community-church.github.io/oatvillechurchweb/)
+**Live Website:** [oatville-community-church.org](https://www.oatville-community-church.org) | [GitHub Pages](https://oatville-community-church.github.io/oatvillechurchweb/)
 
 ## 📖 About Our Church
 
@@ -243,7 +243,7 @@ This project follows our [Code of Conduct](.github/CODE_OF_CONDUCT.md) based on 
 
 ### 🌐 Production Deployment
 
-- **Primary:** [oatvillecommunitychurch.org](https://www.oatvillecommunitychurch.org)
+- **Primary:** [oatville-community-church.org](https://www.oatville-community-church.org)
 - **GitHub Pages:** [oatville-community-church.github.io/oatvillechurchweb](https://oatville-community-church.github.io/oatvillechurchweb/)
 
 ### ⚙️ CI/CD Pipeline
@@ -295,7 +295,7 @@ This project is licensed under the [MIT License](LICENSE) - see the LICENSE file
 
 *Making disciples, serving our community, and glorifying God through modern technology.*
 
-[🌐 Visit Our Website](https://www.oatvillecommunitychurch.org) • [📺 Watch Live](https://www.youtube.com/@OatvilleCommunityChurch) • [📧 Contact Us](mailto:oatvillecommunitychurch@gmail.com)
+[🌐 Visit Our Website](https://www.oatville-community-church.org) • [📺 Watch Live](https://www.youtube.com/@OatvilleCommunityChurch) • [📧 Contact Us](mailto:oatvillecommunitychurch@gmail.com)
 
 ---
 Historical refactors & extended rationale moved to `Documentation/ARCHITECTURE.md`.

@@ -15,8 +15,28 @@ Hard rules:
 - If you find any existing files in `public/`, migrate them into an appropriate `src/` subfolder and remove the legacy copy.
 - New static assets: place in `src/images/` (photos/graphics) or `src/assets/` (favicons, manifest icons, logos, fonts, misc static).
 - Build output must only be written to `dist/` by the Vite build—never hand‑edit `dist/`.
-- All AI/agent‑generated documentation (design notes, READMEs, architecture briefs, change logs, ADRs, etc.) MUST be placed inside the root `Documentation/` directory. Do **not** scatter new markdown/docs at project root or under `src/`. If a doc logically belongs with source (e.g., code comments, inline README snippet), keep it minimal and still add/expand the canonical version under `Documentation/`.
-- When updating or regenerating docs, prefer editing existing files in `Documentation/` instead of creating near‑duplicate variants; consolidate overlapping content and cross‑reference sections rather than copying.
+
+### Documentation Organization Rules
+
+**Pastor Documentation (Production):**
+
+- Final documentation for the pastor MUST go in `Documentation/` (root level)
+- Only include completed, polished guides that the pastor needs
+- Allowed files: setup guides, content management guides, troubleshooting
+
+**Working Documentation (Development):**
+
+- ALL working documents, session notes, planning docs, and WIP materials MUST go in `copilot/session-{YYYY-MM-DD}/`
+- Create a new session folder for each day's work: `copilot/session-2025-10-21/`
+- Include: planning notes, progress tracking, technical analysis, architectural decisions, debugging notes
+- These folders are for development process only - NOT for pastor use
+
+**Prohibited:**
+
+- Do NOT scatter markdown/docs at project root or under `src/`
+- Do NOT create duplicate documentation in multiple locations
+- Do NOT put working documents in the main `Documentation/` folder
+- Do NOT put final pastor guides in session folders
 
 Automations / plugins (`staticCopyPlugin`, PWA manifest) already expect this structure; violating it will cause assets to be omitted from production builds or cached incorrectly.
 
@@ -95,11 +115,13 @@ Performance Budget: Soft budget of 300 KB raw total (see bundle size reporter). 
 Use `npm-check-updates` (ncu) for systematic package management:
 
 **Installation:**
+
 ```bash
 npm install -g npm-check-updates
 ```
 
 **Check for updates:**
+
 ```bash
 ncu                    # Show all outdated packages
 ncu --target minor     # Show only minor/patch updates
@@ -107,12 +129,14 @@ ncu --target latest    # Show all updates including major
 ```
 
 **Update workflow:**
+
 1. **Security fixes first**: `ncu --target patch -u && npm install`
 2. **Minor updates**: `ncu --target minor -u && npm install && npm test`
 3. **Major updates**: Review breaking changes, test incrementally
 4. **Exclude risky packages**: `ncu --reject tailwindcss` (avoid major rewrites)
 
 **Testing after updates:**
+
 ```bash
 npm run build         # Verify build works
 npm run dev          # Test dev server
@@ -212,8 +236,8 @@ Embed (minified preferred) inside `<script type="application/ld+json">`:
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Oatville Community Church",
-  "url": "https://www.oatvillecommunitychurch.org/",
-  "logo": "https://www.oatvillecommunitychurch.org/favicon.svg",
+  "url": "https://www.oatville-community-church.org/",
+  "logo": "https://www.oatville-community-church.org/favicon.svg",
   "sameAs": [
     "https://www.facebook.com/oatvillecc/",
     "https://www.youtube.com/channel/CHANNEL_ID",

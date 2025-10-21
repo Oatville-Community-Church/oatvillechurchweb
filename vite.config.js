@@ -20,11 +20,14 @@ function getValue(obj, keyPath) {
 }
 
 // Plugin to replace {{placeholders}} in HTML files (index + multi-page support later)
-function htmlPlaceholderPlugin() {
+function htmlPlaceholderPlugin(isLocal) {
   return {
     name: 'html-church-data-placeholders',
     transformIndexHtml(html, ctx) {
-      const siteUrl = (process.env.SITE_URL || churchData?.site?.url || 'https://oatville-community-church.github.io/oatvillechurchweb').replace(/\/$/, '');
+      // Use localhost for local development, environment-specific URL for deployment
+      const siteUrl = isLocal 
+        ? 'http://localhost:4173'
+        : (process.env.SITE_URL || churchData?.site?.url || 'https://oatville-community-church.github.io/oatvillechurchweb').replace(/\/$/, '');
       
       let transformed = html.replace(/\{\{([^}]+)\}\}/g, (m, p) => {
         // Special case for site.url to use environment-aware URL
@@ -168,13 +171,17 @@ function staticCopyPlugin() {
   };
 }
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, command }) => {
   const repoName = 'oatvillechurchweb'; // for GitHub Pages base
   // Custom domain support: Check if SITE_URL env var contains a custom domain
   const siteUrl = process.env.SITE_URL || 'https://oatville-community-church.github.io/oatvillechurchweb';
   const isCustomDomain = siteUrl && !siteUrl.includes('github.io');
-  // Auto-detect GitHub Pages either via explicit flag or presence of GITHUB_REPOSITORY env (Actions) ending with repoName
-  const ghPages = (process.env.GITHUB_PAGES === 'true' || (process.env.GITHUB_REPOSITORY && process.env.GITHUB_REPOSITORY.endsWith(`/${repoName}`))) && !isCustomDomain;
+  
+  // Determine if we're running locally (dev server or preview) vs GitHub deployment
+  const isLocal = command === 'serve' || process.env.NODE_ENV !== 'production' || !process.env.GITHUB_PAGES;
+  
+  // Use GitHub Pages base path only for actual GitHub deployment, not local development
+  const ghPages = !isLocal && (process.env.GITHUB_PAGES === 'true' || (process.env.GITHUB_REPOSITORY && process.env.GITHUB_REPOSITORY.endsWith(`/${repoName}`))) && !isCustomDomain;
   
   return {
     // Project source root now lives in /src (all HTML pages relocated there)
@@ -206,7 +213,7 @@ export default defineConfig(({ mode }) => {
       devSourcemap: true
     },
     plugins: [
-      htmlPlaceholderPlugin(),
+      htmlPlaceholderPlugin(isLocal),
       buildInfoPlugin(),
       bundleSizeReporter(),
       sitemapAndRobotsPlugin(),

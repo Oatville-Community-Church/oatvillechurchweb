@@ -1,0 +1,91 @@
+
+> oatville-community-church@1.0.0 prebuild
+> npm run images:optimize && node scripts/fetch-latest-video.js
+
+
+> oatville-community-church@1.0.0 images:optimize
+> node scripts/optimize-images.js
+
+[optimize-images] Processing 3 image(s)...
+Γ£ô Up-to-date church-exterior.webp
+Γ£ô Up-to-date church-exterior.avif
+Γ£ô Up-to-date church-exterior-1600.webp
+Γ£ô Up-to-date church-exterior-1600.avif
+Γ£ô Up-to-date church-exterior-1600.jpg
+Γ£ô Up-to-date church-interior.webp
+Γ£ô Up-to-date church-interior.avif
+Γ£ô Up-to-date church-interior-1600.webp
+Γ£ô Up-to-date church-interior-1600.avif
+Γ£ô Up-to-date church-interior-1600.jpg
+Γ£ô Up-to-date OCC_banner.webp
+Γ£ô Up-to-date OCC_banner.avif
+Γ£ô Up-to-date OCC_banner-1600.webp
+Γ£ô Up-to-date OCC_banner-1600.avif
+Γ£ô Up-to-date OCC_banner-1600.jpg
+[optimize-images] Done.
+[fetch-latest-video] Updated latestVideo metadata for rjKgDUmgPy4
+
+> oatville-community-church@1.0.0 build
+> vite build
+
+[36mvite v7.1.11 [32mbuilding for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 12 modules transformed.
+rendering chunks...
+
+≡ƒôª Total bundle size (raw, no gzip): 818.35 KB
+ΓÜá Bundle size 818.35 KB exceeds budget of 300 KB
+computing gzip size...
+[2m../dist/[22m[32mrobots.txt                            [39m[1m[2m 0.11 kB[22m[1m[22m[2m Γöé gzip:  0.11 kB[22m
+[2m../dist/[22m[32msitemap.xml                           [39m[1m[2m 0.11 kB[22m[1m[22m[2m Γöé gzip:  0.12 kB[22m
+[2m../dist/[22m[36massets/offline-legacy-CnvmjJHj.js     [39m[1m[2m 0.08 kB[22m[1m[22m[2m Γöé gzip:  0.09 kB[22m
+[2m../dist/[22m[36massets/main-legacy-D8HCFoL5.js        [39m[1m[2m 0.12 kB[22m[1m[22m[2m Γöé gzip:  0.13 kB[22m
+[2m../dist/[22m[36massets/plan-legacy-D8HCFoL5.js        [39m[1m[2m 0.12 kB[22m[1m[22m[2m Γöé gzip:  0.13 kB[22m
+[2m../dist/[22m[36massets/ministries-legacy-D8HCFoL5.js  [39m[1m[2m 0.12 kB[22m[1m[22m[2m Γöé gzip:  0.13 kB[22m
+[2m../dist/[22m[36massets/messages-legacy-D8HCFoL5.js    [39m[1m[2m 0.12 kB[22m[1m[22m[2m Γöé gzip:  0.13 kB[22m
+[2m../dist/[22m[36massets/notfound-legacy-D8HCFoL5.js    [39m[1m[2m 0.12 kB[22m[1m[22m[2m Γöé gzip:  0.13 kB[22m
+[2m../dist/[22m[36massets/polyfills-legacy-CAsoQCvB.js   [39m[1m[2m30.21 kB[22m[1m[22m[2m Γöé gzip: 11.52 kB[22m
+[2m../dist/[22m[36massets/main-legacy-BBdYfopK.js        [39m[1m[2m46.04 kB[22m[1m[22m[2m Γöé gzip: 10.59 kB[22m
+
+≡ƒôª Total bundle size (raw, no gzip): 819.33 KB
+ΓÜá Bundle size 819.33 KB exceeds budget of 300 KB
+[2m../dist/[22m[32mfavicon.ico                               [39m[1m[2m  0.00 kB[22m[1m[22m
+[2m../dist/[22m[32mrobots.txt                                [39m[1m[2m  0.11 kB[22m[1m[22m[2m Γöé gzip:  0.11 kB[22m
+[2m../dist/[22m[32mbuild-info.json                           [39m[1m[2m  0.13 kB[22m[1m[22m[2m Γöé gzip:  0.12 kB[22m
+[2m../dist/[22m[32mregisterSW.js                             [39m[1m[2m  0.17 kB[22m[1m[22m
+[2m../dist/[22m[32mfavicon.svg                               [39m[1m[2m  0.29 kB[22m[1m[22m[2m Γöé gzip:  0.22 kB[22m
+[2m../dist/[22m[32msitemap.xml                               [39m[1m[2m  0.60 kB[22m[1m[22m[2m Γöé gzip:  0.21 kB[22m
+[2m../dist/[22m[32mmanifest.webmanifest                      [39m[1m[2m  1.04 kB[22m[1m[22m
+[2m../dist/[22m[32m.vite/manifest.json                       [39m[1m[2m  4.44 kB[22m[1m[22m[2m Γöé gzip:  0.67 kB[22m
+[2m../dist/[22m[32micon-192.png                              [39m[1m[2m  4.45 kB[22m[1m[22m
+[2m../dist/[22m[32moffline.html                              [39m[1m[2m  5.31 kB[22m[1m[22m[2m Γöé gzip:  1.92 kB[22m
+[2m../dist/[22m[32m404.html                                  [39m[1m[2m  8.99 kB[22m[1m[22m[2m Γöé gzip:  2.88 kB[22m
+[2m../dist/[22m[32micon-512.png                              [39m[1m[2m 14.32 kB[22m[1m[22m
+[2m../dist/[22m[32mministries.html                           [39m[1m[2m 14.40 kB[22m[1m[22m[2m Γöé gzip:  3.46 kB[22m
+[2m../dist/[22m[32myou-tube.html                             [39m[1m[2m 14.50 kB[22m[1m[22m[2m Γöé gzip:  3.66 kB[22m
+[2m../dist/[22m[32mplan-visit.html                           [39m[1m[2m 16.91 kB[22m[1m[22m[2m Γöé gzip:  4.15 kB[22m
+[2m../dist/[22m[32mdata/you-tube-rss.xml                     [39m[1m[2m 16.97 kB[22m[1m[22m[2m Γöé gzip:  1.61 kB[22m
+[2m../dist/[22m[32massets/church-interior-CSh3XyoV.avif      [39m[1m[2m 36.98 kB[22m[1m[22m
+[2m../dist/[22m[32mindex.html                                [39m[1m[2m 45.90 kB[22m[1m[22m[2m Γöé gzip:  9.82 kB[22m
+[2m../dist/[22m[32massets/church-interior-CxgCPVLq.webp      [39m[1m[2m 54.41 kB[22m[1m[22m
+[2m../dist/[22m[32massets/church-interior-1600-BcwYQLQG.jpg  [39m[1m[2m 64.13 kB[22m[1m[22m
+[2m../dist/[22m[32massets/church-exterior-BzKB4LMw.avif      [39m[1m[2m127.87 kB[22m[1m[22m
+[2m../dist/[22m[32massets/church-exterior-1600-BfK8YZVh.jpg  [39m[1m[2m251.63 kB[22m[1m[22m
+[2m../dist/[22m[32massets/church-exterior-Dth4-EUH.webp      [39m[1m[2m256.14 kB[22m[1m[22m
+[2m../dist/[22m[35massets/main-Dn6154kX.css                  [39m[1m[2m 38.18 kB[22m[1m[22m[2m Γöé gzip:  7.80 kB[22m
+[2m../dist/[22m[36massets/offline-C9V5b6hx.js                [39m[1m[2m  0.12 kB[22m[1m[22m[2m Γöé gzip:  0.12 kB[22m
+[2m../dist/[22m[36massets/main-DNz46KI5.js                   [39m[1m[2m  0.15 kB[22m[1m[22m[2m Γöé gzip:  0.15 kB[22m
+[2m../dist/[22m[36massets/plan-DNz46KI5.js                   [39m[1m[2m  0.15 kB[22m[1m[22m[2m Γöé gzip:  0.15 kB[22m
+[2m../dist/[22m[36massets/ministries-DNz46KI5.js             [39m[1m[2m  0.15 kB[22m[1m[22m[2m Γöé gzip:  0.15 kB[22m
+[2m../dist/[22m[36massets/messages-DNz46KI5.js               [39m[1m[2m  0.15 kB[22m[1m[22m[2m Γöé gzip:  0.15 kB[22m
+[2m../dist/[22m[36massets/notfound-DNz46KI5.js               [39m[1m[2m  0.15 kB[22m[1m[22m[2m Γöé gzip:  0.15 kB[22m
+[2m../dist/[22m[36massets/main-DXZ-NuGY.js                   [39m[1m[2m  8.68 kB[22m[1m[22m[2m Γöé gzip:  3.20 kB[22m
+[2m../dist/[22m[36massets/polyfills-BIojcvBQ.js              [39m[1m[2m 44.98 kB[22m[1m[22m[2m Γöé gzip: 17.72 kB[22m
+[32mΓ£ô built in 1.77s[39m
+
+PWA v1.1.0
+mode      generateSW
+precache  25 entries (269.32 KiB)
+files generated
+  ../dist/sw.js
+  ../dist/workbox-5ffe50d4.js

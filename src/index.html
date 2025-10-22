@@ -21,8 +21,12 @@
     <meta name="twitter:image" content="{{site.socialImage}}" />
     <!-- theme-color provides address bar tint on supported browsers -->
     <meta name="theme-color" content="#1f2937" />
+    <!-- Resource hints for performance -->
     <link rel="preconnect" href="https://www.youtube.com" />
     <link rel="preconnect" href="https://i.ytimg.com" />
+    <link rel="dns-prefetch" href="https://www.youtube.com" />
+    <link rel="dns-prefetch" href="https://i.ytimg.com" />
+    <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -180,7 +184,7 @@
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center py-3 md:py-4">
           <a
-            href="index.html#home"
+            href="#home"
             class="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-orange-400 rounded-sm"
           >
             <span
@@ -313,7 +317,7 @@
       <!-- Hero Section -->
       <section
         id="home"
-        class="relative min-h-screen flex items-center justify-center text-white py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+        class="relative min-h-screen flex items-center justify-center text-white py-20 overflow-hidden bg-linear-to-br from-gray-900 via-gray-800 to-gray-900"
       >
         <div
           class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_60%)]"
@@ -870,7 +874,7 @@
             >
               <span class="sr-only">Instagram</span>
               <span
-                class="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-500 via-pink-500 to-orange-400 text-white shadow-sm transition duration-300 group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-orange-500 group-hover:scale-110"
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-linear-to-tr from-purple-500 via-pink-500 to-orange-400 text-white shadow-sm transition duration-300 group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-orange-500 group-hover:scale-110"
               >
                 <svg
                   aria-hidden="true"
@@ -951,6 +955,9 @@
           {{location.fullAddress}} | {{contact.phone}}
         </p>
         <p class="text-gray-500">© 2025 {{name}}. All rights reserved.</p>
+        <p class="text-gray-600 text-sm mt-2">
+          Version {{build.version}} | Built on {{build.date}}
+        </p>
       </div>
     </footer>
     <script type="module" src="./main.js"></script>

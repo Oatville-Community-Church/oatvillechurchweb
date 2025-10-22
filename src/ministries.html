@@ -23,6 +23,8 @@
     <meta name="twitter:title" content="{{ministries.seo.title}}" />
     <meta name="twitter:description" content="{{ministries.seo.description}}" />
     <meta name="twitter:image" content="{{site.socialImage}}" />
+    <!-- Resource hints for performance -->
+    <link rel="dns-prefetch" href="https://www.youtube.com" />
 
     <!-- Structured Data - Breadcrumbs -->
     <script type="application/ld+json">
@@ -181,7 +183,7 @@
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center py-3 md:py-4">
           <a
-            href="index.html#home"
+            href="/#home"
             class="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-orange-400 rounded-sm"
           >
             <span
@@ -227,17 +229,17 @@
           </button>
           <div class="hidden md:flex items-center gap-6 lg:gap-8 text-sm">
             <a
-              href="index.html#home"
+              href="/#home"
               class="nav-link text-gray-300 hover:text-white"
               >Home</a
             >
             <a
-              href="index.html#about"
+              href="/#about"
               class="nav-link text-gray-300 hover:text-white"
               >About</a
             >
             <a
-              href="index.html#services"
+              href="/#services"
               class="nav-link text-gray-300 hover:text-white"
               >Services</a
             >
@@ -256,7 +258,7 @@
               >Plan Visit</a
             >
             <a
-              href="index.html#contact"
+              href="/#contact"
               class="nav-link text-gray-300 hover:text-white"
               >Contact</a
             >
@@ -265,19 +267,19 @@
         <div id="primary-menu" class="md:hidden hidden" data-menu-panel>
           <div class="pt-2 pb-6 space-y-1 border-t border-gray-800">
             <a
-              href="index.html#home"
+              href="/#home"
               class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
               data-nav-link
               >Home</a
             >
             <a
-              href="index.html#about"
+              href="/#about"
               class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
               data-nav-link
               >About</a
             >
             <a
-              href="index.html#services"
+              href="/#services"
               class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
               data-nav-link
               >Services</a
@@ -301,7 +303,7 @@
               >Plan Your Visit</a
             >
             <a
-              href="index.html#contact"
+              href="/#contact"
               class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
               data-nav-link
               >Contact</a
@@ -326,7 +328,7 @@
             >
             or learn about our
             <a
-              href="index.html#services"
+              href="/#services"
               class="underline text-blue-200 hover:text-white"
               >service times</a
             >.
@@ -615,7 +617,7 @@
           </p>
           <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a href="plan-visit.html" class="btn btn-primary">Plan a Visit</a>
-            <a href="index.html#contact" class="btn btn-outline">Contact Us</a>
+            <a href="/#contact" class="btn btn-outline">Contact Us</a>
           </div>
         </div>
       </section>
@@ -624,6 +626,9 @@
       <div class="max-w-5xl mx-auto px-4">
         <p class="text-gray-400 text-sm">
           © 2025 {{name}}. All rights reserved.
+        </p>
+        <p class="text-gray-600 text-xs mt-2">
+          Version {{build.version}} | Built on {{build.date}}
         </p>
       </div>
     </footer>

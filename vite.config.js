@@ -4,6 +4,10 @@ import { VitePWA } from 'vite-plugin-pwa';
 import fs from 'fs';
 import path from 'path';
 
+// Load package.json for version info
+const packagePath = path.resolve(__dirname, 'package.json');
+const packageData = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
+
 // Load church data once
 const dataPath = path.resolve(__dirname, 'src', 'data', 'churchInformation.json');
 const planVisitDataPath = path.resolve(__dirname, 'src', 'data', 'planvisit.json');
@@ -45,14 +49,33 @@ function htmlPlaceholderPlugin(isLocal) {
     name: 'html-church-data-placeholders',
     transformIndexHtml(html, ctx) {
       // Use localhost for local development, environment-specific URL for deployment
-      const siteUrl = isLocal 
+      const siteUrl = isLocal
         ? 'http://localhost:4173'
         : (process.env.SITE_URL || churchData?.site?.url || 'https://oatville-community-church.github.io/oatvillechurchweb').replace(/\/$/, '');
-      
+
+      // Get build metadata
+      const buildDate = new Date().toISOString();
+      const buildDateFormatted = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+      const version = packageData.version;
+
       let transformed = html.replace(/\{\{([^}]+)\}\}/g, (m, p) => {
         // Special case for site.url to use environment-aware URL
         if (p.trim() === 'site.url') {
           return siteUrl;
+        }
+        // Special cases for build metadata
+        if (p.trim() === 'build.version') {
+          return version;
+        }
+        if (p.trim() === 'build.date') {
+          return buildDateFormatted;
+        }
+        if (p.trim() === 'build.dateISO') {
+          return buildDate;
         }
         const val = getValue(churchData, p);
         return val !== undefined ? String(val) : m;
@@ -139,17 +162,27 @@ function bundleSizeReporter() {
 function sitemapAndRobotsPlugin() {
   return {
     name: 'sitemap-and-robots',
-    writeBundle(_, bundle) {
+    closeBundle() {
       const siteUrl = process.env.SITE_URL || 'https://oatville-community-church.github.io/oatvillechurchweb';
-  const htmlPages = Object.keys(bundle).filter(f => f.endsWith('.html'));
-  const urls = htmlPages.filter(f => !['offline.html','not-found.html'].includes(f)).map(f => {
-        const clean = f === 'index.html' ? '/' : `/${f.replace(/index.html$/, '')}`;
+      // Define pages manually since bundle keys are hashed
+      const pages = [
+        'index.html',
+        'plan-visit.html',
+        'ministries.html',
+        'you-tube.html'
+      ];
+      const urls = pages.map(f => {
+        const clean = f === 'index.html' ? '/' : `/${f}`;
         return `  <url><loc>${siteUrl}${clean}</loc></url>`;
       }).join('\n');
       const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
-      this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap });
+
+      // Write files directly to dist
+      const distPath = path.resolve(__dirname, 'dist');
+      fs.writeFileSync(path.join(distPath, 'sitemap.xml'), sitemap);
+
       const robots = `User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml`;
-      this.emitFile({ type: 'asset', fileName: 'robots.txt', source: robots });
+      fs.writeFileSync(path.join(distPath, 'robots.txt'), robots);
     }
   };
 }
@@ -187,6 +220,8 @@ function staticCopyPlugin() {
       if (fs.existsSync(rssFile)) {
         this.emitFile({ type: 'asset', fileName: 'data/you-tube-rss.xml', source: fs.readFileSync(rssFile) });
       }
+      // Add .nojekyll file for GitHub Pages (prevents Jekyll processing)
+      this.emitFile({ type: 'asset', fileName: '.nojekyll', source: '' });
     }
   };
 }
@@ -252,16 +287,17 @@ export default defineConfig(({ mode, command }) => {
           description: churchData?.seo?.description || 'Church website',
           categories: ['religion','community','education'],
           icons: [
-            // Data URI minimal placeholders to avoid external public assets
             {
-              src: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADAAQMAAABZQ09NAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMAAHaTzTgAAAAWSURBVEjH7cEBDQAAAMKg909tDjegAAAAAAAAAAB4G0sQAAEBSURBVAjXY2AAAyMDIwMjAwMDw3///38GIgPgP///wYGBgYGJgYGBgY+g/7/BgYGhmEGhj4GBgYGJgYGBgY+BgYGBgaGhgYGBgYGAAD//wMAz1UQ+QAAAABJRU5ErkJggg==',
+              src: ghPages ? `/${repoName}/icon-192.png` : '/icon-192.png',
               sizes: '192x192',
-              type: 'image/png'
+              type: 'image/png',
+              purpose: 'any maskable'
             },
             {
-              src: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgAQMAAAC9Z0ixAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMAAHaTzTgAAAAcSURBVEjH7cEBDQAAAMKg909tDjegAAAAAAAAAAAA4G0sQAAE3l1SxAAAAABJRU5ErkJggg==',
+              src: ghPages ? `/${repoName}/icon-512.png` : '/icon-512.png',
               sizes: '512x512',
-              type: 'image/png'
+              type: 'image/png',
+              purpose: 'any maskable'
             }
           ]
         }

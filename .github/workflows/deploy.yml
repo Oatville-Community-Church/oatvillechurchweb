@@ -34,7 +34,7 @@ jobs:
         env:
           GITHUB_PAGES: "true" # GitHub Pages setup
           BUNDLE_BUDGET_KB: "300"
-          SITE_URL: "https://oatville-community-church.github.io/oatvillechurchweb" # GitHub Pages URL
+          SITE_URL: "https://oatville-community-church.org" # Custom domain URL
         run: npm run build
 
       - name: Upload artifact

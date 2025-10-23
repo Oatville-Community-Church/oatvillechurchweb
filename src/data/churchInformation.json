@@ -87,7 +87,12 @@
     "structuredDataEnabled": true,
     "openGraphEnabled": true,
     "twitterCardEnabled": true,
-    "jsonLdSchemas": ["Organization", "Church", "LocalBusiness", "Place"]
+    "jsonLdSchemas": [
+      "Organization",
+      "Church",
+      "LocalBusiness",
+      "Place"
+    ]
   },
   "site": {
     "url": "https://oatville-community-church.org/",
@@ -124,7 +129,9 @@
         "https://i.ytimg.com",
         "https://www.youtube-nocookie.com"
       ],
-      "critical": ["https://fonts.googleapis.com"]
+      "critical": [
+        "https://fonts.googleapis.com"
+      ]
     }
   },
   "testimonials": [
@@ -189,7 +196,7 @@
     "description": "The Oatville Community Church Sunday Morning live stream.",
     "thumbnail": "https://i.ytimg.com/vi/rjKgDUmgPy4/hqdefault.jpg",
     "publishedAt": "2025-10-19T17:19:21+00:00",
-    "fetchedAt": "2025-10-23T02:56:43.208Z"
+    "fetchedAt": "2025-10-23T03:02:54.940Z"
   },
   "events": {
     "nextSunday": {
@@ -244,6 +251,6 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2025-10-23T02:56:43.208Z"
+    "rssFetchedAt": "2025-10-23T03:02:54.940Z"
   }
 }

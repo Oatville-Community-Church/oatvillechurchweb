@@ -20,17 +20,17 @@
     {
       "id": "worship-music",
       "title": "Worship & Music",
-      "description": "Blending traditional hymns, organ accompaniment, and occasional contemporary songs – Christ-centered and congregationally focused.",
+      "description": "Blending traditional hymns, and  contemporary songs – Christ-centered and congregationally focused.",
       "features": [
-        "Traditional hymns with organ accompaniment",
+        "Traditional hymns ",
         "Contemporary worship songs",
         "Congregational singing focus",
         "Christ-centered musical worship",
         "Special music during services"
       ],
       "schedule": [
-        "Sunday Morning Worship - 11:00 AM",
-        "Sunday Evening Worship - 5:00 PM"
+        "Sunday Morning Worship - 10:45 AM",
+      
       ],
       "leadership": "Music Ministry Team",
       "icon": "🎵"
@@ -47,7 +47,7 @@
         "Character development focus"
       ],
       "schedule": [
-        "Sunday School - 10:00 AM",
+        "Sunday School - 9:45 AM",
         "Children's Church during worship",
         "Vacation Bible School (Summer)"
       ],
@@ -71,8 +71,7 @@
         "Peer fellowship and support"
       ],
       "schedule": [
-        "Youth Group - Sundays 6:30 PM",
-        "Bible Study - Wednesdays 7:00 PM",
+        "Bible Study - Wednesdays 4:00 PM",
         "Special Events - Monthly"
       ],
       "leadership": "Youth Ministry Team",
@@ -93,7 +92,7 @@
         "Spiritual growth focus",
         "Fellowship and sharing"
       ],
-      "schedule": ["Wednesday Prayer - 6:00 PM", "YaWeh Bible Study - 6:45 PM"],
+      "schedule": ["Wednesday Prayer - 5:00 PM", "Bible Study - 4:0 PM"],
       "leadership": "Pastor Rick Oglesby",
       "topics": [
         "Biblical exposition",

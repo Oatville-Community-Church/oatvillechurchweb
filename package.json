@@ -1,6 +1,6 @@
 {
   "name": "oatville-community-church",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Modern static website for Oatville Community Church with world-class build process",
   "main": "index.js",
   "scripts": {

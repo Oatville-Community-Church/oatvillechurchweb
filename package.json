@@ -1,6 +1,6 @@
 {
   "name": "oatville-community-church",
-  "version": "1.0.3",
+  "version": "1.0.9",
   "description": "Modern static website for Oatville Community Church with world-class build process",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "prebuild": "node scripts/increment-version.js && npm run images:optimize && node scripts/fetch-latest-video.js",
     "build": "vite build",
     "build:github": "cross-env GITHUB_PAGES=true npm run build",
+    "build:custom": "cross-env SITE_URL=https://oatville-community-church.org npm run build",
     "preview": "vite preview",
     "images:optimize": "node scripts/optimize-images.js"
   },

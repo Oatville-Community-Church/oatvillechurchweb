@@ -78,11 +78,61 @@
   },
   "seo": {
     "title": "Oatville Community Church | Wichita, KS | Non-Denominational Church",
-    "description": "Oatville Community Church - A non-denominational community church in Wichita, KS. Small church with a big heart. Sunday worship at 10:45 AM  Christian education at 9:45 AM."
+    "description": "Oatville Community Church - A non-denominational community church in Wichita, KS. Small church with a big heart. Sunday worship at 10:45 AM, Christian education at 9:45 AM.",
+    "keywords": "Wichita church, non-denominational church, community church, Christian church Wichita, Sunday worship, Bible study, church near me, Oatville Community Church, KS church, family church",
+    "author": "Oatville Community Church",
+    "robots": "index,follow",
+    "googleSiteVerification": "",
+    "bingSiteAuth": "",
+    "structuredDataEnabled": true,
+    "openGraphEnabled": true,
+    "twitterCardEnabled": true,
+    "jsonLdSchemas": [
+      "Organization",
+      "Church",
+      "LocalBusiness",
+      "Place"
+    ]
   },
   "site": {
     "url": "https://oatville-community-church.org",
-    "socialImage": "/images/OCC_banner.webp"
+    "domain": "oatville-community-church.org",
+    "socialImage": "/images/OCC_banner.webp",
+    "socialImageAlt": "Oatville Community Church | Wichita, KS | Non-Denominational Church social banner",
+    "favicon": "/favicon.svg",
+    "themeColor": "#1f2937",
+    "locale": "en_US",
+    "type": "website",
+    "siteName": "Oatville Community Church",
+    "twitterSite": "@oatvillecc",
+    "facebookAppId": "",
+    "languageCode": "en",
+    "countryCode": "US",
+    "timezone": "America/Chicago",
+    "canonical": true,
+    "lastModified": "2025-10-22T00:00:00-05:00",
+    "publisher": "Oatville Community Church",
+    "copyright": "© 2025 Oatville Community Church. All rights reserved.",
+    "security": {
+      "httpsOnly": true,
+      "hsts": true,
+      "contentSecurityPolicy": true
+    },
+    "performance": {
+      "preconnect": [
+        "https://www.youtube.com",
+        "https://i.ytimg.com",
+        "https://fonts.googleapis.com"
+      ],
+      "dns-prefetch": [
+        "https://www.youtube.com",
+        "https://i.ytimg.com",
+        "https://www.youtube-nocookie.com"
+      ],
+      "critical": [
+        "https://fonts.googleapis.com"
+      ]
+    }
   },
   "testimonials": [
     {
@@ -146,7 +196,7 @@
     "description": "The Oatville Community Church Sunday Morning live stream.",
     "thumbnail": "https://i.ytimg.com/vi/rjKgDUmgPy4/hqdefault.jpg",
     "publishedAt": "2025-10-19T17:19:21+00:00",
-    "fetchedAt": "2025-10-22T10:58:51.602Z"
+    "fetchedAt": "2025-10-23T02:39:15.316Z"
   },
   "events": {
     "nextSunday": {
@@ -201,6 +251,6 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2025-10-22T10:58:51.602Z"
+    "rssFetchedAt": "2025-10-23T02:39:15.316Z"
   }
 }

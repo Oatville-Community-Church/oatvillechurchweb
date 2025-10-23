@@ -420,11 +420,9 @@ function structuredDataPlugin() {
     }
   };
 }
-
-export default defineConfig(({ mode, command }) => {
   const repoName = 'oatvillechurchweb'; // for GitHub Pages base
   // Custom domain support: Check if SITE_URL env var contains a custom domain
-  const siteUrl = process.env.SITE_URL || 'https://oatville-community-church.org';
+  const siteUrl = process.env.SITE_URL || 'https://oatville-community-church.github.io/oatvillechurchweb';
   const isCustomDomain = siteUrl && !siteUrl.includes('github.io');
   
   // Determine if we're running locally (dev server or preview) vs production deployment
@@ -508,4 +506,3 @@ export default defineConfig(({ mode, command }) => {
       open: false
     }
   };
-});

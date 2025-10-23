@@ -51,7 +51,7 @@ function htmlPlaceholderPlugin(isLocal) {
       // Use localhost for local development, environment-specific URL for deployment
       const siteUrl = isLocal
         ? 'http://localhost:4173'
-        : (process.env.SITE_URL || churchData?.site?.url || 'https://oatville-community-church.github.io/oatvillechurchweb').replace(/\/$/, '');
+        : (process.env.SITE_URL || churchData?.site?.url || 'https://oatville-community-church.org').replace(/\/$/, '');
 
       // Get build metadata
       const buildDate = new Date().toISOString();
@@ -220,7 +220,7 @@ function sitemapAndRobotsPlugin() {
   return {
     name: 'sitemap-and-robots',
     closeBundle() {
-      const siteUrl = process.env.SITE_URL || 'https://oatville-community-church.org';
+      const siteUrl = process.env.SITE_URL || churchData?.site?.url || 'https://oatville-community-church.org';
       const lastMod = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
       
       // Define pages with priorities and change frequencies
@@ -423,15 +423,15 @@ function structuredDataPlugin() {
 
 export default defineConfig(({ mode, command }) => {
   const repoName = 'oatvillechurchweb'; // for GitHub Pages base
-  // Custom domain support: Check if SITE_URL env var contains a custom domain
-  const siteUrl = process.env.SITE_URL || 'https://oatville-community-church.org';
-  const isCustomDomain = siteUrl && !siteUrl.includes('github.io');
+  // Custom domain support: Check if SITE_URL env var contains a custom domain OR if CNAME file exists
+  const siteUrl = process.env.SITE_URL || churchData?.site?.url || 'https://oatville-community-church.org';
+  const isCustomDomain = (siteUrl && !siteUrl.includes('github.io')) || fs.existsSync(path.resolve(__dirname, 'src', 'CNAME'));
   
   // Determine if we're running locally (dev server or preview) vs production deployment
   const isLocal = command === 'serve' || mode === 'development';
   
-  // Use GitHub Pages base path only for actual GitHub deployment, not local development
-  const ghPages = !isLocal && (process.env.GITHUB_PAGES === 'true' || (process.env.GITHUB_REPOSITORY && process.env.GITHUB_REPOSITORY.endsWith(`/${repoName}`))) && !isCustomDomain;
+  // Use GitHub Pages base path ONLY when NOT using custom domain and NOT in local development
+  const ghPages = !isLocal && !isCustomDomain && (process.env.GITHUB_PAGES === 'true' || (process.env.GITHUB_REPOSITORY && process.env.GITHUB_REPOSITORY.endsWith(`/${repoName}`)));
   
   return {
     // Project source root now lives in /src (all HTML pages relocated there)

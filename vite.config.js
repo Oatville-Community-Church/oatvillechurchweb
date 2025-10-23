@@ -220,7 +220,7 @@ function sitemapAndRobotsPlugin() {
   return {
     name: 'sitemap-and-robots',
     closeBundle() {
-      const siteUrl = process.env.SITE_URL || churchData?.site?.url || 'https://oatville-community-church.org';
+      const siteUrl = (process.env.SITE_URL || churchData?.site?.url || 'https://oatville-community-church.org').replace(/\/$/, '');
       const lastMod = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
       
       // Define pages with priorities and change frequencies

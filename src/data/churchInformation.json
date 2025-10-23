@@ -28,28 +28,28 @@
   "services": {
     "christianEducation": {
       "name": "Christian Education",
-      "time": "Sundays at 10:00 AM",
+      "time": "Sundays at 10:45 AM",
       "description": "Sunday school and Christian education for all ages"
     },
     "sundayWorship": {
       "name": "Sunday Worship",
-      "time": "11:00 AM & 5:00 PM",
-      "description": "Traditional hymns, contemporary music, and organ-led worship"
+      "time": "10:45 AM",
+      "description": "Traditional hymns, contemporary music"
     },
     "wednesdayPrayer": {
       "name": "Wednesday Prayer",
-      "time": "6:00 PM",
+      "time": "5:00 PM",
       "description": "Community prayer gathering for fellowship and spiritual support"
     },
     "bibleStudy": {
-      "name": "YaWeh Bible Study",
-      "time": "Wednesdays at 6:45 PM",
+      "name": "Bible Study",
+      "time": "Wednesdays at 4:00 PM",
       "description": "Deep dive into scripture with fellowship and discussion"
     },
     "childrensMinistry": {
       "name": "Children's Ministry",
       "time": "During Services",
-      "description": "Children's church and nursery services available"
+      "description": "Children's church"
     },
     "specialEvents": {
       "name": "Special Events",
@@ -69,7 +69,7 @@
     },
     "worship": {
       "title": "Our Worship",
-      "description": "Blending traditional hymns, contemporary music, and organ-led worship to create a meaningful worship experience for all generations."
+      "description": "Blending traditional hymns, contemporary music, to create a meaningful worship experience for all generations."
     },
     "community": {
       "title": "Our Community",
@@ -78,7 +78,7 @@
   },
   "seo": {
     "title": "Oatville Community Church | Wichita, KS | Non-Denominational Church",
-    "description": "Oatville Community Church - A non-denominational community church in Wichita, KS. Small church with a big heart. Sunday worship at 11 AM & 5 PM, Christian education at 10 AM."
+    "description": "Oatville Community Church - A non-denominational community church in Wichita, KS. Small church with a big heart. Sunday worship at 10:45 AM  Christian education at 9:45 AM."
   },
   "site": {
     "url": "https://oatville-community-church.org",
@@ -101,7 +101,7 @@
   "faq": [
     {
       "q": "What time are Sunday worship services?",
-      "a": "Sunday worship is at 11:00 AM and 5:00 PM (Central). Christian Education begins at 10:00 AM."
+      "a": "Sunday worship is at 10:45 AM  (Central). Christian Education begins at 9:45 AM."
     },
     {
       "q": "Is there something for my children?",
@@ -117,7 +117,7 @@
     },
     {
       "q": "Do you live stream services?",
-      "a": "Yes. Our Sunday 11:00 AM service streams live on YouTube and is archived for on‑demand viewing."
+      "a": "Yes. Our Sunday 10:45 AM service streams live on YouTube and is archived for on‑demand viewing."
     }
   ],
   "giving": {
@@ -135,7 +135,7 @@
       "bio": "Committed to biblical teaching and shepherding the church family."
     },
     {
-      "name": "Jane Smith",
+      "name": "Susan Oglesby",
       "role": "Children's Ministry Lead",
       "bio": "Creating a safe, Christ-centered environment for kids to grow."
     }

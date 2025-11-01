@@ -65,6 +65,131 @@ class Linter {
     }
   }
 
+  async checkJsonFiles() {
+    console.log('📄 Checking JSON files...');
+    try {
+      const jsonFiles = await this.getFilesWithExtension(this.srcDir, '.json');
+      
+      for (const file of jsonFiles) {
+        const relativePath = path.relative(this.projectRoot, file);
+        
+        try {
+          const content = await fs.readFile(file, 'utf8');
+          
+          // Check for common JSON syntax issues before parsing
+          const lines = content.split('\n');
+          for (let i = 0; i < lines.length; i++) {
+            const line = lines[i].trim();
+            const lineNum = i + 1;
+            
+            // Check for trailing commas in arrays/objects
+            if (line.match(/,\s*[\]}]/)) {
+              this.errors.push(`${relativePath}:${lineNum}: Trailing comma found - remove comma before ] or }`);
+            }
+            
+            // Check for missing commas between items
+            if (line.match(/"\s*\n\s*"/)) {
+              this.warnings.push(`${relativePath}:${lineNum}: Possible missing comma between items`);
+            }
+          }
+          
+          // Attempt to parse JSON
+          const parsed = JSON.parse(content);
+          
+          // Validate specific church data files
+          if (file.includes('churchInformation.json')) {
+            await this.validateChurchInformation(parsed, relativePath);
+          } else if (file.includes('ministries.json')) {
+            await this.validateMinistriesData(parsed, relativePath);
+          } else if (file.includes('planvisit.json')) {
+            await this.validatePlanVisitData(parsed, relativePath);
+          }
+          
+        } catch (parseError) {
+          this.errors.push(`${relativePath}: Invalid JSON - ${parseError.message}`);
+        }
+      }
+      
+      console.log(`✓ Checked ${jsonFiles.length} JSON files`);
+    } catch (error) {
+      this.errors.push(`Failed to check JSON files: ${error.message}`);
+    }
+  }
+
+  async validateChurchInformation(data, filePath) {
+    const requiredFields = ['name', 'tagline', 'location', 'contact', 'services', 'seo'];
+    const missingFields = requiredFields.filter(field => !data[field]);
+    
+    if (missingFields.length > 0) {
+      this.errors.push(`${filePath}: Missing required fields: ${missingFields.join(', ')}`);
+    }
+    
+    // Validate contact information
+    if (data.contact) {
+      if (data.contact.email && !data.contact.email.includes('@')) {
+        this.errors.push(`${filePath}: Invalid email format in contact.email`);
+      }
+      if (data.contact.phone && !/^\(\d{3}\)\s\d{3}-\d{4}$/.test(data.contact.phone)) {
+        this.warnings.push(`${filePath}: Phone format should be (XXX) XXX-XXXX`);
+      }
+    }
+    
+    // Validate service times format
+    if (data.services && Array.isArray(data.services)) {
+      data.services.forEach((service, index) => {
+        if (!service.day || !service.time) {
+          this.errors.push(`${filePath}: Service ${index + 1} missing day or time`);
+        }
+      });
+    }
+  }
+
+  async validateMinistriesData(data, filePath) {
+    const requiredFields = ['hero', 'ministries', 'seo'];
+    const missingFields = requiredFields.filter(field => !data[field]);
+    
+    if (missingFields.length > 0) {
+      this.errors.push(`${filePath}: Missing required fields: ${missingFields.join(', ')}`);
+    }
+    
+    // Validate ministries array
+    if (data.ministries && Array.isArray(data.ministries)) {
+      data.ministries.forEach((ministry, index) => {
+        const requiredMinistryFields = ['id', 'title', 'description'];
+        const missingMinistryFields = requiredMinistryFields.filter(field => !ministry[field]);
+        
+        if (missingMinistryFields.length > 0) {
+          this.errors.push(`${filePath}: Ministry ${index + 1} missing fields: ${missingMinistryFields.join(', ')}`);
+        }
+        
+        // Validate schedule format if present
+        if (ministry.schedule && Array.isArray(ministry.schedule)) {
+          ministry.schedule.forEach((schedule, schedIndex) => {
+            if (typeof schedule !== 'string' || schedule.trim() === '') {
+              this.warnings.push(`${filePath}: Ministry "${ministry.title}" schedule ${schedIndex + 1} should be a non-empty string`);
+            }
+          });
+        }
+      });
+    }
+    
+    // Validate SEO data
+    if (data.seo) {
+      if (!data.seo.title || !data.seo.description) {
+        this.errors.push(`${filePath}: SEO section missing title or description`);
+      }
+    }
+  }
+
+  async validatePlanVisitData(data, filePath) {
+    const requiredFields = ['hero', 'seo'];
+    const missingFields = requiredFields.filter(field => !data[field]);
+    
+    if (missingFields.length > 0) {
+      this.errors.push(`${filePath}: Missing required fields: ${missingFields.join(', ')}`);
+    }
+  }
+
   async checkHtml() {
     console.log('🏗️ Checking HTML files...');
     try {
@@ -209,14 +334,26 @@ class Linter {
     return files;
   }
 
-  async lint() {
-    console.log('🔍 Starting code quality checks...\n');
+  async lint(jsonOnly = false) {
+    if (jsonOnly) {
+      console.log('🔍 Starting JSON validation checks...\n');
+    } else {
+      console.log('🔍 Starting code quality checks...\n');
+    }
     
     try {
-      await this.checkPackageJson();
-      await this.checkHtml();
-      await this.checkCss();
-      await this.checkJavaScript();
+      if (jsonOnly) {
+        // Only run JSON-related checks
+        await this.checkPackageJson();
+        await this.checkJsonFiles();
+      } else {
+        // Run all checks
+        await this.checkPackageJson();
+        await this.checkJsonFiles();
+        await this.checkHtml();
+        await this.checkCss();
+        await this.checkJavaScript();
+      }
       
       console.log('\n📊 Lint Results:');
       console.log(`Errors: ${this.errors.length}`);
@@ -234,7 +371,11 @@ class Linter {
       }
       
       if (this.errors.length === 0 && this.warnings.length === 0) {
-        console.log('✨ No issues found! Code quality looks great!');
+        if (jsonOnly) {
+          console.log('✨ JSON validation passed! All files are valid.');
+        } else {
+          console.log('✨ No issues found! Code quality looks great!');
+        }
       } else if (this.errors.length === 0) {
         console.log('✅ No errors found! Only warnings that can be addressed later.');
       }
@@ -252,8 +393,9 @@ class Linter {
 }
 
 async function lint() {
+  const jsonOnly = process.argv.includes('--json-only');
   const linter = new Linter();
-  await linter.lint();
+  await linter.lint(jsonOnly);
 }
 
 if (require.main === module) {

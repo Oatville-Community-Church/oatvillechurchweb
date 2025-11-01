@@ -288,9 +288,7 @@ function staticCopyPlugin() {
   return {
     name: 'static-copy-from-src',
     generateBundle() {
-  // Images are now handled solely by Vite's HTML asset graph (hashed & deduped)
-  // to avoid duplicate copies (previously /assets/* + /images/*).
-  // Copy generic asset files (favicons, logos) from src/assets (exclude code)
+      // Copy generic asset files (favicons, logos) from src/assets (exclude code)
       const assetsDir = path.resolve(__dirname, 'src', 'assets');
       if (fs.existsSync(assetsDir)) {
         // Whitelist only essential, small, site-wide assets to avoid copying large unused files

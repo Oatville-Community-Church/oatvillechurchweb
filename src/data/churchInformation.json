@@ -196,7 +196,7 @@
     "description": "The Oatville Community Church Sunday Morning live stream.",
     "thumbnail": "https://i.ytimg.com/vi/4fSdxXH3VnM/hqdefault.jpg",
     "publishedAt": "2025-10-26T17:16:12+00:00",
-    "fetchedAt": "2025-11-01T13:01:37.388Z"
+    "fetchedAt": "2025-11-01T13:40:11.403Z"
   },
   "events": {
     "nextSunday": {
@@ -251,6 +251,6 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2025-11-01T13:01:37.388Z"
+    "rssFetchedAt": "2025-11-01T13:40:11.403Z"
   }
 }

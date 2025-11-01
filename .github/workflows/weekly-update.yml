@@ -1,80 +1,92 @@
 name: Weekly YouTube Update
 
 on:
-    schedule:
-        # Run every Sunday at 2 AM UTC (adjust for your timezone)
-        - cron: "0 2 * * 0"
-    workflow_dispatch: # Allow manual triggering
+  schedule:
+    # Run every Sunday at 2 AM UTC (adjust for your timezone)
+    - cron: "0 2 * * 0"
+  workflow_dispatch: # Allow manual triggering
 
 permissions:
-    contents: write
-    pages: write
-    id-token: write
+  contents: write
+  pages: write
+  id-token: write
 
 concurrency:
-    group: "weekly-update"
-    cancel-in-progress: true
+  group: "weekly-update"
+  cancel-in-progress: true
 
 jobs:
-    update-and-deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-              with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Setup Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  cache: "npm"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
 
-            - name: Install dependencies
-              run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-            - name: Fetch Latest YouTube Video
-              run: node scripts/fetch-latest-video.js
+      - name: Fetch latest YouTube video
+        run: node scripts/fetch-latest-video.js
 
-            - name: Check for changes
-              id: changes
-              run: |
-                  if git diff --quiet src/data/churchInformation.json; then
-                    echo "changed=false" >> $GITHUB_OUTPUT
-                    echo "No changes to YouTube data"
-                  else
-                    echo "changed=true" >> $GITHUB_OUTPUT
-                    echo "YouTube data updated"
-                  fi
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet src/data/churchInformation.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to YouTube data"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "YouTube data updated"
+          fi
 
-            - name: Commit and push changes
-              if: steps.changes.outputs.changed == 'true'
-              run: |
-                  git config --local user.email "action@github.com"
-                  git config --local user.name "GitHub Action"
-                  git add src/data/churchInformation.json src/data/you-tube-rss.xml
-                  git commit -m "Auto-update: Latest YouTube video $(date)"
-                  git push
+      - name: Commit and push changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/data/churchInformation.json src/data/you-tube-rss.xml
+          git commit -m "Auto-update: Latest YouTube video $(date)"
+          git push
 
-            - name: Build site
-              env:
-                  GITHUB_PAGES: "false" # Custom domain setup
-                  BUNDLE_BUDGET_KB: "300"
-                  SITE_URL: "https://oatville-community-church.org" # Actual domain name
-              run: npm run build
+      - name: Lint code quality
+        run: npm run lint
 
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: dist
+      - name: JSON validation
+        run: npm run lint:json
 
-    deploy:
-        needs: update-and-deploy
-        runs-on: ubuntu-latest
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        steps:
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+      - name: Increment version
+        run: node scripts/increment-version.js
+
+      - name: Optimize images
+        run: npm run images:optimize
+
+      - name: Build site
+        env:
+          GITHUB_PAGES: "true"
+          BUNDLE_BUDGET_KB: "300"
+          SITE_URL: "https://oatville-community-church.org"
+        run: vite build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: update-and-deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

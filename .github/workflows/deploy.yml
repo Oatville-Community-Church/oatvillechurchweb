@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -30,12 +30,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Lint code quality
+        run: npm run lint
+
+      - name: JSON validation
+        run: npm run lint:json
+
+      - name: Increment version
+        run: node scripts/increment-version.js
+
+      - name: Optimize images
+        run: npm run images:optimize
+
+      - name: Fetch latest YouTube video
+        run: node scripts/fetch-latest-video.js
+
+      - name: Build site
         env:
-          GITHUB_PAGES: "true" # GitHub Pages setup
+          GITHUB_PAGES: "true"
           BUNDLE_BUDGET_KB: "300"
-          SITE_URL: "https://oatville-community-church.org" # Custom domain URL
-        run: npm run build
+          SITE_URL: "https://oatville-community-church.org"
+        run: vite build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

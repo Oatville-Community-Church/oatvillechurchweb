@@ -29,19 +29,19 @@
     "schedule": [
       {
         "service": "Christian Education",
-        "time": "10:00 AM"
+        "time": "9:45 AM"
       },
       {
         "service": "Sunday Worship",
-        "time": "11:00 AM & 5:00 PM"
+        "time": "10:45 AM"
       },
       {
         "service": "Wednesday Prayer",
-        "time": "6:00 PM"
+        "time": "5:00 PM"
       },
       {
-        "service": "YaWeh Study",
-        "time": "6:45 PM Wednesdays"
+        "service": "Bible Study",
+        "time": "4:00 PM Wednesdays"
       }
     ]
   },

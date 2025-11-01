@@ -28,10 +28,7 @@
         "Christ-centered musical worship",
         "Special music during services"
       ],
-      "schedule": [
-        "Sunday Morning Worship - 10:45 AM",
-      
-      ],
+      "schedule": ["Sunday Morning Worship - 10:45 AM"],
       "leadership": "Music Ministry Team",
       "icon": "🎵"
     },

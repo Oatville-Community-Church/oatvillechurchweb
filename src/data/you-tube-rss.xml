@@ -75,7 +75,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="12"/>
+    <media:statistics views="14"/>
    </media:community>
   </media:group>
  </entry>
@@ -136,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2025-09-28T19:11:38+00:00</published>
-  <updated>2025-10-01T11:57:02+00:00</updated>
+  <updated>2025-10-29T16:44:42+00:00</updated>
   <media:group>
    <media:title>Hell…It’s worse than you think!!!</media:title>
    <media:content url="https://www.youtube.com/v/Ke_Cq6b_5Rs?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -144,7 +144,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="5"/>
+    <media:statistics views="6"/>
    </media:community>
   </media:group>
  </entry>

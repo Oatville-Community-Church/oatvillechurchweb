@@ -50,7 +50,7 @@ jobs:
           GITHUB_PAGES: "true"
           BUNDLE_BUDGET_KB: "300"
           SITE_URL: "https://oatville-community-church.org"
-        run: vite build
+        run: npx vite build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

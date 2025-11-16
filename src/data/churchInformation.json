@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "6TIexWEJsNE",
-    "title": "Oatville Community Church livestream.",
+    "id": "1hsmx16DZPU",
+    "title": "Out of Egypt part 3",
     "description": "The Oatville Community Church Sunday Morning live stream.",
-    "thumbnail": "https://i.ytimg.com/vi/6TIexWEJsNE/hqdefault.jpg",
-    "publishedAt": "2025-11-02T18:09:41+00:00",
-    "fetchedAt": "2025-11-09T03:07:02.651Z"
+    "thumbnail": "https://i.ytimg.com/vi/1hsmx16DZPU/hqdefault.jpg",
+    "publishedAt": "2025-11-10T17:30:00+00:00",
+    "fetchedAt": "2025-11-16T03:11:57.108Z"
   },
   "events": {
     "nextSunday": {
@@ -251,6 +251,6 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2025-11-09T03:07:02.651Z"
+    "rssFetchedAt": "2025-11-16T03:11:57.108Z"
   }
 }

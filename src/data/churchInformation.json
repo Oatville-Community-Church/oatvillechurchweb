@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "DwT7Rj5-UgU",
-    "title": "Oatville Community Church livestream.",
+    "id": "S5iVvyCP7xE",
+    "title": "Thanking God in all things",
     "description": "The Oatville Community Church Sunday Morning live stream.",
-    "thumbnail": "https://i.ytimg.com/vi/DwT7Rj5-UgU/hqdefault.jpg",
-    "publishedAt": "2025-11-16T18:09:13+00:00",
-    "fetchedAt": "2025-11-23T03:20:37.393Z"
+    "thumbnail": "https://i.ytimg.com/vi/S5iVvyCP7xE/hqdefault.jpg",
+    "publishedAt": "2025-11-24T22:16:24+00:00",
+    "fetchedAt": "2025-11-25T18:48:46.426Z"
   },
   "events": {
     "nextSunday": {
@@ -251,6 +251,6 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2025-11-23T03:20:37.393Z"
+    "rssFetchedAt": "2025-11-25T18:48:46.426Z"
   }
 }

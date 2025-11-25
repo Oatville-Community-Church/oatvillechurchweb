@@ -11,6 +11,52 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:S5iVvyCP7xE</id>
+  <yt:videoId>S5iVvyCP7xE</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Thanking God in all things</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=S5iVvyCP7xE"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-11-24T22:16:24+00:00</published>
+  <updated>2025-11-24T23:08:38+00:00</updated>
+  <media:group>
+   <media:title>Thanking God in all things</media:title>
+   <media:content url="https://www.youtube.com/v/S5iVvyCP7xE?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/S5iVvyCP7xE/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="2"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:Y1tOl03vTf4</id>
+  <yt:videoId>Y1tOl03vTf4</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Out of Egypt part4</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=Y1tOl03vTf4"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-11-24T21:54:48+00:00</published>
+  <updated>2025-11-24T22:58:50+00:00</updated>
+  <media:group>
+   <media:title>Out of Egypt part4</media:title>
+   <media:content url="https://www.youtube.com/v/Y1tOl03vTf4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/Y1tOl03vTf4/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="1"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:DwT7Rj5-UgU</id>
   <yt:videoId>DwT7Rj5-UgU</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -28,8 +74,8 @@
    <media:thumbnail url="https://i1.ytimg.com/vi/DwT7Rj5-UgU/hqdefault.jpg" width="480" height="360"/>
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="8"/>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="10"/>
    </media:community>
   </media:group>
  </entry>
@@ -182,7 +228,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2025-09-28T19:11:38+00:00</published>
-  <updated>2025-10-29T16:44:42+00:00</updated>
+  <updated>2025-11-24T13:43:58+00:00</updated>
   <media:group>
    <media:title>Hell…It’s worse than you think!!!</media:title>
    <media:content url="https://www.youtube.com/v/Ke_Cq6b_5Rs?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -306,52 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="15"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:XRMwCmvYyR4</id>
-  <yt:videoId>XRMwCmvYyR4</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Oatville Community Church livestream.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=XRMwCmvYyR4"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2025-08-25T03:56:23+00:00</published>
-  <updated>2025-09-25T05:15:38+00:00</updated>
-  <media:group>
-   <media:title>Oatville Community Church livestream.</media:title>
-   <media:content url="https://www.youtube.com/v/XRMwCmvYyR4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i1.ytimg.com/vi/XRMwCmvYyR4/hqdefault.jpg" width="480" height="360"/>
-   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="28"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:VwCuNx3x9IA</id>
-  <yt:videoId>VwCuNx3x9IA</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Oatville Community Church livestream.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=VwCuNx3x9IA"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2025-08-18T05:46:05+00:00</published>
-  <updated>2025-09-17T14:00:22+00:00</updated>
-  <media:group>
-   <media:title>Oatville Community Church livestream.</media:title>
-   <media:content url="https://www.youtube.com/v/VwCuNx3x9IA?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i3.ytimg.com/vi/VwCuNx3x9IA/hqdefault.jpg" width="480" height="360"/>
-   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="10"/>
    </media:community>
   </media:group>
  </entry>

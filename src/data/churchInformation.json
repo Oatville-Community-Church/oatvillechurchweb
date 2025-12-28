@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "rzKXsVQ60XQ",
-    "title": "Oatville Community Church livestream.",
+    "id": "WZk7iE6Ypoo",
+    "title": "More than a baby",
     "description": "The Oatville Community Church Sunday Morning live stream.",
-    "thumbnail": "https://i.ytimg.com/vi/rzKXsVQ60XQ/hqdefault.jpg",
-    "publishedAt": "2025-12-15T06:21:12+00:00",
-    "fetchedAt": "2025-12-21T03:22:15.582Z"
+    "thumbnail": "https://i.ytimg.com/vi/WZk7iE6Ypoo/hqdefault.jpg",
+    "publishedAt": "2025-12-22T15:39:31+00:00",
+    "fetchedAt": "2025-12-28T03:40:14.252Z"
   },
   "events": {
     "nextSunday": {
@@ -251,6 +251,6 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2025-12-21T03:22:15.582Z"
+    "rssFetchedAt": "2025-12-28T03:40:14.252Z"
   }
 }

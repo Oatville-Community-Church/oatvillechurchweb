@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:WYw731Y1Cug</id>
+  <yt:videoId>WYw731Y1Cug</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>The Jezebel Spirit in America</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=WYw731Y1Cug"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2025-12-29T13:08:21+00:00</published>
+  <updated>2025-12-29T14:43:29+00:00</updated>
+  <media:group>
+   <media:title>The Jezebel Spirit in America</media:title>
+   <media:content url="https://www.youtube.com/v/WYw731Y1Cug?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/WYw731Y1Cug/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="3"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:WZk7iE6Ypoo</id>
   <yt:videoId>WZk7iE6Ypoo</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,7 +52,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="2"/>
+    <media:statistics views="3"/>
    </media:community>
   </media:group>
  </entry>
@@ -67,7 +90,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2025-12-07T18:09:17+00:00</published>
-  <updated>2025-12-07T18:51:06+00:00</updated>
+  <updated>2025-12-31T14:31:04+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/M0g21ELS9C4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -90,7 +113,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2025-11-30T18:07:51+00:00</published>
-  <updated>2025-11-30T18:23:23+00:00</updated>
+  <updated>2025-12-31T14:30:18+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/w5rXNTrOvqc?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -328,30 +351,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="6"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:NuQqVfca1Ac</id>
-  <yt:videoId>NuQqVfca1Ac</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Heaven, don't miss it</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=NuQqVfca1Ac"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2025-09-24T21:38:21+00:00</published>
-  <updated>2025-10-25T15:43:53+00:00</updated>
-  <media:group>
-   <media:title>Heaven, don't miss it</media:title>
-   <media:content url="https://www.youtube.com/v/NuQqVfca1Ac?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i3.ytimg.com/vi/NuQqVfca1Ac/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="2"/>
+    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>

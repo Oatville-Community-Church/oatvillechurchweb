@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:FGoSQtInmuo</id>
+  <yt:videoId>FGoSQtInmuo</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>The beatitudes of the Bible part 1</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=FGoSQtInmuo"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-01-05T02:11:31+00:00</published>
+  <updated>2026-01-05T03:41:16+00:00</updated>
+  <media:group>
+   <media:title>The beatitudes of the Bible part 1</media:title>
+   <media:content url="https://www.youtube.com/v/FGoSQtInmuo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/FGoSQtInmuo/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="8"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:WYw731Y1Cug</id>
   <yt:videoId>WYw731Y1Cug</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,7 +52,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="3"/>
+    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>
@@ -75,7 +98,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="2"/>
+    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>
@@ -98,7 +121,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="6"/>
+    <media:statistics views="9"/>
    </media:community>
   </media:group>
  </entry>
@@ -144,7 +167,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="6"/>
+    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="1" average="5.00" min="1" max="5"/>
     <media:statistics views="5"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:Ke_Cq6b_5Rs</id>
-  <yt:videoId>Ke_Cq6b_5Rs</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Hell…It’s worse than you think!!!</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=Ke_Cq6b_5Rs"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2025-09-28T19:11:38+00:00</published>
-  <updated>2025-11-24T13:43:58+00:00</updated>
-  <media:group>
-   <media:title>Hell…It’s worse than you think!!!</media:title>
-   <media:content url="https://www.youtube.com/v/Ke_Cq6b_5Rs?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i4.ytimg.com/vi/Ke_Cq6b_5Rs/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>

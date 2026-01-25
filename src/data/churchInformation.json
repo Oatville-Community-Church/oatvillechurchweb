@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "_CD20k1FeOg",
+    "id": "OdvWvePoh3k",
     "title": "Oatville Community Church livestream.",
     "description": "The Oatville Community Church Sunday Morning live stream.",
-    "thumbnail": "https://i.ytimg.com/vi/_CD20k1FeOg/hqdefault.jpg",
-    "publishedAt": "2026-01-12T06:38:37+00:00",
-    "fetchedAt": "2026-01-18T03:29:11.355Z"
+    "thumbnail": "https://i.ytimg.com/vi/OdvWvePoh3k/hqdefault.jpg",
+    "publishedAt": "2026-01-19T07:10:30+00:00",
+    "fetchedAt": "2026-01-25T03:46:08.788Z"
   },
   "events": {
     "nextSunday": {
@@ -251,6 +251,6 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-01-18T03:29:11.355Z"
+    "rssFetchedAt": "2026-01-25T03:46:08.788Z"
   }
 }

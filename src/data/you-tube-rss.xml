@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:A4c-8qzyhKk</id>
+  <yt:videoId>A4c-8qzyhKk</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>United we move, divided we fail.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=A4c-8qzyhKk"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-01-25T18:16:00+00:00</published>
+  <updated>2026-01-25T18:46:58+00:00</updated>
+  <media:group>
+   <media:title>United we move, divided we fail.</media:title>
+   <media:content url="https://www.youtube.com/v/A4c-8qzyhKk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/A4c-8qzyhKk/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="5"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:OdvWvePoh3k</id>
   <yt:videoId>OdvWvePoh3k</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,7 +52,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="6"/>
+    <media:statistics views="13"/>
    </media:community>
   </media:group>
  </entry>
@@ -90,7 +113,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2025-12-29T13:08:21+00:00</published>
-  <updated>2025-12-29T14:43:29+00:00</updated>
+  <updated>2026-01-29T15:49:53+00:00</updated>
   <media:group>
    <media:title>The Jezebel Spirit in America</media:title>
    <media:content url="https://www.youtube.com/v/WYw731Y1Cug?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -113,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2025-12-22T15:39:31+00:00</published>
-  <updated>2025-12-22T17:11:35+00:00</updated>
+  <updated>2026-01-22T13:33:58+00:00</updated>
   <media:group>
    <media:title>More than a baby</media:title>
    <media:content url="https://www.youtube.com/v/WZk7iE6Ypoo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -167,7 +190,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="11"/>
+    <media:statistics views="18"/>
    </media:community>
   </media:group>
  </entry>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="9"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:rjKgDUmgPy4</id>
-  <yt:videoId>rjKgDUmgPy4</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Oatville Community Church livestream.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=rjKgDUmgPy4"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2025-10-19T17:19:21+00:00</published>
-  <updated>2025-11-19T14:32:25+00:00</updated>
-  <media:group>
-   <media:title>Oatville Community Church livestream.</media:title>
-   <media:content url="https://www.youtube.com/v/rjKgDUmgPy4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i3.ytimg.com/vi/rjKgDUmgPy4/hqdefault.jpg" width="480" height="360"/>
-   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="14"/>
    </media:community>
   </media:group>
  </entry>

@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "A4c-8qzyhKk",
-    "title": "United we move, divided we fail.",
+    "id": "69iLUVwtKNg",
+    "title": "Oatville Community Church livestream.",
     "description": "The Oatville Community Church Sunday Morning live stream.",
-    "thumbnail": "https://i.ytimg.com/vi/A4c-8qzyhKk/hqdefault.jpg",
-    "publishedAt": "2026-01-25T18:16:00+00:00",
-    "fetchedAt": "2026-02-01T04:22:01.643Z"
+    "thumbnail": "https://i.ytimg.com/vi/69iLUVwtKNg/hqdefault.jpg",
+    "publishedAt": "2026-02-02T06:18:55+00:00",
+    "fetchedAt": "2026-02-08T04:25:53.532Z"
   },
   "events": {
     "nextSunday": {
@@ -251,6 +251,6 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-02-01T04:22:01.643Z"
+    "rssFetchedAt": "2026-02-08T04:25:53.532Z"
   }
 }

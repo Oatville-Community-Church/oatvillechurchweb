@@ -11,6 +11,52 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:33D2Zxbw1rw</id>
+  <yt:videoId>33D2Zxbw1rw</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Kingdom Living in worldly culture.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=33D2Zxbw1rw"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-02-15T18:22:41+00:00</published>
+  <updated>2026-02-15T19:51:20+00:00</updated>
+  <media:group>
+   <media:title>Kingdom Living in worldly culture.</media:title>
+   <media:content url="https://www.youtube.com/v/33D2Zxbw1rw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/33D2Zxbw1rw/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="2"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:SRb_-mji-UU</id>
+  <yt:videoId>SRb_-mji-UU</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=SRb_-mji-UU"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-02-15T18:16:03+00:00</published>
+  <updated>2026-02-15T18:16:04+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/SRb_-mji-UU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/SRb_-mji-UU/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:DdBj1-LbHT0</id>
   <yt:videoId>DdBj1-LbHT0</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,7 +75,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="2" average="5.00" min="1" max="5"/>
-    <media:statistics views="5"/>
+    <media:statistics views="9"/>
    </media:community>
   </media:group>
  </entry>
@@ -52,7 +98,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="2"/>
+    <media:statistics views="4"/>
    </media:community>
   </media:group>
  </entry>
@@ -90,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-01-19T07:10:30+00:00</published>
-  <updated>2026-02-07T23:37:18+00:00</updated>
+  <updated>2026-02-18T15:32:59+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/OdvWvePoh3k?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -167,7 +213,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="7"/>
+    <media:statistics views="8"/>
    </media:community>
   </media:group>
  </entry>
@@ -236,7 +282,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="23"/>
+    <media:statistics views="29"/>
    </media:community>
   </media:group>
  </entry>
@@ -306,52 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="1"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:DwT7Rj5-UgU</id>
-  <yt:videoId>DwT7Rj5-UgU</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Oatville Community Church livestream.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=DwT7Rj5-UgU"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2025-11-16T18:09:13+00:00</published>
-  <updated>2025-12-17T15:31:10+00:00</updated>
-  <media:group>
-   <media:title>Oatville Community Church livestream.</media:title>
-   <media:content url="https://www.youtube.com/v/DwT7Rj5-UgU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i1.ytimg.com/vi/DwT7Rj5-UgU/hqdefault.jpg" width="480" height="360"/>
-   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
-   <media:community>
-    <media:starRating count="1" average="5.00" min="1" max="5"/>
-    <media:statistics views="12"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:1hsmx16DZPU</id>
-  <yt:videoId>1hsmx16DZPU</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Out of Egypt part 3</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=1hsmx16DZPU"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2025-11-10T17:30:00+00:00</published>
-  <updated>2025-12-11T15:37:07+00:00</updated>
-  <media:group>
-   <media:title>Out of Egypt part 3</media:title>
-   <media:content url="https://www.youtube.com/v/1hsmx16DZPU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i2.ytimg.com/vi/1hsmx16DZPU/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="4"/>
    </media:community>
   </media:group>
  </entry>

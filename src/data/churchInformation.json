@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "33D2Zxbw1rw",
-    "title": "Kingdom Living in worldly culture.",
+    "id": "SRb_-mji-UU",
+    "title": "Oatville Community Church livestream.",
     "description": "The Oatville Community Church Sunday Morning live stream.",
-    "thumbnail": "https://i.ytimg.com/vi/33D2Zxbw1rw/hqdefault.jpg",
-    "publishedAt": "2026-02-15T18:22:41+00:00",
-    "fetchedAt": "2026-02-22T04:08:10.519Z"
+    "thumbnail": "https://i.ytimg.com/vi/SRb_-mji-UU/hqdefault.jpg",
+    "publishedAt": "2026-02-23T06:24:06+00:00",
+    "fetchedAt": "2026-03-08T04:02:39.143Z"
   },
   "events": {
     "nextSunday": {
@@ -251,6 +251,6 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-02-22T04:08:10.519Z"
+    "rssFetchedAt": "2026-03-08T04:02:39.143Z"
   }
 }

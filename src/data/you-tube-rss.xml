@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:SRb_-mji-UU</id>
+  <yt:videoId>SRb_-mji-UU</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=SRb_-mji-UU"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-02-23T06:24:06+00:00</published>
+  <updated>2026-02-23T07:02:41+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/SRb_-mji-UU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/SRb_-mji-UU/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="6"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:33D2Zxbw1rw</id>
   <yt:videoId>33D2Zxbw1rw</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -34,29 +57,6 @@
   </media:group>
  </entry>
  <entry>
-  <id>yt:video:SRb_-mji-UU</id>
-  <yt:videoId>SRb_-mji-UU</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Oatville Community Church livestream.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=SRb_-mji-UU"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-02-15T18:16:03+00:00</published>
-  <updated>2026-02-15T18:16:04+00:00</updated>
-  <media:group>
-   <media:title>Oatville Community Church livestream.</media:title>
-   <media:content url="https://www.youtube.com/v/SRb_-mji-UU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i4.ytimg.com/vi/SRb_-mji-UU/hqdefault.jpg" width="480" height="360"/>
-   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="0"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
   <id>yt:video:DdBj1-LbHT0</id>
   <yt:videoId>DdBj1-LbHT0</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -67,7 +67,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-02-09T06:21:21+00:00</published>
-  <updated>2026-02-09T07:30:53+00:00</updated>
+  <updated>2026-03-07T06:41:27+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/DdBj1-LbHT0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -90,7 +90,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-02-02T06:18:55+00:00</published>
-  <updated>2026-02-08T03:28:08+00:00</updated>
+  <updated>2026-03-04T16:39:10+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/69iLUVwtKNg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -113,7 +113,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-01-25T18:16:00+00:00</published>
-  <updated>2026-01-25T18:46:58+00:00</updated>
+  <updated>2026-02-25T15:25:44+00:00</updated>
   <media:group>
    <media:title>United we move, divided we fail.</media:title>
    <media:content url="https://www.youtube.com/v/A4c-8qzyhKk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -121,7 +121,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="1" average="5.00" min="1" max="5"/>
-    <media:statistics views="5"/>
+    <media:statistics views="8"/>
    </media:community>
   </media:group>
  </entry>
@@ -182,7 +182,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-01-05T02:11:31+00:00</published>
-  <updated>2026-02-04T15:43:44+00:00</updated>
+  <updated>2026-03-02T05:57:04+00:00</updated>
   <media:group>
    <media:title>The beatitudes of the Bible part 1</media:title>
    <media:content url="https://www.youtube.com/v/FGoSQtInmuo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>

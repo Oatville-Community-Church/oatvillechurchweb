@@ -8,9 +8,9 @@ function handleContactForm(event) {
 // Lite YouTube embed activation
 function initLiteYouTube() {
     document.querySelectorAll('.lite-yt').forEach(el => {
-        const videoId = el.getAttribute('data-videoid');
-        if (!videoId) return;
         const activate = () => {
+            const videoId = (el.getAttribute('data-videoid') || '').trim();
+            if (!videoId) return;
             if (el.classList.contains('lite-yt--activated')) return;
             el.classList.add('lite-yt--activated');
             const iframe = document.createElement('iframe');
@@ -52,12 +52,83 @@ function initializeChurchWebsite() {
     }
 }
 
+function formatPublishedDate(iso) {
+    const d = new Date(iso);
+    if (isNaN(d)) return '';
+    return d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+}
+
+function refreshHomepageLatestVideoFromRss() {
+    const liteButton = document.querySelector('.lite-yt');
+    if (!liteButton) return; // Not on homepage
+
+    const titleEl = document.getElementById('latest-video-title');
+    const dateEl = document.getElementById('latest-video-date');
+    const descriptionEl = document.getElementById('latest-video-description');
+    const liveLink = document.getElementById('live-watch-link');
+
+    const rssUrl = `${import.meta.env.BASE_URL}data/you-tube-rss.xml?v=${Date.now()}`;
+    fetch(rssUrl, { cache: 'no-store' })
+      .then(r => r.ok ? r.text() : Promise.reject(r.status))
+      .then(xmlText => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(xmlText, 'application/xml');
+          const entry = doc.getElementsByTagName('entry')[0];
+          if (!entry) return;
+
+          const get = (tag) => (entry.getElementsByTagName(tag)[0]?.textContent || '').trim();
+          const id = get('yt:videoId') || get('videoId');
+          const title = get('title');
+          const publishedAt = get('published');
+          const description = get('media:description') || get('description');
+          if (!id) return;
+
+          const thumbnail = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+          liteButton.setAttribute('data-videoid', id);
+
+          const sourceEl = liteButton.querySelector('source');
+          const imgEl = liteButton.querySelector('img');
+          if (sourceEl) sourceEl.setAttribute('srcset', thumbnail);
+          if (imgEl) {
+              imgEl.setAttribute('src', thumbnail);
+              if (title) imgEl.setAttribute('alt', `Thumbnail for ${title}`);
+          }
+
+          if (titleEl && title) titleEl.textContent = title;
+          if (descriptionEl && description) descriptionEl.textContent = description;
+          if (dateEl && publishedAt) {
+              dateEl.dataset.iso = publishedAt;
+              const formatted = formatPublishedDate(publishedAt);
+              if (formatted) dateEl.textContent = `Published: ${formatted}`;
+          }
+
+          if (liveLink) {
+              const latestHref = `https://www.youtube.com/watch?v=${encodeURIComponent(id)}`;
+              liveLink.dataset.defaultHref = latestHref;
+              const state = liveLink.dataset.liveState || 'offline';
+              if (state === 'offline') {
+                  liveLink.href = latestHref;
+              }
+          }
+      })
+      .catch(err => {
+          console.warn('Homepage latest video refresh failed', err);
+      });
+}
+
 function initYouTubeLiveStatus() {
     const liveLink = document.getElementById('live-watch-link');
     const liveStatusText = document.getElementById('live-status-text');
     if (!liveLink) return; // Not on homepage
+    if (!liveLink.dataset.defaultHref) {
+        liveLink.dataset.defaultHref = liveLink.href;
+    }
 
     const applyDefaultState = () => {
+        liveLink.dataset.liveState = 'offline';
+        if (liveLink.dataset.defaultHref) {
+            liveLink.href = liveLink.dataset.defaultHref;
+        }
         liveLink.textContent = 'Watch on YouTube';
         liveLink.classList.remove('text-red-700', 'hover:text-red-900', 'text-amber-700', 'hover:text-amber-900', 'font-semibold');
         liveLink.classList.add('text-gray-600', 'hover:text-gray-900');
@@ -69,6 +140,7 @@ function initYouTubeLiveStatus() {
 
     const applyLiveState = (video) => {
         if (!video?.id) return applyDefaultState();
+        liveLink.dataset.liveState = 'live';
         liveLink.href = `https://www.youtube.com/watch?v=${encodeURIComponent(video.id)}`;
         liveLink.textContent = 'Watch Live Now';
         liveLink.classList.remove('text-gray-600', 'hover:text-gray-900', 'text-amber-700', 'hover:text-amber-900');
@@ -81,6 +153,7 @@ function initYouTubeLiveStatus() {
 
     const applyUpcomingState = (video) => {
         if (!video?.id) return applyDefaultState();
+        liveLink.dataset.liveState = 'upcoming';
         liveLink.href = `https://www.youtube.com/watch?v=${encodeURIComponent(video.id)}`;
         liveLink.textContent = 'Watch Upcoming Stream';
         liveLink.classList.remove('text-gray-600', 'hover:text-gray-900', 'text-red-700', 'hover:text-red-900');
@@ -117,15 +190,16 @@ function initYouTubeLiveStatus() {
 document.addEventListener('DOMContentLoaded', function() {
     initializeChurchWebsite();
     initLiteYouTube();
+    refreshHomepageLatestVideoFromRss();
     initYouTubeLiveStatus();
     initYouTubeArchive();
     initMobileNav();
     // Human readable date on homepage latest video if present
     const lvDate = document.getElementById('latest-video-date');
     if (lvDate && lvDate.dataset.iso) {
-        const d = new Date(lvDate.dataset.iso);
-        if (!isNaN(d)) {
-            lvDate.textContent = 'Published: ' + d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric'});
+        const formatted = formatPublishedDate(lvDate.dataset.iso);
+        if (formatted) {
+            lvDate.textContent = 'Published: ' + formatted;
         }
     }
 });

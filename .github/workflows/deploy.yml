@@ -45,12 +45,17 @@ jobs:
       - name: Fetch latest YouTube video
         run: node scripts/fetch-latest-video.js
 
+      - name: Fetch YouTube live status
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/fetch-live-status.js
+
       - name: Build site
         env:
           GITHUB_PAGES: "true"
           BUNDLE_BUDGET_KB: "300"
           SITE_URL: "https://oatville-community-church.org"
-        run: npx vite build
+        run: npm run build:ci
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

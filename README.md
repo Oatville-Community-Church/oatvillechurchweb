@@ -37,11 +37,12 @@
 ```text
 src/                          # All source files and assets
 ├── *.html                   # Website pages (index, ministries, plan-visit, you-tube)
+├── assets/                  # Favicons, icons, and static metadata assets
 ├── data/
 │   └── churchInformation.json # Church content and information
 ├── images/                  # Church photos and graphics
 ├── js/                      # Website functionality
-└── scss/                    # Styling and design
+└── tailwind.css             # Tailwind entry stylesheet
 Documentation/               # Pastor and setup guides
 ├── PASTOR_HANDOVER_GUIDE.md # Complete setup instructions for pastor
 ├── GITHUB_ACCOUNT_SETUP.md  # GitHub account creation guide
@@ -93,7 +94,8 @@ The website provides a modern development experience with:
 ```bash
 npm install            # Install dependencies + setup git hooks
 npm run dev            # Start development server (http://localhost:5173)
-npm run build          # Full production build with validation
+npm run build          # CI-safe build (lint + vite build)
+npm run build:release  # Full release build (version + assets + YouTube refresh)
 npm run preview        # Preview production build
 npm run lint           # Comprehensive code quality check
 npm run lint:json      # JSON-only validation for content files
@@ -103,31 +105,27 @@ npm run clean          # Clean build artifacts and caches
 
 ### Build System Architecture
 
-The project uses a sophisticated Vite-based build pipeline with automated validation:
+The project uses a Vite-based build pipeline with explicit CI and release paths:
 
-**📋 Build Pipeline (`npm run build`):**
+**📋 Build Commands:**
 
-1. **Pre-build Validation:**
+1. **`npm run build` (default CI-safe):**
    - JSON syntax validation with trailing comma detection
    - Content structure validation for church data files
    - Code quality linting across HTML, CSS, and JavaScript
+   - Vite build with automatic asset hashing for cache-busting
 
-2. **Content Processing:**
+2. **`npm run build:release` (content + release automation):**
    - Version incrementing with timestamp injection
    - Image optimization (WebP/AVIF conversion with quality tuning)
-   - YouTube RSS feed update with latest sermon metadata
+   - YouTube RSS/live status refresh
+   - Vite build output generation (`dist/`)
 
-3. **Asset Compilation:**
-   - Vite build with automatic asset hashing for cache-busting
+3. **Vite Output Generation (both build paths):**
    - Multi-page HTML processing with data placeholder injection
    - PWA manifest generation with environment-aware URLs
-   - Structured data (JSON-LD) injection for SEO
-
-4. **Output Generation:**
    - Sitemap.xml with priority-based URL mapping
-   - Enhanced robots.txt with crawl directives
-   - Security.txt and humans.txt for best practices
-   - Build metadata JSON for deployment tracking
+   - Enhanced robots.txt, security.txt, humans.txt, and build metadata
 
 **🔒 Quality Assurance:**
 
@@ -231,9 +229,9 @@ The project uses a sophisticated CI/CD pipeline with two automated workflows:
    └── Build system verification
 
 3. Content Processing
-   ├── Automated version incrementing
-   ├── Image optimization pipeline
-   └── YouTube RSS feed updates
+    ├── Automated version incrementing
+    ├── Image optimization pipeline
+    └── YouTube RSS + live status updates
 
 4. Production Build
    ├── Vite build with asset processing
@@ -250,12 +248,13 @@ The project uses a sophisticated CI/CD pipeline with two automated workflows:
 - `GITHUB_PAGES: "true"` - GitHub Pages configuration
 - `BUNDLE_BUDGET_KB: "300"` - Performance budget enforcement
 - `SITE_URL: "https://oatville-community-church.org"` - Custom domain
+- `YOUTUBE_API_KEY: "<key>"` - Optional, enables static live/upcoming stream status snapshot generation (`src/data/live-status.json`) in GitHub Actions
 
 ### **Weekly Content Updates (`weekly-update.yml`)**
 
 **Triggers:**
 
-- Scheduled: Every Sunday at 2 AM UTC
+- Scheduled: Every 3 hours (UTC)
 - Manual workflow dispatch
 
 **Pipeline Features:**
@@ -281,10 +280,15 @@ npm run dev
 
 ```bash
 npm run build
-# ├── Pre-build: JSON validation + version increment
-# ├── Content: Image optimization + YouTube updates  
-# ├── Build: Vite compilation + asset processing
-# └── Output: Validated dist/ ready for deployment
+# ├── Lint + JSON validation
+# ├── Vite compilation + asset processing
+# └── Output: dist/ ready for deployment
+
+npm run build:release
+# ├── Lint + JSON validation
+# ├── Version increment + image optimization
+# ├── YouTube content/live refresh
+# └── Vite build output
 ```
 
 **🚀 Deployment Features:**
@@ -326,6 +330,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-**Modern Static Site Architecture** �️
+**Modern Static Site Architecture**
 
 [🌐 Live Website](https://oatville-community-church.org) • [📂 GitHub Repository](https://github.com/Oatville-Community-Church/oatvillechurchweb)

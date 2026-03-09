@@ -7,7 +7,8 @@ This project now uses a lean, fast, and production-grade static build pipeline p
 ```bash
 npm install            # Install dependencies
 npm run dev           # Vite dev server (HMR)
-npm run build         # Production build -> dist/
+npm run build         # CI-safe build (lint + vite build) -> dist/
+npm run build:release # Full release build (version + assets + YouTube refresh)
 npm run preview       # Preview production build locally
 npm run clean         # Remove dist and temp artifacts
 npm run lint          # Custom lint/quality checks
@@ -16,10 +17,10 @@ npm run lint          # Custom lint/quality checks
 ## 📁 Project Structure
 
 ```bash
-├── src/                    # Source root (ALL HTML entry pages + JS, SCSS, Tailwind, assets)
-│   ├── scss/               # SASS stylesheets
+├── src/                    # Source root (ALL HTML entry pages + JS, Tailwind, assets)
 │   ├── js/                 # JavaScript files
 │   ├── images/             # Image assets
+│   ├── tailwind.css        # Tailwind entry stylesheet
 │   └── assets/             # Icons / misc static
 ├── dist/                   # Vite production output (after build)
 ├── scripts/                # Utility scripts (clean.js, lint.js only)
@@ -32,10 +33,12 @@ npm run lint          # Custom lint/quality checks
 ### Development & Production
 
 - **`npm run dev`** – Instant-start dev server (native ESM, on-demand transforms) with HMR
-- **`npm run build`** – Production build (Rollup under the hood) → `dist/`
+- **`npm run build`** – CI-safe production build (`lint` + `build:ci`) → `dist/`
+- **`npm run build:ci`** – Raw Vite production build (used by CI workflows)
+- **`npm run build:release`** – Release build (lint + version increment + image optimize + YouTube refresh + Vite build)
 - **`npm run preview`** – Local preview of built output
 - **`npm run clean`** – Remove `dist/` and caches
-- **`npm run lint`** – Custom HTML/JS/SCSS quality checks
+- **`npm run lint`** – Custom HTML/CSS/JS quality checks
 
 ### Testing & Quality
 
@@ -52,7 +55,7 @@ npm run lint          # Custom lint/quality checks
 
 ### 2. Build Phase (Vite Core)
 
-- SCSS & Tailwind unified through JS entry imports (`src/main.js`)
+- Tailwind CSS entry import compiled through `src/main.js` (`src/tailwind.css`)
 - Tree-shaking, code splitting, hashed filenames
 - Placeholder replacement (`{{key.path}}`) using `churchInformation.json`
  (all HTML resides under `src/`, so Vite `root` is `src` and multi-page inputs are set in `vite.config.js`)
@@ -72,7 +75,7 @@ Serves the already built `dist/` with simple static server—useful for final va
 ### 5. Code Quality (`scripts/lint.js`)
 
 - **HTML Validation**: Checks HTML structure and accessibility
-- **CSS/SCSS Linting**: Identifies deprecated patterns
+- **CSS Linting**: Checks stylesheet best practices
 - **JavaScript Analysis**: Basic syntax and best practice checks
 - **Package.json Validation**: Ensures proper configuration
 
@@ -80,7 +83,7 @@ Serves the already built `dist/` with simple static server—useful for final va
 
 ### ✅ Automated Tasks
 
-- [x] SCSS + Tailwind bundling via Vite
+- [x] Tailwind-driven CSS bundling via Vite
 - [x] HTML placeholder population
 - [x] Hashed asset output & manifest
 - [x] Build info metadata
@@ -133,9 +136,9 @@ Serves the already built `dist/` with simple static server—useful for final va
 
 Configure Tailwind CSS settings, custom themes, and purge options.
 
-### SASS Variables (`src/scss/_variables.scss`)
+### Tailwind Entry Stylesheet (`src/tailwind.css`)
 
-Centralized SASS variables for colors, fonts, and spacing.
+Shared utility-first stylesheet entry with global Tailwind layers and project-level custom CSS.
 
 ### Build Scripts (`scripts/`)
 
@@ -170,12 +173,12 @@ Only minimal auxiliary scripts (clean & lint) remain; legacy custom build/watch/
 - Group related files together
 - Follow consistent naming conventions
 
-### CSS/SASS
+### CSS/Tailwind
 
-- Use SASS partials for organization
-- Follow BEM naming methodology
-- Avoid deep nesting
-- Use variables for consistency
+- Prefer Tailwind utility classes and semantic HTML composition
+- Keep custom CSS in `src/tailwind.css` minimal and component-oriented
+- Avoid deep selector nesting and `!important` unless justified
+- Use CSS variables for repeated theme tokens when utilities are not enough
 
 ### JavaScript
 

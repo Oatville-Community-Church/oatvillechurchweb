@@ -8,11 +8,11 @@ Authoritative technical overview for the Oatville Community Church website. This
 
 ```text
 ├── src/                    # All source (Vite root)
-│   ├── scss/               # SCSS partials & main stylesheet
 │   ├── js/                 # JavaScript (progressive enhancement)
 │   ├── images/             # Image assets (photos/graphics)
 │   ├── assets/             # Favicons / manifest / misc static
 │   ├── data/               # Data JSON (churchInformation.json, future caches)
+│   ├── tailwind.css        # Tailwind entry stylesheet
 │   └── *.html              # Multi‑page HTML entry points (registered in vite.config.js)
 ├── scripts/                # Node utility scripts (clean, lint)
 ├── Documentation/          # Canonical project docs (this file, build, scripts, etc.)
@@ -29,7 +29,7 @@ Key rules: All runtime / static assets originate under `src/`. `publicDir` is di
 
 1. HTML entry pages discovered from explicit `rollupOptions.input`.
 2. Custom placeholder plugin replaces `{{token}}` with values from `src/data/churchInformation.json` (dot‑notation supported).
-3. Tailwind + SCSS compiled; unused utilities purged by content globs.
+3. Tailwind CSS compiled from `src/tailwind.css`; unused utilities purged by content globs.
 4. Rollup optimization: tree‑shaking, minification, content‑hashed filenames.
 5. Static copy plugin moves approved assets from controlled `src` subpaths.
 6. Sitemap & robots generated from emitted HTML.
@@ -46,7 +46,7 @@ See also: `Documentation/BUILD.md` for command‑level build instructions.
 | Vite root & inputs | `vite.config.js` | Keep new pages registered for sitemap inclusion |
 | Data source | `src/data/churchInformation.json` | Single source for templated content & structured data values |
 | Tailwind content | `tailwind.config.js` | Update if adding non‑standard file patterns |
-| SCSS variables | `src/scss/_variables.scss` | Theming tokens |
+| Tailwind entry stylesheet | `src/tailwind.css` | Shared utility-driven styling entry |
 | Performance budget | ENV `BUNDLE_BUDGET_KB` or plugin default | Warns when exceeded |
 
 ---
@@ -77,7 +77,7 @@ Refer to `.github/copilot-instructions.md` §7–§8 for authoritative a11y & me
 
 ## 7. Deployment Notes
 
-- GitHub Pages workflow runs `npm ci && npm run build` with `GITHUB_PAGES=true` to set proper base.
+- GitHub Pages workflow runs `npm ci && npm run lint && npm run build:ci` with `GITHUB_PAGES=true` to set proper base.
 - Output lives exclusively in `dist/`.
 - Static hosting portability: Any CDN / static host works (Netlify, Vercel, S3+CloudFront, etc.).
 

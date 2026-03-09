@@ -439,6 +439,7 @@
                     >View All Messages</a
                   >
                   <a
+                    id="live-watch-link"
                     href="https://www.youtube.com/watch?v={{latestVideo.id}}"
                     target="_blank"
                     rel="noopener"
@@ -446,6 +447,11 @@
                     >Watch on YouTube</a
                   >
                 </div>
+                <p
+                  id="live-status-text"
+                  class="mt-3 text-xs text-gray-500 hidden"
+                  aria-live="polite"
+                ></p>
               </div>
             </div>
           </div>

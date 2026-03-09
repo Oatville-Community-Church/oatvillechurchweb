@@ -9,6 +9,8 @@ const path = require('path');
 const https = require('https');
 
 const DATA_PATH = path.join(__dirname, '..', 'src', 'data', 'churchInformation.json');
+const FETCH_TIMEOUT_MS = Number(process.env.YOUTUBE_FETCH_TIMEOUT_MS || 15000);
+const FETCH_RETRIES = Number(process.env.YOUTUBE_FETCH_RETRIES || 3);
 // Load channel id dynamically from data file (fallback to constant).
 let CHANNEL_ID = 'UCLiIrzYVgwFD0rIEYQoGC5A';
 try {
@@ -20,19 +22,66 @@ try {
 const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
 const RSS_SAVE_PATH = path.join(__dirname, '..', 'src', 'data', 'you-tube-rss.xml');
 
-function fetchRss(url) {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function fetchText(url, redirectCount = 0) {
+  const MAX_REDIRECTS = 3;
   return new Promise((resolve, reject) => {
-    https.get(url, res => {
+    const req = https.get(url, {
+      headers: {
+        'User-Agent': 'oatvillechurchweb-build-bot/1.0 (+https://oatville-community-church.org)',
+        'Accept': 'application/atom+xml,application/xml,text/xml;q=0.9,*/*;q=0.8',
+        'Cache-Control': 'no-cache',
+        Pragma: 'no-cache',
+        'Accept-Encoding': 'identity'
+      }
+    }, res => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        if (redirectCount >= MAX_REDIRECTS) {
+          reject(new Error('Too many redirects'));
+          res.resume();
+          return;
+        }
+        const redirectUrl = new URL(res.headers.location, url).toString();
+        res.resume();
+        fetchText(redirectUrl, redirectCount + 1).then(resolve).catch(reject);
+        return;
+      }
       if (res.statusCode !== 200) {
         reject(new Error(`Status ${res.statusCode}`));
         res.resume();
         return;
       }
       let data = '';
+      res.setEncoding('utf8');
       res.on('data', d => (data += d));
       res.on('end', () => resolve(data));
-    }).on('error', reject);
+    });
+    req.setTimeout(FETCH_TIMEOUT_MS, () => {
+      req.destroy(new Error(`Request timeout after ${FETCH_TIMEOUT_MS}ms`));
+    });
+    req.on('error', reject);
   });
+}
+
+async function fetchRss(url) {
+  let lastError = null;
+  for (let attempt = 1; attempt <= FETCH_RETRIES; attempt += 1) {
+    const cacheBust = `${Date.now()}-${attempt}`;
+    const sep = url.includes('?') ? '&' : '?';
+    const requestUrl = `${url}${sep}cb=${cacheBust}`;
+    try {
+      return await fetchText(requestUrl);
+    } catch (error) {
+      lastError = error;
+      if (attempt < FETCH_RETRIES) {
+        await sleep(300 * attempt);
+      }
+    }
+  }
+  throw lastError || new Error('Failed to fetch RSS');
 }
 
 function extract(str, re) {
@@ -65,6 +114,65 @@ function decodeHtmlEntities(str) {
     .replace(/&#39;/g, "'");
 }
 
+function parseEntriesFromRss(rss) {
+  const fallbackDescription = 'Watch the latest message from Oatville Community Church on YouTube.';
+  const entries = [];
+  const entryRegex = /<entry>([\s\S]*?)<\/entry>/g;
+  let entryMatch;
+  while ((entryMatch = entryRegex.exec(rss)) !== null) {
+    const rawEntry = entryMatch[1];
+    const id = extract(rawEntry, /<yt:videoId>([^<]+)<\/yt:videoId>/);
+    const title = decodeHtmlEntities(extract(rawEntry, /<title>([^<]+)<\/title>/));
+    const published = extract(rawEntry, /<published>([^<]+)<\/published>/);
+    const mediaGroup = extract(rawEntry, /<media:group>([\s\S]*?)<\/media:group>/);
+    const description = decodeHtmlEntities(extract(mediaGroup, /<media:description>([\s\S]*?)<\/media:description>/).trim());
+    if (!id) continue;
+    entries.push({
+      id,
+      title,
+      publishedAt: published,
+      description: description ? description.slice(0, 500) : fallbackDescription,
+      thumbnail: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+    });
+  }
+  return entries;
+}
+
+function normalizeRssSnapshot(rss) {
+  // Remove cache-busting query param echoed by YouTube in feed self-link.
+  return rss
+    .replace(/&amp;cb=\d+(?:-\d+)?/g, '')
+    .replace(/&cb=\d+(?:-\d+)?/g, '');
+}
+
+function isLikelyLivestream(entry) {
+  const haystack = `${entry?.title || ''} ${entry?.description || ''}`.toLowerCase();
+  return /\blive\s*stream\b|\blivestream\b/.test(haystack);
+}
+
+function mergeVideoRecord(prev, next, fetchedAtIso) {
+  const merged = {
+    ...(prev || {}),
+    id: next.id,
+    title: typeof next.title === 'string' ? next.title : (prev?.title || ''),
+    description: typeof next.description === 'string' ? next.description : (prev?.description || ''),
+    thumbnail: typeof next.thumbnail === 'string' ? next.thumbnail : (prev?.thumbnail || ''),
+    publishedAt: typeof next.publishedAt === 'string' ? next.publishedAt : (prev?.publishedAt || '')
+  };
+  const changed =
+    (prev?.id || '') !== (merged.id || '') ||
+    (prev?.title || '') !== (merged.title || '') ||
+    (prev?.description || '') !== (merged.description || '') ||
+    (prev?.thumbnail || '') !== (merged.thumbnail || '') ||
+    (prev?.publishedAt || '') !== (merged.publishedAt || '');
+  if (changed) {
+    merged.fetchedAt = fetchedAtIso;
+  } else if (prev?.fetchedAt) {
+    merged.fetchedAt = prev.fetchedAt;
+  }
+  return { merged, changed };
+}
+
 async function updateLatestVideo() {
   if (!fs.existsSync(DATA_PATH)) {
     console.warn('[fetch-latest-video] Data file missing, aborting');
@@ -77,38 +185,44 @@ async function updateLatestVideo() {
   }
   try {
     const rss = await fetchRss(RSS_URL);
+    const normalizedRss = normalizeRssSnapshot(rss);
     // Persist raw RSS snapshot for debugging / potential future parsing improvements
     try {
-      fs.writeFileSync(RSS_SAVE_PATH, rss);
+      fs.writeFileSync(RSS_SAVE_PATH, normalizedRss);
     } catch (e) {
       console.warn('[fetch-latest-video] Failed to write RSS file:', e.message);
     }
-    // first <entry>
-    const entryMatch = rss.split('<entry>')[1];
-    if (!entryMatch) throw new Error('No entries');
-    const id = extract(entryMatch, /<yt:videoId>([^<]+)<\/yt:videoId>/);
-    const title = decodeHtmlEntities(extract(entryMatch, /<title>([^<]+)<\/title>/));
-    const published = extract(entryMatch, /<published>([^<]+)<\/published>/);
-    // Description in media:group (may span lines)
-    const mediaGroup = extract(entryMatch, /<media:group>([\s\S]*?)<\/media:group>/);
-    const description = decodeHtmlEntities(extract(mediaGroup, /<media:description>([\s\S]*?)<\/media:description>/).trim());
-    const thumb = id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : '';
-    if (id) {
-      json.latestVideo = json.latestVideo || {};
-      json.latestVideo.id = id;
-      if (title) json.latestVideo.title = title;
-      if (published) json.latestVideo.publishedAt = published;
-      if (thumb) json.latestVideo.thumbnail = thumb;
-      if (description) json.latestVideo.description = description.slice(0, 500); // keep concise
-  const nowIso = new Date().toISOString();
-  json.latestVideo.fetchedAt = nowIso;
-  // Track RSS fetch timestamp inside you-tube section
-  json['you-tube'] = json['you-tube'] || {};
-  json['you-tube'].rssFetchedAt = nowIso;
+    const entries = parseEntriesFromRss(normalizedRss);
+    if (!entries.length) throw new Error('No entries');
+
+    const latestVideo = entries[0];
+    const latestStream = entries.find(isLikelyLivestream);
+    const nowIso = new Date().toISOString();
+
+    let hasChanges = false;
+    const latestVideoResult = mergeVideoRecord(json.latestVideo, latestVideo, nowIso);
+    json.latestVideo = latestVideoResult.merged;
+    hasChanges = hasChanges || latestVideoResult.changed;
+
+    if (latestStream) {
+      const latestStreamResult = mergeVideoRecord(json.latestStream, latestStream, nowIso);
+      json.latestStream = latestStreamResult.merged;
+      hasChanges = hasChanges || latestStreamResult.changed;
+    }
+
+    // Keep an update marker for cache busting and diagnostics if something changed,
+    // or if this marker has never been initialized before.
+    json['you-tube'] = json['you-tube'] || {};
+    if (hasChanges || !json['you-tube'].rssFetchedAt) {
+      json['you-tube'].rssFetchedAt = nowIso;
+      hasChanges = true;
+    }
+
+    if (hasChanges) {
       safeWriteJson(DATA_PATH, json);
-      console.log('[fetch-latest-video] Updated latestVideo metadata for', id);
+      console.log('[fetch-latest-video] Updated latest YouTube metadata for', latestVideo.id);
     } else {
-      console.log('[fetch-latest-video] No video ID found');
+      console.log('[fetch-latest-video] No channel changes detected (skipped write)');
     }
   } catch (e) {
     console.log('[fetch-latest-video] Fetch skipped (non-fatal):', e.message);

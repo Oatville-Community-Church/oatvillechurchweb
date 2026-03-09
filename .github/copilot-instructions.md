@@ -46,7 +46,7 @@ If a contribution introduces `public/`, the change should be rejected or refacto
 
 ## 1. Project Overview
 
-A modern static, multi-page church website built with Vite, Tailwind JIT, SCSS, and a light data-driven templating layer (placeholder replacement from `src/data/churchInformation.json`). All static assets must originate inside `src/*`; the legacy `/public` pattern is intentionally disabled (see `vite.config.js`: `publicDir: false`). Build artifacts are emitted to `dist/`.
+A modern static, multi-page church website built with Vite, Tailwind CSS, and a light data-driven templating layer (placeholder replacement from `src/data/churchInformation.json`). All static assets must originate inside `src/*`; the legacy `/public` pattern is intentionally disabled (see `vite.config.js`: `publicDir: false`). Build artifacts are emitted to `dist/`.
 
 Primary goals:
 
@@ -97,7 +97,9 @@ Adding a new page:
 NPM Scripts:
 
 - `dev` – Vite dev server.
-- `build` – Production build (outputs `dist/`).
+- `build` – CI-safe production build (`lint` + `build:ci`).
+- `build:ci` – Raw Vite production build (used by CI workflows).
+- `build:release` – Release build (lint + version increment + image optimize + YouTube refresh + Vite build).
 - `preview` – Preview production build.
 - `clean` / `lint` – Housekeeping tasks.
 
@@ -138,7 +140,7 @@ ncu --target latest    # Show all updates including major
 **Testing after updates:**
 
 ```bash
-npm run build         # Verify build works
+npm run build:ci      # Verify Vite build works
 npm run dev          # Test dev server
 npm audit            # Check security vulnerabilities
 ```
@@ -162,8 +164,8 @@ Always create a backup branch before major package updates and test thoroughly.
 
 - Tailwind JIT configured: update `tailwind.config.js` if new file patterns added.
 - Avoid arbitrary variant proliferation—prefer component classes and extracted partials if complexity grows.
-- SCSS lives under `src/scss/`; if creating large custom styles, group logically (`_components.scss`, `_layout.scss`, etc.).
-- Use utility-first approach by default; fall back to SCSS only for repeated compound patterns.
+- Keep custom CSS centralized in `src/tailwind.css` when utilities are insufficient.
+- Use utility-first approach by default; keep bespoke selectors minimal and reusable.
 
 ---
 

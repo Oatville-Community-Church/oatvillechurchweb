@@ -8,11 +8,13 @@
     "lint": "node scripts/lint.js",
     "lint:json": "node scripts/lint.js --json-only",
     "test": "npm run lint",
-    "dev": "node scripts/fetch-latest-video.js && vite",
-    "prebuild": "npm run lint && node scripts/increment-version.js && npm run images:optimize && node scripts/fetch-latest-video.js",
-    "build": "vite build",
-    "build:github": "cross-env GITHUB_PAGES=true npm run build",
-    "build:custom": "cross-env SITE_URL=https://oatville-community-church.org npm run build",
+    "fetch:youtube": "node scripts/fetch-latest-video.js && node scripts/fetch-live-status.js",
+    "dev": "npm run fetch:youtube && vite",
+    "build:ci": "vite build",
+    "build": "npm run lint && npm run build:ci",
+    "build:release": "npm run lint && node scripts/increment-version.js && npm run images:optimize && npm run fetch:youtube && npm run build:ci",
+    "build:github": "cross-env GITHUB_PAGES=true npm run build:ci",
+    "build:custom": "cross-env SITE_URL=https://oatville-community-church.org npm run build:ci",
     "preview": "vite preview",
     "images:optimize": "node scripts/optimize-images.js",
     "setup-hooks": "node scripts/setup-git-hooks.js",
@@ -22,7 +24,6 @@
     "static-site",
     "church-website",
     "tailwindcss",
-    "sass",
     "modern-build"
   ],
   "author": "Oatville Community Church",
@@ -35,17 +36,19 @@
     "node": ">=20.19.0",
     "npm": ">=8.0.0"
   },
-  "dependencies": {
-    "@tailwindcss/postcss": "^4.1.16",
-    "tailwindcss": "^4.1.16"
+  "overrides": {
+    "rollup": "^4.59.0",
+    "serialize-javascript": "^7.0.4"
   },
+  "dependencies": {},
   "devDependencies": {
     "@vitejs/plugin-legacy": "^7.2.1",
+    "@tailwindcss/postcss": "^4.2.1",
     "cross-env": "^10.1.0",
-    "postcss": "^8.5.6",
-    "sass": "^1.93.3",
-    "sharp": "^0.34.4",
-    "vite": "^7.1.12",
-    "vite-plugin-pwa": "^1.1.0"
+    "postcss": "^8.5.8",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1",
+    "vite-plugin-pwa": "^1.2.0"
   }
 }

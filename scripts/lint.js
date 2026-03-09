@@ -229,13 +229,11 @@ class Linter {
   }
 
   async checkCss() {
-    console.log('🎨 Checking CSS/SCSS files...');
+    console.log('🎨 Checking CSS files...');
     try {
       const cssFiles = await this.getFilesWithExtension(this.srcDir, '.css');
-      const scssFiles = await this.getFilesWithExtension(this.srcDir, '.scss');
-      const allFiles = [...cssFiles, ...scssFiles];
       
-      for (const file of allFiles) {
+      for (const file of cssFiles) {
         const content = await fs.readFile(file, 'utf8');
         const relativePath = path.relative(this.projectRoot, file);
         
@@ -247,20 +245,9 @@ class Linter {
               this.warnings.push(`${relativePath}: Uses !important (consider refactoring)`);
             }
         }
-        
-        // Check for deprecated SASS syntax
-        if (file.endsWith('.scss')) {
-          if (content.includes('@import')) {
-            this.warnings.push(`${relativePath}: Uses deprecated @import (consider @use/@forward)`);
-          }
-          
-          if (content.includes('darken(') || content.includes('lighten(')) {
-            this.warnings.push(`${relativePath}: Uses deprecated color functions (consider color.adjust)`);
-          }
-        }
       }
       
-      console.log(`✓ Checked ${allFiles.length} CSS/SCSS files`);
+      console.log(`✓ Checked ${cssFiles.length} CSS files`);
     } catch (error) {
       this.errors.push(`Failed to check CSS files: ${error.message}`);
     }

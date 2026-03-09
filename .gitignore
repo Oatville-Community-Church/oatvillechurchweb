@@ -75,10 +75,6 @@ temp/
 # CSS Source Maps (optional - you may want to keep these for debugging)
 *.css.map
 
-# Sass cache
-.sass-cache/
-
-
 # Replit specific
 .replit
 replit.nix

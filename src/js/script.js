@@ -52,10 +52,72 @@ function initializeChurchWebsite() {
     }
 }
 
+function initYouTubeLiveStatus() {
+    const liveLink = document.getElementById('live-watch-link');
+    const liveStatusText = document.getElementById('live-status-text');
+    if (!liveLink) return; // Not on homepage
+
+    const applyDefaultState = () => {
+        liveLink.textContent = 'Watch on YouTube';
+        liveLink.classList.remove('text-red-700', 'hover:text-red-900', 'text-amber-700', 'hover:text-amber-900', 'font-semibold');
+        liveLink.classList.add('text-gray-600', 'hover:text-gray-900');
+        if (liveStatusText) {
+            liveStatusText.textContent = '';
+            liveStatusText.classList.add('hidden');
+        }
+    };
+
+    const applyLiveState = (video) => {
+        if (!video?.id) return applyDefaultState();
+        liveLink.href = `https://www.youtube.com/watch?v=${encodeURIComponent(video.id)}`;
+        liveLink.textContent = 'Watch Live Now';
+        liveLink.classList.remove('text-gray-600', 'hover:text-gray-900', 'text-amber-700', 'hover:text-amber-900');
+        liveLink.classList.add('text-red-700', 'hover:text-red-900', 'font-semibold');
+        if (liveStatusText) {
+            liveStatusText.textContent = `Live now on YouTube: ${video.title || 'Sunday service livestream'}`;
+            liveStatusText.classList.remove('hidden');
+        }
+    };
+
+    const applyUpcomingState = (video) => {
+        if (!video?.id) return applyDefaultState();
+        liveLink.href = `https://www.youtube.com/watch?v=${encodeURIComponent(video.id)}`;
+        liveLink.textContent = 'Watch Upcoming Stream';
+        liveLink.classList.remove('text-gray-600', 'hover:text-gray-900', 'text-red-700', 'hover:text-red-900');
+        liveLink.classList.add('text-amber-700', 'hover:text-amber-900', 'font-semibold');
+        if (liveStatusText) {
+            liveStatusText.textContent = `Upcoming livestream: ${video.title || 'Join us soon on YouTube'}`;
+            liveStatusText.classList.remove('hidden');
+        }
+    };
+
+    applyDefaultState();
+    const statusUrl = `${import.meta.env.BASE_URL}data/live-status.json?v=${Date.now()}`;
+    fetch(statusUrl, { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : Promise.reject(r.status))
+      .then(status => {
+          const state = String(status?.state || 'offline').toLowerCase();
+          if (state === 'live' && status?.liveNow?.id) {
+              applyLiveState(status.liveNow);
+              return;
+          }
+          if (state === 'upcoming' && status?.upcoming?.id) {
+              applyUpcomingState(status.upcoming);
+              return;
+          }
+          applyDefaultState();
+      })
+      .catch(err => {
+          console.warn('YouTube live status load failed', err);
+          applyDefaultState();
+      });
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     initializeChurchWebsite();
     initLiteYouTube();
+    initYouTubeLiveStatus();
     initYouTubeArchive();
     initMobileNav();
     // Human readable date on homepage latest video if present
@@ -143,6 +205,7 @@ function initYouTubeArchive() {
     const modalTitle = document.getElementById('video-modal-title');
     const modalDate = document.getElementById('video-modal-date');
     const closeBtn = modal?.querySelector('[data-close-modal]');
+    const rssFetchedAt = rssUpdated?.dataset.rssFetchedAt || '';
 
     function closeModal() {
         if (!modal) return;
@@ -202,6 +265,12 @@ function initYouTubeArchive() {
         if (isNaN(d)) return '';
         return d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric'});
     }
+    function formatDateTime(dateStr) {
+        if (!dateStr) return '';
+        const d = new Date(dateStr);
+        if (isNaN(d)) return '';
+        return d.toLocaleString(undefined, { year:'numeric', month:'short', day:'numeric', hour:'numeric', minute:'2-digit' });
+    }
     function escapeHtml(str){return (str||'').replace(/[&<>"']/g,c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;' }[c]));}
 
     function applySearch(all) {
@@ -243,12 +312,17 @@ function initYouTubeArchive() {
     }
 
     // Use Vite base path so GitHub Pages deployment (/repoName/) works.
-    fetch(`${import.meta.env.BASE_URL}data/you-tube-rss.xml`)
+    const baseRssUrl = `${import.meta.env.BASE_URL}data/you-tube-rss.xml`;
+    const rssVersion = rssFetchedAt || String(Date.now());
+    const rssUrl = `${baseRssUrl}?v=${encodeURIComponent(rssVersion)}`;
+    fetch(rssUrl, { cache: 'no-store' })
       .then(r => r.ok ? r.text() : Promise.reject(r.status))
       .then(txt => {
         const videos = parseRSS(txt);
         if (rssUpdated) {
-            rssUpdated.textContent = `Loaded ${videos.length} videos`;
+            const syncedLabel = formatDateTime(rssFetchedAt);
+            const syncPrefix = syncedLabel ? `Last synced ${syncedLabel}. ` : '';
+            rssUpdated.textContent = `${syncPrefix}Loaded ${videos.length} videos`;
         }
         render(videos);
         attachPlayHandlers(videos);

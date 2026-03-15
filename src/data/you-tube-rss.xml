@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:7xER6gd3WH0</id>
+  <yt:videoId>7xER6gd3WH0</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Beauty for Ashes part 1</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=7xER6gd3WH0"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-03-15T20:08:41+00:00</published>
+  <updated>2026-03-15T21:24:32+00:00</updated>
+  <media:group>
+   <media:title>Beauty for Ashes part 1</media:title>
+   <media:content url="https://www.youtube.com/v/7xER6gd3WH0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/7xER6gd3WH0/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:36mdV2Ut7RE</id>
   <yt:videoId>36mdV2Ut7RE</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,7 +52,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="1"/>
+    <media:statistics views="3"/>
    </media:community>
   </media:group>
  </entry>
@@ -52,7 +75,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="8"/>
+    <media:statistics views="9"/>
    </media:community>
   </media:group>
  </entry>
@@ -75,7 +98,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="2"/>
+    <media:statistics views="3"/>
    </media:community>
   </media:group>
  </entry>
@@ -90,7 +113,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-02-09T06:21:21+00:00</published>
-  <updated>2026-03-07T06:41:27+00:00</updated>
+  <updated>2026-03-11T20:35:34+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/DdBj1-LbHT0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -182,7 +205,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-01-12T06:38:37+00:00</published>
-  <updated>2026-02-11T15:46:07+00:00</updated>
+  <updated>2026-03-10T16:59:47+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/_CD20k1FeOg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="5"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:S5iVvyCP7xE</id>
-  <yt:videoId>S5iVvyCP7xE</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Thanking God in all things</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=S5iVvyCP7xE"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2025-11-24T22:16:24+00:00</published>
-  <updated>2025-12-25T15:03:03+00:00</updated>
-  <media:group>
-   <media:title>Thanking God in all things</media:title>
-   <media:content url="https://www.youtube.com/v/S5iVvyCP7xE?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i4.ytimg.com/vi/S5iVvyCP7xE/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>

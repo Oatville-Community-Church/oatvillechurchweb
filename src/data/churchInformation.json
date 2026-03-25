@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "AV81ggDrL2c",
-    "title": "Beauty for ashes part 2",
-    "description": "Watch the latest message from Oatville Community Church on YouTube.",
-    "thumbnail": "https://i.ytimg.com/vi/AV81ggDrL2c/hqdefault.jpg",
-    "publishedAt": "2026-03-23T00:27:16+00:00",
-    "fetchedAt": "2026-03-23T02:05:00.333Z"
+    "id": "5j-SG6Hq5rw",
+    "title": "Oatville Community Church Sunday Morning service",
+    "description": "Beauty for Ashes From Palms to Ashes to Beauty",
+    "thumbnail": "https://i.ytimg.com/vi/5j-SG6Hq5rw/hqdefault.jpg",
+    "publishedAt": "2026-03-25T20:43:10+00:00",
+    "fetchedAt": "2026-03-25T21:37:17.695Z"
   },
   "events": {
     "nextSunday": {
@@ -251,7 +251,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-03-23T02:05:00.333Z"
+    "rssFetchedAt": "2026-03-25T21:37:17.695Z"
   },
   "latestStream": {
     "id": "SRb_-mji-UU",

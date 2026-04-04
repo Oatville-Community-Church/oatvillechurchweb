@@ -20,8 +20,8 @@
    <name>Oatville Community Church</name>
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
-  <published>2026-04-02T16:04:06+00:00</published>
-  <updated>2026-04-02T16:05:06+00:00</updated>
+  <published>2026-04-04T12:49:05+00:00</published>
+  <updated>2026-04-04T12:49:36+00:00</updated>
   <media:group>
    <media:title>Friday Was Dark… But Sunday is coming</media:title>
    <media:content url="https://www.youtube.com/v/JjdiF9V1kTQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -29,7 +29,7 @@
    <media:description>Good Friday Service</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="0"/>
+    <media:statistics views="1"/>
    </media:community>
   </media:group>
  </entry>

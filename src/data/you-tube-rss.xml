@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:1LPAMB-JTCw</id>
+  <yt:videoId>1LPAMB-JTCw</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Don’t Forget What He’s Done.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=1LPAMB-JTCw"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-04-09T17:28:41+00:00</published>
+  <updated>2026-04-09T17:28:42+00:00</updated>
+  <media:group>
+   <media:title>Don’t Forget What He’s Done.</media:title>
+   <media:content url="https://www.youtube.com/v/1LPAMB-JTCw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/1LPAMB-JTCw/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Sunday Morning Service #OatvilleCommunityChurch</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:4MNENzk1v3k</id>
   <yt:videoId>4MNENzk1v3k</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,7 +52,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="2"/>
+    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>
@@ -52,7 +75,7 @@
    <media:description>Sunday Morning service.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="3"/>
+    <media:statistics views="4"/>
    </media:community>
   </media:group>
  </entry>
@@ -90,7 +113,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-03-23T00:27:16+00:00</published>
-  <updated>2026-03-23T01:44:26+00:00</updated>
+  <updated>2026-04-08T11:20:30+00:00</updated>
   <media:group>
    <media:title>Beauty for ashes part 2</media:title>
    <media:content url="https://www.youtube.com/v/AV81ggDrL2c?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -113,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-03-15T20:08:41+00:00</published>
-  <updated>2026-03-15T21:24:32+00:00</updated>
+  <updated>2026-04-07T03:20:14+00:00</updated>
   <media:group>
    <media:title>Beauty for Ashes part 1</media:title>
    <media:content url="https://www.youtube.com/v/7xER6gd3WH0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="11"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:WYw731Y1Cug</id>
-  <yt:videoId>WYw731Y1Cug</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>The Jezebel Spirit in America</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=WYw731Y1Cug"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2025-12-29T13:08:21+00:00</published>
-  <updated>2026-01-29T15:49:53+00:00</updated>
-  <media:group>
-   <media:title>The Jezebel Spirit in America</media:title>
-   <media:content url="https://www.youtube.com/v/WYw731Y1Cug?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i4.ytimg.com/vi/WYw731Y1Cug/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="9"/>
    </media:community>
   </media:group>
  </entry>

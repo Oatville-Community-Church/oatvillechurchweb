@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:WvnKmJofqgU</id>
+  <yt:videoId>WvnKmJofqgU</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Don't Forget What He Has Done</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=WvnKmJofqgU"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-04-12T19:02:56+00:00</published>
+  <updated>2026-04-12T20:38:42+00:00</updated>
+  <media:group>
+   <media:title>Don't Forget What He Has Done</media:title>
+   <media:content url="https://www.youtube.com/v/WvnKmJofqgU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/WvnKmJofqgU/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="1"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:1LPAMB-JTCw</id>
   <yt:videoId>1LPAMB-JTCw</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -52,7 +75,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="5"/>
+    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>
@@ -98,7 +121,7 @@
    <media:description>Beauty for Ashes From Palms to Ashes to Beauty</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="13"/>
+    <media:statistics views="15"/>
    </media:community>
   </media:group>
  </entry>
@@ -159,7 +182,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-03-08T18:43:11+00:00</published>
-  <updated>2026-03-08T20:12:39+00:00</updated>
+  <updated>2026-04-08T16:43:44+00:00</updated>
   <media:group>
    <media:title>The Few the chosen</media:title>
    <media:content url="https://www.youtube.com/v/36mdV2Ut7RE?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -320,7 +343,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-01-12T06:38:37+00:00</published>
-  <updated>2026-03-10T16:59:47+00:00</updated>
+  <updated>2026-04-10T20:21:04+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/_CD20k1FeOg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="2" average="5.00" min="1" max="5"/>
     <media:statistics views="5"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:FGoSQtInmuo</id>
-  <yt:videoId>FGoSQtInmuo</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>The beatitudes of the Bible part 1</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=FGoSQtInmuo"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-01-05T02:11:31+00:00</published>
-  <updated>2026-03-02T05:57:04+00:00</updated>
-  <media:group>
-   <media:title>The beatitudes of the Bible part 1</media:title>
-   <media:content url="https://www.youtube.com/v/FGoSQtInmuo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i3.ytimg.com/vi/FGoSQtInmuo/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="11"/>
    </media:community>
   </media:group>
  </entry>

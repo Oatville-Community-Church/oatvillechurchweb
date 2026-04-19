@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:1LPAMB-JTCw</id>
+  <yt:videoId>1LPAMB-JTCw</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>We have a calling.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=1LPAMB-JTCw"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-04-09T17:28:41+00:00</published>
+  <updated>2026-04-19T15:42:04+00:00</updated>
+  <media:group>
+   <media:title>We have a calling.</media:title>
+   <media:content url="https://www.youtube.com/v/1LPAMB-JTCw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/1LPAMB-JTCw/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Sunday Morning Service #OatvilleCommunityChurch</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="3"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:WvnKmJofqgU</id>
   <yt:videoId>WvnKmJofqgU</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,30 +52,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="1"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:1LPAMB-JTCw</id>
-  <yt:videoId>1LPAMB-JTCw</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Don’t Forget What He’s Done.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=1LPAMB-JTCw"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-04-09T17:28:41+00:00</published>
-  <updated>2026-04-09T17:28:42+00:00</updated>
-  <media:group>
-   <media:title>Don’t Forget What He’s Done.</media:title>
-   <media:content url="https://www.youtube.com/v/1LPAMB-JTCw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i2.ytimg.com/vi/1LPAMB-JTCw/hqdefault.jpg" width="480" height="360"/>
-   <media:description>Sunday Morning Service #OatvilleCommunityChurch</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="0"/>
+    <media:statistics views="2"/>
    </media:community>
   </media:group>
  </entry>
@@ -113,7 +113,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-03-30T06:02:00+00:00</published>
-  <updated>2026-03-30T09:22:37+00:00</updated>
+  <updated>2026-04-12T23:05:17+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church Sunday Morning service</media:title>
    <media:content url="https://www.youtube.com/v/5j-SG6Hq5rw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -159,7 +159,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-03-15T20:08:41+00:00</published>
-  <updated>2026-04-07T03:20:14+00:00</updated>
+  <updated>2026-04-15T19:38:54+00:00</updated>
   <media:group>
    <media:title>Beauty for Ashes part 1</media:title>
    <media:content url="https://www.youtube.com/v/7xER6gd3WH0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -274,7 +274,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-02-02T06:18:55+00:00</published>
-  <updated>2026-03-04T16:39:10+00:00</updated>
+  <updated>2026-04-14T21:37:55+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/69iLUVwtKNg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>

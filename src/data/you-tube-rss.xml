@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:BmtzRn_i4D8</id>
+  <yt:videoId>BmtzRn_i4D8</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>70th Aniversary session 1</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=BmtzRn_i4D8"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-04-25T15:00:19+00:00</published>
+  <updated>2026-04-25T15:06:09+00:00</updated>
+  <media:group>
+   <media:title>70th Aniversary session 1</media:title>
+   <media:content url="https://www.youtube.com/v/BmtzRn_i4D8?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/BmtzRn_i4D8/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="2"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:1LPAMB-JTCw</id>
   <yt:videoId>1LPAMB-JTCw</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -21,7 +44,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-04-20T05:45:01+00:00</published>
-  <updated>2026-04-20T06:09:27+00:00</updated>
+  <updated>2026-04-20T06:38:03+00:00</updated>
   <media:group>
    <media:title>We have a calling.</media:title>
    <media:content url="https://www.youtube.com/v/1LPAMB-JTCw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -29,7 +52,7 @@
    <media:description>Sunday Morning Service #OatvilleCommunityChurch</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="5"/>
+    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>
@@ -90,7 +113,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-04-04T12:49:05+00:00</published>
-  <updated>2026-04-05T23:03:27+00:00</updated>
+  <updated>2026-04-21T17:55:04+00:00</updated>
   <media:group>
    <media:title>Friday was dark.. but Sunday is coming..</media:title>
    <media:content url="https://www.youtube.com/v/JjdiF9V1kTQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -136,7 +159,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-03-23T00:27:16+00:00</published>
-  <updated>2026-04-08T11:20:30+00:00</updated>
+  <updated>2026-04-23T00:03:12+00:00</updated>
   <media:group>
    <media:title>Beauty for ashes part 2</media:title>
    <media:content url="https://www.youtube.com/v/AV81ggDrL2c?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -190,7 +213,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="4"/>
+    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="13"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:_CD20k1FeOg</id>
-  <yt:videoId>_CD20k1FeOg</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Oatville Community Church livestream.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=_CD20k1FeOg"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-01-12T06:38:37+00:00</published>
-  <updated>2026-04-10T20:21:04+00:00</updated>
-  <media:group>
-   <media:title>Oatville Community Church livestream.</media:title>
-   <media:content url="https://www.youtube.com/v/_CD20k1FeOg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i4.ytimg.com/vi/_CD20k1FeOg/hqdefault.jpg" width="480" height="360"/>
-   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
-   <media:community>
-    <media:starRating count="2" average="5.00" min="1" max="5"/>
-    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>

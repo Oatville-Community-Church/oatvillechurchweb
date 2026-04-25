@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "1LPAMB-JTCw",
-    "title": "We have a calling.",
-    "description": "Sunday Morning Service #OatvilleCommunityChurch",
-    "thumbnail": "https://i.ytimg.com/vi/1LPAMB-JTCw/hqdefault.jpg",
-    "publishedAt": "2026-04-20T05:45:01+00:00",
-    "fetchedAt": "2026-04-20T08:03:51.376Z"
+    "id": "BmtzRn_i4D8",
+    "title": "70th Aniversary session 1",
+    "description": "Watch the latest message from Oatville Community Church on YouTube.",
+    "thumbnail": "https://i.ytimg.com/vi/BmtzRn_i4D8/hqdefault.jpg",
+    "publishedAt": "2026-04-25T15:00:19+00:00",
+    "fetchedAt": "2026-04-25T15:37:40.005Z"
   },
   "events": {
     "nextSunday": {
@@ -251,7 +251,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-04-20T08:03:51.376Z"
+    "rssFetchedAt": "2026-04-25T15:37:40.005Z"
   },
   "latestStream": {
     "id": "SRb_-mji-UU",

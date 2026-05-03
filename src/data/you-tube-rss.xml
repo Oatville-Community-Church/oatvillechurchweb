@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:bt-4TuwQfWU</id>
+  <yt:videoId>bt-4TuwQfWU</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Let it go.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=bt-4TuwQfWU"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-05-03T15:34:54+00:00</published>
+  <updated>2026-05-03T15:41:54+00:00</updated>
+  <media:group>
+   <media:title>Let it go.</media:title>
+   <media:content url="https://www.youtube.com/v/bt-4TuwQfWU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/bt-4TuwQfWU/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:c50dmR35ks0</id>
   <yt:videoId>c50dmR35ks0</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -21,7 +44,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-04-27T05:13:08+00:00</published>
-  <updated>2026-04-27T08:06:08+00:00</updated>
+  <updated>2026-04-27T08:33:17+00:00</updated>
   <media:group>
    <media:title>A new thing</media:title>
    <media:content url="https://www.youtube.com/v/c50dmR35ks0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -29,7 +52,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="4"/>
+    <media:statistics views="6"/>
    </media:community>
   </media:group>
  </entry>
@@ -52,7 +75,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="6"/>
+    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>
@@ -228,7 +251,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-03-08T18:43:11+00:00</published>
-  <updated>2026-04-08T16:43:44+00:00</updated>
+  <updated>2026-04-28T22:10:49+00:00</updated>
   <media:group>
    <media:title>The Few the chosen</media:title>
    <media:content url="https://www.youtube.com/v/36mdV2Ut7RE?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -274,7 +297,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-02-15T18:22:41+00:00</published>
-  <updated>2026-03-18T19:12:29+00:00</updated>
+  <updated>2026-04-28T19:57:14+00:00</updated>
   <media:group>
    <media:title>Kingdom Living in worldly culture.</media:title>
    <media:content url="https://www.youtube.com/v/33D2Zxbw1rw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -297,7 +320,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-02-09T06:21:21+00:00</published>
-  <updated>2026-03-11T20:35:34+00:00</updated>
+  <updated>2026-04-29T00:56:50+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/DdBj1-LbHT0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="11"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:A4c-8qzyhKk</id>
-  <yt:videoId>A4c-8qzyhKk</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>United we move, divided we fail.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=A4c-8qzyhKk"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-01-25T18:16:00+00:00</published>
-  <updated>2026-02-25T15:25:44+00:00</updated>
-  <media:group>
-   <media:title>United we move, divided we fail.</media:title>
-   <media:content url="https://www.youtube.com/v/A4c-8qzyhKk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i2.ytimg.com/vi/A4c-8qzyhKk/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
-   <media:community>
-    <media:starRating count="1" average="5.00" min="1" max="5"/>
-    <media:statistics views="8"/>
    </media:community>
   </media:group>
  </entry>

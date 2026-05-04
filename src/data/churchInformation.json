@@ -195,8 +195,8 @@
     "title": "Let it go.",
     "description": "Watch the latest message from Oatville Community Church on YouTube.",
     "thumbnail": "https://i.ytimg.com/vi/bt-4TuwQfWU/hqdefault.jpg",
-    "publishedAt": "2026-05-03T15:34:54+00:00",
-    "fetchedAt": "2026-05-03T15:44:21.161Z"
+    "publishedAt": "2026-05-04T05:15:40+00:00",
+    "fetchedAt": "2026-05-04T11:03:48.928Z"
   },
   "events": {
     "nextSunday": {
@@ -251,7 +251,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-05-03T15:44:21.161Z"
+    "rssFetchedAt": "2026-05-04T11:03:48.928Z"
   },
   "latestStream": {
     "id": "SRb_-mji-UU",

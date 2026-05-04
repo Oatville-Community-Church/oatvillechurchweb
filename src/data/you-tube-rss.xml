@@ -20,16 +20,16 @@
    <name>Oatville Community Church</name>
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
-  <published>2026-05-03T15:34:54+00:00</published>
-  <updated>2026-05-03T15:41:54+00:00</updated>
+  <published>2026-05-04T05:15:40+00:00</published>
+  <updated>2026-05-04T06:27:43+00:00</updated>
   <media:group>
    <media:title>Let it go.</media:title>
    <media:content url="https://www.youtube.com/v/bt-4TuwQfWU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
    <media:thumbnail url="https://i3.ytimg.com/vi/bt-4TuwQfWU/hqdefault.jpg" width="480" height="360"/>
    <media:description></media:description>
    <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="0"/>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="4"/>
    </media:community>
   </media:group>
  </entry>

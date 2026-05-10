@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "bt-4TuwQfWU",
-    "title": "Let it go.",
-    "description": "Watch the latest message from Oatville Community Church on YouTube.",
-    "thumbnail": "https://i.ytimg.com/vi/bt-4TuwQfWU/hqdefault.jpg",
-    "publishedAt": "2026-05-04T05:15:40+00:00",
-    "fetchedAt": "2026-05-04T11:03:48.928Z"
+    "id": "RhtBpwdBasQ",
+    "title": "A tale of two mothers.",
+    "description": "Sunday Morning service.",
+    "thumbnail": "https://i.ytimg.com/vi/RhtBpwdBasQ/hqdefault.jpg",
+    "publishedAt": "2026-05-10T15:37:29+00:00",
+    "fetchedAt": "2026-05-10T15:52:09.996Z"
   },
   "events": {
     "nextSunday": {
@@ -251,7 +251,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-05-04T11:03:48.928Z"
+    "rssFetchedAt": "2026-05-10T15:52:09.996Z"
   },
   "latestStream": {
     "id": "SRb_-mji-UU",

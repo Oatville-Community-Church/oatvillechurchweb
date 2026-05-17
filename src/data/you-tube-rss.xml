@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:lS2J3NqnNfg</id>
+  <yt:videoId>lS2J3NqnNfg</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Is your name in the Boo?</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=lS2J3NqnNfg"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-05-17T15:37:49+00:00</published>
+  <updated>2026-05-17T15:39:58+00:00</updated>
+  <media:group>
+   <media:title>Is your name in the Boo?</media:title>
+   <media:content url="https://www.youtube.com/v/lS2J3NqnNfg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/lS2J3NqnNfg/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Sunday Morning Service</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:RhtBpwdBasQ</id>
   <yt:videoId>RhtBpwdBasQ</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -21,7 +44,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-05-11T05:15:48+00:00</published>
-  <updated>2026-05-11T06:10:15+00:00</updated>
+  <updated>2026-05-11T08:11:39+00:00</updated>
   <media:group>
    <media:title>A tale of two mothers.</media:title>
    <media:content url="https://www.youtube.com/v/RhtBpwdBasQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -29,7 +52,7 @@
    <media:description>Sunday Morning service.</media:description>
    <media:community>
     <media:starRating count="1" average="5.00" min="1" max="5"/>
-    <media:statistics views="5"/>
+    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>
@@ -113,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-04-20T05:45:01+00:00</published>
-  <updated>2026-05-05T05:59:18+00:00</updated>
+  <updated>2026-05-10T15:31:38+00:00</updated>
   <media:group>
    <media:title>We have a calling.</media:title>
    <media:content url="https://www.youtube.com/v/1LPAMB-JTCw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -136,7 +159,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-04-12T19:02:56+00:00</published>
-  <updated>2026-05-04T18:24:09+00:00</updated>
+  <updated>2026-05-13T14:57:09+00:00</updated>
   <media:group>
    <media:title>Don't Forget What He Has Done</media:title>
    <media:content url="https://www.youtube.com/v/WvnKmJofqgU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="3"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:DdBj1-LbHT0</id>
-  <yt:videoId>DdBj1-LbHT0</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Oatville Community Church livestream.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=DdBj1-LbHT0"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-02-09T06:21:21+00:00</published>
-  <updated>2026-04-29T00:56:50+00:00</updated>
-  <media:group>
-   <media:title>Oatville Community Church livestream.</media:title>
-   <media:content url="https://www.youtube.com/v/DdBj1-LbHT0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i1.ytimg.com/vi/DdBj1-LbHT0/hqdefault.jpg" width="480" height="360"/>
-   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
-   <media:community>
-    <media:starRating count="2" average="5.00" min="1" max="5"/>
-    <media:statistics views="10"/>
    </media:community>
   </media:group>
  </entry>

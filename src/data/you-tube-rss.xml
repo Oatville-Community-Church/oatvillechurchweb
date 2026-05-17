@@ -14,22 +14,22 @@
   <id>yt:video:lS2J3NqnNfg</id>
   <yt:videoId>lS2J3NqnNfg</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Is your name in the Boo?</title>
+  <title>Is your name in the Book?</title>
   <link rel="alternate" href="https://www.youtube.com/watch?v=lS2J3NqnNfg"/>
   <author>
    <name>Oatville Community Church</name>
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-05-17T15:37:49+00:00</published>
-  <updated>2026-05-17T15:39:58+00:00</updated>
+  <updated>2026-05-17T21:47:10+00:00</updated>
   <media:group>
-   <media:title>Is your name in the Boo?</media:title>
+   <media:title>Is your name in the Book?</media:title>
    <media:content url="https://www.youtube.com/v/lS2J3NqnNfg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
    <media:thumbnail url="https://i1.ytimg.com/vi/lS2J3NqnNfg/hqdefault.jpg" width="480" height="360"/>
    <media:description>Sunday Morning Service</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="0"/>
+    <media:statistics views="4"/>
    </media:community>
   </media:group>
  </entry>
@@ -144,7 +144,7 @@
    <media:description>Sunday Morning Service #OatvilleCommunityChurch</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="7"/>
+    <media:statistics views="8"/>
    </media:community>
   </media:group>
  </entry>

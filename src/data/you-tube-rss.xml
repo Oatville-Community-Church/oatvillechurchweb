@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:8JRiYTxQNG8</id>
+  <yt:videoId>8JRiYTxQNG8</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=8JRiYTxQNG8"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-05-24T15:42:13+00:00</published>
+  <updated>2026-05-24T15:42:15+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream.</media:title>
+   <media:content url="https://www.youtube.com/v/8JRiYTxQNG8?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/8JRiYTxQNG8/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:lS2J3NqnNfg</id>
   <yt:videoId>lS2J3NqnNfg</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,7 +52,7 @@
    <media:description>Sunday Morning Service</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="6"/>
+    <media:statistics views="12"/>
    </media:community>
   </media:group>
  </entry>
@@ -67,7 +90,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-05-04T05:15:40+00:00</published>
-  <updated>2026-05-04T06:27:43+00:00</updated>
+  <updated>2026-05-21T02:21:37+00:00</updated>
   <media:group>
    <media:title>Let it go.</media:title>
    <media:content url="https://www.youtube.com/v/bt-4TuwQfWU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -90,7 +113,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-04-27T05:13:08+00:00</published>
-  <updated>2026-04-27T08:33:17+00:00</updated>
+  <updated>2026-05-21T02:42:19+00:00</updated>
   <media:group>
    <media:title>A new thing</media:title>
    <media:content url="https://www.youtube.com/v/c50dmR35ks0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -167,7 +190,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="4"/>
+    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>
@@ -320,7 +343,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-02-23T06:24:06+00:00</published>
-  <updated>2026-03-18T19:14:49+00:00</updated>
+  <updated>2026-05-21T18:31:49+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/SRb_-mji-UU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="9"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:33D2Zxbw1rw</id>
-  <yt:videoId>33D2Zxbw1rw</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Kingdom Living in worldly culture.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=33D2Zxbw1rw"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-02-15T18:22:41+00:00</published>
-  <updated>2026-04-28T19:57:14+00:00</updated>
-  <media:group>
-   <media:title>Kingdom Living in worldly culture.</media:title>
-   <media:content url="https://www.youtube.com/v/33D2Zxbw1rw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i4.ytimg.com/vi/33D2Zxbw1rw/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="3"/>
    </media:community>
   </media:group>
  </entry>

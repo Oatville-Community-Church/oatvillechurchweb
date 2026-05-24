@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "lS2J3NqnNfg",
-    "title": "Is your name in the Book?",
-    "description": "Sunday Morning Service",
-    "thumbnail": "https://i.ytimg.com/vi/lS2J3NqnNfg/hqdefault.jpg",
-    "publishedAt": "2026-05-18T05:43:21+00:00",
-    "fetchedAt": "2026-05-18T09:58:53.175Z"
+    "id": "8JRiYTxQNG8",
+    "title": "Oatville Community Church livestream.",
+    "description": "The Oatville Community Church Sunday Morning live stream.",
+    "thumbnail": "https://i.ytimg.com/vi/8JRiYTxQNG8/hqdefault.jpg",
+    "publishedAt": "2026-05-24T15:42:13+00:00",
+    "fetchedAt": "2026-05-24T15:59:44.888Z"
   },
   "events": {
     "nextSunday": {
@@ -251,14 +251,14 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-05-18T09:58:53.175Z"
+    "rssFetchedAt": "2026-05-24T15:59:44.888Z"
   },
   "latestStream": {
-    "id": "SRb_-mji-UU",
+    "id": "8JRiYTxQNG8",
     "title": "Oatville Community Church livestream.",
     "description": "The Oatville Community Church Sunday Morning live stream.",
-    "thumbnail": "https://i.ytimg.com/vi/SRb_-mji-UU/hqdefault.jpg",
-    "publishedAt": "2026-02-23T06:24:06+00:00",
-    "fetchedAt": "2026-03-09T16:36:06.551Z"
+    "thumbnail": "https://i.ytimg.com/vi/8JRiYTxQNG8/hqdefault.jpg",
+    "publishedAt": "2026-05-24T15:42:13+00:00",
+    "fetchedAt": "2026-05-24T15:59:44.888Z"
   }
 }

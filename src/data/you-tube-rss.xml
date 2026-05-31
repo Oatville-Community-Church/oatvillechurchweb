@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:PLcRg-usMdk</id>
+  <yt:videoId>PLcRg-usMdk</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Oatville Community Church livestream. Living the whole life.</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=PLcRg-usMdk"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-05-24T17:11:35+00:00</published>
+  <updated>2026-05-31T15:42:16+00:00</updated>
+  <media:group>
+   <media:title>Oatville Community Church livestream. Living the whole life.</media:title>
+   <media:content url="https://www.youtube.com/v/PLcRg-usMdk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/PLcRg-usMdk/hqdefault.jpg" width="480" height="360"/>
+   <media:description>The Oatville Community Church Sunday Morning live stream. Living the whole life.</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="1"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:8JRiYTxQNG8</id>
   <yt:videoId>8JRiYTxQNG8</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,30 +52,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="5"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:PLcRg-usMdk</id>
-  <yt:videoId>PLcRg-usMdk</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Oatville Community Church livestream.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=PLcRg-usMdk"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-05-24T17:11:35+00:00</published>
-  <updated>2026-05-24T17:16:02+00:00</updated>
-  <media:group>
-   <media:title>Oatville Community Church livestream.</media:title>
-   <media:content url="https://www.youtube.com/v/PLcRg-usMdk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i1.ytimg.com/vi/PLcRg-usMdk/hqdefault.jpg" width="480" height="360"/>
-   <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="0"/>
+    <media:statistics views="6"/>
    </media:community>
   </media:group>
  </entry>
@@ -136,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-04-27T05:13:08+00:00</published>
-  <updated>2026-05-21T02:42:19+00:00</updated>
+  <updated>2026-05-28T00:17:37+00:00</updated>
   <media:group>
    <media:title>A new thing</media:title>
    <media:content url="https://www.youtube.com/v/c50dmR35ks0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -159,7 +159,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-04-26T04:01:28+00:00</published>
-  <updated>2026-04-26T04:42:53+00:00</updated>
+  <updated>2026-05-26T16:01:49+00:00</updated>
   <media:group>
    <media:title>70th Aniversary session 2</media:title>
    <media:content url="https://www.youtube.com/v/BmtzRn_i4D8?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -228,7 +228,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-04-06T00:52:41+00:00</published>
-  <updated>2026-05-06T18:41:09+00:00</updated>
+  <updated>2026-05-28T21:04:44+00:00</updated>
   <media:group>
    <media:title>When the grave could not hold Him</media:title>
    <media:content url="https://www.youtube.com/v/4MNENzk1v3k?version=3" type="application/x-shockwave-flash" width="640" height="390"/>

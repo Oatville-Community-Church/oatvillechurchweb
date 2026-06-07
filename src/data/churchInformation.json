@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "PLcRg-usMdk",
-    "title": "Oatville Community Church livestream. Living the whole life.",
-    "description": "The Oatville Community Church Sunday Morning live stream. Living the whole life.",
-    "thumbnail": "https://i.ytimg.com/vi/PLcRg-usMdk/hqdefault.jpg",
-    "publishedAt": "2026-06-01T05:12:48+00:00",
-    "fetchedAt": "2026-06-01T11:28:38.051Z"
+    "id": "I06-ubMcH3k",
+    "title": "Lamb of God",
+    "description": "Sunday Morning",
+    "thumbnail": "https://i.ytimg.com/vi/I06-ubMcH3k/hqdefault.jpg",
+    "publishedAt": "2026-06-07T15:40:52+00:00",
+    "fetchedAt": "2026-06-07T16:12:48.217Z"
   },
   "events": {
     "nextSunday": {
@@ -251,7 +251,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-06-01T11:28:38.051Z"
+    "rssFetchedAt": "2026-06-07T16:12:48.217Z"
   },
   "latestStream": {
     "id": "PLcRg-usMdk",

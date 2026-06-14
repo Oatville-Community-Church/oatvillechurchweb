@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:IEGBCraEKoA</id>
+  <yt:videoId>IEGBCraEKoA</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>“Let’s be encouraged.”</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=IEGBCraEKoA"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-06-14T15:32:36+00:00</published>
+  <updated>2026-06-14T15:42:16+00:00</updated>
+  <media:group>
+   <media:title>“Let’s be encouraged.”</media:title>
+   <media:content url="https://www.youtube.com/v/IEGBCraEKoA?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/IEGBCraEKoA/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Sunday Morning Service</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:I06-ubMcH3k</id>
   <yt:videoId>I06-ubMcH3k</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -21,7 +44,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-06-08T06:26:11+00:00</published>
-  <updated>2026-06-08T10:39:13+00:00</updated>
+  <updated>2026-06-08T10:49:26+00:00</updated>
   <media:group>
    <media:title>Lamb of God</media:title>
    <media:content url="https://www.youtube.com/v/I06-ubMcH3k?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -29,7 +52,7 @@
    <media:description>Sunday Morning</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="6"/>
+    <media:statistics views="12"/>
    </media:community>
   </media:group>
  </entry>
@@ -113,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-05-11T05:15:48+00:00</published>
-  <updated>2026-05-11T08:11:39+00:00</updated>
+  <updated>2026-06-10T14:34:18+00:00</updated>
   <media:group>
    <media:title>A tale of two mothers.</media:title>
    <media:content url="https://www.youtube.com/v/RhtBpwdBasQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="7"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:7xER6gd3WH0</id>
-  <yt:videoId>7xER6gd3WH0</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Beauty for Ashes part 1</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=7xER6gd3WH0"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-03-15T20:08:41+00:00</published>
-  <updated>2026-05-04T21:12:36+00:00</updated>
-  <media:group>
-   <media:title>Beauty for Ashes part 1</media:title>
-   <media:content url="https://www.youtube.com/v/7xER6gd3WH0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i4.ytimg.com/vi/7xER6gd3WH0/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="6"/>
    </media:community>
   </media:group>
  </entry>

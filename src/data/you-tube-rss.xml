@@ -20,8 +20,8 @@
    <name>Oatville Community Church</name>
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
-  <published>2026-06-14T15:32:36+00:00</published>
-  <updated>2026-06-14T15:42:16+00:00</updated>
+  <published>2026-06-15T05:29:23+00:00</published>
+  <updated>2026-06-15T07:00:29+00:00</updated>
   <media:group>
    <media:title>“Let’s be encouraged.”</media:title>
    <media:content url="https://www.youtube.com/v/IEGBCraEKoA?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -29,7 +29,7 @@
    <media:description>Sunday Morning Service</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="0"/>
+    <media:statistics views="3"/>
    </media:community>
   </media:group>
  </entry>
@@ -52,7 +52,7 @@
    <media:description>Sunday Morning</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="12"/>
+    <media:statistics views="13"/>
    </media:community>
   </media:group>
  </entry>
@@ -75,7 +75,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream. Living the whole life.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="4"/>
+    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>
@@ -98,7 +98,7 @@
    <media:description>The Oatville Community Church Sunday Morning live stream.</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="6"/>
+    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>
@@ -328,7 +328,7 @@
    <media:description>Beauty for Ashes From Palms to Ashes to Beauty</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="16"/>
+    <media:statistics views="18"/>
    </media:community>
   </media:group>
  </entry>

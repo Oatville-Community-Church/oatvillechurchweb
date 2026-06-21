@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:myoDnqUk6bo</id>
+  <yt:videoId>myoDnqUk6bo</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>The good, good, Father</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=myoDnqUk6bo"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-06-21T15:39:00+00:00</published>
+  <updated>2026-06-21T15:43:50+00:00</updated>
+  <media:group>
+   <media:title>The good, good, Father</media:title>
+   <media:content url="https://www.youtube.com/v/myoDnqUk6bo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/myoDnqUk6bo/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Sunday Morning Service</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="1"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:IEGBCraEKoA</id>
   <yt:videoId>IEGBCraEKoA</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -113,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-05-18T05:43:21+00:00</published>
-  <updated>2026-05-18T07:21:47+00:00</updated>
+  <updated>2026-06-18T05:34:52+00:00</updated>
   <media:group>
    <media:title>Is your name in the Book?</media:title>
    <media:content url="https://www.youtube.com/v/lS2J3NqnNfg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -328,30 +351,7 @@
    <media:description>Beauty for Ashes From Palms to Ashes to Beauty</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="18"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:AV81ggDrL2c</id>
-  <yt:videoId>AV81ggDrL2c</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Beauty for ashes part 2</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=AV81ggDrL2c"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-03-23T00:27:16+00:00</published>
-  <updated>2026-05-05T00:11:49+00:00</updated>
-  <media:group>
-   <media:title>Beauty for ashes part 2</media:title>
-   <media:content url="https://www.youtube.com/v/AV81ggDrL2c?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i2.ytimg.com/vi/AV81ggDrL2c/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="7"/>
+    <media:statistics views="19"/>
    </media:community>
   </media:group>
  </entry>

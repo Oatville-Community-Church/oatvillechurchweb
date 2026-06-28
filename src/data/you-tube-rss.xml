@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:1COHZZQRxFg</id>
+  <yt:videoId>1COHZZQRxFg</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Keep the Fire Burning</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=1COHZZQRxFg"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-06-28T15:33:34+00:00</published>
+  <updated>2026-06-28T15:41:27+00:00</updated>
+  <media:group>
+   <media:title>Keep the Fire Burning</media:title>
+   <media:content url="https://www.youtube.com/v/1COHZZQRxFg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/1COHZZQRxFg/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Sunday Morning</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="3"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:myoDnqUk6bo</id>
   <yt:videoId>myoDnqUk6bo</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -28,8 +51,8 @@
    <media:thumbnail url="https://i2.ytimg.com/vi/myoDnqUk6bo/hqdefault.jpg" width="480" height="360"/>
    <media:description>Sunday Morning Service</media:description>
    <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="1"/>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="4"/>
    </media:community>
   </media:group>
  </entry>
@@ -90,7 +113,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-06-01T05:12:48+00:00</published>
-  <updated>2026-06-01T05:32:24+00:00</updated>
+  <updated>2026-06-24T17:48:17+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream. Living the whole life.</media:title>
    <media:content url="https://www.youtube.com/v/PLcRg-usMdk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -113,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-05-25T05:46:31+00:00</published>
-  <updated>2026-05-25T08:09:16+00:00</updated>
+  <updated>2026-06-24T17:52:47+00:00</updated>
   <media:group>
    <media:title>Oatville Community Church livestream.</media:title>
    <media:content url="https://www.youtube.com/v/8JRiYTxQNG8?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="4"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:5j-SG6Hq5rw</id>
-  <yt:videoId>5j-SG6Hq5rw</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Oatville Community Church Sunday Morning service</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=5j-SG6Hq5rw"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-03-30T06:02:00+00:00</published>
-  <updated>2026-05-05T11:35:38+00:00</updated>
-  <media:group>
-   <media:title>Oatville Community Church Sunday Morning service</media:title>
-   <media:content url="https://www.youtube.com/v/5j-SG6Hq5rw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i2.ytimg.com/vi/5j-SG6Hq5rw/hqdefault.jpg" width="480" height="360"/>
-   <media:description>Beauty for Ashes From Palms to Ashes to Beauty</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="19"/>
    </media:community>
   </media:group>
  </entry>

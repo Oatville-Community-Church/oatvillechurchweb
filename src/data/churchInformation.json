@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "myoDnqUk6bo",
-    "title": "The good, good, Father",
-    "description": "Sunday Morning Service",
-    "thumbnail": "https://i.ytimg.com/vi/myoDnqUk6bo/hqdefault.jpg",
-    "publishedAt": "2026-06-22T05:21:33+00:00",
-    "fetchedAt": "2026-06-22T11:49:08.764Z"
+    "id": "1COHZZQRxFg",
+    "title": "Keep the Fire Burning",
+    "description": "Sunday Morning",
+    "thumbnail": "https://i.ytimg.com/vi/1COHZZQRxFg/hqdefault.jpg",
+    "publishedAt": "2026-06-28T15:33:34+00:00",
+    "fetchedAt": "2026-06-28T16:08:06.233Z"
   },
   "events": {
     "nextSunday": {
@@ -251,7 +251,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-06-22T11:49:08.764Z"
+    "rssFetchedAt": "2026-06-28T16:08:06.233Z"
   },
   "latestStream": {
     "id": "PLcRg-usMdk",

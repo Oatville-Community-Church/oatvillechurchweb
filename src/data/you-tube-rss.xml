@@ -20,15 +20,15 @@
    <name>Oatville Community Church</name>
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
-  <published>2026-07-05T15:36:15+00:00</published>
-  <updated>2026-07-05T15:40:08+00:00</updated>
+  <published>2026-07-06T05:06:43+00:00</published>
+  <updated>2026-07-06T06:14:18+00:00</updated>
   <media:group>
    <media:title>Freedom that last.</media:title>
    <media:content url="https://www.youtube.com/v/m65pIv0rgAk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
    <media:thumbnail url="https://i2.ytimg.com/vi/m65pIv0rgAk/hqdefault.jpg" width="480" height="360"/>
    <media:description>Sunday Morning 7-5-26</media:description>
    <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
     <media:statistics views="2"/>
    </media:community>
   </media:group>
@@ -52,7 +52,7 @@
    <media:description>Sunday Morning</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="8"/>
+    <media:statistics views="9"/>
    </media:community>
   </media:group>
  </entry>

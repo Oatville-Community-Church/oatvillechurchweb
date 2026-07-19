@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "LH6mrKpXxAw",
-    "title": "Where will you stand?",
-    "description": "Sunday Morning Service",
-    "thumbnail": "https://i.ytimg.com/vi/LH6mrKpXxAw/hqdefault.jpg",
-    "publishedAt": "2026-07-13T05:34:53+00:00",
-    "fetchedAt": "2026-07-13T11:59:03.000Z"
+    "id": "qWmcBZ7_Lx0",
+    "title": "Where should we build?",
+    "description": "Sunday Morning",
+    "thumbnail": "https://i.ytimg.com/vi/qWmcBZ7_Lx0/hqdefault.jpg",
+    "publishedAt": "2026-07-19T15:35:51+00:00",
+    "fetchedAt": "2026-07-19T15:55:27.184Z"
   },
   "events": {
     "nextSunday": {
@@ -251,7 +251,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-07-13T11:59:03.000Z"
+    "rssFetchedAt": "2026-07-19T15:55:27.184Z"
   },
   "latestStream": {
     "id": "PLcRg-usMdk",

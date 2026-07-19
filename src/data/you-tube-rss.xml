@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:qWmcBZ7_Lx0</id>
+  <yt:videoId>qWmcBZ7_Lx0</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>Where should we build?</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=qWmcBZ7_Lx0"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-07-19T15:35:51+00:00</published>
+  <updated>2026-07-19T15:44:16+00:00</updated>
+  <media:group>
+   <media:title>Where should we build?</media:title>
+   <media:content url="https://www.youtube.com/v/qWmcBZ7_Lx0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/qWmcBZ7_Lx0/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Sunday Morning</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:LH6mrKpXxAw</id>
   <yt:videoId>LH6mrKpXxAw</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,7 +52,7 @@
    <media:description>Sunday Morning Service</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="1"/>
+    <media:statistics views="6"/>
    </media:community>
   </media:group>
  </entry>
@@ -326,29 +349,6 @@
    <media:content url="https://www.youtube.com/v/1LPAMB-JTCw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
    <media:thumbnail url="https://i2.ytimg.com/vi/1LPAMB-JTCw/hqdefault.jpg" width="480" height="360"/>
    <media:description>Sunday Morning Service #OatvilleCommunityChurch</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="8"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:WvnKmJofqgU</id>
-  <yt:videoId>WvnKmJofqgU</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Don't Forget What He Has Done</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=WvnKmJofqgU"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-04-12T19:02:56+00:00</published>
-  <updated>2026-05-13T14:57:09+00:00</updated>
-  <media:group>
-   <media:title>Don't Forget What He Has Done</media:title>
-   <media:content url="https://www.youtube.com/v/WvnKmJofqgU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i4.ytimg.com/vi/WvnKmJofqgU/hqdefault.jpg" width="480" height="360"/>
-   <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="8"/>

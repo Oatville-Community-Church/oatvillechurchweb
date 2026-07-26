@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:mNDHytw8GoU</id>
+  <yt:videoId>mNDHytw8GoU</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>What should we say?</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=mNDHytw8GoU"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-07-26T15:41:04+00:00</published>
+  <updated>2026-07-26T15:42:36+00:00</updated>
+  <media:group>
+   <media:title>What should we say?</media:title>
+   <media:content url="https://www.youtube.com/v/mNDHytw8GoU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/mNDHytw8GoU/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Sunday Morning Service</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="3"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:qWmcBZ7_Lx0</id>
   <yt:videoId>qWmcBZ7_Lx0</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -21,7 +44,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-07-20T05:21:32+00:00</published>
-  <updated>2026-07-20T08:01:11+00:00</updated>
+  <updated>2026-07-20T15:32:04+00:00</updated>
   <media:group>
    <media:title>Where should we build?</media:title>
    <media:content url="https://www.youtube.com/v/qWmcBZ7_Lx0?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -29,7 +52,7 @@
    <media:description>Sunday Morning</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="2"/>
+    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>
@@ -136,7 +159,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-06-15T05:29:23+00:00</published>
-  <updated>2026-06-15T07:00:29+00:00</updated>
+  <updated>2026-07-16T21:35:34+00:00</updated>
   <media:group>
    <media:title>“Let’s be encouraged.”</media:title>
    <media:content url="https://www.youtube.com/v/IEGBCraEKoA?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="7"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:1LPAMB-JTCw</id>
-  <yt:videoId>1LPAMB-JTCw</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>We have a calling.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=1LPAMB-JTCw"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-04-20T05:45:01+00:00</published>
-  <updated>2026-05-10T15:31:38+00:00</updated>
-  <media:group>
-   <media:title>We have a calling.</media:title>
-   <media:content url="https://www.youtube.com/v/1LPAMB-JTCw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i2.ytimg.com/vi/1LPAMB-JTCw/hqdefault.jpg" width="480" height="360"/>
-   <media:description>Sunday Morning Service #OatvilleCommunityChurch</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="8"/>
    </media:community>
   </media:group>
  </entry>

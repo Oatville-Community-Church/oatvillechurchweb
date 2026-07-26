@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "qWmcBZ7_Lx0",
-    "title": "Where should we build?",
-    "description": "Sunday Morning",
-    "thumbnail": "https://i.ytimg.com/vi/qWmcBZ7_Lx0/hqdefault.jpg",
-    "publishedAt": "2026-07-20T05:21:32+00:00",
-    "fetchedAt": "2026-07-20T11:42:36.991Z"
+    "id": "mNDHytw8GoU",
+    "title": "What should we say?",
+    "description": "Sunday Morning Service",
+    "thumbnail": "https://i.ytimg.com/vi/mNDHytw8GoU/hqdefault.jpg",
+    "publishedAt": "2026-07-26T15:41:04+00:00",
+    "fetchedAt": "2026-07-26T15:59:29.102Z"
   },
   "events": {
     "nextSunday": {
@@ -251,7 +251,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-07-20T11:42:36.991Z"
+    "rssFetchedAt": "2026-07-26T15:59:29.102Z"
   },
   "latestStream": {
     "id": "PLcRg-usMdk",

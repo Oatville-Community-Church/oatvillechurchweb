@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:bhYGUPqWaxw</id>
+  <yt:videoId>bhYGUPqWaxw</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>“What Shall We Wear”</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=bhYGUPqWaxw"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-08-23T14:44:56+00:00</published>
+  <updated>2026-08-23T14:46:32+00:00</updated>
+  <media:group>
+   <media:title>“What Shall We Wear”</media:title>
+   <media:content url="https://www.youtube.com/v/bhYGUPqWaxw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/bhYGUPqWaxw/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:naeyHY3_D84</id>
   <yt:videoId>naeyHY3_D84</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,7 +52,7 @@
    <media:description>Sunday morning</media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="3"/>
+    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>
@@ -159,7 +182,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-07-06T05:06:43+00:00</published>
-  <updated>2026-07-06T06:14:18+00:00</updated>
+  <updated>2026-08-10T01:08:18+00:00</updated>
   <media:group>
    <media:title>Freedom that last.</media:title>
    <media:content url="https://www.youtube.com/v/m65pIv0rgAk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="13"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:RhtBpwdBasQ</id>
-  <yt:videoId>RhtBpwdBasQ</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>A tale of two mothers.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=RhtBpwdBasQ"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-05-11T05:15:48+00:00</published>
-  <updated>2026-07-07T23:02:14+00:00</updated>
-  <media:group>
-   <media:title>A tale of two mothers.</media:title>
-   <media:content url="https://www.youtube.com/v/RhtBpwdBasQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i3.ytimg.com/vi/RhtBpwdBasQ/hqdefault.jpg" width="480" height="360"/>
-   <media:description>Sunday Morning service.</media:description>
-   <media:community>
-    <media:starRating count="1" average="5.00" min="1" max="5"/>
-    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>

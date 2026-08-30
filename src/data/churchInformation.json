@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "bhYGUPqWaxw",
-    "title": "“What Shall We Wear”",
-    "description": "Watch the latest message from Oatville Community Church on YouTube.",
-    "thumbnail": "https://i.ytimg.com/vi/bhYGUPqWaxw/hqdefault.jpg",
-    "publishedAt": "2026-08-24T05:41:19+00:00",
-    "fetchedAt": "2026-08-24T09:43:15.147Z"
+    "id": "PbWogyoGLHM",
+    "title": "What Shal l we wear",
+    "description": "What Shall we wear part 2",
+    "thumbnail": "https://i.ytimg.com/vi/PbWogyoGLHM/hqdefault.jpg",
+    "publishedAt": "2026-08-30T14:41:24+00:00",
+    "fetchedAt": "2026-08-30T16:01:16.696Z"
   },
   "events": {
     "nextSunday": {
@@ -251,7 +251,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-08-24T09:43:15.147Z"
+    "rssFetchedAt": "2026-08-30T16:01:16.696Z"
   },
   "latestStream": {
     "id": "PLcRg-usMdk",

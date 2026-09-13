@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:4ItPo2stnY4</id>
+  <yt:videoId>4ItPo2stnY4</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>“What Shall We Wear Part 4”</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=4ItPo2stnY4"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-09-13T14:45:58+00:00</published>
+  <updated>2026-09-13T14:46:14+00:00</updated>
+  <media:group>
+   <media:title>“What Shall We Wear Part 4”</media:title>
+   <media:content url="https://www.youtube.com/v/4ItPo2stnY4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/4ItPo2stnY4/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:F0tNR547rIg</id>
   <yt:videoId>F0tNR547rIg</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -75,7 +98,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="4"/>
+    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>
@@ -136,7 +159,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-08-03T05:50:00+00:00</published>
-  <updated>2026-08-03T07:57:04+00:00</updated>
+  <updated>2026-09-02T18:16:24+00:00</updated>
   <media:group>
    <media:title>The God that never gives up.</media:title>
    <media:content url="https://www.youtube.com/v/jIGkgiBrgIk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -159,7 +182,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-07-27T05:13:30+00:00</published>
-  <updated>2026-07-27T05:53:18+00:00</updated>
+  <updated>2026-08-27T15:57:34+00:00</updated>
   <media:group>
    <media:title>What should we say?</media:title>
    <media:content url="https://www.youtube.com/v/mNDHytw8GoU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -320,7 +343,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-06-08T06:26:11+00:00</published>
-  <updated>2026-07-09T21:16:40+00:00</updated>
+  <updated>2026-09-10T17:51:33+00:00</updated>
   <media:group>
    <media:title>Lamb of God</media:title>
    <media:content url="https://www.youtube.com/v/I06-ubMcH3k?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="13"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:PLcRg-usMdk</id>
-  <yt:videoId>PLcRg-usMdk</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Oatville Community Church livestream. Living the whole life.</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=PLcRg-usMdk"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-06-01T05:12:48+00:00</published>
-  <updated>2026-06-24T17:48:17+00:00</updated>
-  <media:group>
-   <media:title>Oatville Community Church livestream. Living the whole life.</media:title>
-   <media:content url="https://www.youtube.com/v/PLcRg-usMdk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i1.ytimg.com/vi/PLcRg-usMdk/hqdefault.jpg" width="480" height="360"/>
-   <media:description>The Oatville Community Church Sunday Morning live stream. Living the whole life.</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="7"/>
    </media:community>
   </media:group>
  </entry>

@@ -20,16 +20,16 @@
    <name>Oatville Community Church</name>
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
-  <published>2026-09-20T14:19:01+00:00</published>
-  <updated>2026-09-20T14:19:02+00:00</updated>
+  <published>2026-09-20T17:30:54+00:00</published>
+  <updated>2026-09-20T18:37:40+00:00</updated>
   <media:group>
    <media:title>What Shall We Wear Part 5</media:title>
    <media:content url="https://www.youtube.com/v/q1dy0SXkg5M?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
    <media:thumbnail url="https://i2.ytimg.com/vi/q1dy0SXkg5M/hqdefault.jpg" width="480" height="360"/>
    <media:description></media:description>
    <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="0"/>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="17"/>
    </media:community>
   </media:group>
  </entry>
@@ -75,7 +75,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="4"/>
+    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>

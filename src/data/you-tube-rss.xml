@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:gIEq-UbHFao</id>
+  <yt:videoId>gIEq-UbHFao</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>What Shall We Wear? Part 6</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=gIEq-UbHFao"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-09-27T14:44:30+00:00</published>
+  <updated>2026-09-27T15:47:48+00:00</updated>
+  <media:group>
+   <media:title>What Shall We Wear? Part 6</media:title>
+   <media:content url="https://www.youtube.com/v/gIEq-UbHFao?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/gIEq-UbHFao/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="1"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:q1dy0SXkg5M</id>
   <yt:videoId>q1dy0SXkg5M</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -28,8 +51,8 @@
    <media:thumbnail url="https://i2.ytimg.com/vi/q1dy0SXkg5M/hqdefault.jpg" width="480" height="360"/>
    <media:description></media:description>
    <media:community>
-    <media:starRating count="1" average="5.00" min="1" max="5"/>
-    <media:statistics views="17"/>
+    <media:starRating count="2" average="5.00" min="1" max="5"/>
+    <media:statistics views="31"/>
    </media:community>
   </media:group>
  </entry>
@@ -182,7 +205,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-08-03T05:50:00+00:00</published>
-  <updated>2026-09-02T18:16:24+00:00</updated>
+  <updated>2026-09-26T12:48:08+00:00</updated>
   <media:group>
    <media:title>The God that never gives up.</media:title>
    <media:content url="https://www.youtube.com/v/jIGkgiBrgIk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -251,7 +274,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-07-13T05:34:53+00:00</published>
-  <updated>2026-08-14T20:01:57+00:00</updated>
+  <updated>2026-09-24T19:38:00+00:00</updated>
   <media:group>
    <media:title>Where will you stand?</media:title>
    <media:content url="https://www.youtube.com/v/LH6mrKpXxAw?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -274,7 +297,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-07-06T05:06:43+00:00</published>
-  <updated>2026-08-10T01:08:18+00:00</updated>
+  <updated>2026-09-23T20:32:25+00:00</updated>
   <media:group>
    <media:title>Freedom that last.</media:title>
    <media:content url="https://www.youtube.com/v/m65pIv0rgAk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -297,7 +320,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-06-29T04:00:00+00:00</published>
-  <updated>2026-07-29T11:17:24+00:00</updated>
+  <updated>2026-09-20T23:47:16+00:00</updated>
   <media:group>
    <media:title>Keep the Fire Burning</media:title>
    <media:content url="https://www.youtube.com/v/1COHZZQRxFg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="1" average="5.00" min="1" max="5"/>
     <media:statistics views="4"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:IEGBCraEKoA</id>
-  <yt:videoId>IEGBCraEKoA</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>“Let’s be encouraged.”</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=IEGBCraEKoA"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-06-15T05:29:23+00:00</published>
-  <updated>2026-09-18T04:55:01+00:00</updated>
-  <media:group>
-   <media:title>“Let’s be encouraged.”</media:title>
-   <media:content url="https://www.youtube.com/v/IEGBCraEKoA?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i2.ytimg.com/vi/IEGBCraEKoA/hqdefault.jpg" width="480" height="360"/>
-   <media:description>Sunday Morning Service</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="3"/>
    </media:community>
   </media:group>
  </entry>

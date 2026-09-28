@@ -20,16 +20,16 @@
    <name>Oatville Community Church</name>
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
-  <published>2026-09-27T14:44:30+00:00</published>
-  <updated>2026-09-27T15:47:48+00:00</updated>
+  <published>2026-09-28T05:36:30+00:00</published>
+  <updated>2026-09-28T07:30:14+00:00</updated>
   <media:group>
    <media:title>What Shall We Wear? Part 6</media:title>
    <media:content url="https://www.youtube.com/v/gIEq-UbHFao?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
    <media:thumbnail url="https://i4.ytimg.com/vi/gIEq-UbHFao/hqdefault.jpg" width="480" height="360"/>
    <media:description></media:description>
    <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="1"/>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="3"/>
    </media:community>
   </media:group>
  </entry>
@@ -343,7 +343,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-06-22T05:21:33+00:00</published>
-  <updated>2026-09-18T04:09:37+00:00</updated>
+  <updated>2026-09-28T10:46:33+00:00</updated>
   <media:group>
    <media:title>The good, good, Father</media:title>
    <media:content url="https://www.youtube.com/v/myoDnqUk6bo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>

@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:fM7gYNuo9zo</id>
+  <yt:videoId>fM7gYNuo9zo</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>“Come Alive”</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=fM7gYNuo9zo"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-10-11T14:07:35+00:00</published>
+  <updated>2026-10-18T17:15:42+00:00</updated>
+  <media:group>
+   <media:title>“Come Alive”</media:title>
+   <media:content url="https://www.youtube.com/v/fM7gYNuo9zo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/fM7gYNuo9zo/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Sunday Service (Come Alive)</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:XhQ4ayANf38</id>
   <yt:videoId>XhQ4ayANf38</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -28,31 +51,8 @@
    <media:thumbnail url="https://i1.ytimg.com/vi/XhQ4ayANf38/hqdefault.jpg" width="480" height="360"/>
    <media:description></media:description>
    <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="3"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:fM7gYNuo9zo</id>
-  <yt:videoId>fM7gYNuo9zo</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>God uses broken people</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=fM7gYNuo9zo"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-10-11T14:07:35+00:00</published>
-  <updated>2026-10-11T14:07:36+00:00</updated>
-  <media:group>
-   <media:title>God uses broken people</media:title>
-   <media:content url="https://www.youtube.com/v/fM7gYNuo9zo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i3.ytimg.com/vi/fM7gYNuo9zo/hqdefault.jpg" width="480" height="360"/>
-   <media:description>Sunday Service (God uses broken people)</media:description>
-   <media:community>
-    <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="0"/>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="36"/>
    </media:community>
   </media:group>
  </entry>
@@ -136,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-09-14T05:15:05+00:00</published>
-  <updated>2026-10-04T01:08:50+00:00</updated>
+  <updated>2026-10-15T04:59:12+00:00</updated>
   <media:group>
    <media:title>“What Shall We Wear Part 4”</media:title>
    <media:content url="https://www.youtube.com/v/4ItPo2stnY4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>

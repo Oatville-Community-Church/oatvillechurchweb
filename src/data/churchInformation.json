@@ -191,12 +191,12 @@
     }
   ],
   "latestVideo": {
-    "id": "fM7gYNuo9zo",
-    "title": "“Come Alive”",
-    "description": "Sunday Service (Come Alive)",
-    "thumbnail": "https://i.ytimg.com/vi/fM7gYNuo9zo/hqdefault.jpg",
-    "publishedAt": "2026-10-19T05:49:41+00:00",
-    "fetchedAt": "2026-10-19T12:06:06.234Z"
+    "id": "AbzjHg9suXQ",
+    "title": "“What Will It Take?”",
+    "description": "Watch the latest message from Oatville Community Church on YouTube.",
+    "thumbnail": "https://i.ytimg.com/vi/AbzjHg9suXQ/hqdefault.jpg",
+    "publishedAt": "2026-10-25T14:24:57+00:00",
+    "fetchedAt": "2026-10-25T15:32:14.951Z"
   },
   "events": {
     "nextSunday": {
@@ -251,7 +251,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-10-19T12:06:06.234Z"
+    "rssFetchedAt": "2026-10-25T15:32:14.951Z"
   },
   "latestStream": {
     "id": "PLcRg-usMdk",

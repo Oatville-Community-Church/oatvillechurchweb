@@ -43,6 +43,56 @@ function getValue(obj, keyPath) {
   return keyPath.trim().split('.').reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : undefined), obj);
 }
 
+// Pages gated behind an "approved": true flag in churchInformation.json. Unapproved pages are
+// left out of builds, the sitemap, and the dev server (which returns 404 for them).
+const approvalGatedPages = { 'beliefs.html': 'beliefsPage' };
+function isPagePublished(file) {
+  const dataKey = approvalGatedPages[file];
+  return !dataKey || getValue(churchData, dataKey)?.approved === true;
+}
+
+// Keep {{#ifApproved data.path}}...{{/ifApproved}} content (e.g. links to a gated page) only when
+// that data object is approved.
+function expandApprovalBlocks(html) {
+  return html.replace(/\{\{#ifApproved ([\w.-]+)\}\}([\s\S]*?)\{\{\/ifApproved\}\}/g, (m, dataPath, block) =>
+    getValue(churchData, dataPath)?.approved === true ? block : ''
+  );
+}
+
+// Dev server serves every HTML file under src/, so block unapproved pages explicitly.
+function approvalGatePlugin() {
+  return {
+    name: 'approval-gated-pages',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const file = path.basename((req.url || '').split('?')[0]);
+        if (approvalGatedPages[file] && !isPagePublished(file)) {
+          res.statusCode = 404;
+          res.end(`${file} is not published (set "approved": true in churchInformation.json)`);
+          return;
+        }
+        next();
+      });
+    }
+  };
+}
+
+// Expand {{#each list.path}}...{{/each}} blocks, filling {{this.field}} from each array item.
+// Items marked "draft": true render only in local dev so unreviewed content never ships.
+function expandEachBlocks(html, isLocal) {
+  return html.replace(/\{\{#each ([\w.-]+)\}\}([\s\S]*?)\{\{\/each\}\}/g, (m, listPath, block) => {
+    const list = getValue(churchData, listPath);
+    if (!Array.isArray(list)) return m;
+    return list
+      .filter(item => isLocal || !item.draft)
+      .map(item => block.replace(/\{\{this\.([\w.-]+)\}\}/g, (_, key) => {
+        const val = getValue(item, key);
+        return val !== undefined ? String(val) : '';
+      }))
+      .join('');
+  });
+}
+
 // Plugin to replace {{placeholders}} in HTML files (index + multi-page support later)
 function htmlPlaceholderPlugin(isLocal) {
   return {
@@ -62,7 +112,7 @@ function htmlPlaceholderPlugin(isLocal) {
       });
       const version = packageData.version;
 
-      let transformed = html.replace(/\{\{([^}]+)\}\}/g, (m, p) => {
+      let transformed = expandEachBlocks(expandApprovalBlocks(html), isLocal).replace(/\{\{([^}]+)\}\}/g, (m, p) => {
         // Special case for site.url to use environment-aware URL
         if (p.trim() === 'site.url') {
           return siteUrl;
@@ -228,9 +278,10 @@ function sitemapAndRobotsPlugin() {
         { file: 'index.html', priority: '1.0', changefreq: 'weekly' },
         { file: 'plan-visit.html', priority: '0.9', changefreq: 'monthly' },
         { file: 'ministries.html', priority: '0.8', changefreq: 'monthly' },
+        { file: 'beliefs.html', priority: '0.8', changefreq: 'monthly' },
         { file: 'you-tube.html', priority: '0.7', changefreq: 'weekly' }
-      ];
-      
+      ].filter(page => isPagePublished(page.file));
+
       const urls = pages.map(page => {
         const clean = page.file === 'index.html' ? '/' : `/${page.file}`;
         return `  <url>
@@ -456,6 +507,7 @@ export default defineConfig(({ mode, command }) => {
           main: path.resolve(__dirname, 'src', 'index.html'),
           plan: path.resolve(__dirname, 'src', 'plan-visit.html'),
           ministries: path.resolve(__dirname, 'src', 'ministries.html'),
+          ...(isPagePublished('beliefs.html') && { beliefs: path.resolve(__dirname, 'src', 'beliefs.html') }),
           messages: path.resolve(__dirname, 'src', 'you-tube.html'),
           offline: path.resolve(__dirname, 'src', 'offline.html'),
           notfound: path.resolve(__dirname, 'src', '404.html')
@@ -471,6 +523,7 @@ export default defineConfig(({ mode, command }) => {
       buildInfoPlugin(),
       bundleSizeReporter(),
       sitemapAndRobotsPlugin(),
+      approvalGatePlugin(),
       staticCopyPlugin(),
       VitePWA({
         registerType: 'autoUpdate',

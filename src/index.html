@@ -243,6 +243,13 @@
             <a href="#about" class="nav-link text-gray-300 hover:text-white"
               >About</a
             >
+            {{#ifApproved beliefsPage}}
+            <a
+              href="beliefs.html"
+              class="nav-link text-gray-300 hover:text-white"
+              >Beliefs</a
+            >
+            {{/ifApproved}}
             <a href="#services" class="nav-link text-gray-300 hover:text-white"
               >Services</a
             >
@@ -279,6 +286,14 @@
               data-nav-link
               >About</a
             >
+            {{#ifApproved beliefsPage}}
+            <a
+              href="beliefs.html"
+              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
+              data-nav-link
+              >Beliefs</a
+            >
+            {{/ifApproved}}
             <a
               href="#services"
               class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
@@ -518,12 +533,17 @@
           </div>
           <div class="grid md:grid-cols-3 gap-10 mt-16">
             <div class="card text-center fade-in-up anim-delay-1">
-              <h3 class="text-2xl font-bold mb-4 text-gray-800">Our Mission</h3>
-              <p class="text-gray-600">
-                To reach the lost and show and grow in Christ's love - creating
-                a welcoming community where people can experience authentic
-                faith and fellowship.
-              </p>
+              <h3 class="text-2xl font-bold mb-4 text-gray-800">
+                {{about.mission.title}}
+              </h3>
+              <p class="text-gray-600">{{about.mission.description}}</p>
+              {{#ifApproved beliefsPage}}
+              <a
+                href="beliefs.html"
+                class="inline-block mt-4 text-sm font-semibold text-orange-600 hover:text-orange-700 underline"
+                >What we believe</a
+              >
+              {{/ifApproved}}
             </div>
             <div class="card text-center fade-in-up anim-delay-2">
               <h3 class="text-2xl font-bold mb-4 text-gray-800">Our Worship</h3>

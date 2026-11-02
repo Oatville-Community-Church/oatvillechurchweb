@@ -294,3 +294,15 @@
     z-index: 2;
   }
 }
+
+/* Draft beliefs only render in local dev builds; flag them for pastor review */
+details[data-draft="true"] summary::after {
+  content: "Draft - pending review";
+  margin-left: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #fef3c7;
+  color: #92400e;
+}

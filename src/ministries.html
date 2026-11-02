@@ -237,6 +237,13 @@
             <a href="/#about" class="nav-link text-gray-300 hover:text-white"
               >About</a
             >
+            {{#ifApproved beliefsPage}}
+            <a
+              href="beliefs.html"
+              class="nav-link text-gray-300 hover:text-white"
+              >Beliefs</a
+            >
+            {{/ifApproved}}
             <a href="/#services" class="nav-link text-gray-300 hover:text-white"
               >Services</a
             >
@@ -273,6 +280,14 @@
               data-nav-link
               >About</a
             >
+            {{#ifApproved beliefsPage}}
+            <a
+              href="beliefs.html"
+              class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"
+              data-nav-link
+              >Beliefs</a
+            >
+            {{/ifApproved}}
             <a
               href="/#services"
               class="block px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 focus:outline-hidden focus:bg-gray-800"

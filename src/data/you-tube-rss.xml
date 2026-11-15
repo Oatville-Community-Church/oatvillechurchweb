@@ -11,6 +11,29 @@
  </author>
  <published>2023-10-09T15:10:14+00:00</published>
  <entry>
+  <id>yt:video:hTcZjY9jjb8</id>
+  <yt:videoId>hTcZjY9jjb8</yt:videoId>
+  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
+  <title>“The Remnant”</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=hTcZjY9jjb8"/>
+  <author>
+   <name>Oatville Community Church</name>
+   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
+  </author>
+  <published>2026-11-15T15:43:26+00:00</published>
+  <updated>2026-11-15T18:14:36+00:00</updated>
+  <media:group>
+   <media:title>“The Remnant”</media:title>
+   <media:content url="https://www.youtube.com/v/hTcZjY9jjb8?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/hTcZjY9jjb8/hqdefault.jpg" width="480" height="360"/>
+   <media:description></media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="0"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
   <id>yt:video:x6Yuubi6H-Q</id>
   <yt:videoId>x6Yuubi6H-Q</yt:videoId>
   <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
@@ -29,7 +52,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="1" average="5.00" min="1" max="5"/>
-    <media:statistics views="4"/>
+    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>
@@ -75,7 +98,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="10"/>
+    <media:statistics views="11"/>
    </media:community>
   </media:group>
  </entry>
@@ -98,7 +121,7 @@
    <media:description></media:description>
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
-    <media:statistics views="12"/>
+    <media:statistics views="13"/>
    </media:community>
   </media:group>
  </entry>
@@ -113,7 +136,7 @@
    <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
   </author>
   <published>2026-10-19T05:49:41+00:00</published>
-  <updated>2026-10-19T06:46:24+00:00</updated>
+  <updated>2026-11-12T06:43:29+00:00</updated>
   <media:group>
    <media:title>“Come Alive”</media:title>
    <media:content url="https://www.youtube.com/v/fM7gYNuo9zo?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
@@ -329,29 +352,6 @@
    <media:community>
     <media:starRating count="0" average="0.00" min="1" max="5"/>
     <media:statistics views="6"/>
-   </media:community>
-  </media:group>
- </entry>
- <entry>
-  <id>yt:video:eaC9HDAG3OY</id>
-  <yt:videoId>eaC9HDAG3OY</yt:videoId>
-  <yt:channelId>UCLiIrzYVgwFD0rIEYQoGC5A</yt:channelId>
-  <title>Be Ready</title>
-  <link rel="alternate" href="https://www.youtube.com/watch?v=eaC9HDAG3OY"/>
-  <author>
-   <name>Oatville Community Church</name>
-   <uri>https://www.youtube.com/channel/UCLiIrzYVgwFD0rIEYQoGC5A</uri>
-  </author>
-  <published>2026-08-10T05:24:11+00:00</published>
-  <updated>2026-10-04T11:35:35+00:00</updated>
-  <media:group>
-   <media:title>Be Ready</media:title>
-   <media:content url="https://www.youtube.com/v/eaC9HDAG3OY?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
-   <media:thumbnail url="https://i2.ytimg.com/vi/eaC9HDAG3OY/hqdefault.jpg" width="480" height="360"/>
-   <media:description>Sunday Morning</media:description>
-   <media:community>
-    <media:starRating count="1" average="5.00" min="1" max="5"/>
-    <media:statistics views="5"/>
    </media:community>
   </media:group>
  </entry>

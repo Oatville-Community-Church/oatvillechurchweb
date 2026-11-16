@@ -195,8 +195,8 @@
     "title": "“The Remnant”",
     "description": "Watch the latest message from Oatville Community Church on YouTube.",
     "thumbnail": "https://i.ytimg.com/vi/hTcZjY9jjb8/hqdefault.jpg",
-    "publishedAt": "2026-11-15T15:43:26+00:00",
-    "fetchedAt": "2026-11-15T18:28:18.640Z"
+    "publishedAt": "2026-11-16T06:28:12+00:00",
+    "fetchedAt": "2026-11-16T10:37:29.752Z"
   },
   "events": {
     "nextSunday": {
@@ -302,7 +302,7 @@
   "you-tube": {
     "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
     "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
-    "rssFetchedAt": "2026-11-15T18:28:18.640Z"
+    "rssFetchedAt": "2026-11-16T10:37:29.752Z"
   },
   "latestStream": {
     "id": "PLcRg-usMdk",

@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
  * Fetch latest YouTube video metadata (RSS-based, no API key) and persist
- * simplified info into churchInformation.json (latestVideo fields).
+ * simplified info into src/data/youtube.json (latestVideo fields).
  * If fetch fails, leaves existing data untouched for stability.
  */
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const DATA_PATH = path.join(__dirname, '..', 'src', 'data', 'churchInformation.json');
+const DATA_PATH = path.join(__dirname, '..', 'src', 'data', 'youtube.json');
 const FETCH_TIMEOUT_MS = Number(process.env.YOUTUBE_FETCH_TIMEOUT_MS || 15000);
 const FETCH_RETRIES = Number(process.env.YOUTUBE_FETCH_RETRIES || 3);
 // Load channel id dynamically from data file (fallback to constant).

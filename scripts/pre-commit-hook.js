@@ -150,9 +150,10 @@ class PreCommitValidator {
     
     if (!lintValid) {
       console.error('\n❌ Code quality checks failed. Please fix the issues above before committing.');
+      console.error('   • Content files (content/*.md): check indentation, and that the top section starts and ends with ---');
       return false;
     }
-    
+
     console.log('\n✅ All pre-commit checks passed! Commit is allowed to proceed.');
     return true;
   }

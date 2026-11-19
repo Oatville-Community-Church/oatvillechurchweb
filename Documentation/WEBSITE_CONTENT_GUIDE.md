@@ -1,478 +1,187 @@
 # Website Content Update Guide
 
-This guide will teach you how to update your church website content by editing JSON data files using GitHub's web interface or mobile app.
+This guide shows how to update the church website by editing simple text files in GitHub (on a computer or in the mobile app).
 
 ## Quick Start
 
-**To update your website:**
+1. Open the repository on GitHub and go to the **`content`** folder.
+2. Click the file you want to change (see the table below).
+3. Click the pencil icon (✏️) to edit.
+4. Change the text after the colons.
+5. Scroll down and click **Commit changes**.
+6. The website updates by itself in 2-3 minutes.
 
-1. Go to your GitHub repository (you'll get the link after being added to the organization)
-2. Navigate to `src` → `data` → choose the file you want to edit:
-   - `churchInformation.json` - General church info, contact details, leadership
-   - `planvisit.json` - Plan Your Visit page content
-   - `ministries.json` - Ministries page content
-3. Click the pencil icon (✏️) to edit
-4. Make your changes (see sections below)
-5. Scroll down and click "Commit changes"
-6. Your website will automatically update in 2-3 minutes!
+## Which File Do I Edit?
 
-## What You Can Update
+| To change… | Open this file in `content/` |
+|---|---|
+| Church name, tagline, address, phone, email, social links | `church.md` |
+| Office hours | `hours.md` |
+| Service times and events on the home page | `services.md` |
+| "About" section on the home page | `about.md` |
+| Frequently asked questions | `faq.md` |
+| Testimonials | `testimonials.md` |
+| Giving information | `giving.md` |
+| Pastor and leadership | `leadership.md` |
+| "What We Believe" page (and showing/hiding it) | `beliefs.md` |
+| "Plan Your Visit" page | `plan-visit.md` |
+| Ministries page heading and "Get Involved" section | `ministries/_index.md` |
+| One ministry | `ministries/01-worship-music.md` (and the other numbered files) |
 
-The website gets its information from JSON data files in the `src/data` folder. Each file controls different parts of your website:
+You will never need to touch anything in `src/data/`. That folder holds technical settings and the automatic YouTube updates.
 
-- **`churchInformation.json`** - Basic church info, contact details, leadership, social media
-- **`planvisit.json`** - Complete content for the "Plan Your Visit" page
-- **`ministries.json`** - All ministry information and volunteer opportunities
+### What each file changes on the live website
 
-⚠️ **IMPORTANT**: Always keep the exact same structure (field names) - only change the values inside the quotes!
+| File | What it controls |
+|---|---|
+| `church.md` | Name, tagline, welcome message, address, phone and email (used across every page) |
+| `hours.md` | The "Church Hours" list on the home page |
+| `services.md` | The "Service Times & Programs" cards on the home page |
+| `about.md` | The mission and community text on the home page |
+| `faq.md`, `testimonials.md`, `events.md` | Home page FAQ, testimonials and the next-service date (search engines) |
+| `plan-visit.md` | Everything on the Plan Your Visit page (including its questions and accessibility list) |
+| `ministries/01-….md` … | One card each on the Ministries page |
+| `ministries/_index.md` | Ministries page heading, Volunteer Opportunities, FAQ and the "Get Involved" buttons |
+| `beliefs.md` | The What We Believe page (hidden until `approved: true`) |
 
-### Basic Church Information (churchInformation.json)
+**Not shown anywhere on the website yet:** `leadership.md`, `giving.md`, the "Our Worship" part of `about.md`, the `mission:` line in `church.md`, and the `upcoming:` list in `events.md`. Editing those won't change any page until your technical support person adds a place for them.
 
-```json
-"name": "Oatville Community Church",
-"tagline": "Small church with a big heart",
-"mission": "reach the lost and show and grow in Christ's love",
-"description": "A non-denominational community church..."
+**Still handled by technical support** (not editable here): the page layouts and headings, the Ministries "ministry catalog" that search engines read, and the Church Hours that search engines read (these are separate from the list on the home page).
+
+## What a File Looks Like
+
+Every file has a section at the top between two lines of three dashes (`---`). Lines starting with `#` are notes to you and are ignored.
+
+```yaml
+---
+# Office hours
+hours:
+  sunday: 9:30 AM - 1:00 PM
+  monday: 8:30 AM - 4:00 PM
+  friday: Closed
+---
 ```
 
-**What to change:**
+To change Sunday's hours, edit only the text after `sunday:`.
 
-- `"name"`: Your church's official name
-- `"tagline"`: A short catchy phrase about your church
-- `"mission"`: Your church's mission statement
-- `"description"`: A longer description of your church
+### Lists
 
-### Plan Your Visit Content (planvisit.json)
+Lists use a dash at the start of each line. To add an item, copy a line and change the text. Keep the same indentation.
 
-This file controls everything on the "Plan Your Visit" page:
-
-```json
-"hero": {
-  "title": "Plan Your Visit",
-  "subtitle": "We're excited to welcome you to our church family!"
-},
-"serviceTimes": {
-  "title": "Service Times",
-  "sunday": {
-    "time": "11:00 AM & 5:00 PM",
-    "description": "Traditional hymns, contemporary music, and biblical teaching"
-  }
-}
+```yaml
+schedule:
+  - Sunday School - 9:45 AM
+  - Children's Church during worship
+  - Vacation Bible School (Summer)
 ```
 
-**What to change:**
+### Ministry Files
 
-- Update service times and descriptions
-- Modify welcome messages and visitor information
-- Update FAQ answers about what to expect
-- Change accessibility information
-- ⚠️ **Keep field names like `"hero"`, `"serviceTimes"` exactly the same - only change the text inside quotes**
+A ministry file has the same top section, and the **description is the normal text below the second `---` line**. You can write it freely:
 
-### Ministries Content (ministries.json)
+```md
+---
+id: childrens-ministry
+title: Children's Ministry
+icon: 👶
+detailsTitle: Age Groups
+details:
+  - Nursery (0-2 years)
+  - Preschool (3-5 years)
+leader: Susan Oglesby
+---
 
-This file controls the entire "Ministries" page:
-
-```json
-"hero": {
-  "title": "Our Ministries",
-  "subtitle": "Discover ways to connect, serve, and grow in faith"
-},
-"ministries": [
-  {
-    "name": "Children's Ministry",
-    "icon": "👶",
-    "description": "Age-appropriate learning and activities for children",
-    "schedule": "Sundays during worship service"
-  }
-]
+Safe, caring environments where kids learn Scripture, prayer, and foundational truths.
 ```
 
-**What to change:**
+- `detailsTitle` is the heading above the bullet list (the colon is added for you).
+- `details` are the bullet points (add or remove lines).
+- `leader` is optional. Delete the line to hide the "Leader" line.
 
-- Update ministry names, descriptions, and schedules
-- Modify volunteer opportunity descriptions
-- Change contact information for ministry leaders
-- Update FAQ about ministries
-- ⚠️ **Keep field names like `"ministries"`, `"volunteerOpportunities"` exactly the same - only change the content**
+**To add a ministry:** open an existing ministry file, copy its contents into a new file in the same folder (Add file → Create new file), name it with the next number (for example `07-seniors.md`), and change the text. A new card appears on the page, in number order. Each ministry needs a unique `id` made of lowercase letters and dashes.
 
-### Contact Information (churchInformation.json)
+**To remove a ministry:** delete its file. **To keep a draft without publishing it:** add the line `draft: true` to the top section; drafts only show in a local preview, never on the live site.
 
-```json
-"contact": {
-  "phone": "(316) 390-3591",
-  "email": "oatvillecommunitychurch@gmail.com"
-},
-"location": {
-  "address": "3814 S Hoover Rd",
-  "city": "Wichita",
-  "state": "KS",
-  "zipCode": "67215"
-}
+## Formatting Rules (only three)
+
+1. **Indentation matters.** Use spaces (never the Tab key) and keep the same number of spaces as the line above it.
+2. **Keep the labels.** Only change the text *after* the colon, never the word before it (such as `phone:` or `time:`).
+3. **Quotes are needed in a few cases.** If your text contains a colon followed by a space (like `Note: bring a Bible`), starts with a special character (`"`, `'`, `#`, `*`, `&`, `-`, `[`, `{`), or is only `true`, `false` or a number, put the whole text in double quotes: `"Note: bring a Bible"`.
+
+### Examples
+
+✅ `phone: (316) 390-3591`
+✅ `time: "Sundays at 10:45 AM: all ages"` (quotes because of the colon)
+❌ `time: Sundays at 10:45 AM: all ages` (breaks the file)
+❌ `phne: (316) 390-3591` (changed the label)
+
+## Common Updates
+
+### Service times (`services.md`) and office hours (`hours.md`)
+
+Each service is one card on the home page. Change only the text after `time:`:
+
+```yaml
+services:
+  - name: Sunday Worship
+    time: 10:45 AM
+    description: Traditional hymns and contemporary music.
 ```
 
-**What to change:**
+To add a card, copy a whole group (from the dash to the last line) and change the text. Office hours work the same way, with `days:` and `time:`. Service times also appear on the Plan Your Visit page (`plan-visit.md`, under `serviceTimes`), so update both.
 
-- Update phone numbers, email, or address as needed
-- Make sure the address is exactly as you want it to appear on Google Maps
+### Phone, email or address (`church.md`)
 
-### Service Times (churchInformation.json)
-
-```json
-"services": {
-  "sundayWorship": {
-    "name": "Sunday Worship",
-    "time": "11:00 AM & 5:00 PM",
-    "description": "Traditional hymns, contemporary music..."
-  },
-  "wednesdayPrayer": {
-    "name": "Wednesday Prayer",
-    "time": "6:00 PM",
-    "description": "Community prayer gathering..."
-  }
-}
+```yaml
+contact:
+  phone: (316) 390-3591
+  email: oatvillecommunitychurch@gmail.com
 ```
 
-**What to change:**
+### Add a frequently asked question (`faq.md`)
 
-- Update service times when they change
-- Modify service names or descriptions
-- Add new services or remove ones you no longer have
+Copy an existing pair (the `q:` and `a:` lines, including the dash) and change the text. Please don't use a double quote (`"`) in a question or answer; the check will stop the update if you do. Use an apostrophe or rephrase:
 
-### Office Hours (churchInformation.json)
-
-```json
-"hours": {
-  "sunday": "9:30 AM - 1:00 PM",
-  "monday": "8:30 AM - 4:00 PM",
-  "tuesday": "8:30 AM - 4:00 PM",
-  "wednesday": "8:30 AM - 4:00 PM",
-  "thursday": "8:00 AM - 4:00 PM",
-  "friday": "Closed",
-  "saturday": "2:00 PM - 5:00 PM"
-}
+```yaml
+faq:
+  - q: What time are Sunday worship services?
+    a: Sunday worship is at 10:45 AM (Central).
 ```
 
-**What to change:**
+### Show or hide the "What We Believe" page (`beliefs.md`)
 
-- Update when your office hours change
-- Use "Closed" for days when the office is closed
-- Use format like "9:00 AM - 5:00 PM" for open days
-
-### Social Media Links (churchInformation.json)
-
-```json
-"socialMedia": {
-  "facebook": "https://www.facebook.com/oatvillecc/",
-  "youtube": "https://www.youtube.com/@OatvilleCommunityChurch",
-  "instagram": "https://www.instagram.com/oatvillecommunitychurch/"
-}
+```yaml
+beliefsPage:
+  approved: false
 ```
 
-**What to change:**
+Change `false` to `true` to publish the page and its menu links, or back to `false` to hide it.
 
-- Update links when your social media usernames change
-- Remove platforms you don't use by deleting the entire line
-- Add new platforms by copying the format
+## Editing on the GitHub Mobile App
 
-### Leadership Information (churchInformation.json)
-
-```json
-"leadership": [
-  {
-    "name": "John Doe",
-    "role": "Pastor",
-    "bio": "Committed to biblical teaching..."
-  },
-  {
-    "name": "Jane Smith",
-    "role": "Children's Ministry Lead",
-    "bio": "Creating a safe, Christ-centered environment..."
-  }
-]
-```
-
-**What to change:**
-
-- Update names, roles, and bios when staff changes
-- Add new staff members by copying the format
-- Remove staff members by deleting their entire section
-
-### Frequently Asked Questions (churchInformation.json)
-
-```json
-"faq": [
-  {
-    "q": "What time are Sunday worship services?",
-    "a": "Sunday worship is at 11:00 AM and 5:00 PM..."
-  },
-  {
-    "q": "Is there something for my children?",
-    "a": "Yes. Children's ministry and nursery are available..."
-  }
-]
-```
-
-**What to change:**
-
-- Update answers when information changes
-- Add new questions by copying the format
-- Remove questions by deleting their entire section
-
-### Testimonials (churchInformation.json)
-
-```json
-"testimonials": [
-  {
-    "name": "Emily",
-    "quote": "From day one I felt like family here."
-  },
-  {
-    "name": "James",
-    "quote": "Biblical teaching and genuine community changed my life."
-  }
-]
-```
-
-**What to change:**
-
-- Add new testimonials from church members
-- Update or remove existing ones
-- Keep quotes short (20-40 words work best)
-
-## Step-by-Step Editing Instructions
-
-### Using GitHub Web Interface (Computer)
-
-1. **Navigate to the File**
-   - Go to your repository: `https://github.com/Oatville-Community-Church/oatvillechurchweb`
-   - Click on the `src` folder
-   - Click on the `data` folder
-   - Click on the file you want to edit:
-     - `churchInformation.json` - General church info
-     - `planvisit.json` - Plan Your Visit page
-     - `ministries.json` - Ministries page
-
-2. **Edit the File**
-   - Click the pencil icon (✏️) in the top right of the file view
-   - Make your changes carefully
-   - **CRITICAL**: Keep all field names exactly the same - only change values inside quotes
-   - Make sure to keep all quotation marks and commas
-
-3. **Save Your Changes**
-   - Scroll down to "Commit changes"
-   - Add a brief description like "Updated service times" or "Updated ministries"
-   - Click "Commit changes"
-
-### Using GitHub Mobile App
-
-1. **Open the App**
-   - Open the GitHub app on your phone/tablet
-   - Navigate to the Oatville-Community-Church organization
-   - Tap on the `oatvillechurchweb` repository
-
-2. **Find the File**
-   - Tap "Browse files"
-   - Tap `src` → `data` → choose your file:
-     - `churchInformation.json` - General church info
-     - `planvisit.json` - Plan Your Visit page
-     - `ministries.json` - Ministries page
-
-3. **Edit and Save**
-   - Tap the pencil icon to edit
-   - Make your changes (keep structure the same!)
-   - Tap "Commit changes" at the top right
-   - Add a description and commit
-
-## Important Formatting Rules
-
-### Keep the Structure - CRITICAL RULE
-
-**⚠️ NEVER change field names - only change the content inside quotes!**
-
-✅ **CORRECT** - Only change the value:
-
-```json
-"title": "NEW TITLE HERE"
-```
-
-❌ **WRONG** - Don't change field names:
-
-```json
-"newFieldName": "NEW TITLE HERE"
-```
-
-### Maintain JSON Format
-
-- **Always keep the commas** between items
-- **Always keep the quotation marks** around text
-- **Don't delete the curly braces** `{` `}`
-- **Don't delete the square brackets** `[` `]`
-- **Don't change field names** like `"hero"`, `"ministries"`, `"serviceTimes"`
-
-### Example of Correct Format
-
-```json
-"services": {
-  "sundayWorship": {
-    "name": "Sunday Worship",
-    "time": "10:30 AM",
-    "description": "Come join us for worship"
-  }
-}
-```
-
-### Common Mistakes to Avoid
-
-- ❌ Missing comma: `"name": "John" "role": "Pastor"`
-- ✅ Correct: `"name": "John", "role": "Pastor"`
-- ❌ Missing quotes: `name: John Doe`
-- ✅ Correct: `"name": "John Doe"`
-- ❌ Changing field names: `"newName": "John Doe"`
-- ✅ Correct: `"name": "John Doe"`
+1. Open the app and go to the `Oatville-Community-Church` organization → `oatvillechurchweb`.
+2. Tap **Browse files** → `content` → the file you want.
+3. Tap the pencil icon, make your change, then tap **Commit changes** and add a short description.
 
 ## What Happens After You Save
 
-1. **Automatic Build**: GitHub will automatically rebuild your website (takes 2-3 minutes)
-2. **Live Updates**: Changes appear on your live website
-3. **YouTube Updates**: The latest YouTube video updates automatically every week
+1. GitHub checks your file. If something is wrong (for example, a bad indent), the update **will not go live**, and the previous version of the site stays up.
+2. If the check passes, the site rebuilds and your change appears in 2-3 minutes.
+3. YouTube videos update automatically every week. You don't need to do anything.
 
-## YouTube Video Updates
+## If Something Goes Wrong
 
-**Good news!** Your latest YouTube videos update automatically every Sunday at 2 AM. You don't need to do anything for this to work.
+- **Look for a red ✗** next to your latest commit (or open the **Actions** tab). Click it to see a message that names the file and line, for example `content/hours.md:6: …`. Fix that line and commit again.
+- **Made a mistake?** Every change is saved in history, so nothing is lost. Contact technical support and they can restore any earlier version.
+- **Change not showing?** Wait 5 minutes, then refresh with Ctrl+F5 (Windows) or Cmd+Shift+R (Mac).
 
-If you ever change your YouTube channel, you'll need to update the YouTube channel ID in the file:
+## When to Contact Support
 
-```json
-"you-tube": {
-  "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A"
-}
-```
+- The website looks broken after your change
+- You want a new section, page or feature
+- You want to change the design or layout
+- You need help uploading images
 
-## Common Updates You'll Make
+Please include what you were trying to change, what you expected, what happened, and a screenshot if the site looks wrong.
 
-### Updating Service Times (churchInformation.json)
-
-Most common update - when service times change seasonally:
-
-```json
-"services": {
-  "sundayWorship": {
-    "time": "NEW TIME HERE"
-  }
-}
-```
-
-### Updating Plan Your Visit Info (planvisit.json)
-
-For seasonal changes or updated visitor information:
-
-```json
-"serviceTimes": {
-  "sunday": {
-    "time": "NEW TIME HERE",
-    "description": "NEW DESCRIPTION HERE"
-  }
-}
-```
-
-### Updating Ministry Information (ministries.json)
-
-For changes to ministry schedules or descriptions:
-
-```json
-"ministries": [
-  {
-    "name": "KEEP THE SAME",
-    "schedule": "NEW SCHEDULE HERE",
-    "description": "NEW DESCRIPTION HERE"
-  }
-]
-```
-
-### Adding Special Events (churchInformation.json)
-
-For holiday services or special events:
-
-```json
-"services": {
-  "specialEvents": {
-    "name": "Easter Service",
-    "time": "April 9th at 10:00 AM",
-    "description": "Join us for our Easter celebration"
-  }
-}
-```
-
-### Updating Contact Info (churchInformation.json)
-
-When phone numbers or email changes:
-
-```json
-"contact": {
-  "phone": "NEW PHONE NUMBER",
-  "email": "NEW EMAIL ADDRESS"
-}
-```
-
-## Troubleshooting
-
-### If Your Changes Don't Appear
-
-1. Wait 5 minutes - the site takes time to rebuild
-2. Check if there's a red X next to your latest commit (means there was an error)
-3. Try refreshing your browser with Ctrl+F5 (Windows) or Cmd+Shift+R (Mac)
-
-### If You Made a Mistake
-
-1. Don't panic! Every change is saved in history
-2. Contact your technical support person
-3. They can easily restore previous versions
-
-### If the Site Looks Broken
-
-1. Check your recent changes for missing commas or quotes
-2. Look at the "Actions" tab in GitHub for error messages
-3. Contact technical support if needed
-
-## Getting Help
-
-### Before You Contact Support
-
-1. Double-check your formatting (commas, quotes, brackets)
-2. Make sure you didn't accidentally delete important punctuation
-3. Try waiting 5 minutes for changes to appear
-
-### When to Contact Support
-
-- The website appears broken after your changes
-- You need to add new sections or features
-- You want to update the website design or layout
-- You need help with image uploads
-
-### What Information to Include
-
-- What you were trying to change
-- What you expected to happen
-- What actually happened
-- Screenshots if the site looks wrong
-
-## Quick Reference
-
-| What You Want to Update | File to Edit | Where to Find It | Example |
-|------------------------|---------------|------------------|---------|
-| Service times | `churchInformation.json` | `services` → specific service → `time` | `"time": "10:30 AM"` |
-| Phone number | `churchInformation.json` | `contact` → `phone` | `"phone": "(316) 555-0123"` |
-| Church address | `churchInformation.json` | `location` → `address`, `city`, etc. | `"address": "123 Main St"` |
-| Office hours | `churchInformation.json` | `hours` → specific day | `"monday": "9 AM - 5 PM"` |
-| Pastor information | `churchInformation.json` | `leadership` → find pastor entry | `"name": "Pastor John"` |
-| Add new FAQ | `churchInformation.json` | `faq` → copy existing format | `{"q": "Question?", "a": "Answer"}` |
-| Social media links | `churchInformation.json` | `socialMedia` → platform name | `"facebook": "https://..."` |
-| Plan Visit page content | `planvisit.json` | Various sections | `"title": "New Title"` |
-| Ministry descriptions | `ministries.json` | `ministries` → find ministry | `"description": "New desc"` |
-| Volunteer opportunities | `ministries.json` | `volunteerOpportunities` | `"title": "New opportunity"` |
-
----
-
-**Remember:** The website automatically updates YouTube videos weekly, so you only need to focus on church information, service times, ministries, and announcements.
-
-**CRITICAL REMINDER**: Always keep the exact same structure (field names like `"hero"`, `"ministries"`, `"serviceTimes"`) - only change the content inside the quotes! Make small changes at first until you're comfortable with the process!
+**Tip:** Make small changes at first until you're comfortable with the process.

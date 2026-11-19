@@ -94,16 +94,7 @@ class Linter {
           }
           
           // Attempt to parse JSON
-          const parsed = JSON.parse(content);
-          
-          // Validate specific church data files
-          if (file.includes('churchInformation.json')) {
-            await this.validateChurchInformation(parsed, relativePath);
-          } else if (file.includes('ministries.json')) {
-            await this.validateMinistriesData(parsed, relativePath);
-          } else if (file.includes('planvisit.json')) {
-            await this.validatePlanVisitData(parsed, relativePath);
-          }
+          JSON.parse(content);
           
         } catch (parseError) {
           this.errors.push(`${relativePath}: Invalid JSON - ${parseError.message}`);
@@ -114,6 +105,108 @@ class Linter {
     } catch (error) {
       this.errors.push(`Failed to check JSON files: ${error.message}`);
     }
+  }
+
+  async checkContent() {
+    console.log('📝 Checking content files (content/*.md)...');
+    const root = this.projectRoot;
+    let loader;
+    try {
+      loader = require('./content-loader.js');
+    } catch (error) {
+      this.errors.push(`Could not load content loader: ${error.message}`);
+      return;
+    }
+    const { parseMarkdownFile, listMarkdown, ContentError, CONTENT_DIR, MINISTRIES_DIR, PAGE_KEYS } = loader;
+
+    // Each file must parse; collect top-level keys to catch two files defining the same key
+    const files = [...listMarkdown(CONTENT_DIR), ...listMarkdown(MINISTRIES_DIR)];
+    const keyOwner = {};
+    for (const file of files) {
+      const rel = path.relative(root, file);
+      const isMinistry = path.dirname(file) === MINISTRIES_DIR;
+      try {
+        const { data, body } = parseMarkdownFile(file);
+        if (body && !isMinistry) {
+          this.warnings.push(`${rel}: Text below the closing --- is ignored in this file (put it in the front matter)`);
+        }
+        if (!isMinistry && !PAGE_KEYS[path.basename(file, '.md')]) {
+          for (const key of Object.keys(data)) {
+            if (keyOwner[key]) {
+              this.errors.push(`${rel}: "${key}" is already defined in ${keyOwner[key]}`);
+            }
+            keyOwner[key] = rel;
+          }
+        }
+      } catch (error) {
+        if (error instanceof ContentError) this.errors.push(error.message);
+        else this.errors.push(`${rel}: ${error.message}`);
+      }
+    }
+    if (this.errors.length > 0) return;
+
+    let data;
+    try {
+      data = loader.loadContent();
+    } catch (error) {
+      this.errors.push(error.message);
+      return;
+    }
+    await this.validateChurchInformation(data, 'content/');
+    await this.validateMinistriesData(data.ministries, 'content/ministries/');
+    await this.validatePlanVisitData(data.planvisit || {}, 'content/plan-visit.md');
+    console.log(`✓ Checked ${files.length} content files`);
+  }
+
+  async checkTemplates() {
+    console.log('🧩 Checking page templates against content...');
+    let data;
+    try {
+      data = require('./content-loader.js').loadContent();
+    } catch (error) {
+      return; // already reported by checkContent
+    }
+    const { getValue } = require('./template-blocks.js');
+    const skip = new Set(['build.version', 'build.date']);
+    const htmlFiles = await this.getFilesWithExtension(this.srcDir, '.html');
+    for (const file of htmlFiles) {
+      const relativePath = path.relative(this.projectRoot, file);
+      const html = await fs.readFile(file, 'utf8');
+      const seen = new Set();
+      for (const match of html.matchAll(/\{\{([^}]+)\}\}/g)) {
+        const token = match[1].trim();
+        if (/^(\/|else$)/.test(token)) continue;
+        const block = token.match(/^#(each|if|unless|ifApproved) (\S+)$/);
+        const ref = block ? block[2] : token.replace(/^plain /, '');
+        if (/^(this|@)/.test(ref) || skip.has(ref) || seen.has(token)) continue;
+        seen.add(token);
+        const value = getValue(data, ref);
+        if (block && block[1] === 'each' && !Array.isArray(value)) {
+          this.errors.push(`${relativePath}: {{#each ${ref}}} needs a list, but "${ref}" is missing or not a list in the content files`);
+        } else if (!block && value === undefined) {
+          this.errors.push(`${relativePath}: {{${ref}}} has no value - a line may be missing from the content files`);
+        } else if (block && block[1] === 'ifApproved' && value === undefined) {
+          this.errors.push(`${relativePath}: {{#ifApproved ${ref}}} has no matching content`);
+        }
+      }
+    }
+
+    // FAQ text is copied into search-engine JSON-LD, so it must not contain characters that break JSON
+    const faqLists = [
+      ['faq', data.faq, 'q', 'a', 'content/faq.md'],
+      ['planvisit.commonQuestions.faqs', data.planvisit?.commonQuestions?.faqs, 'question', 'answer', 'content/plan-visit.md'],
+      ['ministries.faq', data.ministries?.faq, 'question', 'answer', 'content/ministries/_index.md']
+    ];
+    for (const [name, list, qKey, aKey, where] of faqLists) {
+      (list || []).forEach((item, i) => {
+        for (const key of [qKey, aKey]) {
+          if (typeof item[key] === 'string' && /["\\\n]/.test(item[key])) {
+            this.errors.push(`${where}: ${name} item ${i + 1} "${key}" contains a double quote, backslash or line break - use an apostrophe or rephrase`);
+          }
+        }
+      });
+    }
+    console.log(`✓ Checked templates in ${htmlFiles.length} HTML files`);
   }
 
   async validateChurchInformation(data, filePath) {
@@ -137,8 +230,8 @@ class Linter {
     // Validate service times format
     if (data.services && Array.isArray(data.services)) {
       data.services.forEach((service, index) => {
-        if (!service.day || !service.time) {
-          this.errors.push(`${filePath}: Service ${index + 1} missing day or time`);
+        if (!service.name || !service.time) {
+          this.errors.push(`content/services.md: Service ${index + 1} is missing a name or time`);
         }
       });
     }
@@ -323,7 +416,7 @@ class Linter {
 
   async lint(jsonOnly = false) {
     if (jsonOnly) {
-      console.log('🔍 Starting JSON validation checks...\n');
+      console.log('🔍 Starting JSON and content validation checks...\n');
     } else {
       console.log('🔍 Starting code quality checks...\n');
     }
@@ -333,10 +426,14 @@ class Linter {
         // Only run JSON-related checks
         await this.checkPackageJson();
         await this.checkJsonFiles();
+        await this.checkContent();
+        await this.checkTemplates();
       } else {
         // Run all checks
         await this.checkPackageJson();
         await this.checkJsonFiles();
+        await this.checkContent();
+        await this.checkTemplates();
         await this.checkHtml();
         await this.checkCss();
         await this.checkJavaScript();
@@ -359,7 +456,7 @@ class Linter {
       
       if (this.errors.length === 0 && this.warnings.length === 0) {
         if (jsonOnly) {
-          console.log('✨ JSON validation passed! All files are valid.');
+          console.log('✨ JSON and content validation passed! All files are valid.');
         } else {
           console.log('✨ No issues found! Code quality looks great!');
         }

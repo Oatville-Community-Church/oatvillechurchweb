@@ -122,7 +122,7 @@ Welcome to your church website! This guide will help you take full control of yo
 
 ### You Can Handle These Yourself
 
-- Updating text content in the JSON file
+- Updating text content in the `content/` files
 - Changing service times and hours
 - Adding/updating staff information
 - Uploading new images

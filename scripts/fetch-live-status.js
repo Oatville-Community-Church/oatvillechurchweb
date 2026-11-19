@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const DATA_PATH = path.join(__dirname, '..', 'src', 'data', 'churchInformation.json');
+const DATA_PATH = path.join(__dirname, '..', 'src', 'data', 'youtube.json');
 const LIVE_STATUS_PATH = path.join(__dirname, '..', 'src', 'data', 'live-status.json');
 const API_KEY = process.env.YOUTUBE_API_KEY || '';
 const FETCH_TIMEOUT_MS = Number(process.env.YOUTUBE_FETCH_TIMEOUT_MS || 15000);

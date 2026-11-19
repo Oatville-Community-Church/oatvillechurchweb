@@ -46,7 +46,7 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          if git diff --quiet src/data/churchInformation.json src/data/live-status.json; then
+          if git diff --quiet src/data/youtube.json src/data/live-status.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "No changes to YouTube data"
           else
@@ -59,7 +59,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/churchInformation.json src/data/you-tube-rss.xml src/data/live-status.json
+          git add src/data/youtube.json src/data/you-tube-rss.xml src/data/live-status.json
           git commit -m "Auto-update: YouTube content/status $(date)"
           git push
 

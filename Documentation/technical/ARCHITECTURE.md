@@ -11,10 +11,11 @@ Authoritative technical overview for the Oatville Community Church website. This
 │   ├── js/                 # JavaScript (progressive enhancement)
 │   ├── images/             # Image assets (photos/graphics)
 │   ├── assets/             # Favicons / manifest / misc static
-│   ├── data/               # Data JSON (churchInformation.json, future caches)
+│   ├── data/               # Technical data JSON (site.json, youtube.json, live-status.json)
 │   ├── tailwind.css        # Tailwind entry stylesheet
 │   └── *.html              # Multi‑page HTML entry points (registered in vite.config.js)
-├── scripts/                # Node utility scripts (clean, lint)
+├── content/                # Editable content: markdown + YAML front matter (church info, pages, ministries/)
+├── scripts/                # Node utility scripts (clean, lint, content-loader)
 ├── Documentation/          # Canonical project docs (this file, build, scripts, etc.)
 ├── dist/                   # Build output (generated – never edit manually)
 └── vite.config.js          # Vite configuration & custom HTML/data plugins
@@ -28,7 +29,7 @@ Key rules: All runtime / static assets originate under `src/`. `publicDir` is di
 ## 2. Build Pipeline Flow
 
 1. HTML entry pages discovered from explicit `rollupOptions.input`.
-2. Custom placeholder plugin replaces `{{token}}` with values from `src/data/churchInformation.json` (dot‑notation supported).
+2. Custom placeholder plugin replaces `{{token}}` with values from the merged content object built by `scripts/content-loader.js` from `content/**/*.md` + `src/data/*.json` (dot‑notation supported).
 3. Tailwind CSS compiled from `src/tailwind.css`; unused utilities purged by content globs.
 4. Rollup optimization: tree‑shaking, minification, content‑hashed filenames.
 5. Static copy plugin moves approved assets from controlled `src` subpaths.
@@ -44,7 +45,7 @@ See also: `Documentation/BUILD.md` for command‑level build instructions.
 | Aspect | Location | Notes |
 |--------|----------|-------|
 | Vite root & inputs | `vite.config.js` | Keep new pages registered for sitemap inclusion |
-| Data source | `src/data/churchInformation.json` | Single source for templated content & structured data values |
+| Data source | `content/**/*.md`, `src/data/site.json`, `src/data/youtube.json` via `scripts/content-loader.js` | Single merged `churchData` object for templated content & structured data values |
 | Tailwind content | `tailwind.config.js` | Update if adding non‑standard file patterns |
 | Tailwind entry stylesheet | `src/tailwind.css` | Shared utility-driven styling entry |
 | Performance budget | ENV `BUNDLE_BUDGET_KB` or plugin default | Warns when exceeded |
@@ -53,9 +54,12 @@ See also: `Documentation/BUILD.md` for command‑level build instructions.
 
 ## 4. Data & Placeholder Conventions
 
-- Use semantic, plain‑text values in `churchInformation.json`.
+- Use semantic, plain‑text values in `content/*.md` front matter (each top-level key becomes a top-level data key; `plan-visit.md` nests under `planvisit`; ministry file bodies become `description`).
 - Reference with `{{key}}` or nested `{{path.to.key}}`.
-- For new structured data (JSON‑LD) fields, add to JSON then embed scripts in page `<head>`.
+- Repeat and conditional blocks are expanded by `scripts/template-blocks.js` before placeholders: `{{#each list}}…{{/each}}` (nestable; `{{this}}`, `{{this.field}}`, `{{@index}}`), `{{#if x}}…{{else}}…{{/if}}`, `{{#unless x}}`, `{{#unless @last}},{{/unless}}` for JSON-LD commas, and `{{plain this.field}}` to straighten curly quotes in JSON-LD. Items with `draft: true` render only in local preview.
+- `npm run lint` verifies every placeholder and `{{#each}}` in `src/*.html` has data behind it.
+- Tailwind scans only `src/` (`source("./")` in `src/tailwind.css`), so editing content or docs never changes the CSS.
+- For new structured data (JSON‑LD) fields, add to the content (or `src/data/site.json` for technical settings) then embed scripts in page `<head>`.
 
 ---
 
@@ -100,7 +104,7 @@ Actions performed during project streamlining:
 1. Create `src/<name>.html` replicating head structure from an existing page.
 2. Insert required meta + placeholder tokens.
 3. Add entry to `rollupOptions.input` in `vite.config.js`.
-4. Populate any new data keys in `churchInformation.json`.
+4. Populate any new data keys in a `content/*.md` file (or `src/data/site.json`).
 5. Run `npm run build` and verify page appears in sitemap & canonical link.
 
 ---

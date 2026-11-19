@@ -3,47 +3,22 @@ import legacy from '@vitejs/plugin-legacy';
 import { VitePWA } from 'vite-plugin-pwa';
 import fs from 'fs';
 import path from 'path';
+import { loadContent } from './scripts/content-loader.js';
+import { expandBlocks } from './scripts/template-blocks.js';
 
 // Load package.json for version info
 const packagePath = path.resolve(__dirname, 'package.json');
 const packageData = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
 
-// Load church data once
-const dataPath = path.resolve(__dirname, 'src', 'data', 'churchInformation.json');
-const planVisitDataPath = path.resolve(__dirname, 'src', 'data', 'planvisit.json');
-const ministriesDataPath = path.resolve(__dirname, 'src', 'data', 'ministries.json');
-let churchData = {};
-let planVisitData = {};
-let ministriesData = {};
-try {
-  churchData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-} catch (e) {
-  // eslint-disable-next-line no-console
-  console.warn('Could not load churchInformation.json for placeholder replacement');
-}
-try {
-  planVisitData = JSON.parse(fs.readFileSync(planVisitDataPath, 'utf8'));
-  // Merge planvisit data into churchData for placeholder access
-  churchData.planvisit = planVisitData;
-} catch (e) {
-  // eslint-disable-next-line no-console
-  console.warn('Could not load planvisit.json for placeholder replacement');
-}
-try {
-  ministriesData = JSON.parse(fs.readFileSync(ministriesDataPath, 'utf8'));
-  // Merge ministries data into churchData for placeholder access
-  churchData.ministries = ministriesData;
-} catch (e) {
-  // eslint-disable-next-line no-console
-  console.warn('Could not load ministries.json for placeholder replacement');
-}
+// Load church data once (markdown in content/ + technical JSON in src/data/; see scripts/content-loader.js)
+const churchData = loadContent();
 
 // Helper to get nested value
 function getValue(obj, keyPath) {
   return keyPath.trim().split('.').reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : undefined), obj);
 }
 
-// Pages gated behind an "approved": true flag in churchInformation.json. Unapproved pages are
+// Pages gated behind an "approved: true" flag in content/beliefs.md. Unapproved pages are
 // left out of builds, the sitemap, and the dev server (which returns 404 for them).
 const approvalGatedPages = { 'beliefs.html': 'beliefsPage' };
 function isPagePublished(file) {
@@ -68,29 +43,13 @@ function approvalGatePlugin() {
         const file = path.basename((req.url || '').split('?')[0]);
         if (approvalGatedPages[file] && !isPagePublished(file)) {
           res.statusCode = 404;
-          res.end(`${file} is not published (set "approved": true in churchInformation.json)`);
+          res.end(`${file} is not published (set approved: true in content/beliefs.md)`);
           return;
         }
         next();
       });
     }
   };
-}
-
-// Expand {{#each list.path}}...{{/each}} blocks, filling {{this.field}} from each array item.
-// Items marked "draft": true render only in local dev so unreviewed content never ships.
-function expandEachBlocks(html, isLocal) {
-  return html.replace(/\{\{#each ([\w.-]+)\}\}([\s\S]*?)\{\{\/each\}\}/g, (m, listPath, block) => {
-    const list = getValue(churchData, listPath);
-    if (!Array.isArray(list)) return m;
-    return list
-      .filter(item => isLocal || !item.draft)
-      .map(item => block.replace(/\{\{this\.([\w.-]+)\}\}/g, (_, key) => {
-        const val = getValue(item, key);
-        return val !== undefined ? String(val) : '';
-      }))
-      .join('');
-  });
 }
 
 // Plugin to replace {{placeholders}} in HTML files (index + multi-page support later)
@@ -112,7 +71,7 @@ function htmlPlaceholderPlugin(isLocal) {
       });
       const version = packageData.version;
 
-      let transformed = expandEachBlocks(expandApprovalBlocks(html), isLocal).replace(/\{\{([^}]+)\}\}/g, (m, p) => {
+      let transformed = expandBlocks(expandApprovalBlocks(html), churchData, isLocal).replace(/\{\{([^}]+)\}\}/g, (m, p) => {
         // Special case for site.url to use environment-aware URL
         if (p.trim() === 'site.url') {
           return siteUrl;

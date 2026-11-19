@@ -57,7 +57,7 @@ npm run lint          # Custom lint/quality checks
 
 - Tailwind CSS entry import compiled through `src/main.js` (`src/tailwind.css`)
 - Tree-shaking, code splitting, hashed filenames
-- Placeholder replacement (`{{key.path}}`) using `churchInformation.json`
+- Placeholder replacement (`{{key.path}}`) using the content object from `scripts/content-loader.js` (`content/**/*.md` + `src/data/*.json`)
  (all HTML resides under `src/`, so Vite `root` is `src` and multi-page inputs are set in `vite.config.js`)
 - Automatic manifest + build-info emission
 - Bundle budget check (env-configured `BUNDLE_BUDGET_KB`)

@@ -87,9 +87,9 @@ All images should be placed in the `src/images/` folder of your repository.
 
 ## Using Images on Your Website
 
-### In the JSON File
+### In the Settings File
 
-After uploading an image, you can reference it in your `churchInformation.json` file:
+After uploading an image, the share-preview image is referenced in `src/data/site.json` (a technical file - ask your technical support person to change it):
 
 ```json
 "site": {
@@ -124,7 +124,7 @@ If you want to replace an existing image with a new one:
 If you want to use a different filename:
 
 1. **Upload the new image** following the steps above
-2. **Update the JSON file** to reference the new image name
+2. **Ask technical support to update `src/data/site.json`** (or the relevant page) to reference the new image name
 3. **Optionally delete the old image** (see deletion section below)
 
 ## Deleting Images
@@ -133,7 +133,7 @@ If you want to use a different filename:
 
 Before deleting an image, make sure it's not referenced in:
 
-- Your `churchInformation.json` file
+- Your `src/data/site.json` file and the files in `content/`
 - Any HTML files
 - Any other parts of your website
 
@@ -200,7 +200,7 @@ Before deleting an image, make sure it's not referenced in:
 
 ### Image Not Showing Up
 
-1. **Check the filename** - make sure it matches exactly what you put in the JSON file
+1. **Check the filename** - make sure it matches exactly what is written in the settings file
 2. **Check the path** - images should start with `/images/`
 3. **Wait a few minutes** - the website needs time to rebuild
 4. **Check file size** - very large images might not load properly
@@ -240,7 +240,7 @@ If your image file is over 500KB:
 
 - Replace existing images
 - Add new images to the images folder
-- Update image references in the JSON file
+- Update image references in the settings/content files
 - Basic image optimization before upload
 
 ### Information to Include When Asking for Help
@@ -257,7 +257,7 @@ If your image file is over 500KB:
 3. **Keep file sizes under 200KB** when possible
 4. **Test images on mobile devices** to ensure they look good
 5. **Backup important photos** separately before uploading
-6. **Update JSON references** when changing image names
+6. **Update file references** when changing image names
 7. **Delete unused images** to keep the repository clean
 
 ---

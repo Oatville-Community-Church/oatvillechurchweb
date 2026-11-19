@@ -1,0 +1,23 @@
+{
+  "latestVideo": {
+    "id": "hTcZjY9jjb8",
+    "title": "“The Remnant”",
+    "description": "Watch the latest message from Oatville Community Church on YouTube.",
+    "thumbnail": "https://i.ytimg.com/vi/hTcZjY9jjb8/hqdefault.jpg",
+    "publishedAt": "2026-11-16T06:28:12+00:00",
+    "fetchedAt": "2026-11-16T10:37:29.752Z"
+  },
+  "latestStream": {
+    "id": "PLcRg-usMdk",
+    "title": "Oatville Community Church livestream. Living the whole life.",
+    "description": "The Oatville Community Church Sunday Morning live stream. Living the whole life.",
+    "thumbnail": "https://i.ytimg.com/vi/PLcRg-usMdk/hqdefault.jpg",
+    "publishedAt": "2026-06-01T05:12:48+00:00",
+    "fetchedAt": "2026-06-01T11:28:38.051Z"
+  },
+  "you-tube": {
+    "friendly-url": "https://www.youtube.com/@OatvilleCommunityChurch",
+    "channel-id": "UCLiIrzYVgwFD0rIEYQoGC5A",
+    "rssFetchedAt": "2026-11-16T10:37:29.752Z"
+  }
+}

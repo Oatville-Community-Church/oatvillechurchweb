@@ -20,7 +20,7 @@
 **📱 Architecture:**
 
 - **Static Site Generation:** Vite-powered build system with multi-page support
-- **Data-Driven Content:** JSON-based content management with placeholder templating
+- **Data-Driven Content:** Markdown/YAML content files with placeholder templating
 - **Modern Web Standards:** PWA-capable with offline support and structured data
 - **Performance Optimized:** Asset optimization, cache management, and lazy loading
 - **SEO Enhanced:** Automatic sitemap generation, robots.txt, and meta tag injection
@@ -39,10 +39,16 @@ src/                          # All source files and assets
 ├── *.html                   # Website pages (index, ministries, plan-visit, you-tube)
 ├── assets/                  # Favicons, icons, and static metadata assets
 ├── data/
-│   └── churchInformation.json # Church content and information
+│   ├── site.json            # Site + SEO settings (developer-owned)
+│   └── youtube.json         # Latest video data (written by the weekly YouTube job)
 ├── images/                  # Church photos and graphics
 ├── js/                      # Website functionality
 └── tailwind.css             # Tailwind entry stylesheet
+content/                      # Pastor-editable content (markdown + YAML front matter)
+├── church.md, hours.md, services.md, about.md, faq.md, ...
+├── plan-visit.md            # Plan Your Visit page
+├── beliefs.md               # What We Believe page (hidden until approved)
+└── ministries/              # _index.md + one numbered file per ministry
 Documentation/               # Pastor and setup guides
 ├── PASTOR_HANDOVER_GUIDE.md # Complete setup instructions for pastor
 ├── GITHUB_ACCOUNT_SETUP.md  # GitHub account creation guide
@@ -138,28 +144,23 @@ The project uses a Vite-based build pipeline with explicit CI and release paths:
 
 The website uses a centralized data management approach:
 
-- **Primary Data:** `src/data/churchInformation.json` contains all website content
-- **Specialized Data:** `src/data/ministries.json` and `src/data/planvisit.json` for page-specific content
+- **Editable Content:** `content/*.md` (YAML front matter) holds the church info and page text; `content/ministries/` has one file per ministry. `scripts/content-loader.js` merges these into one `churchData` object at build time
+- **Technical Data:** `src/data/site.json` (site + SEO) and `src/data/youtube.json` (written by the weekly YouTube workflow) are merged in too
 - **Dynamic Placeholders:** HTML pages use `{{placeholder}}` syntax for dynamic content injection
-- **Automated Validation:** Build process validates JSON syntax and prevents broken placeholders
+- **Automated Validation:** `npm run lint` validates every content file (with file and line numbers) and the build prevents broken placeholders
 
-Example data structure and usage:
+Example content file (`content/services.md`) and usage:
 
-```json
-{
-  "name": "Organization Name",
-  "services": {
-    "primary": {
-      "name": "Service Name",
-      "time": "Service Time"
-    }
-  },
-  "seo": {
-    "title": "Page Title",
-    "description": "Meta description"
-  }
-}
+```md
+---
+services:
+  primary:
+    name: Service Name
+    time: Service Time
+---
 ```
+
+Each top-level front matter key becomes a top-level data key. `content/plan-visit.md` is nested under `planvisit`, and the `ministries` object is built from `content/ministries/`. The body text of a ministry file becomes its `description`.
 
 Reference in HTML: `{{name}}` or `{{services.primary.time}}` or `{{seo.title}}`
 
@@ -183,8 +184,8 @@ Reference in HTML: `{{name}}` or `{{services.primary.time}}` or `{{seo.title}}`
 
 **Content Updates:**
 
-1. **Text Changes:** Edit JSON files in `src/data/`
-2. **Validation:** Run `npm run lint:json` to check syntax
+1. **Text Changes:** Edit markdown files in `content/`
+2. **Validation:** Run `npm run lint:json` to check JSON and content syntax
 3. **Testing:** Use `npm run dev` for live preview
 4. **Deployment:** `npm run build` validates and prepares for production
 
@@ -197,7 +198,7 @@ Reference in HTML: `{{name}}` or `{{services.primary.time}}` or `{{seo.title}}`
 
 **Error Handling:**
 
-- **JSON Syntax Errors:** Precise line-by-line error reporting with fix suggestions
+- **Content/JSON Syntax Errors:** Precise line-by-line error reporting with fix suggestions
 - **Build Failures:** Early termination with detailed error context
 - **Asset Issues:** Image optimization failures halt deployment
 - **Performance Warnings:** Bundle size budget violations logged to console

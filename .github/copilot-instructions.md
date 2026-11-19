@@ -46,7 +46,7 @@ If a contribution introduces `public/`, the change should be rejected or refacto
 
 ## 1. Project Overview
 
-A modern static, multi-page church website built with Vite, Tailwind CSS, and a light data-driven templating layer (placeholder replacement from `src/data/churchInformation.json`). All static assets must originate inside `src/*`; the legacy `/public` pattern is intentionally disabled (see `vite.config.js`: `publicDir: false`). Build artifacts are emitted to `dist/`.
+A modern static, multi-page church website built with Vite, Tailwind CSS, and a light data-driven templating layer (placeholder replacement from markdown front matter in `content/` plus `src/data/*.json`, merged by `scripts/content-loader.js`). All static assets must originate inside `src/*`; the legacy `/public` pattern is intentionally disabled (see `vite.config.js`: `publicDir: false`). Build artifacts are emitted to `dist/`.
 
 Primary goals:
 
@@ -59,15 +59,16 @@ Primary goals:
 
 ## 2. Source of Truth Data
 
-Central dynamic data lives in: `src/data/churchInformation.json`.
+Central dynamic data lives in `content/*.md` (YAML front matter; pastor-editable, one file per ministry in `content/ministries/`), plus developer-owned `src/data/site.json` (site + SEO) and the bot-written `src/data/youtube.json`. `scripts/content-loader.js` merges them into one `churchData` object.
 
-- Add new mission / service / social / testimonial / SEO metadata fields here first.
+- Add new mission / service / social / testimonial fields to the matching `content/*.md` file first (SEO / site metadata goes in `src/data/site.json`).
+- Lists are rendered with `{{#each list.path}}…{{/each}}` blocks (see `scripts/template-blocks.js`: nesting, `{{#if}}`/`{{else}}`, `{{#unless @last}}`, `{{plain …}}`); never hard-code text in HTML that belongs to a content file.
 - Keys can be referenced in HTML using `{{path.to.key}}` placeholders (see placeholder plugin in `vite.config.js`). Nested paths supported via dot notation.
-- Keep content semantic and concise; avoid embedded HTML inside JSON values except for simple line breaks if absolutely required.
+- Keep content semantic and concise; avoid embedded HTML inside content values except for simple line breaks if absolutely required.
 
 ### 2.1 Adding New Data Fields
 
-1. Add to `churchInformation.json`.
+1. Add to the relevant `content/*.md` front matter (run `npm run lint` to validate).
 2. Reference in HTML using `{{newField}}` or `{{parent.child}}`.
 3. If used in structured data (JSON-LD), update the injection logic block (create if missing) in `index.html` or page file.
 
@@ -86,7 +87,7 @@ Adding a new page:
 
 1. Create `src/<pagename>.html` (place directly under `src/`; avoid subfolders unless updating Tailwind content globs if needed).
 2. Copy standard `<head>` structure from `src/index.html` (retain meta/OG/twitter placeholders; add structured data as required).
-3. Use `{{placeholders}}` sourced from `src/data/churchInformation.json`.
+3. Use `{{placeholders}}` sourced from the content files / `src/data/site.json`.
 4. Add the page to `rollupOptions.input` in `vite.config.js` (explicit multi-page inputs; required for sitemap and canonical generation).
 5. Build (`npm run build`) to verify it appears in `dist/` and in generated `sitemap.xml`.
 
@@ -331,9 +332,9 @@ Add separate scripts for `Event`, `FAQPage`, `VideoObject` (avoid bundling into 
 
 | Task                    | Location / Action                                           |
 | ----------------------- | ----------------------------------------------------------- |
-| Add service time        | `churchInformation.json` > `services`                       |
+| Add service time        | `content/services.md` (and `content/plan-visit.md`)         |
 | Add new page            | Create `src/<name>.html` + update `vite.config.js` inputs   |
-| Update SEO title        | `churchInformation.json` > `seo.title`                      |
+| Update SEO title        | `src/data/site.json` > `seo.title`                          |
 | Add structured data     | Inline `<script type="application/ld+json">` in target page |
 | Add image               | `src/images/` (optimize)                                    |
 | Add / update docs       | `Documentation/` (centralized – see §0)                     |
@@ -350,7 +351,7 @@ Add separate scripts for `Event`, `FAQPage`, `VideoObject` (avoid bundling into 
 When responding to user requests:
 
 1. Confirm intention succinctly.
-2. If editing content: prefer updating `churchInformation.json` then referencing placeholders.
+2. If editing content: prefer updating the `content/*.md` files then referencing placeholders.
 3. If adding structured data: produce JSON-LD compliant with schema.org.
 4. Avoid large code blocks duplicating unmodified content—show only deltas if patching.
 5. Validate assumptions; if uncertain, state the assumption and proceed minimally.

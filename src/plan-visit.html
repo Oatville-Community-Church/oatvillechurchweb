@@ -56,46 +56,16 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
+          {{#each planvisit.commonQuestions.faqs}}
           {
             "@type": "Question",
-            "name": "Do I need to dress up?",
+            "name": "{{plain this.question}}",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Wear what's comfortable – jeans, casual, or traditional. All are welcome."
+              "text": "{{plain this.answer}}"
             }
-          },
-          {
-            "@type": "Question",
-            "name": "Will I be singled out?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No – you're our guest. We won't ask you to stand or introduce yourself publicly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is the building accessible?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Entrances and seating are accessible; let us know if you need assistance."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What about parking?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Free parking is available on-site. We recommend arriving 10-15 minutes early to find a convenient spot."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I bring my children?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely! We have nursery and children's ministry during services, or children are welcome to stay with parents."
-            }
-          }
+          }{{#unless @last}},{{/unless}}
+          {{/each}}
         ]
       }
     </script>
@@ -330,14 +300,9 @@
                 >.
               </p>
               <ul class="list-disc pl-6 space-y-2 text-gray-600 text-sm">
-                <li>Parking available on site – arrive 10 minutes early</li>
-                <li>
-                  Friendly greeters & ushers if you need help finding a seat
-                </li>
-                <li>Services last about 60–70 minutes</li>
-                <li>
-                  Prayer and community are central (opportunities to connect)
-                </li>
+                {{#each planvisit.whatToExpect.highlights}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
             </div>
             <div class="card p-6">
@@ -345,10 +310,9 @@
                 {{planvisit.serviceTimes.title}}
               </h3>
               <ul class="space-y-2 text-gray-600 text-sm">
-                <li><strong>Christian Education:</strong> 9:45 AM</li>
-                <li><strong>Sunday Worship:</strong> 10:45 AM</li>
-                <li><strong>Wednesday Prayer:</strong> 5:00 PM</li>
-                <li><strong>Study:</strong> 4:00 PM Wednesdays</li>
+                {{#each planvisit.serviceTimes.schedule}}
+                <li><strong>{{this.service}}:</strong> {{this.time}}</li>
+                {{/each}}
               </ul>
               <p class="text-xs text-gray-500 mt-4">
                 {{planvisit.serviceTimes.timezone}}
@@ -365,10 +329,9 @@
                 {{planvisit.childrenFamilies.description}}
               </p>
               <ul class="list-disc pl-6 space-y-2 text-gray-600 text-sm">
-                <li>Safe, caring volunteers (screened)</li>
-                <li>Simple check-in process</li>
-                <li>Age‑appropriate teaching</li>
-                <li>Family seating always welcome</li>
+                {{#each planvisit.childrenFamilies.features}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
             </div>
             <div
@@ -378,11 +341,9 @@
                 {{planvisit.beforeYouArrive.title}}
               </h4>
               <ol class="list-decimal pl-5 space-y-2 text-gray-600 text-sm">
-                <li>Pick a service time</li>
-                <li>Plan to arrive 10–15 minutes early</li>
-                <li>Stop by to say hello – we'd love to meet you</li>
-                <li>Grab a seat anywhere comfortable</li>
-                <li>Complete a connect card if you'd like follow‑up</li>
+                {{#each planvisit.beforeYouArrive.steps}}
+                <li>{{this}}</li>
+                {{/each}}
               </ol>
             </div>
           </div>
@@ -393,51 +354,16 @@
                 {{planvisit.commonQuestions.title}}
               </h3>
               <div class="space-y-4">
+                {{#each planvisit.commonQuestions.faqs}}
                 <details class="bg-white border rounded-lg p-4">
                   <summary class="font-semibold cursor-pointer">
-                    Do I need to dress up?
+                    {{this.question}}
                   </summary>
                   <p class="mt-2 text-gray-600 text-sm">
-                    Wear what’s comfortable – jeans, casual, or traditional. All
-                    are welcome.
+                    {{this.answer}}
                   </p>
                 </details>
-                <details class="bg-white border rounded-lg p-4">
-                  <summary class="font-semibold cursor-pointer">
-                    Will I be singled out?
-                  </summary>
-                  <p class="mt-2 text-gray-600 text-sm">
-                    No – you're our guest. We won't ask you to stand or
-                    introduce yourself publicly.
-                  </p>
-                </details>
-                <details class="bg-white border rounded-lg p-4">
-                  <summary class="font-semibold cursor-pointer">
-                    Is the building accessible?
-                  </summary>
-                  <p class="mt-2 text-gray-600 text-sm">
-                    Yes. Entrances and seating are accessible; let us know if
-                    you need assistance.
-                  </p>
-                </details>
-                <details class="bg-white border rounded-lg p-4">
-                  <summary class="font-semibold cursor-pointer">
-                    What about parking?
-                  </summary>
-                  <p class="mt-2 text-gray-600 text-sm">
-                    Free parking is available on-site. We recommend arriving
-                    10-15 minutes early to find a convenient spot.
-                  </p>
-                </details>
-                <details class="bg-white border rounded-lg p-4">
-                  <summary class="font-semibold cursor-pointer">
-                    Can I bring my children?
-                  </summary>
-                  <p class="mt-2 text-gray-600 text-sm">
-                    Absolutely! We have nursery and children's ministry during
-                    services, or children are welcome to stay with parents.
-                  </p>
-                </details>
+                {{/each}}
               </div>
             </div>
             <div class="card p-6">
@@ -448,12 +374,9 @@
                 {{planvisit.nextStep.description}}
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
-                <a href="tel:{{contact.phone}}" class="btn btn-primary"
-                  >Call Us</a
-                >
-                <a href="/#contact" class="btn btn-outline"
-                  >Get Directions</a
-                >
+                {{#each planvisit.nextStep.actions}}
+                <a href="{{this.url}}" class="btn btn-{{this.type}}">{{this.text}}</a>
+                {{/each}}
               </div>
             </div>
           </div>
@@ -468,23 +391,11 @@
               accessible to all visitors.
             </p>
             <ul class="grid md:grid-cols-2 gap-2 text-sm text-blue-700">
+              {{#each planvisit.accessibility.features}}
               <li class="flex items-center">
-                <span class="mr-2">♿</span> Wheelchair accessible entrances and
-                seating
+                <span class="mr-2">{{this.icon}}</span> {{this.text}}
               </li>
-              <li class="flex items-center">
-                <span class="mr-2">🚻</span> Accessible restrooms
-              </li>
-              <li class="flex items-center">
-                <span class="mr-2">📖</span> Large print materials available
-              </li>
-              <li class="flex items-center">
-                <span class="mr-2">🔊</span> Hearing assistance devices
-                available
-              </li>
-              <li class="flex items-center">
-                <span class="mr-2">🐕</span> Service animal friendly
-              </li>
+              {{/each}}
             </ul>
           </div>
         </div>

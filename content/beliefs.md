@@ -2,7 +2,7 @@
 # What We Believe page. The page stays hidden until approved is true.
 # Edit the text after each colon. Keep quotes and indentation as they are.
 beliefsPage:
-  approved: false
+  approved: true
   seo:
     title: What We Believe | Oatville Community Church | Wichita, KS
     description: Our mission and core beliefs at Oatville Community Church, a non-denominational church in Wichita, KS. Learn what we believe about the Bible, God, Jesus, and the church.
